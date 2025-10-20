@@ -6,7 +6,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Upload, Download, Loader2 } from "lucide-react";
-import { trackEvent } from "@/components/Analytics";
+
+const trackEvent = (eventName: string, eventParams?: Record<string, any>) => {
+  if (typeof window !== "undefined" && (window as any).gtag) {
+    (window as any).gtag("event", eventName, eventParams);
+  }
+};
 
 export default function ConvertForm() {
   const [file, setFile] = useState<File | null>(null);
