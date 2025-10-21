@@ -3,6 +3,15 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://heictojpg.fr'
 
+  // Articles de blog (IDs 1 à 4)
+  const blogPostIds = [1, 2, 3, 4]
+  const blogPosts = blogPostIds.map((id) => ({
+    url: `${baseUrl}/blog/${id}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
   return [
     {
       url: baseUrl,
@@ -16,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    ...blogPosts,
     {
       url: `${baseUrl}/a-propos`,
       lastModified: new Date(),
