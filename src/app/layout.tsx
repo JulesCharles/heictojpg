@@ -18,6 +18,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Convertir HEIC en JPG gratuitement en ligne",
   description: "Outil gratuit pour convertir vos fichiers HEIC (photos iPhone) en images JPG rapidement et sans perte de qualité.",
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/icon.ico', type: 'image/x-icon' }
+    ],
+    apple: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
