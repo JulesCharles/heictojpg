@@ -5,7 +5,7 @@ import ImageConvertForm from "@/components/ImageConvertForm";
 export const metadata: Metadata = {
   title: "Convertir PNG en JPG gratuitement en ligne",
   description:
-    "Convertissez vos images PNG en JPG en un clic. Outil gratuit, rapide et sans inscription. Reduisez la taille de vos fichiers PNG en les convertissant au format JPG.",
+    "Convertissez vos images PNG en JPG en un clic. Outil gratuit, rapide et sans inscription. Réduisez la taille de vos fichiers PNG en les convertissant au format JPG.",
   keywords: [
     "convertir png en jpg",
     "png to jpg",
@@ -59,23 +59,23 @@ const jsonLd = {
           name: "La conversion PNG en JPG est-elle gratuite ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Oui, notre outil de conversion PNG en JPG est entierement gratuit, sans inscription requise et sans limitation d'usage.",
+            text: "Oui, notre outil de conversion PNG en JPG est entièrement gratuit, sans inscription requise et sans limitation d'usage.",
           },
         },
         {
           "@type": "Question",
-          name: "La qualite de l'image est-elle conservee ?",
+          name: "La qualité de l'image est-elle conservée ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Le format JPG utilise une compression avec perte, mais notre outil optimise la qualite pour obtenir le meilleur rapport taille/qualite possible.",
+            text: "Le format JPG utilise une compression avec perte, mais notre outil optimise la qualité pour obtenir le meilleur rapport taille/qualité possible.",
           },
         },
         {
           "@type": "Question",
-          name: "Mes fichiers sont-ils conserves sur vos serveurs ?",
+          name: "Mes fichiers sont-ils conservés sur vos serveurs ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Non, aucun fichier n'est conserve sur nos serveurs. La conversion s'effectue en memoire et toutes les donnees temporaires sont supprimees immediatement apres le telechargement.",
+            text: "Non, aucun fichier n'est conservé sur nos serveurs. La conversion s'effectue en mémoire et toutes les données temporaires sont supprimées immédiatement après le téléchargement.",
           },
         },
       ],
@@ -96,10 +96,10 @@ export default function ConvertirPngEnJpg() {
         </h1>
 
         <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-          Transformez vos images PNG en fichiers JPG optimises en quelques
-          secondes. Notre convertisseur en ligne est rapide, securise et
-          entierement gratuit. Aucune inscription requise, aucun fichier
-          conserve sur nos serveurs.
+          Transformez vos images PNG en fichiers JPG optimisés en quelques
+          secondes. Notre convertisseur en ligne est rapide, sécurisé et
+          entièrement gratuit. Aucune inscription requise, aucun fichier
+          conservé sur nos serveurs.
         </p>
       </div>
 
@@ -107,13 +107,13 @@ export default function ConvertirPngEnJpg() {
         <ImageConvertForm
           title="Convertir PNG en JPG"
           acceptedFormats=".png,image/png"
-          acceptLabel="Selectionner un fichier PNG"
+          acceptLabel="Sélectionner un fichier PNG"
           outputFormat="jpg"
           apiEndpoint="/api/convert-image"
           outputExtension=".jpg"
           acceptedMimeTypes={["image/png"]}
           acceptedExtensions={[".png"]}
-          errorMessage="Veuillez selectionner un fichier PNG valide."
+          errorMessage="Veuillez sélectionner un fichier PNG valide."
         />
       </div>
 
@@ -125,26 +125,26 @@ export default function ConvertirPngEnJpg() {
         <div className="prose prose-gray max-w-none">
           <p className="text-gray-600 mb-4">
             Le format PNG (Portable Network Graphics) est un format d&apos;image
-            sans perte tres utilise pour les graphiques, les captures d&apos;ecran
+            sans perte très utilisé pour les graphiques, les captures d&apos;écran
             et les images avec transparence. Cependant, les fichiers PNG sont
-            souvent beaucoup plus volumineux que leurs equivalents JPG, ce qui
-            peut poser probleme pour le partage en ligne ou l&apos;envoi par email.
+            souvent beaucoup plus volumineux que leurs équivalents JPG, ce qui
+            peut poser problème pour le partage en ligne ou l&apos;envoi par email.
           </p>
 
           <p className="text-gray-600 mb-4">
-            En convertissant vos fichiers PNG en JPG, vous pouvez reduire
-            considerablement la taille de vos images, parfois de 50 a 80 %. Le
-            format JPG utilise une compression avec perte qui elimine les
-            donnees visuelles imperceptibles a l&apos;oeil nu, tout en conservant
-            une excellente qualite d&apos;image pour la plupart des usages
+            En convertissant vos fichiers PNG en JPG, vous pouvez réduire
+            considérablement la taille de vos images, parfois de 50 à 80 %. Le
+            format JPG utilise une compression avec perte qui élimine les
+            données visuelles imperceptibles à l&apos;oeil nu, tout en conservant
+            une excellente qualité d&apos;image pour la plupart des usages
             quotidiens.
           </p>
 
           <p className="text-gray-600 mb-4">
             Le format JPG est le standard universel pour les photographies
-            numeriques. Il est supporte par absolument tous les navigateurs web,
-            systemes d&apos;exploitation, reseaux sociaux et applications de
-            messagerie. Convertir vos PNG en JPG garantit une compatibilite
+            numériques. Il est supporté par absolument tous les navigateurs web,
+            systèmes d&apos;exploitation, réseaux sociaux et applications de
+            messagerie. Convertir vos PNG en JPG garantit une compatibilité
             maximale avec tous vos outils et plateformes.
           </p>
 
@@ -156,25 +156,25 @@ export default function ConvertirPngEnJpg() {
             <li>
               •{" "}
               <strong>Utilisez JPG pour :</strong> les photographies, les images
-              destinees au web, les envois par email, les publications sur les
-              reseaux sociaux
+              destinées au web, les envois par email, les publications sur les
+              réseaux sociaux
             </li>
             <li>
               •{" "}
               <strong>Conservez le PNG pour :</strong> les logos avec
-              transparence, les captures d&apos;ecran de texte, les graphiques
-              vectoriels, les images necessitant une qualite parfaite au pixel
-              pres
+              transparence, les captures d&apos;écran de texte, les graphiques
+              vectoriels, les images nécessitant une qualité parfaite au pixel
+              près
             </li>
             <li>
               •{" "}
-              <strong>Taille de fichier :</strong> un JPG est generalement 5 a
-              10 fois plus leger qu&apos;un PNG pour une photo de meme resolution
+              <strong>Taille de fichier :</strong> un JPG est généralement 5 à
+              10 fois plus léger qu&apos;un PNG pour une photo de même résolution
             </li>
             <li>
               •{" "}
               <strong>Optimisation web :</strong> convertir vos images PNG en JPG
-              ameliore significativement la vitesse de chargement de vos pages
+              améliore significativement la vitesse de chargement de vos pages
               web et votre score SEO
             </li>
           </ul>
@@ -183,7 +183,7 @@ export default function ConvertirPngEnJpg() {
 
       <div className="bg-white rounded-lg shadow-sm p-8">
         <h2 className="text-2xl font-semibold text-gray-800 mb-6">
-          Questions frequentes
+          Questions fréquentes
         </h2>
 
         <div className="prose prose-gray max-w-none">
@@ -193,28 +193,28 @@ export default function ConvertirPngEnJpg() {
           <p className="text-gray-600 mb-6">
             Oui, notre outil est 100 % gratuit et sans aucune limitation. Vous
             pouvez convertir autant de fichiers PNG en JPG que vous le
-            souhaitez, sans inscription et sans filigrane ajoute a vos images.
+            souhaitez, sans inscription et sans filigrane ajouté à vos images.
           </p>
 
           <h3 className="text-xl font-semibold text-gray-800 mb-3">
-            La qualite de l&apos;image est-elle conservee ?
+            La qualité de l&apos;image est-elle conservée ?
           </h3>
           <p className="text-gray-600 mb-6">
             Le format JPG utilise une compression avec perte, ce qui signifie
-            qu&apos;une legere reduction de qualite est possible. Cependant, notre
-            outil optimise les parametres de compression pour offrir le meilleur
-            rapport qualite/taille possible. Pour la plupart des usages
-            (photos, web, email), la difference est imperceptible.
+            qu&apos;une légère réduction de qualité est possible. Cependant, notre
+            outil optimise les paramètres de compression pour offrir le meilleur
+            rapport qualité/taille possible. Pour la plupart des usages
+            (photos, web, email), la différence est imperceptible.
           </p>
 
           <h3 className="text-xl font-semibold text-gray-800 mb-3">
-            Mes fichiers sont-ils conserves sur vos serveurs ?
+            Mes fichiers sont-ils conservés sur vos serveurs ?
           </h3>
           <p className="text-gray-600 mb-6">
-            Non, la confidentialite de vos donnees est notre priorite. Aucun
-            fichier n&apos;est stocke sur nos serveurs. La conversion s&apos;effectue en
-            memoire et toutes les donnees temporaires sont supprimees
-            immediatement apres le telechargement de votre image convertie.
+            Non, la confidentialité de vos données est notre priorité. Aucun
+            fichier n&apos;est stocké sur nos serveurs. La conversion s&apos;effectue en
+            mémoire et toutes les données temporaires sont supprimées
+            immédiatement après le téléchargement de votre image convertie.
           </p>
         </div>
       </div>

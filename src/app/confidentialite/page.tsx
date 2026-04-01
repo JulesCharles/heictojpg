@@ -147,7 +147,7 @@ export default function Privacy() {
               Toute modification sera affichée sur cette page avec la date de mise à jour.
             </p>
             <p className="text-gray-600">
-              <strong>Dernière mise à jour :</strong> 20 octobre 2025
+              <strong>Dernière mise à jour :</strong> 1 avril 2026
             </p>
           </div>
         </section>

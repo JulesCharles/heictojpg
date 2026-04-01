@@ -5,7 +5,7 @@ import CompressForm from "@/components/CompressForm";
 export const metadata: Metadata = {
   title: "Compresser une image en ligne gratuitement - JPG, PNG, WebP",
   description:
-    "Compressez vos images JPG, PNG et WebP en ligne gratuitement. Reduisez la taille de vos fichiers sans perte de qualite visible. Outil rapide et sans inscription.",
+    "Compressez vos images JPG, PNG et WebP en ligne gratuitement. Réduisez la taille de vos fichiers sans perte de qualité visible. Outil rapide et sans inscription.",
   keywords: [
     "compresser image",
     "compression image en ligne",
@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     siteName: "heictojpg.fr",
     title: "Compresser une image en ligne gratuitement - JPG, PNG, WebP",
     description:
-      "Compressez vos images en ligne gratuitement. Reduisez la taille de vos fichiers sans perte visible.",
+      "Compressez vos images en ligne gratuitement. Réduisez la taille de vos fichiers sans perte visible.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Compresser une image en ligne gratuitement - JPG, PNG, WebP",
     description:
-      "Compressez vos images en ligne gratuitement. Reduisez la taille de vos fichiers sans perte visible.",
+      "Compressez vos images en ligne gratuitement. Réduisez la taille de vos fichiers sans perte visible.",
   },
   alternates: {
     canonical: "https://heictojpg.fr/compresser-image",
@@ -60,20 +60,20 @@ const jsonLd = {
           name: "La compression d'image est-elle gratuite ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Oui, notre outil de compression d'images est entierement gratuit, sans inscription requise et sans limitation d'usage.",
+            text: "Oui, notre outil de compression d'images est entièrement gratuit, sans inscription requise et sans limitation d'usage.",
           },
         },
         {
           "@type": "Question",
-          name: "La qualite de l'image est-elle affectee par la compression ?",
+          name: "La qualité de l'image est-elle affectée par la compression ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Notre outil optimise la compression pour reduire la taille du fichier tout en conservant une qualite visuelle excellente. Vous pouvez ajuster le niveau de qualite selon vos besoins.",
+            text: "Notre outil optimise la compression pour réduire la taille du fichier tout en conservant une qualité visuelle excellente. Vous pouvez ajuster le niveau de qualité selon vos besoins.",
           },
         },
         {
           "@type": "Question",
-          name: "Quels formats d'image sont supportes ?",
+          name: "Quels formats d'image sont supportés ?",
           acceptedAnswer: {
             "@type": "Answer",
             text: "Notre compresseur supporte les formats d'image les plus courants : JPG/JPEG, PNG et WebP.",
@@ -97,9 +97,9 @@ export default function CompresserImage() {
         </h1>
 
         <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-          Reduisez la taille de vos images JPG, PNG et WebP sans perte de
-          qualite visible. Notre outil de compression en ligne est rapide,
-          securise et entierement gratuit. Aucune inscription requise.
+          Réduisez la taille de vos images JPG, PNG et WebP sans perte de
+          qualité visible. Notre outil de compression en ligne est rapide,
+          sécurisé et entièrement gratuit. Aucune inscription requise.
         </p>
       </div>
 
@@ -114,59 +114,59 @@ export default function CompresserImage() {
 
         <div className="prose prose-gray max-w-none">
           <p className="text-gray-600 mb-4">
-            La compression d&apos;images est une etape essentielle pour tout
-            projet web, application mobile ou communication numerique. Des
+            La compression d&apos;images est une étape essentielle pour tout
+            projet web, application mobile ou communication numérique. Des
             images trop lourdes ralentissent le chargement de vos pages web,
             consomment plus de bande passante et offrent une mauvaise
-            experience utilisateur. Compresser vos images permet de reduire
-            significativement leur taille tout en conservant une qualite
+            expérience utilisateur. Compresser vos images permet de réduire
+            significativement leur taille tout en conservant une qualité
             visuelle excellente.
           </p>
 
           <p className="text-gray-600 mb-4">
-            Google et les autres moteurs de recherche penalisent les sites web
+            Google et les autres moteurs de recherche pénalisent les sites web
             dont les pages se chargent lentement. En optimisant la taille de
-            vos images, vous ameliorez non seulement la vitesse de votre site,
-            mais aussi votre positionnement dans les resultats de recherche
+            vos images, vous améliorez non seulement la vitesse de votre site,
+            mais aussi votre positionnement dans les résultats de recherche
             (SEO). C&apos;est un levier simple et efficace pour booster votre
-            visibilite en ligne.
+            visibilité en ligne.
           </p>
 
           <p className="text-gray-600 mb-4">
-            Notre outil de compression utilise des algorithmes avances pour
-            analyser chaque image et eliminer les donnees superflues sans
-            affecter la qualite perceptible. Vous pouvez ajuster le niveau de
-            compression selon vos besoins : une compression legere pour
-            conserver une qualite maximale, ou une compression plus agressive
-            pour obtenir les fichiers les plus legers possible.
+            Notre outil de compression utilise des algorithmes avancés pour
+            analyser chaque image et éliminer les données superflues sans
+            affecter la qualité perceptible. Vous pouvez ajuster le niveau de
+            compression selon vos besoins : une compression légère pour
+            conserver une qualité maximale, ou une compression plus agressive
+            pour obtenir les fichiers les plus légers possible.
           </p>
 
           <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">
-            Comment choisir le bon niveau de qualite ?
+            Comment choisir le bon niveau de qualité ?
           </h3>
 
           <ul className="text-gray-600 space-y-2">
             <li>
               •{" "}
-              <strong>Qualite 80-100 % :</strong> compression legere, ideale
-              pour les portfolios photographiques et les images ou la qualite
+              <strong>Qualité 80-100 % :</strong> compression légère, idéale
+              pour les portfolios photographiques et les images où la qualité
               est primordiale
             </li>
             <li>
               •{" "}
-              <strong>Qualite 60-80 % :</strong> bon compromis entre taille et
-              qualite, recommande pour la plupart des sites web et blogs
+              <strong>Qualité 60-80 % :</strong> bon compromis entre taille et
+              qualité, recommandé pour la plupart des sites web et blogs
             </li>
             <li>
               •{" "}
-              <strong>Qualite 40-60 % :</strong> compression forte, adaptee aux
-              vignettes, miniatures et images d&apos;apercu ou la taille prime
+              <strong>Qualité 40-60 % :</strong> compression forte, adaptée aux
+              vignettes, miniatures et images d&apos;aperçu où la taille prime
             </li>
             <li>
               •{" "}
-              <strong>Economie de stockage :</strong> compresser vos images
-              peut reduire leur taille de 50 a 90 %, liberant un espace
-              considerable sur vos serveurs et appareils
+              <strong>Économie de stockage :</strong> compresser vos images
+              peut réduire leur taille de 50 à 90 %, libérant un espace
+              considérable sur vos serveurs et appareils
             </li>
           </ul>
         </div>
@@ -174,7 +174,7 @@ export default function CompresserImage() {
 
       <div className="bg-white rounded-lg shadow-sm p-8">
         <h2 className="text-2xl font-semibold text-gray-800 mb-6">
-          Questions frequentes
+          Questions fréquentes
         </h2>
 
         <div className="prose prose-gray max-w-none">
@@ -189,28 +189,29 @@ export default function CompresserImage() {
           </p>
 
           <h3 className="text-xl font-semibold text-gray-800 mb-3">
-            La qualite de l&apos;image est-elle affectee ?
+            La qualité de l&apos;image est-elle affectée ?
           </h3>
           <p className="text-gray-600 mb-6">
-            Notre algorithme de compression est optimise pour reduire la taille
-            du fichier tout en conservant une qualite visuelle excellente. Vous
-            pouvez ajuster le curseur de qualite selon vos besoins. Pour la
-            plupart des usages web, une qualite de 70-80 % offre un excellent
-            rapport taille/qualite avec une difference imperceptible a l&apos;oeil
+            Notre algorithme de compression est optimisé pour réduire la taille
+            du fichier tout en conservant une qualité visuelle excellente. Vous
+            pouvez ajuster le curseur de qualité selon vos besoins. Pour la
+            plupart des usages web, une qualité de 70-80 % offre un excellent
+            rapport taille/qualité avec une différence imperceptible à l&apos;oeil
             nu.
           </p>
 
           <h3 className="text-xl font-semibold text-gray-800 mb-3">
-            Quels formats d&apos;image sont supportes ?
+            Quels formats d&apos;image sont supportés ?
           </h3>
           <p className="text-gray-600 mb-6">
             Notre compresseur prend en charge les formats d&apos;image les plus
-            courants : JPG/JPEG, PNG et WebP. Il vous suffit de deposer votre
-            fichier et notre outil detectera automatiquement le format pour
-            appliquer la compression la plus adaptee.
+            courants : JPG/JPEG, PNG et WebP. Il vous suffit de déposer votre
+            fichier et notre outil détectera automatiquement le format pour
+            appliquer la compression la plus adaptée.
           </p>
         </div>
       </div>
+
 
       {/* Autres outils */}
       <div className="bg-white rounded-lg shadow-sm p-8 mt-8">

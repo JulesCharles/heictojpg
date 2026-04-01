@@ -3,10 +3,11 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
-const blogPosts: Record<string, { title: string; date: string; readTime: string; content: string }> = {
+const blogPosts: Record<string, { title: string; date: string; dateISO: string; readTime: string; content: string }> = {
   "convertir-heic-en-jpg-sans-perte-qualite": {
     title: "Comment convertir HEIC en JPG sans perte de qualité",
     date: "15 janvier 2025",
+    dateISO: "2025-01-15",
     readTime: "5 min",
     content: `
 Depuis iOS 11, Apple utilise par défaut le format HEIC pour stocker les photos prises avec votre iPhone. Si ce format présente de nombreux avantages, il peut poser des problèmes de compatibilité lorsque vous souhaitez partager vos images sur d'autres plateformes. Heureusement, il existe plusieurs méthodes simples et efficaces pour convertir HEIC en JPG tout en préservant la qualité de vos photos iPhone.
@@ -53,6 +54,7 @@ Pour une qualité optimale, choisissez un taux de compression JPG élevé (90-95
   "pourquoi-apple-utilise-format-heic": {
     title: "Pourquoi Apple utilise-t-il le format HEIC ?",
     date: "12 janvier 2025",
+    dateISO: "2025-01-12",
     readTime: "3 min",
     content: `
 Depuis septembre 2017 et le lancement d'iOS 11, Apple a fait un choix technologique majeur : remplacer le traditionnel format JPEG par le HEIC pour toutes les nouvelles photos prises avec l'iPhone. Cette décision, qui peut sembler anodine, cache en réalité une stratégie technique et commerciale réfléchie. Découvrons ensemble les raisons qui ont poussé la marque à la pomme à adopter ce nouveau standard d'image.
@@ -85,6 +87,7 @@ HEIC peut stocker bien plus d'informations que le JPEG : plusieurs images dans u
   "optimiser-photos-web-heic-jpg-webp": {
     title: "Optimiser ses photos pour le web : HEIC vs JPG vs WebP",
     date: "8 janvier 2025",
+    dateISO: "2025-01-08",
     readTime: "7 min",
     content: `
 Dans l'univers de la création de contenu web, choisir le bon format d'image peut considérablement impacter les performances de votre site. Entre HEIC, JPG et WebP, chaque format présente des avantages spécifiques selon le contexte d'usage. Que vous soyez blogueur, e-commerçant ou créateur de contenu, comprendre ces différences vous aidera à optimiser vos photos pour offrir la meilleure expérience utilisateur possible.
@@ -119,6 +122,7 @@ Développé par Google, WebP représente l'évolution logique du JPG. Ce format 
   "gerer-espace-stockage-iphone-conversion-heic": {
     title: "Gérer l'espace de stockage sur iPhone avec la conversion HEIC",
     date: "5 janvier 2025",
+    dateISO: "2025-01-05",
     readTime: "4 min",
     content: `
 L'espace de stockage constitue l'un des défis quotidiens des utilisateurs d'iPhone, particulièrement ceux qui possèdent des modèles 64 ou 128 Go. Les photos représentent souvent la première cause de saturation de la mémoire. Heureusement, le format HEIC d'Apple et quelques stratégies de conversion intelligentes peuvent vous aider à libérer significativement de l'espace tout en conservant vos précieux souvenirs.
@@ -157,6 +161,7 @@ Cette méthode peut libérer 30 à 40% d'espace sur vos photos archivées.
   "heic-vs-jpg-quelle-difference": {
     title: "HEIC vs JPG : quelle différence entre ces deux formats ?",
     date: "22 janvier 2025",
+    dateISO: "2025-01-22",
     readTime: "6 min",
     content: `
 Le monde de la photographie numérique repose sur différents formats d'image, chacun avec ses propres caractéristiques. Deux formats dominent aujourd'hui le paysage : le HEIC, adopté par Apple, et le JPG, standard universel depuis plus de trente ans. Mais quelles sont réellement les différences entre ces deux formats ? Lequel choisir selon vos besoins ? Ce guide complet vous aide à y voir clair.
@@ -215,6 +220,7 @@ En résumé, le HEIC est techniquement supérieur au JPG sur presque tous les as
   "ouvrir-fichier-heic-windows": {
     title: "Comment ouvrir un fichier HEIC sur Windows gratuitement",
     date: "20 janvier 2025",
+    dateISO: "2025-01-20",
     readTime: "5 min",
     content: `
 Vous avez transféré des photos depuis votre iPhone vers votre PC Windows et vous ne parvenez pas à les ouvrir ? C'est un problème très courant. Les fichiers HEIC, format par défaut des photos iPhone depuis iOS 11, ne sont pas pris en charge nativement par Windows. Heureusement, plusieurs solutions gratuites existent pour résoudre ce problème. Voici un guide complet avec quatre méthodes différentes.
@@ -295,6 +301,7 @@ Pour un usage régulier, la méthode 1 (extension Microsoft Store) est la plus p
   "meilleurs-formats-image-2025": {
     title: "Les meilleurs formats d'image en 2025 : guide complet",
     date: "18 janvier 2025",
+    dateISO: "2025-01-18",
     readTime: "8 min",
     content: `
 En 2025, le choix du bon format d'image est plus important que jamais. Entre les formats historiques comme JPEG et PNG, les formats modernes comme WebP et AVIF, et les formats spécifiques comme HEIC et SVG, il peut être difficile de s'y retrouver. Ce guide complet passe en revue les principaux formats d'image disponibles aujourd'hui, avec leurs forces, leurs faiblesses et leurs cas d'utilisation recommandés.
@@ -450,6 +457,16 @@ Le format parfait n'existe pas, mais en combinant intelligemment ces différents
   },
 };
 
+const relatedArticles: Record<string, string[]> = {
+  "convertir-heic-en-jpg-sans-perte-qualite": ["heic-vs-jpg-quelle-difference", "pourquoi-apple-utilise-format-heic", "ouvrir-fichier-heic-windows"],
+  "pourquoi-apple-utilise-format-heic": ["heic-vs-jpg-quelle-difference", "gerer-espace-stockage-iphone-conversion-heic", "convertir-heic-en-jpg-sans-perte-qualite"],
+  "optimiser-photos-web-heic-jpg-webp": ["meilleurs-formats-image-2025", "heic-vs-jpg-quelle-difference", "convertir-heic-en-jpg-sans-perte-qualite"],
+  "gerer-espace-stockage-iphone-conversion-heic": ["pourquoi-apple-utilise-format-heic", "convertir-heic-en-jpg-sans-perte-qualite", "heic-vs-jpg-quelle-difference"],
+  "heic-vs-jpg-quelle-difference": ["pourquoi-apple-utilise-format-heic", "meilleurs-formats-image-2025", "optimiser-photos-web-heic-jpg-webp"],
+  "ouvrir-fichier-heic-windows": ["convertir-heic-en-jpg-sans-perte-qualite", "heic-vs-jpg-quelle-difference", "meilleurs-formats-image-2025"],
+  "meilleurs-formats-image-2025": ["optimiser-photos-web-heic-jpg-webp", "heic-vs-jpg-quelle-difference", "convertir-heic-en-jpg-sans-perte-qualite"],
+};
+
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
 }
@@ -474,7 +491,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       url: `https://heictojpg.fr/blog/${slug}`,
       siteName: "heictojpg.fr",
       locale: "fr_FR",
-      publishedTime: post.date,
+      publishedTime: post.dateISO,
     },
     twitter: {
       card: "summary",
@@ -499,7 +516,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": post.title,
-    "datePublished": post.date,
+    "datePublished": post.dateISO,
     "author": { "@type": "Organization", "name": "heictojpg.fr" },
     "publisher": { "@type": "Organization", "name": "heictojpg.fr" },
     "mainEntityOfPage": `https://heictojpg.fr/blog/${slug}`,
@@ -587,7 +604,52 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
           })}
         </div>
 
-        <div className="mt-12 pt-8 border-t">
+        {/* Articles similaires */}
+        {relatedArticles[slug] && (
+          <div className="mt-12 pt-8 border-t">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">Articles similaires</h3>
+            <div className="space-y-3">
+              {relatedArticles[slug].map((relatedSlug) => {
+                const related = blogPosts[relatedSlug];
+                if (!related) return null;
+                return (
+                  <Link key={relatedSlug} href={`/blog/${relatedSlug}`} className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+                    <h4 className="font-semibold text-gray-800">{related.title}</h4>
+                    <span className="text-sm text-gray-500">{related.readTime} de lecture</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Outils recommandés */}
+        <div className="mt-8 pt-8 border-t">
+          <h3 className="text-xl font-semibold text-gray-800 mb-4">Nos outils gratuits</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            <Link href="/" className="block p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors text-center">
+              <span className="text-sm font-medium text-blue-700">HEIC → JPG</span>
+            </Link>
+            <Link href="/convertir-png-en-jpg" className="block p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors text-center">
+              <span className="text-sm font-medium text-blue-700">PNG → JPG</span>
+            </Link>
+            <Link href="/convertir-webp-en-jpg" className="block p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors text-center">
+              <span className="text-sm font-medium text-blue-700">WebP → JPG</span>
+            </Link>
+            <Link href="/convertir-jpg-en-png" className="block p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors text-center">
+              <span className="text-sm font-medium text-blue-700">JPG → PNG</span>
+            </Link>
+            <Link href="/compresser-image" className="block p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors text-center">
+              <span className="text-sm font-medium text-blue-700">Compresser</span>
+            </Link>
+            <Link href="/faq" className="block p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-center">
+              <span className="text-sm font-medium text-gray-700">FAQ</span>
+            </Link>
+          </div>
+        </div>
+
+        {/* CTA conversion */}
+        <div className="mt-8 pt-8 border-t">
           <div className="bg-blue-50 rounded-lg p-6 text-center">
             <h3 className="text-xl font-semibold text-gray-800 mb-4">
               Besoin de convertir vos photos HEIC ?

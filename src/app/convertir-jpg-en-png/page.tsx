@@ -5,7 +5,7 @@ import ImageConvertForm from "@/components/ImageConvertForm";
 export const metadata: Metadata = {
   title: "Convertir JPG en PNG gratuitement en ligne",
   description:
-    "Convertissez vos images JPG en PNG en un clic. Obtenez la transparence et une qualite sans perte. Outil gratuit, rapide et sans inscription.",
+    "Convertissez vos images JPG en PNG en un clic. Obtenez la transparence et une qualité sans perte. Outil gratuit, rapide et sans inscription.",
   keywords: [
     "convertir jpg en png",
     "jpg to png",
@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     siteName: "heictojpg.fr",
     title: "Convertir JPG en PNG gratuitement en ligne",
     description:
-      "Convertissez vos images JPG en PNG en un clic. Transparence et qualite sans perte.",
+      "Convertissez vos images JPG en PNG en un clic. Transparence et qualité sans perte.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Convertir JPG en PNG gratuitement en ligne",
     description:
-      "Convertissez vos images JPG en PNG en un clic. Transparence et qualite sans perte.",
+      "Convertissez vos images JPG en PNG en un clic. Transparence et qualité sans perte.",
   },
   alternates: {
     canonical: "https://heictojpg.fr/convertir-jpg-en-png",
@@ -60,7 +60,7 @@ const jsonLd = {
           name: "Pourquoi convertir JPG en PNG ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Le format PNG supporte la transparence et offre une compression sans perte, ce qui le rend ideal pour les logos, les graphiques et les images necessitant une qualite parfaite au pixel pres.",
+            text: "Le format PNG supporte la transparence et offre une compression sans perte, ce qui le rend idéal pour les logos, les graphiques et les images nécessitant une qualité parfaite au pixel près.",
           },
         },
         {
@@ -68,7 +68,7 @@ const jsonLd = {
           name: "La conversion JPG en PNG est-elle gratuite ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Oui, notre outil de conversion JPG en PNG est entierement gratuit, sans inscription requise et sans limitation d'usage.",
+            text: "Oui, notre outil de conversion JPG en PNG est entièrement gratuit, sans inscription requise et sans limitation d'usage.",
           },
         },
         {
@@ -76,7 +76,7 @@ const jsonLd = {
           name: "Le fichier PNG sera-t-il plus volumineux que le JPG ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Oui, les fichiers PNG sont generalement plus volumineux que les JPG car le format PNG utilise une compression sans perte qui preserve chaque pixel de l'image originale.",
+            text: "Oui, les fichiers PNG sont généralement plus volumineux que les JPG car le format PNG utilise une compression sans perte qui préserve chaque pixel de l'image originale.",
           },
         },
       ],
@@ -99,7 +99,7 @@ export default function ConvertirJpgEnPng() {
         <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
           Transformez vos images JPG en fichiers PNG avec support de la
           transparence et compression sans perte. Notre convertisseur en ligne
-          est rapide, securise et entierement gratuit. Aucune inscription
+          est rapide, sécurisé et entièrement gratuit. Aucune inscription
           requise.
         </p>
       </div>
@@ -108,13 +108,13 @@ export default function ConvertirJpgEnPng() {
         <ImageConvertForm
           title="Convertir JPG en PNG"
           acceptedFormats=".jpg,.jpeg,image/jpeg"
-          acceptLabel="Selectionner un fichier JPG"
+          acceptLabel="Sélectionner un fichier JPG"
           outputFormat="png"
           apiEndpoint="/api/convert-image"
           outputExtension=".png"
           acceptedMimeTypes={["image/jpeg"]}
           acceptedExtensions={[".jpg", ".jpeg"]}
-          errorMessage="Veuillez selectionner un fichier JPG valide."
+          errorMessage="Veuillez sélectionner un fichier JPG valide."
         />
       </div>
 
@@ -125,29 +125,29 @@ export default function ConvertirJpgEnPng() {
 
         <div className="prose prose-gray max-w-none">
           <p className="text-gray-600 mb-4">
-            Le format JPG (ou JPEG) est le format le plus repandu pour les
-            photographies numeriques. Il offre une excellente compression, mais
-            utilise un algorithme avec perte qui peut degrader la qualite de
+            Le format JPG (ou JPEG) est le format le plus répandu pour les
+            photographies numériques. Il offre une excellente compression, mais
+            utilise un algorithme avec perte qui peut dégrader la qualité de
             l&apos;image a chaque sauvegarde. Le format PNG, en revanche, utilise
-            une compression sans perte qui preserve chaque pixel de l&apos;image
+            une compression sans perte qui préserve chaque pixel de l&apos;image
             originale.
           </p>
 
           <p className="text-gray-600 mb-4">
             L&apos;un des principaux avantages du format PNG est le support de la
-            transparence (canal alpha). Contrairement au JPG qui ne gere pas la
-            transparence, le PNG permet de creer des images avec des zones
-            transparentes, ce qui est essentiel pour les logos, les icones et
-            les elements graphiques destines a etre superposes sur differents
-            arriere-plans.
+            transparence (canal alpha). Contrairement au JPG qui ne gère pas la
+            transparence, le PNG permet de créer des images avec des zones
+            transparentes, ce qui est essentiel pour les logos, les icônes et
+            les éléments graphiques destinés à être superposés sur différents
+            arrière-plans.
           </p>
 
           <p className="text-gray-600 mb-4">
-            Pour les graphistes, les developpeurs web et les createurs de
+            Pour les graphistes, les développeurs web et les créateurs de
             contenu, le format PNG est souvent indispensable. Convertir vos
             images JPG en PNG vous permet de travailler avec un format sans
-            perte, ideal pour l&apos;edition repetee, la superposition de calques
-            et la creation de visuels professionnels.
+            perte, idéal pour l&apos;édition répétée, la superposition de calques
+            et la création de visuels professionnels.
           </p>
 
           <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">
@@ -158,25 +158,25 @@ export default function ConvertirJpgEnPng() {
             <li>
               •{" "}
               <strong>Transparence :</strong> le PNG supporte le canal alpha,
-              permettant des zones transparentes dans vos images, ideal pour les
-              logos et les icones
+              permettant des zones transparentes dans vos images, idéal pour les
+              logos et les icônes
             </li>
             <li>
               •{" "}
-              <strong>Qualite sans perte :</strong> aucune degradation de
-              l&apos;image lors de la compression, chaque pixel est preserve
-              fidelement
+              <strong>Qualité sans perte :</strong> aucune dégradation de
+              l&apos;image lors de la compression, chaque pixel est préservé
+              fidèlement
             </li>
             <li>
               •{" "}
-              <strong>Design graphique :</strong> format privilegie pour les
-              maquettes, les elements d&apos;interface et les compositions visuelles
+              <strong>Design graphique :</strong> format privilégié pour les
+              maquettes, les éléments d&apos;interface et les compositions visuelles
               professionnelles
             </li>
             <li>
               •{" "}
-              <strong>Texte et graphiques :</strong> le PNG offre une nettete
-              superieure pour les captures d&apos;ecran, les schemas et les images
+              <strong>Texte et graphiques :</strong> le PNG offre une netteté
+              supérieure pour les captures d&apos;écran, les schémas et les images
               contenant du texte
             </li>
           </ul>
@@ -185,7 +185,7 @@ export default function ConvertirJpgEnPng() {
 
       <div className="bg-white rounded-lg shadow-sm p-8">
         <h2 className="text-2xl font-semibold text-gray-800 mb-6">
-          Questions frequentes
+          Questions fréquentes
         </h2>
 
         <div className="prose prose-gray max-w-none">
@@ -195,8 +195,8 @@ export default function ConvertirJpgEnPng() {
           <p className="text-gray-600 mb-6">
             Le format PNG offre des avantages uniques par rapport au JPG : le
             support de la transparence, une compression sans perte et une
-            meilleure nettete pour les textes et graphiques. Il est ideal pour
-            le design graphique, les logos et les images necessitant une qualite
+            meilleure netteté pour les textes et graphiques. Il est idéal pour
+            le design graphique, les logos et les images nécessitant une qualité
             parfaite.
           </p>
 
@@ -205,18 +205,18 @@ export default function ConvertirJpgEnPng() {
           </h3>
           <p className="text-gray-600 mb-6">
             Oui, notre outil est 100 % gratuit et sans aucune limitation.
-            Convertissez autant de fichiers JPG en PNG que necessaire, sans
-            inscription et sans filigrane ajoute a vos images.
+            Convertissez autant de fichiers JPG en PNG que nécessaire, sans
+            inscription et sans filigrane ajouté à vos images.
           </p>
 
           <h3 className="text-xl font-semibold text-gray-800 mb-3">
             Le fichier PNG sera-t-il plus volumineux que le JPG ?
           </h3>
           <p className="text-gray-600 mb-6">
-            Oui, en regle generale, un fichier PNG est plus volumineux qu&apos;un
-            fichier JPG de meme resolution. Cela est du a la compression sans
-            perte du PNG qui conserve chaque detail de l&apos;image. C&apos;est le prix
-            a payer pour une qualite parfaite et le support de la transparence.
+            Oui, en règle générale, un fichier PNG est plus volumineux qu&apos;un
+            fichier JPG de même résolution. Cela est dû à la compression sans
+            perte du PNG qui conserve chaque détail de l&apos;image. C&apos;est le prix
+            à payer pour une qualité parfaite et le support de la transparence.
           </p>
         </div>
       </div>

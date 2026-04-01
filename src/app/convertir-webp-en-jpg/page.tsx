@@ -5,7 +5,7 @@ import ImageConvertForm from "@/components/ImageConvertForm";
 export const metadata: Metadata = {
   title: "Convertir WebP en JPG gratuitement en ligne",
   description:
-    "Convertissez vos images WebP en JPG en un clic. Outil gratuit, rapide et sans inscription. Assurez la compatibilite de vos images WebP avec tous les logiciels.",
+    "Convertissez vos images WebP en JPG en un clic. Outil gratuit, rapide et sans inscription. Assurez la compatibilité de vos images WebP avec tous les logiciels.",
   keywords: [
     "convertir webp en jpg",
     "webp to jpg",
@@ -59,7 +59,7 @@ const jsonLd = {
           name: "Pourquoi convertir WebP en JPG ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Le format WebP n'est pas supporte par tous les logiciels, notamment les anciennes versions de Photoshop, certains clients email et certaines applications d'impression. Convertir en JPG assure une compatibilite universelle.",
+            text: "Le format WebP n'est pas supporté par tous les logiciels, notamment les anciennes versions de Photoshop, certains clients email et certaines applications d'impression. Convertir en JPG assure une compatibilité universelle.",
           },
         },
         {
@@ -67,15 +67,15 @@ const jsonLd = {
           name: "La conversion WebP en JPG est-elle gratuite ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Oui, notre outil de conversion WebP en JPG est entierement gratuit, sans inscription requise et sans limitation d'usage.",
+            text: "Oui, notre outil de conversion WebP en JPG est entièrement gratuit, sans inscription requise et sans limitation d'usage.",
           },
         },
         {
           "@type": "Question",
-          name: "Mes fichiers sont-ils conserves sur vos serveurs ?",
+          name: "Mes fichiers sont-ils conservés sur vos serveurs ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Non, aucun fichier n'est conserve sur nos serveurs. La conversion s'effectue en memoire et toutes les donnees temporaires sont supprimees immediatement apres le telechargement.",
+            text: "Non, aucun fichier n'est conservé sur nos serveurs. La conversion s'effectue en mémoire et toutes les données temporaires sont supprimées immédiatement après le téléchargement.",
           },
         },
       ],
@@ -98,7 +98,7 @@ export default function ConvertirWebpEnJpg() {
         <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
           Transformez vos images WebP en fichiers JPG compatibles avec tous les
           logiciels et appareils. Notre convertisseur en ligne est rapide,
-          securise et entierement gratuit. Aucune inscription requise.
+          sécurisé et entièrement gratuit. Aucune inscription requise.
         </p>
       </div>
 
@@ -106,13 +106,13 @@ export default function ConvertirWebpEnJpg() {
         <ImageConvertForm
           title="Convertir WebP en JPG"
           acceptedFormats=".webp,image/webp"
-          acceptLabel="Selectionner un fichier WebP"
+          acceptLabel="Sélectionner un fichier WebP"
           outputFormat="jpg"
           apiEndpoint="/api/convert-image"
           outputExtension=".jpg"
           acceptedMimeTypes={["image/webp"]}
           acceptedExtensions={[".webp"]}
-          errorMessage="Veuillez selectionner un fichier WebP valide."
+          errorMessage="Veuillez sélectionner un fichier WebP valide."
         />
       </div>
 
@@ -123,28 +123,28 @@ export default function ConvertirWebpEnJpg() {
 
         <div className="prose prose-gray max-w-none">
           <p className="text-gray-600 mb-4">
-            Le format WebP est un format d&apos;image moderne developpe par Google,
-            offrant une compression superieure au JPG et au PNG. Il est
-            largement utilise sur le web pour optimiser la vitesse de
-            chargement des pages. Cependant, malgre ses avantages techniques,
-            le format WebP n&apos;est pas encore supporte par tous les logiciels et
-            systemes.
+            Le format WebP est un format d&apos;image moderne développé par Google,
+            offrant une compression supérieure au JPG et au PNG. Il est
+            largement utilisé sur le web pour optimiser la vitesse de
+            chargement des pages. Cependant, malgré ses avantages techniques,
+            le format WebP n&apos;est pas encore supporté par tous les logiciels et
+            systèmes.
           </p>
 
           <p className="text-gray-600 mb-4">
             De nombreuses applications de bureau, logiciels de retouche photo
             anciens, clients de messagerie et services d&apos;impression
-            n&apos;acceptent pas les fichiers WebP. Lorsque vous telechargez une
+            n&apos;acceptent pas les fichiers WebP. Lorsque vous téléchargez une
             image depuis un site web, elle est souvent au format WebP, ce qui
-            peut poser probleme si vous souhaitez l&apos;utiliser dans un document,
+            peut poser problème si vous souhaitez l&apos;utiliser dans un document,
             l&apos;envoyer par email ou l&apos;imprimer.
           </p>
 
           <p className="text-gray-600 mb-4">
             En convertissant vos fichiers WebP en JPG, vous obtenez un format
             universellement reconnu qui fonctionne avec absolument tous les
-            logiciels, systemes d&apos;exploitation et appareils. Le format JPG
-            reste le standard le plus repandu pour les photographies numeriques
+            logiciels, systèmes d&apos;exploitation et appareils. Le format JPG
+            reste le standard le plus répandu pour les photographies numériques
             et les images du quotidien.
           </p>
 
@@ -155,14 +155,14 @@ export default function ConvertirWebpEnJpg() {
           <ul className="text-gray-600 space-y-2">
             <li>
               •{" "}
-              <strong>Compatibilite logicielle :</strong> ouvrez vos images WebP
-              dans n&apos;importe quel logiciel de retouche photo, meme les versions
+              <strong>Compatibilité logicielle :</strong> ouvrez vos images WebP
+              dans n&apos;importe quel logiciel de retouche photo, même les versions
               anciennes
             </li>
             <li>
               •{" "}
-              <strong>Pieces jointes email :</strong> envoyez vos images par
-              email sans risque d&apos;incompatibilite avec le client de messagerie
+              <strong>Pièces jointes email :</strong> envoyez vos images par
+              email sans risque d&apos;incompatibilité avec le client de messagerie
               du destinataire
             </li>
             <li>
@@ -172,7 +172,7 @@ export default function ConvertirWebpEnJpg() {
             </li>
             <li>
               •{" "}
-              <strong>Reseaux sociaux :</strong> bien que la plupart des
+              <strong>Réseaux sociaux :</strong> bien que la plupart des
               plateformes acceptent le WebP, le JPG garantit un affichage
               optimal partout
             </li>
@@ -182,7 +182,7 @@ export default function ConvertirWebpEnJpg() {
 
       <div className="bg-white rounded-lg shadow-sm p-8">
         <h2 className="text-2xl font-semibold text-gray-800 mb-6">
-          Questions frequentes
+          Questions fréquentes
         </h2>
 
         <div className="prose prose-gray max-w-none">
@@ -190,30 +190,30 @@ export default function ConvertirWebpEnJpg() {
             Pourquoi convertir WebP en JPG ?
           </h3>
           <p className="text-gray-600 mb-6">
-            Le format WebP n&apos;est pas supporte par tous les logiciels,
+            Le format WebP n&apos;est pas supporté par tous les logiciels,
             notamment les anciennes versions de Photoshop, certains clients
             email et les services d&apos;impression. Convertir en JPG garantit que
-            votre image pourra etre ouverte, editee et partagee partout sans
-            aucun probleme de compatibilite.
+            votre image pourra être ouverte, éditée et partagée partout sans
+            aucun problème de compatibilité.
           </p>
 
           <h3 className="text-xl font-semibold text-gray-800 mb-3">
             La conversion WebP en JPG est-elle gratuite ?
           </h3>
           <p className="text-gray-600 mb-6">
-            Oui, notre outil est entierement gratuit et illimite. Convertissez
-            autant de fichiers WebP en JPG que necessaire, sans inscription,
+            Oui, notre outil est entièrement gratuit et illimité. Convertissez
+            autant de fichiers WebP en JPG que nécessaire, sans inscription,
             sans filigrane et sans aucune restriction.
           </p>
 
           <h3 className="text-xl font-semibold text-gray-800 mb-3">
-            Mes fichiers sont-ils conserves sur vos serveurs ?
+            Mes fichiers sont-ils conservés sur vos serveurs ?
           </h3>
           <p className="text-gray-600 mb-6">
-            Non, votre vie privee est notre priorite. Aucun fichier n&apos;est
-            stocke sur nos serveurs. La conversion s&apos;effectue en memoire et
-            toutes les donnees temporaires sont supprimees immediatement apres
-            le telechargement de votre image convertie.
+            Non, votre vie privée est notre priorité. Aucun fichier n&apos;est
+            stocké sur nos serveurs. La conversion s&apos;effectue en mémoire et
+            toutes les données temporaires sont supprimées immédiatement après
+            le téléchargement de votre image convertie.
           </p>
         </div>
       </div>
