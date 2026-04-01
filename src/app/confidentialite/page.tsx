@@ -1,8 +1,20 @@
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Politique de confidentialité - Convertisseur HEIC en JPG",
   description: "Notre politique de confidentialité détaille comment nous protégeons vos données lors de la conversion HEIC vers JPG.",
+  openGraph: {
+    type: "website",
+    title: "Politique de confidentialité - Convertisseur HEIC en JPG",
+    description: "Comment nous protégeons vos données lors de la conversion HEIC vers JPG.",
+    url: "https://heictojpg.fr/confidentialite",
+    siteName: "heictojpg.fr",
+    locale: "fr_FR",
+  },
+  alternates: {
+    canonical: "https://heictojpg.fr/confidentialite",
+  },
 };
 
 export default function Privacy() {
@@ -151,6 +163,9 @@ export default function Privacy() {
             </p>
           </div>
         </section>
+      </div>
+      <div className="mt-8 text-center">
+        <p className="text-gray-600">Retour à l'<Link href="/" className="text-blue-600 hover:text-blue-800">outil de conversion HEIC → JPG</Link> | <Link href="/a-propos" className="text-blue-600 hover:text-blue-800">À propos</Link> | <Link href="/faq" className="text-blue-600 hover:text-blue-800">FAQ</Link></p>
       </div>
     </div>
   );

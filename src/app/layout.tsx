@@ -16,8 +16,42 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Convertir HEIC en JPG gratuitement en ligne",
-  description: "Outil gratuit pour convertir vos fichiers HEIC (photos iPhone) en images JPG rapidement et sans perte de qualité.",
+  metadataBase: new URL('https://heictojpg.fr'),
+  title: {
+    default: "Convertir HEIC en JPG gratuitement en ligne | heictojpg.fr",
+    template: "%s | heictojpg.fr",
+  },
+  description: "Convertissez vos photos iPhone HEIC en JPG en 1 clic. Gratuit, rapide, sans inscription. Aucun fichier conservé sur nos serveurs.",
+  keywords: ["convertir heic en jpg", "heic to jpg", "conversion heic", "photo iphone jpg", "heic gratuit", "convertisseur heic"],
+  authors: [{ name: "heictojpg.fr" }],
+  creator: "heictojpg.fr",
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: "https://heictojpg.fr",
+    siteName: "heictojpg.fr",
+    title: "Convertir HEIC en JPG gratuitement en ligne",
+    description: "Convertissez vos photos iPhone HEIC en JPG en 1 clic. Gratuit, rapide, sans inscription.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Convertir HEIC en JPG gratuitement en ligne",
+    description: "Convertissez vos photos iPhone HEIC en JPG en 1 clic. Gratuit, rapide, sans inscription.",
+  },
+  alternates: {
+    canonical: "https://heictojpg.fr",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },

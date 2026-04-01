@@ -5,32 +5,64 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export const metadata: Metadata = {
   title: "Blog - Convertisseur HEIC en JPG",
   description: "Articles et guides sur la conversion d'images HEIC en JPG, conseils photo et optimisation d'images.",
+  openGraph: {
+    type: "website",
+    title: "Blog - Convertisseur HEIC en JPG",
+    description: "Articles et guides sur la conversion d'images HEIC en JPG, conseils photo et optimisation d'images.",
+    url: "https://heictojpg.fr/blog",
+    siteName: "heictojpg.fr",
+    locale: "fr_FR",
+  },
+  alternates: {
+    canonical: "https://heictojpg.fr/blog",
+  },
 };
 
 const blogPosts = [
   {
-    id: 1,
+    slug: "heic-vs-jpg-quelle-difference",
+    title: "HEIC vs JPG : quelle différence entre ces deux formats ?",
+    excerpt: "Comparaison complète entre HEIC et JPG : compression, qualité, compatibilité et cas d'usage pour choisir le bon format.",
+    date: "22 janvier 2025",
+    readTime: "6 min",
+  },
+  {
+    slug: "ouvrir-fichier-heic-windows",
+    title: "Comment ouvrir un fichier HEIC sur Windows gratuitement",
+    excerpt: "4 méthodes gratuites pour ouvrir et visualiser vos fichiers HEIC sur Windows 10 et 11, étape par étape.",
+    date: "20 janvier 2025",
+    readTime: "5 min",
+  },
+  {
+    slug: "meilleurs-formats-image-2025",
+    title: "Les meilleurs formats d'image en 2025 : guide complet",
+    excerpt: "JPEG, PNG, WebP, AVIF, HEIC, SVG : découvrez les forces et faiblesses de chaque format d'image pour bien choisir.",
+    date: "18 janvier 2025",
+    readTime: "8 min",
+  },
+  {
+    slug: "convertir-heic-en-jpg-sans-perte-qualite",
     title: "Comment convertir HEIC en JPG sans perte de qualité",
     excerpt: "Découvrez les meilleures techniques pour convertir vos photos iPhone tout en préservant leur qualité d'origine.",
     date: "15 janvier 2025",
     readTime: "5 min",
   },
   {
-    id: 2,
+    slug: "pourquoi-apple-utilise-format-heic",
     title: "Pourquoi Apple utilise-t-il le format HEIC ?",
     excerpt: "Comprenez les avantages du format HEIC et pourquoi Apple l'a choisi comme format par défaut pour ses appareils.",
     date: "12 janvier 2025",
     readTime: "3 min",
   },
   {
-    id: 3,
+    slug: "optimiser-photos-web-heic-jpg-webp",
     title: "Optimiser ses photos pour le web : HEIC vs JPG vs WebP",
     excerpt: "Comparaison détaillée des formats d'image modernes et leurs cas d'usage pour le web.",
     date: "8 janvier 2025",
     readTime: "7 min",
   },
   {
-    id: 4,
+    slug: "gerer-espace-stockage-iphone-conversion-heic",
     title: "Gérer l'espace de stockage sur iPhone avec la conversion HEIC",
     excerpt: "Astuces pour libérer de l'espace sur votre iPhone en optimisant vos photos.",
     date: "5 janvier 2025",
@@ -52,10 +84,10 @@ export default function Blog() {
 
       <div className="grid gap-6 md:grid-cols-2">
         {blogPosts.map((post) => (
-          <Card key={post.id} className="hover:shadow-lg transition-shadow">
+          <Card key={post.slug} className="hover:shadow-lg transition-shadow">
             <CardHeader>
               <CardTitle className="text-xl hover:text-blue-600 transition-colors">
-                <Link href={`/blog/${post.id}`}>
+                <Link href={`/blog/${post.slug}`}>
                   {post.title}
                 </Link>
               </CardTitle>
@@ -70,7 +102,7 @@ export default function Blog() {
                 {post.excerpt}
               </p>
               <Link
-                href={`/blog/${post.id}`}
+                href={`/blog/${post.slug}`}
                 className="text-blue-600 hover:text-blue-800 font-medium text-sm"
               >
                 Lire la suite →

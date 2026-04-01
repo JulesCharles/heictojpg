@@ -9,13 +9,13 @@ export default function Footer() {
             © 2025 HEIC → JPG. Aucun fichier n'est conservé.
           </div>
 
-          <div className="flex space-x-6 text-sm">
-            <Link
-              href="/confidentialite"
-              className="text-gray-600 hover:text-blue-600 transition-colors"
-            >
-              Confidentialité
-            </Link>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <Link href="/convertir-png-en-jpg" className="text-gray-600 hover:text-blue-600 transition-colors">PNG → JPG</Link>
+            <Link href="/convertir-webp-en-jpg" className="text-gray-600 hover:text-blue-600 transition-colors">WebP → JPG</Link>
+            <Link href="/convertir-jpg-en-png" className="text-gray-600 hover:text-blue-600 transition-colors">JPG → PNG</Link>
+            <Link href="/compresser-image" className="text-gray-600 hover:text-blue-600 transition-colors">Compresser</Link>
+            <Link href="/faq" className="text-gray-600 hover:text-blue-600 transition-colors">FAQ</Link>
+            <Link href="/confidentialite" className="text-gray-600 hover:text-blue-600 transition-colors">Confidentialité</Link>
           </div>
         </div>
       </div>

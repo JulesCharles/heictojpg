@@ -1,10 +1,22 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, Zap, Heart } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "À propos - Convertisseur HEIC en JPG gratuit",
   description: "Découvrez notre mission : fournir un outil de conversion HEIC vers JPG gratuit, sécurisé et respectueux de votre vie privée.",
+  openGraph: {
+    type: "website",
+    title: "À propos - Convertisseur HEIC en JPG gratuit",
+    description: "Outil de conversion HEIC vers JPG gratuit, sécurisé et respectueux de votre vie privée.",
+    url: "https://heictojpg.fr/a-propos",
+    siteName: "heictojpg.fr",
+    locale: "fr_FR",
+  },
+  alternates: {
+    canonical: "https://heictojpg.fr/a-propos",
+  },
 };
 
 export default function About() {
@@ -122,6 +134,18 @@ export default function About() {
               <li>• <strong>Tailwind CSS</strong> - Pour un design moderne et responsive</li>
             </ul>
           </div>
+        </div>
+        <div className="bg-white rounded-lg shadow-sm p-8">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-4">Nos outils</h2>
+          <p className="text-gray-600 mb-4">Découvrez tous nos outils de conversion d'images gratuits :</p>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/" className="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors text-sm font-medium">HEIC → JPG</Link>
+            <Link href="/convertir-png-en-jpg" className="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors text-sm font-medium">PNG → JPG</Link>
+            <Link href="/convertir-webp-en-jpg" className="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors text-sm font-medium">WebP → JPG</Link>
+            <Link href="/convertir-jpg-en-png" className="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors text-sm font-medium">JPG → PNG</Link>
+            <Link href="/compresser-image" className="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors text-sm font-medium">Compresser image</Link>
+          </div>
+          <p className="mt-6 text-gray-600">Consultez notre <Link href="/blog" className="text-blue-600 hover:text-blue-800">blog</Link> et notre <Link href="/faq" className="text-blue-600 hover:text-blue-800">FAQ</Link> pour en savoir plus.</p>
         </div>
       </div>
     </div>
