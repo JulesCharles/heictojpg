@@ -3,7 +3,7 @@ import Link from "next/link";
 import ImageConvertForm from "@/components/ImageConvertForm";
 
 export const metadata: Metadata = {
-  title: "Convertir WebP en JPG gratuitement en ligne",
+  title: "Convertir WebP en JPG en ligne gratuit | heictojpg.fr",
   description:
     "Convertissez vos images WebP en JPG en un clic. Outil gratuit, rapide et sans inscription. Assurez la compatibilité de vos images WebP avec tous les logiciels.",
   keywords: [

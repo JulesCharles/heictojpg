@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Convertir HEIC en JPG sur Android - Guide complet [2025]",
+  title: "Convertir HEIC en JPG sur Android [2026] | heictojpg.fr",
   description:
-    "Découvrez comment convertir vos photos HEIC en JPG sur Android. Méthodes avec Google Photos, applications tierces et en ligne. Guide complet pour la conversion HEIC JPG sur Android.",
+    "Guide complet pour convertir vos photos HEIC en JPG sur Android. 3 methodes gratuites expliquees pas a pas.",
   openGraph: {
     type: "website",
     title: "Convertir HEIC en JPG sur Android - Guide complet [2025]",

@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Script from "next/script";
+import { ClerkProvider } from "@clerk/nextjs";
+import { frFR } from "@clerk/localizations";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,10 +20,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://heictojpg.fr'),
   title: {
-    default: "Convertir HEIC en JPG gratuitement en ligne | heictojpg.fr",
-    template: "%s | heictojpg.fr",
+    default: "Outils image et PDF en ligne gratuits | heictojpg.fr",
+    template: "%s",
   },
-  description: "Convertissez vos photos iPhone HEIC en JPG en 1 clic. Gratuit, rapide, sans inscription. Aucun fichier conservé sur nos serveurs.",
+  description: "Convertissez, compressez et editez vos images en ligne gratuitement. HEIC, JPG, PNG, WebP, SVG, PDF. Sans inscription, aucun fichier conserve.",
   keywords: ["convertir heic en jpg", "heic to jpg", "conversion heic", "photo iphone jpg", "heic gratuit", "convertisseur heic"],
   authors: [{ name: "heictojpg.fr" }],
   creator: "heictojpg.fr",
@@ -67,6 +69,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider localization={frFR}>
     <html lang="fr">
       <head>
         {/* Google Tag Manager */}
@@ -80,6 +83,15 @@ export default function RootLayout({
           `}
         </Script>
         {/* End Google Tag Manager */}
+        {/* Google AdSense */}
+        {process.env.NEXT_PUBLIC_ADSENSE_CLIENT && (
+          <Script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT}`}
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
+        )}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50 min-h-screen flex flex-col`}
@@ -101,5 +113,6 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
+    </ClerkProvider>
   );
 }

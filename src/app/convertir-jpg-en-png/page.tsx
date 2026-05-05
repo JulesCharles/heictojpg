@@ -3,7 +3,7 @@ import Link from "next/link";
 import ImageConvertForm from "@/components/ImageConvertForm";
 
 export const metadata: Metadata = {
-  title: "Convertir JPG en PNG gratuitement en ligne",
+  title: "Convertir JPG en PNG en ligne gratuit | heictojpg.fr",
   description:
     "Convertissez vos images JPG en PNG en un clic. Obtenez la transparence et une qualité sans perte. Outil gratuit, rapide et sans inscription.",
   keywords: [

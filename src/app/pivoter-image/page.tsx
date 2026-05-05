@@ -1,0 +1,99 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import Client from "./client";
+
+export const metadata: Metadata = {
+  title: "Pivoter et retourner une image gratuit | heictojpg.fr",
+  description: "Pivotez vos images de 90, 180 ou 270 degres. Retournez horizontalement ou verticalement. Gratuit, sans inscription.",
+  keywords: ["pivoter image","tourner photo","rotation image en ligne","retourner image","pivoter photo gratuit"],
+  openGraph: {
+    type: "website", locale: "fr_FR",
+    url: "https://heictojpg.fr/pivoter-image",
+    siteName: "heictojpg.fr",
+    title: "Pivoter et retourner une image gratuitement en ligne",
+    description: "Pivotez vos images de 90, 180 ou 270 degres. Retournez horizontalement ou verticalement. Gratuit, sans inscription.",
+  },
+  alternates: { canonical: "https://heictojpg.fr/pivoter-image" },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      name: "Pivoter et retourner une image gratuitement",
+      url: "https://heictojpg.fr/pivoter-image",
+      description: "Pivotez vos images de 90, 180 ou 270 degres. Retournez horizontalement ou verticalement. Gratuit, sans inscription.",
+      applicationCategory: "MultimediaApplication",
+      operatingSystem: "Tout navigateur web",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+      inLanguage: "fr",
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        { "@type": "Question", name: "La qualite est-elle affectee par la rotation ?", acceptedAnswer: { "@type": "Answer", text: "Non, la rotation de 90, 180 ou 270 degres est une operation sans perte pour les formats qui le supportent. L'image n'est pas re-compressee, elle est simplement reorientee." } },
+        { "@type": "Question", name: "Puis-je pivoter d'un angle personnalise ?", acceptedAnswer: { "@type": "Answer", text: "Notre outil supporte les rotations de 90, 180 et 270 degres. Pour des rotations d'angles arbitraires, un logiciel d'edition plus avance est necessaire." } }
+      ],
+    },
+  ],
+};
+
+export default function Page() {
+  return (
+    <div className="container mx-auto px-4 py-12 max-w-4xl">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold text-gray-800 mb-6">Pivoter et retourner une image gratuitement</h1>
+        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">Pivotez vos images de 90, 180 ou 270 degres, ou retournez-les horizontalement ou verticalement. Ideal pour corriger l'orientation de vos photos. Compatible avec tous les formats d'image courants.</p>
+      </div>
+
+      <div className="mb-16">
+        <Client />
+      </div>
+
+      <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Pourquoi pivoter vos images ?</h2>
+        <div className="prose prose-gray max-w-none">
+          <p className="text-gray-600 mb-4">La rotation d'image est essentielle pour corriger l'orientation des photos prises avec un smartphone ou un appareil photo en mode portrait/paysage. Parfois, les metadonnees EXIF d'orientation ne sont pas correctement interpretees par certains logiciels, ce qui affiche l'image tournee.</p>
+          <p className="text-gray-600 mb-4">Notre outil propose plusieurs types de transformations : rotation de 90 degres (quart de tour), 180 degres (demi-tour), 270 degres (trois quarts de tour), retournement vertical (miroir haut/bas) et retournement horizontal (miroir gauche/droite).</p>
+          <p className="text-gray-600 mb-4">Le retournement horizontal est souvent utilise pour les selfies, car les appareils photo frontaux prennent les photos en miroir. Le retournement vertical est utile pour les images scannees a l'envers.</p>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Questions frequentes</h2>
+        <div className="prose prose-gray max-w-none">
+          <div>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">La qualite est-elle affectee par la rotation ?</h3>
+            <p className="text-gray-600 mb-4">Non, la rotation de 90, 180 ou 270 degres est une operation sans perte pour les formats qui le supportent. L'image n'est pas re-compressee, elle est simplement reorientee.</p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">Puis-je pivoter d'un angle personnalise ?</h3>
+            <p className="text-gray-600 mb-4">Notre outil supporte les rotations de 90, 180 et 270 degres. Pour des rotations d'angles arbitraires, un logiciel d'edition plus avance est necessaire.</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-lg shadow-sm p-8">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Nos autres outils</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <Link href="/" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+            <h3 className="font-semibold text-gray-800">HEIC &rarr; JPG</h3>
+            <p className="text-sm text-gray-600">Convertissez vos photos iPhone.</p>
+          </Link>
+          <Link href="/compresser-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+            <h3 className="font-semibold text-gray-800">Compresser image</h3>
+            <p className="text-sm text-gray-600">Reduisez le poids de vos images.</p>
+          </Link>
+          <Link href="/redimensionner-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
+            <h3 className="font-semibold text-gray-800">Redimensionner</h3>
+            <p className="text-sm text-gray-600">Changez la taille de vos images.</p>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}

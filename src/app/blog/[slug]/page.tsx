@@ -455,6 +455,202 @@ Le choix du format dépend avant tout de votre cas d'utilisation. Voici nos reco
 Le format parfait n'existe pas, mais en combinant intelligemment ces différents formats selon vos besoins, vous optimiserez à la fois la qualité de vos images et les performances de vos projets.
     `,
   },
+  "supprimer-fond-image-gratuitement": {
+    title: "Comment supprimer le fond d'une image gratuitement (5 methodes)",
+    date: "5 mai 2026",
+    dateISO: "2026-05-05",
+    readTime: "8 min",
+    content: `
+Vous avez une photo de produit avec un arriere-plan encombre, un portrait avec un decor peu flatteur, ou un logo que vous souhaitez isoler sur fond transparent ? Supprimer le fond d'une image est l'une des retouches photo les plus demandees. Bonne nouvelle : vous n'avez plus besoin de Photoshop ni de competences en design pour y arriver. Voici 5 methodes gratuites pour supprimer l'arriere-plan de n'importe quelle image.
+
+## Methode 1 : heictojpg.fr (en ligne, gratuit, sans inscription)
+
+Notre outil de suppression de fond utilise l'intelligence artificielle pour detecter automatiquement le sujet principal de votre photo et supprimer l'arriere-plan. Le resultat est une image PNG avec fond transparent, prete a etre utilisee dans vos designs, presentations ou publications.
+
+**Comment faire :**
+1. Allez sur heictojpg.fr/supprimer-fond-image
+2. Uploadez votre image (JPG, PNG ou WebP)
+3. Attendez 10 a 30 secondes que l'IA analyse votre image
+4. Telechargez le resultat en PNG transparent
+
+**Avantages :** gratuit, sans inscription, sans filigrane, traitement local (vos fichiers ne sont pas conserves)
+**Limites :** fonctionne mieux sur les photos avec un sujet bien defini et un fond relativement uniforme
+
+## Methode 2 : remove.bg
+
+remove.bg est l'un des services les plus connus pour la suppression de fond. Il utilise une IA tres performante qui gere bien les cheveux, la fourrure et les contours complexes.
+
+**Avantages :** tres bonne qualite, rapide
+**Limites :** version gratuite limitee en resolution (preview uniquement), la haute resolution est payante (environ 1 euro par image)
+
+## Methode 3 : Canva (edition en ligne)
+
+Canva propose un outil de suppression de fond integre a son editeur. Si vous utilisez deja Canva pour vos visuels, c'est une option pratique.
+
+**Avantages :** integre dans un editeur complet, facile a utiliser
+**Limites :** necessite un compte Canva Pro (payant) pour la fonctionnalite de suppression de fond
+
+## Methode 4 : GIMP (logiciel gratuit)
+
+GIMP est un logiciel de retouche photo gratuit et open source. Il permet de supprimer le fond manuellement avec plusieurs outils : baguette magique, selection par couleur, chemins, ou masques de calque.
+
+**Comment faire avec GIMP :**
+1. Ouvrez votre image dans GIMP
+2. Ajoutez un canal alpha (Calque > Transparence > Ajouter un canal alpha)
+3. Utilisez la baguette magique pour selectionner le fond
+4. Supprimez la selection (Edition > Effacer)
+5. Exportez en PNG pour conserver la transparence
+
+**Avantages :** gratuit, controle total, pas de limite
+**Limites :** plus lent et technique que les outils IA, courbe d'apprentissage
+
+## Methode 5 : PowerPoint (oui, vraiment)
+
+Peu de gens le savent, mais Microsoft PowerPoint integre un outil de suppression de fond assez efficace.
+
+**Comment faire :**
+1. Inserez votre image dans PowerPoint
+2. Cliquez sur l'image > Format > Supprimer l'arriere-plan
+3. Ajustez les zones a garder ou supprimer
+4. Cliquez droit sur l'image > Enregistrer en tant qu'image (PNG)
+
+**Avantages :** deja installe sur la plupart des PC, surprenamment efficace
+**Limites :** pas toujours precis sur les contours complexes
+
+## Quelle methode choisir ?
+
+- **Pour une suppression rapide sans installation** : heictojpg.fr ou remove.bg
+- **Pour un controle total** : GIMP
+- **Si vous etes deja dans Canva** : utilisez l'outil integre
+- **En depannage** : PowerPoint fait le travail
+
+## Conseils pour un meilleur resultat
+
+Quelle que soit la methode choisie, certains types d'images donnent de meilleurs resultats :
+
+**Les meilleures images pour la suppression de fond :**
+- Un sujet unique et bien centre
+- Un bon contraste entre le sujet et le fond
+- Un eclairage uniforme sans ombres portees trop marquees
+- Une photo en haute resolution
+
+**Les images plus difficiles :**
+- Plusieurs sujets qui se chevauchent
+- Un fond tres similaire au sujet en couleur et texture
+- Des cheveux fins ou de la fourrure sur un fond complexe
+- Des objets transparents (verre, eau)
+
+## Quel format pour l'image sans fond ?
+
+Apres avoir supprime le fond, exportez toujours votre image en **PNG**. C'est le seul format courant qui supporte la transparence. Le JPG ne supporte pas la transparence — si vous enregistrez en JPG, le fond transparent sera remplace par du blanc.
+
+Le format WebP supporte egalement la transparence et produit des fichiers plus legers que le PNG, mais il est moins compatible avec les anciens logiciels.
+    `,
+  },
+  "reduire-taille-photo-iphone": {
+    title: "Comment reduire la taille d'une photo sur iPhone (guide complet 2026)",
+    date: "5 mai 2026",
+    dateISO: "2026-05-05",
+    readTime: "7 min",
+    content: `
+Les photos prises avec un iPhone 15 ou 16 pesent entre 2 et 8 Mo chacune en format HEIC, et jusqu'a 15 Mo en ProRAW. Avec des milliers de photos, votre stockage iCloud peut vite saturer, et l'envoi par email devient complique quand les pieces jointes depassent 25 Mo. Voici toutes les methodes pour reduire la taille de vos photos iPhone.
+
+## Pourquoi les photos iPhone sont-elles si lourdes ?
+
+Les iPhones modernes prennent des photos en 12, 24 ou 48 megapixels selon le modele. Plus il y a de pixels, plus le fichier est volumineux. A cela s'ajoutent les informations de profondeur (mode Portrait), le HDR, et les donnees EXIF (localisation, parametres de prise de vue).
+
+Voici les tailles moyennes par modele :
+- **iPhone 15/16 (mode standard)** : 2-4 Mo en HEIC, 4-8 Mo en JPG
+- **iPhone 15/16 Pro (48 MP)** : 5-8 Mo en HEIC, 10-15 Mo en JPG
+- **Mode ProRAW** : 25-75 Mo par photo
+
+## Methode 1 : Compresser en ligne avec heictojpg.fr
+
+La methode la plus simple et la plus efficace : uploadez vos photos sur heictojpg.fr/compresser-image et reglez la qualite souhaitee. Vous pouvez reduire la taille de 50 a 80% sans difference visible a l'oeil nu.
+
+**Etapes :**
+1. Ouvrez Safari sur votre iPhone
+2. Allez sur heictojpg.fr/compresser-image
+3. Selectionnez vos photos depuis la pellicule
+4. Reglez la qualite (70-80% est le meilleur compromis)
+5. Telechargez les photos compressees
+
+**Resultat :** une photo de 5 Mo devient environ 1 Mo a 75% de qualite.
+
+## Methode 2 : Changer le format de capture sur iPhone
+
+Vous pouvez configurer votre iPhone pour prendre des photos moins lourdes directement a la source.
+
+**Passer de ProRAW a HEIC :**
+1. Allez dans Reglages > Appareil photo > Formats
+2. Choisissez "Haute efficacite" (HEIC) au lieu de "Le plus compatible" (JPG)
+3. Desactivez Apple ProRAW si active
+
+Le format HEIC est deja 50% plus leger que le JPG pour la meme qualite. C'est le reglage optimal pour la plupart des utilisateurs.
+
+## Methode 3 : Reduire la resolution avant envoi
+
+Quand vous partagez une photo par email ou message, iOS propose parfois de reduire la taille. Pour forcer cette reduction :
+
+1. Ouvrez la photo dans l'app Photos
+2. Appuyez sur Partager
+3. Choisissez Mail
+4. iOS vous proposera "Taille reelle", "Grande", "Moyenne", "Petite"
+5. Selectionnez "Moyenne" ou "Petite" selon votre besoin
+
+## Methode 4 : Utiliser l'app Raccourcis (automatisation)
+
+Vous pouvez creer un raccourci automatique qui compresse toutes les photos selectionnees :
+
+1. Ouvrez l'app Raccourcis
+2. Creez un nouveau raccourci
+3. Ajoutez l'action "Redimensionner l'image" (par exemple a 1920px de large)
+4. Ajoutez "Convertir l'image" en JPEG avec qualite 0.7
+5. Ajoutez "Enregistrer dans l'album photo"
+
+Ce raccourci apparaitra dans le menu Partager de l'app Photos.
+
+## Methode 5 : Convertir HEIC en JPG compresse
+
+Si vos photos sont en HEIC et que vous devez les envoyer a quelqu'un qui ne peut pas les ouvrir, convertissez-les en JPG avec compression :
+
+1. Allez sur heictojpg.fr/convertir-heic-en-jpg
+2. Uploadez vos photos HEIC
+3. Telechargez les JPG (deja optimises a 92% de qualite)
+
+La conversion HEIC vers JPG reduit souvent la taille car le JPG a 92% de qualite est plus leger que le HEIC original pour les photos de paysage et de nature.
+
+## Methode 6 : Optimiser le stockage iCloud
+
+Si votre objectif est de liberer de l'espace sur votre iPhone sans perdre vos photos :
+
+1. Allez dans Reglages > Photos
+2. Activez "Optimiser le stockage de l'iPhone"
+
+Votre iPhone conservera des versions alleguees de vos photos en local et stockera les originales en haute resolution dans iCloud. Quand vous ouvrez une photo, la version haute resolution est telechargee a la volee.
+
+## Combien peut-on reduire la taille ?
+
+Voici les gains typiques selon la methode :
+
+- **HEIC au lieu de JPG** : -50% (sans perte visible)
+- **Compression JPG a 80%** : -60 a 70% (perte minimale)
+- **Compression JPG a 60%** : -80 a 85% (perte legere visible en zoom)
+- **Redimensionner a 1920px** : -70 a 90% (reduit aussi la resolution)
+- **Combinaison compression + redimensionnement** : -90 a 95%
+
+## Quelle qualite choisir ?
+
+- **Pour les reseaux sociaux** : 70-80% de qualite, 1920px de large max. Les reseaux recompressent de toute facon.
+- **Pour l'email** : 75-85% de qualite. Objectif : rester sous 2 Mo par photo.
+- **Pour l'archivage** : gardez les originaux. Ne compressez que les copies.
+- **Pour l'impression** : ne compressez pas, gardez la resolution maximale.
+
+## Resume
+
+La methode la plus rapide pour reduire la taille de vos photos iPhone est d'utiliser un compresseur en ligne comme heictojpg.fr/compresser-image. Pour une solution a long terme, activez le format HEIC dans les reglages de votre appareil photo et l'optimisation du stockage iCloud.
+    `,
+  },
 };
 
 const relatedArticles: Record<string, string[]> = {
@@ -557,9 +753,6 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
           </div>
         </div>
 
-        <div className="w-full h-64 bg-gray-200 rounded-lg mb-8 flex items-center justify-center">
-          <span className="text-gray-500">Image placeholder</span>
-        </div>
       </div>
 
       <div className="bg-white rounded-lg shadow-sm p-8">

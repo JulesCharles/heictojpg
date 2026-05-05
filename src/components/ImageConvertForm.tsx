@@ -1,17 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Upload, Download, Loader2 } from "lucide-react";
-
-const trackEvent = (eventName: string, eventParams?: Record<string, any>) => {
-  if (typeof window !== "undefined" && (window as any).gtag) {
-    (window as any).gtag("event", eventName, eventParams);
-  }
-};
+import { Upload, Download, Loader2, X, ImageIcon } from "lucide-react";
+import JSZip from "jszip";
+import { useConversionLimit } from "@/lib/useConversionLimit";
 
 interface ImageConvertFormProps {
   title: string;
@@ -25,6 +19,12 @@ interface ImageConvertFormProps {
   errorMessage?: string;
 }
 
+interface ConvertedFile {
+  name: string;
+  blob: Blob;
+  url: string;
+}
+
 export default function ImageConvertForm({
   title,
   acceptedFormats,
@@ -34,155 +34,195 @@ export default function ImageConvertForm({
   outputExtension,
   acceptedMimeTypes,
   acceptedExtensions,
-  errorMessage = "Veuillez sélectionner un fichier valide.",
+  errorMessage = "Veuillez selectionner un fichier valide.",
 }: ImageConvertFormProps) {
-  const [file, setFile] = useState<File | null>(null);
+  const [files, setFiles] = useState<File[]>([]);
   const [converting, setConverting] = useState(false);
-  const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
+  const [convertedFiles, setConvertedFiles] = useState<ConvertedFile[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [progress, setProgress] = useState(0);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const { conversionsLeft, recordConversion, isLimited } = useConversionLimit();
+
+  const isValidFile = (f: File) => {
+    const validType = acceptedMimeTypes ? acceptedMimeTypes.some((t) => f.type.includes(t)) : true;
+    const validExt = acceptedExtensions ? acceptedExtensions.some((e) => f.name.toLowerCase().endsWith(e)) : true;
+    return validType || validExt;
+  };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedFile = e.target.files?.[0];
-    if (selectedFile) {
-      const isValidType = acceptedMimeTypes ? acceptedMimeTypes.some(t => selectedFile.type.includes(t)) : true;
-      const isValidExt = acceptedExtensions ? acceptedExtensions.some(e => selectedFile.name.toLowerCase().endsWith(e)) : true;
-      if (isValidType || isValidExt) {
-        setFile(selectedFile);
-        setError(null);
-        setDownloadUrl(null);
-        trackEvent("file_selected", {
-          file_type: selectedFile.type,
-          file_size: selectedFile.size,
-          conversion_type: `${selectedFile.type}_to_${outputFormat}`,
-        });
-      } else {
-        setError(errorMessage);
-        setFile(null);
-      }
+    const selected = Array.from(e.target.files || []).filter(isValidFile);
+    if (selected.length > 0) {
+      setFiles(selected);
+      setError(null);
+      setConvertedFiles([]);
+      setProgress(0);
+    } else if (e.target.files && e.target.files.length > 0) {
+      setError(errorMessage);
     }
   };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    const dropped = Array.from(e.dataTransfer.files).filter(isValidFile);
+    if (dropped.length > 0) {
+      setFiles(dropped);
+      setError(null);
+      setConvertedFiles([]);
+    }
+  };
+
+  const removeFile = (i: number) => setFiles((prev) => prev.filter((_, idx) => idx !== i));
 
   const handleConvert = async () => {
-    if (!file) return;
+    if (files.length === 0) return;
+    if (isLimited) {
+      setError("Limite atteinte ! Passez a Pro pour des conversions illimitees.");
+      return;
+    }
 
+    const filesToConvert = files.slice(0, conversionsLeft);
     setConverting(true);
     setError(null);
-    setDownloadUrl(null);
+    setConvertedFiles([]);
+    setProgress(0);
 
-    const startTime = Date.now();
+    const results: ConvertedFile[] = [];
 
-    try {
-      const formData = new FormData();
-      formData.append("file", file);
-      formData.append("format", outputFormat);
+    for (let i = 0; i < filesToConvert.length; i++) {
+      try {
+        const formData = new FormData();
+        formData.append("file", filesToConvert[i]);
+        formData.append("format", outputFormat);
 
-      const response = await fetch(apiEndpoint, {
-        method: "POST",
-        body: formData,
-      });
+        const response = await fetch(apiEndpoint, { method: "POST", body: formData });
+        if (!response.ok) throw new Error("Erreur");
 
-      if (!response.ok) {
-        throw new Error("Erreur lors de la conversion");
+        const blob = await response.blob();
+        const name = filesToConvert[i].name.replace(/\.[^/.]+$/, outputExtension);
+        results.push({ name, blob, url: URL.createObjectURL(blob) });
+        recordConversion();
+      } catch {
+        // skip failed
       }
+      setProgress(Math.round(((i + 1) / filesToConvert.length) * 100));
+    }
 
-      const blob = await response.blob();
-      const url = URL.createObjectURL(blob);
-      setDownloadUrl(url);
+    setConvertedFiles(results);
+    setConverting(false);
 
-      trackEvent("conversion_success", {
-        file_size: file.size,
-        conversion_time: Date.now() - startTime,
-        output_format: outputFormat,
-      });
-    } catch (err) {
-      setError("Erreur lors de la conversion. Veuillez réessayer.");
-      trackEvent("conversion_error", {
-        error_message: err instanceof Error ? err.message : "Unknown error",
-      });
-    } finally {
-      setConverting(false);
+    if (filesToConvert.length < files.length) {
+      setError(`${filesToConvert.length} fichier(s) converti(s) sur ${files.length}. Passez a Pro pour un usage illimite.`);
     }
   };
 
-  const handleDownload = () => {
-    if (downloadUrl && file) {
-      const link = document.createElement("a");
-      link.href = downloadUrl;
-      link.download = file.name.replace(/\.[^/.]+$/, outputExtension);
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      trackEvent("file_download", {
-        file_name: file.name.replace(/\.[^/.]+$/, outputExtension),
-        original_size: file.size,
-      });
-    }
+  const handleDownloadSingle = (file: ConvertedFile) => {
+    const a = document.createElement("a");
+    a.href = file.url;
+    a.download = file.name;
+    a.click();
+  };
+
+  const handleDownloadAll = async () => {
+    if (convertedFiles.length === 1) { handleDownloadSingle(convertedFiles[0]); return; }
+    const zip = new JSZip();
+    for (const f of convertedFiles) zip.file(f.name, f.blob);
+    const content = await zip.generateAsync({ type: "blob" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(content);
+    a.download = `converted-${outputFormat}.zip`;
+    a.click();
   };
 
   return (
     <Card className="w-full max-w-lg mx-auto shadow-lg">
       <CardHeader className="text-center">
         <CardTitle className="text-2xl text-gray-800">{title}</CardTitle>
+        <p className="text-sm text-gray-500 mt-1">
+          {conversionsLeft} conversion(s) gratuite(s) restante(s)
+        </p>
       </CardHeader>
       <CardContent className="space-y-6">
-        <div className="space-y-2">
-          <Label htmlFor="file-upload" className="text-sm font-medium">
-            {acceptLabel}
-          </Label>
-          <div className="relative">
-            <Input
-              id="file-upload"
-              type="file"
-              accept={acceptedFormats}
-              onChange={handleFileChange}
-              className="cursor-pointer"
-            />
-            <Upload className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-          </div>
+        <div
+          onDrop={handleDrop}
+          onDragOver={(e) => e.preventDefault()}
+          onClick={() => inputRef.current?.click()}
+          className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center cursor-pointer hover:border-blue-400 hover:bg-blue-50/50 transition-colors"
+        >
+          <Upload className="mx-auto h-8 w-8 text-gray-400 mb-3" />
+          <p className="text-sm text-gray-600">
+            Glissez vos fichiers ici ou <span className="text-blue-600 font-medium">parcourir</span>
+          </p>
+          <p className="text-xs text-gray-400 mt-1">{acceptLabel} - Plusieurs fichiers acceptes</p>
+          <input ref={inputRef} type="file" accept={acceptedFormats} multiple onChange={handleFileChange} className="hidden" />
         </div>
 
-        {file && (
-          <div className="p-4 bg-blue-50 rounded-lg">
-            <p className="text-sm text-blue-800">
-              <strong>Fichier sélectionné:</strong> {file.name}
-            </p>
-            <p className="text-xs text-blue-600">
-              Taille: {(file.size / 1024 / 1024).toFixed(2)} MB
-            </p>
+        {files.length > 0 && (
+          <div className="space-y-2">
+            <p className="text-sm font-medium text-gray-700">{files.length} fichier(s)</p>
+            <div className="max-h-32 overflow-y-auto space-y-1">
+              {files.map((f, i) => (
+                <div key={i} className="flex items-center justify-between p-2 bg-blue-50 rounded text-sm">
+                  <div className="flex items-center gap-2 min-w-0">
+                    <ImageIcon className="h-4 w-4 text-blue-500 shrink-0" />
+                    <span className="truncate text-blue-800">{f.name}</span>
+                    <span className="text-xs text-blue-500 shrink-0">{(f.size / 1024 / 1024).toFixed(1)} MB</span>
+                  </div>
+                  <button onClick={() => removeFile(i)} className="text-blue-400 hover:text-red-500"><X className="h-4 w-4" /></button>
+                </div>
+              ))}
+            </div>
           </div>
         )}
 
         {error && (
           <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
             <p className="text-sm text-red-800">{error}</p>
+            {isLimited && (
+              <a href="/pricing" className="text-sm text-blue-600 font-medium hover:underline mt-1 inline-block">
+                Voir les offres Pro &rarr;
+              </a>
+            )}
+          </div>
+        )}
+
+        {converting && (
+          <div className="space-y-2">
+            <div className="flex justify-between text-sm text-gray-600">
+              <span>Conversion...</span>
+              <span>{progress}%</span>
+            </div>
+            <div className="w-full bg-gray-200 rounded-full h-2">
+              <div className="bg-blue-600 h-2 rounded-full transition-all" style={{ width: `${progress}%` }} />
+            </div>
           </div>
         )}
 
         <div className="flex gap-4">
-          <Button onClick={handleConvert} disabled={!file || converting} className="flex-1">
-            {converting ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Conversion...
-              </>
-            ) : (
-              "Convertir"
-            )}
+          <Button onClick={handleConvert} disabled={files.length === 0 || converting} className="flex-1">
+            {converting ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" />Conversion...</> : `Convertir${files.length > 1 ? ` (${files.length})` : ""}`}
           </Button>
-
-          {downloadUrl && (
-            <Button onClick={handleDownload} variant="outline" className="flex-1">
-              <Download className="mr-2 h-4 w-4" />
-              Télécharger
+          {convertedFiles.length > 0 && (
+            <Button onClick={handleDownloadAll} variant="outline" className="flex-1">
+              <Download className="mr-2 h-4 w-4" />{convertedFiles.length > 1 ? "ZIP" : "Telecharger"}
             </Button>
           )}
         </div>
 
-        {downloadUrl && (
+        {convertedFiles.length > 1 && (
+          <div className="space-y-1">
+            {convertedFiles.map((f, i) => (
+              <div key={i} className="flex items-center justify-between p-2 bg-green-50 rounded text-sm">
+                <span className="truncate text-green-800">{f.name}</span>
+                <button onClick={() => handleDownloadSingle(f)} className="text-green-600 hover:text-green-800 text-xs font-medium">Telecharger</button>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {convertedFiles.length === 1 && (
           <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-            <p className="text-sm text-green-800">
-              Conversion réussie ! Votre fichier est prêt à télécharger.
-            </p>
+            <p className="text-sm text-green-800">Conversion reussie !</p>
           </div>
         )}
       </CardContent>

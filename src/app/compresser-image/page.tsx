@@ -3,9 +3,9 @@ import Link from "next/link";
 import CompressForm from "@/components/CompressForm";
 
 export const metadata: Metadata = {
-  title: "Compresser une image en ligne gratuitement - JPG, PNG, WebP",
+  title: "Compresser une image en ligne gratuit | heictojpg.fr",
   description:
-    "Compressez vos images JPG, PNG et WebP en ligne gratuitement. Réduisez la taille de vos fichiers sans perte de qualité visible. Outil rapide et sans inscription.",
+    "Reduisez le poids de vos images JPG, PNG et WebP. Qualite reglable. Gratuit, rapide, sans inscription.",
   keywords: [
     "compresser image",
     "compression image en ligne",

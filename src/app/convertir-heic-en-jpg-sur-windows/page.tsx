@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Convertir HEIC en JPG sur Windows - Guide complet [2025]",
+  title: "Convertir HEIC en JPG sur Windows [2026] | heictojpg.fr",
   description:
-    "Apprenez à convertir vos photos HEIC en JPG sur Windows facilement. Méthodes avec Photos Windows, Paint et en ligne. Guide complet pour la conversion HEIC JPG sur PC.",
+    "Guide complet pour ouvrir et convertir HEIC en JPG sur Windows 10/11. 4 methodes gratuites.",
   openGraph: {
     type: "website",
     title: "Convertir HEIC en JPG sur Windows - Guide complet [2025]",

@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Convertir HEIC en JPG sur iPhone - Guide complet [2025]",
+  title: "Convertir HEIC en JPG sur iPhone [2026] | heictojpg.fr",
   description:
     "Apprenez à convertir vos photos HEIC en JPG sur iPhone. Changez le format par défaut dans les réglages iOS, utilisez l'app Fichiers ou convertissez en ligne. Guide complet.",
   openGraph: {
