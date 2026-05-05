@@ -31,8 +31,8 @@ export default function PdfToImageClient({ format = "jpg", title = "Convertir PD
   };
 
   const handleSubmit = async () => {
-    if (isLimited) { setError("Limite atteinte ! Passez a Pro pour un usage illimite."); return; }
-    if (!file) { setError("Veuillez selectionner un fichier PDF."); return; }
+    if (isLimited) { setError("Limite atteinte ! Passez à Pro pour un usage illimité."); return; }
+    if (!file) { setError("Veuillez sélectionner un fichier PDF."); return; }
     setLoading(true); setError(null); setDownloadUrl(null); setPageCount(null);
 
     try {
@@ -52,7 +52,7 @@ export default function PdfToImageClient({ format = "jpg", title = "Convertir PD
       const baseName = file.name.replace(/\.pdf$/i, "");
       setDownloadName(ct === "application/zip" ? `${baseName}-images.zip` : `${baseName}.${format}`);
     } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : "Erreur lors de la conversion. Verifiez que le PDF n'est pas protege.");
+      setError(err instanceof Error ? err.message : "Erreur lors de la conversion. Vérifiez que le PDF n'est pas protégé.");
     } finally {
       setLoading(false);
     }
@@ -88,7 +88,7 @@ export default function PdfToImageClient({ format = "jpg", title = "Convertir PD
         )}
 
         <div className="space-y-2">
-          <Label className="text-sm font-medium">Qualite de sortie</Label>
+          <Label className="text-sm font-medium">Qualité de sortie</Label>
           <div className="flex gap-2">
             {[{ value: "72", label: "Web (72 DPI)" }, { value: "150", label: "Standard (150 DPI)" }, { value: "300", label: "HD (300 DPI)" }].map((d) => (
               <button key={d.value} onClick={() => setDpi(d.value)}
@@ -107,7 +107,7 @@ export default function PdfToImageClient({ format = "jpg", title = "Convertir PD
           </Button>
           {downloadUrl && (
             <Button onClick={() => { const a = document.createElement("a"); a.href = downloadUrl; a.download = downloadName; a.click(); }} variant="outline" className="flex-1">
-              <Download className="mr-2 h-4 w-4" />Telecharger
+              <Download className="mr-2 h-4 w-4" />Télécharger
             </Button>
           )}
         </div>
@@ -115,8 +115,8 @@ export default function PdfToImageClient({ format = "jpg", title = "Convertir PD
         {downloadUrl && (
           <div className="p-3 bg-green-50 border border-green-200 rounded-lg">
             <p className="text-sm text-green-800">
-              Conversion reussie !
-              {pageCount && parseInt(pageCount) > 1 ? ` ${pageCount} pages extraites (ZIP).` : " Votre image est prete."}
+              Conversion réussie !
+              {pageCount && parseInt(pageCount) > 1 ? ` ${pageCount} pages extraites (ZIP).` : " Votre image est prête."}
             </p>
           </div>
         )}

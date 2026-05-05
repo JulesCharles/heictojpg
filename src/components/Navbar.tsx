@@ -7,7 +7,7 @@ export default async function Navbar() {
   const { userId } = await auth();
 
   return (
-    <nav className="border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <nav className="relative z-50 border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
@@ -23,7 +23,8 @@ export default async function Navbar() {
                 HEIC
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
               </button>
-              <div className="absolute left-0 top-full mt-1 w-48 bg-white border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+              <div className="absolute left-0 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                <div className="bg-white border rounded-lg shadow-lg">
                 <Link href="/convertir-heic-en-jpg" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-t-lg">HEIC &rarr; JPG</Link>
                 <Link href="/convertir-heic-en-png" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">HEIC &rarr; PNG</Link>
                 <Link href="/convertir-heic-en-webp" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">HEIC &rarr; WebP</Link>
@@ -34,6 +35,7 @@ export default async function Navbar() {
                 <Link href="/convertir-heic-en-ico" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">HEIC &rarr; ICO</Link>
                 <Link href="/compresser-heic" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Compresser HEIC</Link>
                 <Link href="/lire-metadonnees-heic" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-b-lg">Metadonnees HEIC</Link>
+                </div>
               </div>
             </div>
 
@@ -43,7 +45,8 @@ export default async function Navbar() {
                 Convertir
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
               </button>
-              <div className="absolute left-0 top-full mt-1 w-48 bg-white border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 max-h-80 overflow-y-auto">
+              <div className="absolute left-0 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                <div className="bg-white border rounded-lg shadow-lg max-h-80 overflow-y-auto">
                 <Link href="/convertir-jpg-en-webp" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-t-lg">JPG &rarr; WebP</Link>
                 <Link href="/convertir-png-en-webp" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">PNG &rarr; WebP</Link>
                 <Link href="/convertir-png-en-jpg" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">PNG &rarr; JPG</Link>
@@ -56,6 +59,7 @@ export default async function Navbar() {
                 <Link href="/convertir-tiff-en-jpg" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">TIFF &rarr; JPG</Link>
                 <Link href="/convertir-bmp-en-jpg" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">BMP &rarr; JPG</Link>
                 <Link href="/convertir-png-en-ico" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-b-lg">PNG &rarr; ICO</Link>
+                </div>
               </div>
             </div>
 
@@ -65,7 +69,8 @@ export default async function Navbar() {
                 Outils
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
               </button>
-              <div className="absolute left-0 top-full mt-1 w-56 bg-white border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+              <div className="absolute left-0 top-full pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                <div className="bg-white border rounded-lg shadow-lg">
                 <Link href="/compresser-image" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-t-lg">Compresser image</Link>
                 <Link href="/redimensionner-image" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Redimensionner</Link>
                 <Link href="/recadrer-image" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Recadrer</Link>
@@ -77,6 +82,7 @@ export default async function Navbar() {
                 <Link href="/inverser-couleurs-image" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Inverser couleurs</Link>
                 <Link href="/lire-metadonnees-image" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Lire metadonnees</Link>
                 <Link href="/supprimer-metadonnees-image" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-b-lg">Supprimer metadonnees</Link>
+                </div>
               </div>
             </div>
 

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "FAQ - Questions fréquentes sur la conversion HEIC en JPG",
   description:
-    "Reponses aux questions frequentes sur la conversion HEIC en JPG et nos outils image en ligne gratuits.",
+    "Réponses aux questions fréquentes sur la conversion HEIC en JPG et nos outils image en ligne gratuits.",
   openGraph: {
     type: "website",
     title: "FAQ - Questions fréquentes sur la conversion HEIC en JPG",

@@ -45,7 +45,7 @@ export default function HeicMetadataForm() {
       const data = await response.json();
       setMetadata(data.metadata);
     } catch {
-      setError("Erreur lors de la lecture des metadonnees.");
+      setError("Erreur lors de la lecture des métadonnées.");
     } finally {
       setLoading(false);
     }
@@ -55,12 +55,12 @@ export default function HeicMetadataForm() {
     <div className="space-y-6">
       <Card className="w-full max-w-lg mx-auto shadow-lg">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl text-gray-800">Lire les metadonnees HEIC</CardTitle>
+          <CardTitle className="text-2xl text-gray-800">Lire les métadonnées HEIC</CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="space-y-2">
             <Label htmlFor="file-upload" className="text-sm font-medium">
-              Selectionner un fichier HEIC ou image
+              Sélectionner un fichier HEIC ou image
             </Label>
             <div className="relative">
               <Input
@@ -91,7 +91,7 @@ export default function HeicMetadataForm() {
             {loading ? (
               <><Loader2 className="mr-2 h-4 w-4 animate-spin" />Lecture...</>
             ) : (
-              <><Info className="mr-2 h-4 w-4" />Lire les metadonnees</>
+              <><Info className="mr-2 h-4 w-4" />Lire les métadonnées</>
             )}
           </Button>
         </CardContent>
@@ -100,7 +100,7 @@ export default function HeicMetadataForm() {
       {metadata && Object.keys(metadata).length > 0 && (
         <Card className="w-full max-w-lg mx-auto shadow-lg">
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Metadonnees EXIF</CardTitle>
+            <CardTitle className="text-xl text-gray-800">Métadonnées EXIF</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             {Object.entries(metadata).map(([category, fields]) => (

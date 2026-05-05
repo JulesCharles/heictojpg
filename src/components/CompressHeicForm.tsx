@@ -90,7 +90,7 @@ export default function CompressHeicForm() {
 
         <div className="space-y-2">
           <Label htmlFor="quality" className="text-sm font-medium">
-            Qualite : {quality}%
+            Qualité : {quality}%
           </Label>
           <input
             id="quality"
@@ -102,8 +102,8 @@ export default function CompressHeicForm() {
             className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
           />
           <div className="flex justify-between text-xs text-gray-500">
-            <span>Plus leger</span>
-            <span>Meilleure qualite</span>
+            <span>Plus léger</span>
+            <span>Meilleure qualité</span>
           </div>
         </div>
 

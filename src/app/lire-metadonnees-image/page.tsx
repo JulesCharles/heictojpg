@@ -3,15 +3,15 @@ import Link from "next/link";
 import Client from "./client";
 
 export const metadata: Metadata = {
-  title: "Lire les metadonnees EXIF d'une image | heictojpg.fr",
-  description: "Visualisez les metadonnees EXIF de vos photos JPG, PNG, WebP et HEIC : appareil, date, GPS, reglages. Gratuit, sans inscription.",
-  keywords: ["lire exif","metadonnees image","exif viewer","info photo","donnees image","exif en ligne"],
+  title: "Lire les métadonnées EXIF d'une image | heictojpg.fr",
+  description: "Visualisez les métadonnées EXIF de vos photos JPG, PNG, WebP et HEIC : appareil, date, GPS, réglages. Gratuit, sans inscription.",
+  keywords: ["lire exif","métadonnées image","exif viewer","info photo","données image","exif en ligne"],
   openGraph: {
     type: "website", locale: "fr_FR",
     url: "https://heictojpg.fr/lire-metadonnees-image",
     siteName: "heictojpg.fr",
-    title: "Lire les metadonnees EXIF d'une image en ligne",
-    description: "Visualisez les metadonnees EXIF de vos photos JPG, PNG, WebP et HEIC : appareil, date, GPS, reglages. Gratuit, sans inscription.",
+    title: "Lire les métadonnées EXIF d'une image en ligne",
+    description: "Visualisez les métadonnées EXIF de vos photos JPG, PNG, WebP et HEIC : appareil, date, GPS, réglages. Gratuit, sans inscription.",
   },
   alternates: { canonical: "https://heictojpg.fr/lire-metadonnees-image" },
 };
@@ -21,9 +21,9 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebApplication",
-      name: "Lire les metadonnees d'une image",
+      name: "Lire les métadonnées d'une image",
       url: "https://heictojpg.fr/lire-metadonnees-image",
-      description: "Visualisez les metadonnees EXIF de vos photos JPG, PNG, WebP et HEIC : appareil, date, GPS, reglages. Gratuit, sans inscription.",
+      description: "Visualisez les métadonnées EXIF de vos photos JPG, PNG, WebP et HEIC : appareil, date, GPS, réglages. Gratuit, sans inscription.",
       applicationCategory: "MultimediaApplication",
       operatingSystem: "Tout navigateur web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
@@ -32,8 +32,8 @@ const jsonLd = {
     {
       "@type": "FAQPage",
       mainEntity: [
-        { "@type": "Question", name: "Tous les formats d'image contiennent-ils des metadonnees EXIF ?", acceptedAnswer: { "@type": "Answer", text: "Les JPG et HEIC contiennent generalement beaucoup de metadonnees. Les PNG et WebP en contiennent moins. Les SVG et GIF n'en contiennent generalement pas." } },
-        { "@type": "Question", name: "Mes fichiers sont-ils conserves sur vos serveurs ?", acceptedAnswer: { "@type": "Answer", text: "Non, aucun fichier n'est conserve. L'analyse est effectuee en memoire et toutes les donnees sont supprimees immediatement apres affichage des resultats." } }
+        { "@type": "Question", name: "Tous les formats d'image contiennent-ils des métadonnées EXIF ?", acceptedAnswer: { "@type": "Answer", text: "Les JPG et HEIC contiennent généralement beaucoup de métadonnées. Les PNG et WebP en contiennent moins. Les SVG et GIF n'en contiennent généralement pas." } },
+        { "@type": "Question", name: "Mes fichiers sont-ils conservés sur vos serveurs ?", acceptedAnswer: { "@type": "Answer", text: "Non, aucun fichier n'est conservé. L'analyse est effectuée en mémoire et toutes les données sont supprimées immédiatement après affichage des résultats." } }
       ],
     },
   ],
@@ -45,8 +45,8 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">Lire les metadonnees d'une image</h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">Decouvrez toutes les informations cachees dans vos photos : appareil utilise, date de prise de vue, localisation GPS, reglages (ISO, ouverture, vitesse). Compatible JPG, PNG, WebP, HEIC et TIFF.</p>
+        <h1 className="text-4xl font-bold text-gray-800 mb-6">Lire les métadonnées d'une image</h1>
+        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">Découvrez toutes les informations cachées dans vos photos : appareil utilisé, date de prise de vue, localisation GPS, réglages (ISO, ouverture, vitesse). Compatible JPG, PNG, WebP, HEIC et TIFF.</p>
       </div>
 
       <div className="mb-16">
@@ -54,27 +54,27 @@ export default function Page() {
       </div>
 
       <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Comprendre les metadonnees EXIF de vos photos</h2>
+        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Comprendre les métadonnées EXIF de vos photos</h2>
         <div className="prose prose-gray max-w-none">
-          <p className="text-gray-600 mb-4">Les metadonnees EXIF (Exchangeable Image File Format) sont des informations embarquees automatiquement dans chaque photo par votre appareil photo ou smartphone. Elles constituent une mine d'informations techniques et contextuelles.</p>
-          <p className="text-gray-600 mb-4">Pour les photographes, les metadonnees EXIF sont un outil d'apprentissage precieux. En analysant les reglages utilises pour vos meilleures photos (ouverture, vitesse d'obturation, ISO, focale), vous pouvez comprendre ce qui fonctionne et reproduire ces conditions.</p>
-          <p className="text-gray-600 mb-4">Pour les professionnels de la securite et de la vie privee, les metadonnees EXIF sont un sujet de preoccupation : elles peuvent reveler la localisation exacte de la prise de vue, le modele de l'appareil, et d'autres informations personnelles.</p>
-          <p className="text-gray-600 mb-4">Notre outil lit et affiche de maniere claire toutes les metadonnees presentes dans votre fichier image, organisees par categories : informations sur l'appareil, reglages de prise de vue, donnees GPS, et informations sur le fichier.</p>
-          <p className="text-gray-600 mb-4">Tous les formats d'image courants sont supportes : JPEG, PNG, WebP, HEIC (iPhone), TIFF et AVIF.</p>
+          <p className="text-gray-600 mb-4">Les métadonnées EXIF (Exchangeable Image File Format) sont des informations embarquées automatiquement dans chaque photo par votre appareil photo ou smartphone. Elles constituent une mine d'informations techniques et contextuelles.</p>
+          <p className="text-gray-600 mb-4">Pour les photographes, les métadonnées EXIF sont un outil d'apprentissage précieux. En analysant les réglages utilisés pour vos meilleures photos (ouverture, vitesse d'obturation, ISO, focale), vous pouvez comprendre ce qui fonctionne et reproduire ces conditions.</p>
+          <p className="text-gray-600 mb-4">Pour les professionnels de la sécurité et de la vie privée, les métadonnées EXIF sont un sujet de préoccupation : elles peuvent révéler la localisation exacte de la prise de vue, le modèle de l'appareil, et d'autres informations personnelles.</p>
+          <p className="text-gray-600 mb-4">Notre outil lit et affiche de manière claire toutes les métadonnées présentes dans votre fichier image, organisées par catégories : informations sur l'appareil, réglages de prise de vue, données GPS, et informations sur le fichier.</p>
+          <p className="text-gray-600 mb-4">Tous les formats d'image courants sont supportés : JPEG, PNG, WebP, HEIC (iPhone), TIFF et AVIF.</p>
         </div>
       </div>
 
       <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Questions frequentes</h2>
+        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Questions fréquentes</h2>
         <div className="prose prose-gray max-w-none">
           <div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">Tous les formats d'image contiennent-ils des metadonnees EXIF ?</h3>
-            <p className="text-gray-600 mb-4">Les JPG et HEIC contiennent generalement beaucoup de metadonnees. Les PNG et WebP en contiennent moins. Les SVG et GIF n'en contiennent generalement pas.</p>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">Tous les formats d'image contiennent-ils des métadonnées EXIF ?</h3>
+            <p className="text-gray-600 mb-4">Les JPG et HEIC contiennent généralement beaucoup de métadonnées. Les PNG et WebP en contiennent moins. Les SVG et GIF n'en contiennent généralement pas.</p>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">Mes fichiers sont-ils conserves sur vos serveurs ?</h3>
-            <p className="text-gray-600 mb-4">Non, aucun fichier n'est conserve. L'analyse est effectuee en memoire et toutes les donnees sont supprimees immediatement apres affichage des resultats.</p>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">Mes fichiers sont-ils conservés sur vos serveurs ?</h3>
+            <p className="text-gray-600 mb-4">Non, aucun fichier n'est conservé. L'analyse est effectuée en mémoire et toutes les données sont supprimées immédiatement après affichage des résultats.</p>
           </div>
         </div>
       </div>
@@ -88,7 +88,7 @@ export default function Page() {
           </Link>
           <Link href="/compresser-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">Compresser image</h3>
-            <p className="text-sm text-gray-600">Reduisez le poids de vos images.</p>
+            <p className="text-sm text-gray-600">Réduisez le poids de vos images.</p>
           </Link>
           <Link href="/redimensionner-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">Redimensionner</h3>

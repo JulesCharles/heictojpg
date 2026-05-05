@@ -4,7 +4,7 @@ import AdBanner from "@/components/AdBanner";
 
 export const metadata: Metadata = {
   title: "heictojpg.fr - Outils image et PDF en ligne gratuits",
-  description: "Convertissez, compressez, redimensionnez et editez vos images en ligne gratuitement. HEIC, JPG, PNG, WebP, SVG, PDF et plus. Sans inscription.",
+  description: "Convertissez, compressez, redimensionnez et éditez vos images en ligne gratuitement. HEIC, JPG, PNG, WebP, SVG, PDF et plus. Sans inscription.",
   keywords: [
     "convertir image en ligne",
     "outils image gratuit",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: "https://heictojpg.fr",
     siteName: "heictojpg.fr",
     title: "heictojpg.fr - Outils image et PDF en ligne gratuits",
-    description: "Convertissez, compressez et editez vos images en ligne gratuitement.",
+    description: "Convertissez, compressez et éditez vos images en ligne gratuitement.",
   },
   alternates: { canonical: "https://heictojpg.fr" },
 };
@@ -30,7 +30,7 @@ const jsonLd = {
   "@type": "WebSite",
   name: "heictojpg.fr",
   url: "https://heictojpg.fr",
-  description: "Outils de conversion et d'edition d'images en ligne gratuits.",
+  description: "Outils de conversion et d'édition d'images en ligne gratuits.",
   inLanguage: "fr",
 };
 
@@ -44,31 +44,31 @@ interface Tool {
 
 const heicTools: Tool[] = [
   { href: "/convertir-heic-en-jpg", label: "HEIC en JPG", desc: "Le format universel pour vos photos iPhone.", icon: "JPG", primary: true },
-  { href: "/convertir-heic-en-png", label: "HEIC en PNG", desc: "Qualite sans perte avec transparence.", icon: "PNG" },
-  { href: "/convertir-heic-en-webp", label: "HEIC en WebP", desc: "Optimise pour le web moderne.", icon: "WebP" },
+  { href: "/convertir-heic-en-png", label: "HEIC en PNG", desc: "Qualité sans perte avec transparence.", icon: "PNG" },
+  { href: "/convertir-heic-en-webp", label: "HEIC en WebP", desc: "Optimisé pour le web moderne.", icon: "WebP" },
   { href: "/convertir-heic-en-pdf", label: "HEIC en PDF", desc: "Pour l'impression et les documents.", icon: "PDF" },
   { href: "/convertir-heic-en-avif", label: "HEIC en AVIF", desc: "Le format le plus performant.", icon: "AVIF" },
   { href: "/convertir-heic-en-tiff", label: "HEIC en TIFF", desc: "Format pro pour l'impression.", icon: "TIFF" },
   { href: "/convertir-heic-en-gif", label: "HEIC en GIF", desc: "Compatible partout.", icon: "GIF" },
-  { href: "/convertir-heic-en-ico", label: "HEIC en ICO", desc: "Creez un favicon.", icon: "ICO" },
-  { href: "/compresser-heic", label: "Compresser HEIC", desc: "Reduisez la taille.", icon: "ZIP" },
-  { href: "/lire-metadonnees-heic", label: "Metadonnees HEIC", desc: "Lisez les donnees EXIF.", icon: "EXIF" },
+  { href: "/convertir-heic-en-ico", label: "HEIC en ICO", desc: "Créez un favicon.", icon: "ICO" },
+  { href: "/compresser-heic", label: "Compresser HEIC", desc: "Réduisez la taille.", icon: "ZIP" },
+  { href: "/lire-metadonnees-heic", label: "Métadonnées HEIC", desc: "Lisez les données EXIF.", icon: "EXIF" },
 ];
 
 const convertTools: Tool[] = [
-  { href: "/convertir-jpg-en-webp", label: "JPG en WebP", desc: "25-35% plus leger que JPG.", icon: "WebP" },
-  { href: "/convertir-png-en-webp", label: "PNG en WebP", desc: "Jusqu'a 80% plus leger.", icon: "WebP" },
-  { href: "/convertir-png-en-jpg", label: "PNG en JPG", desc: "Reduisez la taille de vos PNG.", icon: "JPG" },
-  { href: "/convertir-webp-en-jpg", label: "WebP en JPG", desc: "Compatibilite universelle.", icon: "JPG" },
-  { href: "/convertir-webp-en-png", label: "WebP en PNG", desc: "Pour l'edition et le design.", icon: "PNG" },
-  { href: "/convertir-jpg-en-png", label: "JPG en PNG", desc: "Qualite sans perte.", icon: "PNG" },
-  { href: "/convertir-jpg-en-avif", label: "JPG en AVIF", desc: "50% plus leger que JPG.", icon: "AVIF" },
+  { href: "/convertir-jpg-en-webp", label: "JPG en WebP", desc: "25-35% plus léger que JPG.", icon: "WebP" },
+  { href: "/convertir-png-en-webp", label: "PNG en WebP", desc: "Jusqu'à 80% plus léger.", icon: "WebP" },
+  { href: "/convertir-png-en-jpg", label: "PNG en JPG", desc: "Réduisez la taille de vos PNG.", icon: "JPG" },
+  { href: "/convertir-webp-en-jpg", label: "WebP en JPG", desc: "Compatibilité universelle.", icon: "JPG" },
+  { href: "/convertir-webp-en-png", label: "WebP en PNG", desc: "Pour l'édition et le design.", icon: "PNG" },
+  { href: "/convertir-jpg-en-png", label: "JPG en PNG", desc: "Qualité sans perte.", icon: "PNG" },
+  { href: "/convertir-jpg-en-avif", label: "JPG en AVIF", desc: "50% plus léger que JPG.", icon: "AVIF" },
   { href: "/convertir-svg-en-png", label: "SVG en PNG", desc: "Vectoriel vers bitmap.", icon: "PNG" },
   { href: "/convertir-svg-en-jpg", label: "SVG en JPG", desc: "Vectoriel vers photo.", icon: "JPG" },
   { href: "/convertir-tiff-en-jpg", label: "TIFF en JPG", desc: "Scans et photos pro.", icon: "JPG" },
   { href: "/convertir-bmp-en-jpg", label: "BMP en JPG", desc: "Format ancien vers moderne.", icon: "JPG" },
   { href: "/convertir-gif-en-jpg", label: "GIF en JPG", desc: "Extrayez une image fixe.", icon: "JPG" },
-  { href: "/convertir-png-en-ico", label: "PNG en ICO", desc: "Creez un favicon.", icon: "ICO" },
+  { href: "/convertir-png-en-ico", label: "PNG en ICO", desc: "Créez un favicon.", icon: "ICO" },
   { href: "/convertir-jpg-en-svg", label: "JPG en SVG", desc: "Vectorisation d'image.", icon: "SVG" },
   { href: "/convertir-png-en-svg", label: "PNG en SVG", desc: "Vectorisation sans perte.", icon: "SVG" },
   { href: "/convertir-avif-en-jpg", label: "AVIF en JPG", desc: "Ouvrez les fichiers AVIF.", icon: "JPG" },
@@ -76,28 +76,28 @@ const convertTools: Tool[] = [
 ];
 
 const editTools: Tool[] = [
-  { href: "/compresser-image", label: "Compresser image", desc: "Reduisez le poids de vos photos.", icon: "ZIP" },
+  { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids de vos photos.", icon: "ZIP" },
   { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille de vos images.", icon: "RSZ" },
-  { href: "/recadrer-image", label: "Recadrer", desc: "Decoupez la zone souhaitee.", icon: "CRP" },
+  { href: "/recadrer-image", label: "Recadrer", desc: "Découpez la zone souhaitée.", icon: "CRP" },
   { href: "/pivoter-image", label: "Pivoter / Retourner", desc: "Corrigez l'orientation.", icon: "ROT" },
-  { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Detourage IA automatique.", icon: "AI" },
-  { href: "/flouter-image", label: "Flouter", desc: "Vie privee et effet artistique.", icon: "BLR" },
+  { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Détourage IA automatique.", icon: "AI" },
+  { href: "/flouter-image", label: "Flouter", desc: "Vie privée et effet artistique.", icon: "BLR" },
   { href: "/convertir-image-noir-et-blanc", label: "Noir et blanc", desc: "Effet niveaux de gris.", icon: "B&W" },
-  { href: "/ajouter-filigrane", label: "Filigrane", desc: "Protegez vos photos.", icon: "WM" },
+  { href: "/ajouter-filigrane", label: "Filigrane", desc: "Protégez vos photos.", icon: "WM" },
   { href: "/changer-dpi-image", label: "Changer DPI", desc: "72, 150 ou 300 DPI.", icon: "DPI" },
-  { href: "/inverser-couleurs-image", label: "Inverser couleurs", desc: "Effet negatif.", icon: "INV" },
-  { href: "/supprimer-metadonnees-image", label: "Supprimer EXIF", desc: "Protegez votre vie privee.", icon: "DEL" },
+  { href: "/inverser-couleurs-image", label: "Inverser couleurs", desc: "Effet négatif.", icon: "INV" },
+  { href: "/supprimer-metadonnees-image", label: "Supprimer EXIF", desc: "Protégez votre vie privée.", icon: "DEL" },
   { href: "/lire-metadonnees-image", label: "Lire EXIF", desc: "Analysez vos photos.", icon: "EXIF" },
 ];
 
 const pdfTools: Tool[] = [
   { href: "/fusionner-pdf", label: "Fusionner PDF", desc: "Combinez plusieurs PDF en un.", icon: "MRG" },
-  { href: "/diviser-pdf", label: "Diviser PDF", desc: "Separez un PDF par pages.", icon: "SPL" },
-  { href: "/compresser-pdf", label: "Compresser PDF", desc: "Reduisez la taille.", icon: "ZIP" },
+  { href: "/diviser-pdf", label: "Diviser PDF", desc: "Séparez un PDF par pages.", icon: "SPL" },
+  { href: "/compresser-pdf", label: "Compresser PDF", desc: "Réduisez la taille.", icon: "ZIP" },
   { href: "/convertir-jpg-en-pdf", label: "JPG en PDF", desc: "Images vers document PDF.", icon: "PDF" },
   { href: "/convertir-png-en-pdf", label: "PNG en PDF", desc: "Captures vers PDF.", icon: "PDF" },
   { href: "/convertir-pdf-en-jpg", label: "PDF en JPG", desc: "Extrayez les pages en images.", icon: "JPG" },
-  { href: "/convertir-pdf-en-png", label: "PDF en PNG", desc: "Pages en PNG haute qualite.", icon: "PNG" },
+  { href: "/convertir-pdf-en-png", label: "PDF en PNG", desc: "Pages en PNG haute qualité.", icon: "PNG" },
 ];
 
 const colorSchemes = {
@@ -195,8 +195,8 @@ export default function Home() {
             {" "}en ligne
           </h1>
           <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
-            Convertissez, compressez, redimensionnez et editez vos images gratuitement.
-            Sans inscription. Aucun fichier conserve.
+            Convertissez, compressez, redimensionnez et éditez vos images gratuitement.
+            Sans inscription. Aucun fichier conservé.
           </p>
         </div>
       </div>
@@ -210,7 +210,7 @@ export default function Home() {
 
         <ToolSection title="Convertir des images" tag="Tous les formats" tools={convertTools} scheme="green" />
 
-        <ToolSection title="Editer des images" tag="Retouche" tools={editTools} scheme="purple" />
+        <ToolSection title="Éditer des images" tag="Retouche" tools={editTools} scheme="purple" />
 
         <AdBanner slot="SLOT_2" format="horizontal" />
 
@@ -221,8 +221,8 @@ export default function Home() {
           <h2 className="text-2xl font-bold text-gray-900 tracking-tight mb-8">Guides</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {[
-              { href: "/convertir-heic-en-jpg-sur-iphone", title: "Convertir HEIC sur iPhone", desc: "Changez le format par defaut ou convertissez vos photos." },
-              { href: "/convertir-heic-en-jpg-sur-mac", title: "Convertir HEIC sur Mac", desc: "Utilisez Apercu, Automator ou notre outil en ligne." },
+              { href: "/convertir-heic-en-jpg-sur-iphone", title: "Convertir HEIC sur iPhone", desc: "Changez le format par défaut ou convertissez vos photos." },
+              { href: "/convertir-heic-en-jpg-sur-mac", title: "Convertir HEIC sur Mac", desc: "Utilisez Aperçu, Automator ou notre outil en ligne." },
               { href: "/convertir-heic-en-jpg-sur-windows", title: "Convertir HEIC sur Windows", desc: "Ouvrez et convertissez vos fichiers HEIC sur PC." },
               { href: "/convertir-heic-en-jpg-sur-android", title: "Convertir HEIC sur Android", desc: "Solutions pour ouvrir les photos iPhone sur Android." },
             ].map((guide) => (
@@ -247,12 +247,12 @@ export default function Home() {
 
         {/* Blog */}
         <section>
-          <h2 className="text-2xl font-bold text-gray-900 tracking-tight mb-8">Articles recents</h2>
+          <h2 className="text-2xl font-bold text-gray-900 tracking-tight mb-8">Articles récents</h2>
           <div className="grid md:grid-cols-3 gap-4">
             {[
-              { href: "/blog/heic-vs-jpg-quelle-difference", title: "HEIC vs JPG : quelle difference ?", desc: "Comparaison complete entre les deux formats." },
-              { href: "/blog/ouvrir-fichier-heic-windows", title: "Ouvrir un fichier HEIC sur Windows", desc: "4 methodes gratuites pour vos fichiers HEIC." },
-              { href: "/blog/convertir-heic-en-jpg-sans-perte-qualite", title: "Convertir sans perte de qualite", desc: "Les meilleures techniques de conversion." },
+              { href: "/blog/heic-vs-jpg", title: "HEIC vs JPG : lequel choisir ?", desc: "Comparatif détaillé entre les deux formats." },
+              { href: "/blog/format-webp", title: "Tout savoir sur le format WebP", desc: "Le format recommandé par Google pour le web." },
+              { href: "/blog/comment-convertir-heic-en-jpg", title: "Convertir HEIC en JPG (guide)", desc: "Guide étape par étape, gratuit." },
             ].map((post) => (
               <Link
                 key={post.href}

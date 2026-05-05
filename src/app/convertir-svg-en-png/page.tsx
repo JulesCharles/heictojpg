@@ -5,7 +5,7 @@ import ImageConvertForm from "@/components/ImageConvertForm";
 export const metadata: Metadata = {
   title: "Convertir SVG en PNG en ligne gratuit | heictojpg.fr",
   description:
-    "Convertissez vos fichiers SVG en PNG haute qualite en un clic. Outil gratuit, rapide et sans inscription.",
+    "Convertissez vos fichiers SVG en PNG haute qualité en un clic. Outil gratuit, rapide et sans inscription.",
   keywords: [
     "convertir svg en png",
     "svg to png",
@@ -31,7 +31,7 @@ const jsonLd = {
   "@type": "WebApplication",
   name: "Convertisseur SVG en PNG",
   url: "https://heictojpg.fr/convertir-svg-en-png",
-  description: "Convertissez vos fichiers SVG en PNG haute qualite gratuitement en ligne.",
+  description: "Convertissez vos fichiers SVG en PNG haute qualité gratuitement en ligne.",
   applicationCategory: "MultimediaApplication",
   operatingSystem: "Tout navigateur web",
   offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
@@ -50,8 +50,8 @@ export default function ConvertirSvgEnPng() {
           Convertir SVG en PNG gratuitement
         </h1>
         <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-          Transformez vos fichiers vectoriels SVG en images PNG haute resolution.
-          Notre outil en ligne est rapide, securise et entierement gratuit.
+          Transformez vos fichiers vectoriels SVG en images PNG haute résolution.
+          Notre outil en ligne est rapide, sécurisé et entièrement gratuit.
           Aucune inscription requise.
         </p>
       </div>
@@ -60,13 +60,13 @@ export default function ConvertirSvgEnPng() {
         <ImageConvertForm
           title="Convertir SVG en PNG"
           acceptedFormats=".svg,image/svg+xml"
-          acceptLabel="Selectionner un fichier SVG"
+          acceptLabel="Sélectionner un fichier SVG"
           outputFormat="png"
           apiEndpoint="/api/svg-to-png"
           outputExtension=".png"
           acceptedExtensions={[".svg"]}
           acceptedMimeTypes={["image/svg+xml"]}
-          errorMessage="Veuillez selectionner un fichier SVG valide."
+          errorMessage="Veuillez sélectionner un fichier SVG valide."
         />
       </div>
 
@@ -76,23 +76,23 @@ export default function ConvertirSvgEnPng() {
         </h2>
         <div className="prose prose-gray max-w-none">
           <p className="text-gray-600 mb-4">
-            Le format SVG (Scalable Vector Graphics) est ideal pour les logos, icones et
-            illustrations car il est vectoriel et donc redimensionnable sans perte de qualite.
+            Le format SVG (Scalable Vector Graphics) est idéal pour les logos, icônes et
+            illustrations car il est vectoriel et donc redimensionnable sans perte de qualité.
             Cependant, de nombreux logiciels et plateformes ne supportent pas le SVG.
           </p>
           <p className="text-gray-600 mb-4">
             En convertissant vos SVG en PNG, vous obtenez des images compatibles avec tous
-            les navigateurs, applications de messagerie, reseaux sociaux et logiciels de
+            les navigateurs, applications de messagerie, réseaux sociaux et logiciels de
             retouche photo.
           </p>
           <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">
             Cas d&apos;utilisation
           </h3>
           <ul className="text-gray-600 space-y-2">
-            <li>&bull; <strong>Reseaux sociaux :</strong> Instagram, Facebook et Twitter n&apos;acceptent pas les SVG</li>
-            <li>&bull; <strong>Presentations :</strong> PowerPoint et Google Slides preferent le PNG</li>
+            <li>&bull; <strong>Réseaux sociaux :</strong> Instagram, Facebook et Twitter n&apos;acceptent pas les SVG</li>
+            <li>&bull; <strong>Présentations :</strong> PowerPoint et Google Slides préfèrent le PNG</li>
             <li>&bull; <strong>Email :</strong> Les clients mail n&apos;affichent pas toujours les SVG correctement</li>
-            <li>&bull; <strong>Impression :</strong> Le PNG offre une resolution fixe adaptee a l&apos;impression</li>
+            <li>&bull; <strong>Impression :</strong> Le PNG offre une résolution fixe adaptée à l&apos;impression</li>
           </ul>
         </div>
       </div>
@@ -106,7 +106,7 @@ export default function ConvertirSvgEnPng() {
           </Link>
           <Link href="/convertir-png-en-jpg" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">PNG &rarr; JPG</h3>
-            <p className="text-sm text-gray-600">Reduisez la taille de vos PNG en JPG.</p>
+            <p className="text-sm text-gray-600">Réduisez la taille de vos PNG en JPG.</p>
           </Link>
           <Link href="/redimensionner-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">Redimensionner</h3>
@@ -114,7 +114,7 @@ export default function ConvertirSvgEnPng() {
           </Link>
           <Link href="/compresser-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">Compresser image</h3>
-            <p className="text-sm text-gray-600">Reduisez le poids de vos images.</p>
+            <p className="text-sm text-gray-600">Réduisez le poids de vos images.</p>
           </Link>
         </div>
       </div>

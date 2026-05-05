@@ -39,7 +39,7 @@ export default function CropClient() {
           <Input type="number" value={height} onChange={(e) => setHeight(e.target.value)} placeholder="500" />
         </div>
       </div>
-      <p className="text-xs text-gray-500">Entrez les coordonnees et dimensions de la zone a conserver en pixels.</p>
+      <p className="text-xs text-gray-500">Entrez les coordonnées et dimensions de la zone à conserver en pixels.</p>
     </EditImageForm>
   );
 }

@@ -35,17 +35,17 @@ export default function Client() {
 
   return (
     <Card className="w-full max-w-lg mx-auto shadow-lg">
-      <CardHeader className="text-center"><CardTitle className="text-2xl text-gray-800">Proteger un PDF</CardTitle><p className="text-sm text-gray-500 mt-1">{conversionsLeft} utilisation(s) gratuite(s) restante(s)</p></CardHeader>
+      <CardHeader className="text-center"><CardTitle className="text-2xl text-gray-800">Protéger un PDF</CardTitle><p className="text-sm text-gray-500 mt-1">{conversionsLeft} utilisation(s) gratuite(s) restante(s)</p></CardHeader>
       <CardContent className="space-y-6">
-        <div className="space-y-2"><Label className="text-sm font-medium">Selectionner un PDF</Label><div className="relative"><Input type="file" accept=".pdf" onChange={handleFile} className="cursor-pointer" /><Upload className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" /></div></div>
+        <div className="space-y-2"><Label className="text-sm font-medium">Sélectionner un PDF</Label><div className="relative"><Input type="file" accept=".pdf" onChange={handleFile} className="cursor-pointer" /><Upload className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" /></div></div>
         {file && <div className="p-3 bg-blue-50 rounded-lg"><p className="text-sm text-blue-800"><strong>Fichier :</strong> {file.name}</p></div>}
-        <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg"><p className="text-sm text-amber-800"><Lock className="inline h-4 w-4 mr-1" />Note : cette version optimise et nettoie les metadonnees du PDF. La protection par mot de passe complete sera disponible prochainement.</p></div>
+        <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg"><p className="text-sm text-amber-800"><Lock className="inline h-4 w-4 mr-1" />Note : cette version optimise et nettoie les métadonnées du PDF. La protection par mot de passe complète sera disponible prochainement.</p></div>
         {error && <div className="p-3 bg-red-50 border border-red-200 rounded-lg"><p className="text-sm text-red-800">{error}</p></div>}
         <div className="flex gap-4">
-          <Button onClick={handleSubmit} disabled={!file || processing} className="flex-1">{processing ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" />Traitement...</> : "Proteger"}</Button>
-          {downloadUrl && <Button onClick={() => { const a = document.createElement("a"); a.href = downloadUrl; a.download = "protege.pdf"; a.click(); }} variant="outline" className="flex-1"><Download className="mr-2 h-4 w-4" />Telecharger</Button>}
+          <Button onClick={handleSubmit} disabled={!file || processing} className="flex-1">{processing ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" />Traitement...</> : "Protéger"}</Button>
+          {downloadUrl && <Button onClick={() => { const a = document.createElement("a"); a.href = downloadUrl; a.download = "protege.pdf"; a.click(); }} variant="outline" className="flex-1"><Download className="mr-2 h-4 w-4" />Télécharger</Button>}
         </div>
-        {downloadUrl && <div className="p-3 bg-green-50 border border-green-200 rounded-lg"><p className="text-sm text-green-800">PDF optimise et nettoye !</p></div>}
+        {downloadUrl && <div className="p-3 bg-green-50 border border-green-200 rounded-lg"><p className="text-sm text-green-800">PDF optimisé et nettoyé !</p></div>}
       </CardContent>
     </Card>
   );

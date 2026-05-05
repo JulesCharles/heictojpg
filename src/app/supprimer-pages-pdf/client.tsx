@@ -21,7 +21,7 @@ export default function Client() {
   };
 
   const handleSubmit = async () => {
-    if (isLimited) { setError("Limite atteinte ! Passez a Pro pour un usage illimite."); return; }
+    if (isLimited) { setError("Limite atteinte ! Passez à Pro pour un usage illimité."); return; }
     if (!file) return;
     setProcessing(true); setError(null); setDownloadUrl(null);
     try {
@@ -38,15 +38,15 @@ export default function Client() {
     <Card className="w-full max-w-lg mx-auto shadow-lg">
       <CardHeader className="text-center"><CardTitle className="text-2xl text-gray-800">Supprimer des pages</CardTitle><p className="text-sm text-gray-500 mt-1">{conversionsLeft} utilisation(s) gratuite(s) restante(s)</p></CardHeader>
       <CardContent className="space-y-6">
-        <div className="space-y-2"><Label className="text-sm font-medium">Selectionner un PDF</Label><div className="relative"><Input type="file" accept=".pdf" onChange={handleFile} className="cursor-pointer" /><Upload className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" /></div></div>
+        <div className="space-y-2"><Label className="text-sm font-medium">Sélectionner un PDF</Label><div className="relative"><Input type="file" accept=".pdf" onChange={handleFile} className="cursor-pointer" /><Upload className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" /></div></div>
         {file && <div className="p-3 bg-blue-50 rounded-lg"><p className="text-sm text-blue-800"><strong>Fichier :</strong> {file.name}</p></div>}
-        <div className="space-y-2"><Label className="text-sm font-medium">Pages a supprimer</Label><Input type="text" value={pages} onChange={(e) => setPages(e.target.value)} placeholder="ex: 1, 3, 5" /><p className="text-xs text-gray-500">Separez les numeros par des virgules</p></div>
+        <div className="space-y-2"><Label className="text-sm font-medium">Pages à supprimer</Label><Input type="text" value={pages} onChange={(e) => setPages(e.target.value)} placeholder="ex: 1, 3, 5" /><p className="text-xs text-gray-500">Séparez les numéros par des virgules</p></div>
         {error && <div className="p-3 bg-red-50 border border-red-200 rounded-lg"><p className="text-sm text-red-800">{error}</p>{isLimited && <a href="/pricing" className="text-sm text-blue-600 font-medium hover:underline mt-1 inline-block">Voir les offres Pro &rarr;</a>}</div>}
         <div className="flex gap-4">
           <Button onClick={handleSubmit} disabled={!file || processing} className="flex-1">{processing ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" />Traitement...</> : "Supprimer"}</Button>
-          {downloadUrl && <Button onClick={() => { const a = document.createElement("a"); a.href = downloadUrl; a.download = "modifie.pdf"; a.click(); }} variant="outline" className="flex-1"><Download className="mr-2 h-4 w-4" />Telecharger</Button>}
+          {downloadUrl && <Button onClick={() => { const a = document.createElement("a"); a.href = downloadUrl; a.download = "modifie.pdf"; a.click(); }} variant="outline" className="flex-1"><Download className="mr-2 h-4 w-4" />Télécharger</Button>}
         </div>
-        {downloadUrl && <div className="p-3 bg-green-50 border border-green-200 rounded-lg"><p className="text-sm text-green-800">Pages supprimees !</p></div>}
+        {downloadUrl && <div className="p-3 bg-green-50 border border-green-200 rounded-lg"><p className="text-sm text-green-800">Pages supprimées !</p></div>}
       </CardContent>
     </Card>
   );

@@ -4,7 +4,7 @@ import HeicConvertForm from "@/components/HeicConvertForm";
 
 export const metadata: Metadata = {
   title: "Convertir HEIC en TIFF en ligne gratuit | heictojpg.fr",
-  description: "Convertissez vos photos iPhone HEIC en TIFF haute qualite. Format professionnel pour l'impression et la retouche. Gratuit, sans inscription.",
+  description: "Convertissez vos photos iPhone HEIC en TIFF haute qualité. Format professionnel pour l'impression et la retouche. Gratuit, sans inscription.",
   keywords: ["convertir heic en tiff", "heic to tiff", "heic tiff gratuit", "photo iphone tiff"],
   openGraph: {
     type: "website", locale: "fr_FR",
@@ -32,7 +32,7 @@ export default function ConvertirHeicEnTiff() {
         <h1 className="text-4xl font-bold text-gray-800 mb-6">Convertir HEIC en TIFF gratuitement</h1>
         <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
           Transformez vos photos iPhone HEIC en TIFF, le format de reference pour l&apos;impression professionnelle
-          et la retouche photo avancee. Qualite maximale sans compression destructrice.
+          et la retouche photo avancée. Qualité maximale sans compression destructrice.
         </p>
       </div>
       <div className="mb-16">
@@ -43,14 +43,14 @@ export default function ConvertirHeicEnTiff() {
         <div className="prose prose-gray max-w-none">
           <p className="text-gray-600 mb-4">
             Le TIFF (Tagged Image File Format) est le format de reference dans le monde de l&apos;impression
-            et de la photographie professionnelle. Il offre une qualite sans perte et supporte les
-            espaces colorimétriques avances (CMYK, 16 bits).
+            et de la photographie professionnelle. Il offre une qualité sans perte et supporte les
+            espaces colorimétriques avancés (CMYK, 16 bits).
           </p>
           <ul className="text-gray-600 space-y-2">
-            <li>&bull; <strong>Impression pro :</strong> format prefere des imprimeurs et graphistes</li>
+            <li>&bull; <strong>Impression pro :</strong> format préféré des imprimeurs et graphistes</li>
             <li>&bull; <strong>Retouche :</strong> compatible Photoshop, Lightroom, GIMP, Affinity</li>
-            <li>&bull; <strong>Archivage :</strong> conservation sans perte de la qualite originale</li>
-            <li>&bull; <strong>16 bits :</strong> plus de donnees colorimétriques pour la retouche</li>
+            <li>&bull; <strong>Archivage :</strong> conservation sans perte de la qualité originale</li>
+            <li>&bull; <strong>16 bits :</strong> plus de données colorimétriques pour la retouche</li>
           </ul>
         </div>
       </div>
@@ -63,15 +63,15 @@ export default function ConvertirHeicEnTiff() {
           </Link>
           <Link href="/convertir-heic-en-png" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">HEIC &rarr; PNG</h3>
-            <p className="text-sm text-gray-600">Qualite sans perte avec transparence.</p>
+            <p className="text-sm text-gray-600">Qualité sans perte avec transparence.</p>
           </Link>
           <Link href="/convertir-heic-en-webp" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">HEIC &rarr; WebP</h3>
-            <p className="text-sm text-gray-600">Format optimise pour le web.</p>
+            <p className="text-sm text-gray-600">Format optimisé pour le web.</p>
           </Link>
           <Link href="/convertir-heic-en-pdf" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">HEIC &rarr; PDF</h3>
-            <p className="text-sm text-gray-600">Integrez vos photos dans un document.</p>
+            <p className="text-sm text-gray-600">Intégrez vos photos dans un document.</p>
           </Link>
         </div>
       </div>

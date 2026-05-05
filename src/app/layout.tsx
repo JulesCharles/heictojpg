@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     default: "Outils image et PDF en ligne gratuits | heictojpg.fr",
     template: "%s",
   },
-  description: "Convertissez, compressez et editez vos images en ligne gratuitement. HEIC, JPG, PNG, WebP, SVG, PDF. Sans inscription, aucun fichier conserve.",
+  description: "Convertissez, compressez et éditez vos images en ligne gratuitement. HEIC, JPG, PNG, WebP, SVG, PDF. Sans inscription, aucun fichier conservé.",
   keywords: ["convertir heic en jpg", "heic to jpg", "conversion heic", "photo iphone jpg", "heic gratuit", "convertisseur heic"],
   authors: [{ name: "heictojpg.fr" }],
   creator: "heictojpg.fr",

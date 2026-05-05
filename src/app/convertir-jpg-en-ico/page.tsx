@@ -4,15 +4,15 @@ import ImageConvertForm from "@/components/ImageConvertForm";
 
 export const metadata: Metadata = {
   title: "Convertir JPG en ICO (favicon) gratuit | heictojpg.fr",
-  description: "Creez un favicon ICO a partir d'une photo JPG. Multi-tailles 16x16 a 256x256. Gratuit, sans inscription.",
-  keywords: ["convertir jpg en ico","jpg to ico","jpg ico gratuit","creer favicon jpg","favicon depuis photo"],
+  description: "Créez un favicon ICO à partir d'une photo JPG. Multi-tailles 16x16 à 256x256. Gratuit, sans inscription.",
+  keywords: ["convertir jpg en ico","jpg to ico","jpg ico gratuit","créer favicon jpg","favicon depuis photo"],
   openGraph: {
     type: "website",
     locale: "fr_FR",
     url: "https://heictojpg.fr/convertir-jpg-en-ico",
     siteName: "heictojpg.fr",
     title: "Convertir JPG en ICO (favicon) gratuitement en ligne",
-    description: "Creez un favicon ICO a partir d'une photo JPG. Multi-tailles 16x16 a 256x256. Gratuit, sans inscription.",
+    description: "Créez un favicon ICO à partir d'une photo JPG. Multi-tailles 16x16 à 256x256. Gratuit, sans inscription.",
   },
   alternates: { canonical: "https://heictojpg.fr/convertir-jpg-en-ico" },
 };
@@ -24,7 +24,7 @@ const jsonLd = {
       "@type": "WebApplication",
       name: "Convertisseur JPG en ICO",
       url: "https://heictojpg.fr/convertir-jpg-en-ico",
-      description: "Creez un favicon ICO a partir d'une photo JPG. Multi-tailles 16x16 a 256x256. Gratuit, sans inscription.",
+      description: "Créez un favicon ICO à partir d'une photo JPG. Multi-tailles 16x16 à 256x256. Gratuit, sans inscription.",
       applicationCategory: "MultimediaApplication",
       operatingSystem: "Tout navigateur web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
@@ -35,13 +35,13 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "Mon logo JPG n'est pas carre, que faire ?",
-          acceptedAnswer: { "@type": "Answer", text: "L'outil recadre automatiquement votre image en carre en gardant le centre. Pour un meilleur controle, recadrez d'abord votre image en carre avec notre outil de recadrage, puis convertissez en ICO." },
+          name: "Mon logo JPG n'est pas carré, que faire ?",
+          acceptedAnswer: { "@type": "Answer", text: "L'outil recadre automatiquement votre image en carré en gardant le centre. Pour un meilleur contrôle, recadrez d'abord votre image en carré avec notre outil de recadrage, puis convertissez en ICO." },
         },
         {
           "@type": "Question",
-          name: "La qualite est-elle suffisante pour un favicon ?",
-          acceptedAnswer: { "@type": "Answer", text: "Oui, meme a 16x16 pixels, notre outil optimise le rendu pour obtenir le meilleur resultat possible a partir de votre JPG." },
+          name: "La qualité est-elle suffisante pour un favicon ?",
+          acceptedAnswer: { "@type": "Answer", text: "Oui, même à 16x16 pixels, notre outil optimise le rendu pour obtenir le meilleur résultat possible à partir de votre JPG." },
         }
       ],
     },
@@ -56,7 +56,7 @@ export default function Page() {
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-800 mb-6">Convertir JPG en ICO (favicon) gratuitement</h1>
         <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-          Creez un fichier favicon ICO a partir de n'importe quelle image JPG. Parfait pour creer rapidement un favicon a partir d'un logo ou d'une photo. Le fichier genere contient toutes les tailles standard.
+          Créez un fichier favicon ICO à partir de n'importe quelle image JPG. Parfait pour créer rapidement un favicon à partir d'un logo ou d'une photo. Le fichier généré contient toutes les tailles standard.
         </p>
       </div>
 
@@ -64,37 +64,37 @@ export default function Page() {
         <ImageConvertForm
           title="JPG &rarr; ICO"
           acceptedFormats=".jpg,.jpeg,image/jpeg"
-          acceptLabel="Selectionner un fichier JPG"
+          acceptLabel="Sélectionner un fichier JPG"
           outputFormat="ico"
           apiEndpoint="/api/convert-image"
           outputExtension=".ico"
           acceptedMimeTypes={["image/jpeg"]}
           acceptedExtensions={[".jpg",".jpeg"]}
-          errorMessage="Veuillez selectionner un fichier JPG valide."
+          errorMessage="Veuillez sélectionner un fichier JPG valide."
         />
       </div>
 
       <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Creer un favicon a partir d'une photo JPG</h2>
+        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Créer un favicon à partir d'une photo JPG</h2>
         <div className="prose prose-gray max-w-none">
-          <p className="text-gray-600 mb-4">Vous avez un logo ou une image en JPG et souhaitez en faire un favicon pour votre site web ? Notre outil genere automatiquement un fichier ICO multi-tailles a partir de votre image JPG.</p>
-          <p className="text-gray-600 mb-4">L'image est automatiquement recadree et redimensionnee pour chaque taille standard de favicon : 16x16, 32x32, 48x48, 64x64, 128x128 et 256x256 pixels. Le recadrage est centre pour conserver le sujet principal de votre image.</p>
-          <p className="text-gray-600 mb-4">Pour un resultat optimal, utilisez une image carree avec le sujet bien centre. Si votre image est rectangulaire, les bords seront coupes pour obtenir un format carre.</p>
+          <p className="text-gray-600 mb-4">Vous avez un logo ou une image en JPG et souhaitez en faire un favicon pour votre site web ? Notre outil génère automatiquement un fichier ICO multi-tailles à partir de votre image JPG.</p>
+          <p className="text-gray-600 mb-4">L'image est automatiquement recadrée et redimensionnée pour chaque taille standard de favicon : 16x16, 32x32, 48x48, 64x64, 128x128 et 256x256 pixels. Le recadrage est centré pour conserver le sujet principal de votre image.</p>
+          <p className="text-gray-600 mb-4">Pour un résultat optimal, utilisez une image carrée avec le sujet bien centré. Si votre image est rectangulaire, les bords seront coupés pour obtenir un format carré.</p>
         </div>
       </div>
 
       <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Questions frequentes</h2>
+        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Questions fréquentes</h2>
         <div className="prose prose-gray max-w-none">
-          
+
           <div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">Mon logo JPG n'est pas carre, que faire ?</h3>
-            <p className="text-gray-600 mb-4">L'outil recadre automatiquement votre image en carre en gardant le centre. Pour un meilleur controle, recadrez d'abord votre image en carre avec notre outil de recadrage, puis convertissez en ICO.</p>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">Mon logo JPG n'est pas carré, que faire ?</h3>
+            <p className="text-gray-600 mb-4">L'outil recadre automatiquement votre image en carré en gardant le centre. Pour un meilleur contrôle, recadrez d'abord votre image en carré avec notre outil de recadrage, puis convertissez en ICO.</p>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">La qualite est-elle suffisante pour un favicon ?</h3>
-            <p className="text-gray-600 mb-4">Oui, meme a 16x16 pixels, notre outil optimise le rendu pour obtenir le meilleur resultat possible a partir de votre JPG.</p>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">La qualité est-elle suffisante pour un favicon ?</h3>
+            <p className="text-gray-600 mb-4">Oui, même à 16x16 pixels, notre outil optimise le rendu pour obtenir le meilleur résultat possible à partir de votre JPG.</p>
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@ export default function Page() {
           </Link>
           <Link href="/compresser-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">Compresser image</h3>
-            <p className="text-sm text-gray-600">Reduisez le poids de vos images.</p>
+            <p className="text-sm text-gray-600">Réduisez le poids de vos images.</p>
           </Link>
           <Link href="/redimensionner-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">Redimensionner</h3>

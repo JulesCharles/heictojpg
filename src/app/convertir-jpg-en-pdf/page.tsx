@@ -249,6 +249,13 @@ export default function ConvertirJpgEnPdf() {
           </Link>
         </div>
       </div>
+
+      {/* Article recommande */}
+      <div className="bg-blue-50 rounded-lg p-6 mt-8">
+        <h3 className="font-semibold text-gray-800 mb-2">Vous cherchez une alternative gratuite a iLovePDF ?</h3>
+        <p className="text-sm text-gray-600 mb-3">Decouvrez notre comparatif des 7 meilleures alternatives gratuites pour manipuler vos PDF en ligne.</p>
+        <Link href="/blog/ilovepdf-alternatives-gratuites" className="text-sm font-medium text-blue-600 hover:text-blue-800">Lire l&apos;article &rarr;</Link>
+      </div>
     </div>
   );
 }

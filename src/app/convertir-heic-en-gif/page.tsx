@@ -32,7 +32,7 @@ export default function ConvertirHeicEnGif() {
         <h1 className="text-4xl font-bold text-gray-800 mb-6">Convertir HEIC en GIF gratuitement</h1>
         <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
           Transformez vos photos iPhone HEIC en images GIF compatibles avec absolument
-          toutes les plateformes. Le GIF est le format le plus universellement supporte.
+          toutes les plateformes. Le GIF est le format le plus universellement supporté.
         </p>
       </div>
       <div className="mb-16">
@@ -43,13 +43,13 @@ export default function ConvertirHeicEnGif() {
         <div className="prose prose-gray max-w-none">
           <p className="text-gray-600 mb-4">
             Le format GIF (Graphics Interchange Format) est l&apos;un des plus anciens formats d&apos;image du web.
-            Il est supporte par absolument tous les navigateurs, clients email et systemes d&apos;exploitation.
+            Il est supporté par absolument tous les navigateurs, clients email et systèmes d&apos;exploitation.
           </p>
           <ul className="text-gray-600 space-y-2">
-            <li>&bull; <strong>Compatibilite totale :</strong> fonctionne partout, meme les anciens systemes</li>
+            <li>&bull; <strong>Compatibilité totale :</strong> fonctionne partout, même les anciens systèmes</li>
             <li>&bull; <strong>Email :</strong> tous les clients email affichent les GIF</li>
             <li>&bull; <strong>Transparence :</strong> supporte la transparence simple (1 bit)</li>
-            <li>&bull; <strong>Limitation :</strong> 256 couleurs max, donc preferable pour les graphiques simples</li>
+            <li>&bull; <strong>Limitation :</strong> 256 couleurs max, donc préférable pour les graphiques simples</li>
           </ul>
         </div>
       </div>
@@ -62,11 +62,11 @@ export default function ConvertirHeicEnGif() {
           </Link>
           <Link href="/convertir-heic-en-png" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">HEIC &rarr; PNG</h3>
-            <p className="text-sm text-gray-600">Qualite sans perte avec transparence.</p>
+            <p className="text-sm text-gray-600">Qualité sans perte avec transparence.</p>
           </Link>
           <Link href="/convertir-heic-en-webp" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">HEIC &rarr; WebP</h3>
-            <p className="text-sm text-gray-600">Format optimise pour le web.</p>
+            <p className="text-sm text-gray-600">Format optimisé pour le web.</p>
           </Link>
           <Link href="/convertir-heic-en-tiff" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">HEIC &rarr; TIFF</h3>

@@ -4,15 +4,15 @@ import Client from "./client";
 
 export const metadata: Metadata = {
   title: "Supprimer le fond d'une image par IA | heictojpg.fr",
-  description: "Supprimez automatiquement l'arriere-plan de vos photos grace a l'intelligence artificielle. Resultat en PNG transparent. Gratuit, sans inscription.",
-  keywords: ["supprimer fond image", "supprimer arriere plan", "remove background", "fond transparent", "detourage photo", "enlever fond photo", "detourage automatique"],
+  description: "Supprimez automatiquement l'arrière-plan de vos photos grâce à l'intelligence artificielle. Résultat en PNG transparent. Gratuit, sans inscription.",
+  keywords: ["supprimer fond image", "supprimer arrière plan", "remove background", "fond transparent", "détourage photo", "enlever fond photo", "détourage automatique"],
   openGraph: {
     type: "website",
     locale: "fr_FR",
     url: "https://heictojpg.fr/supprimer-fond-image",
     siteName: "heictojpg.fr",
     title: "Supprimer le fond d'une image gratuitement",
-    description: "Supprimez automatiquement l'arriere-plan de vos photos. Gratuit, sans inscription.",
+    description: "Supprimez automatiquement l'arrière-plan de vos photos. Gratuit, sans inscription.",
   },
   alternates: { canonical: "https://heictojpg.fr/supprimer-fond-image" },
 };
@@ -24,7 +24,7 @@ const jsonLd = {
       "@type": "WebApplication",
       name: "Supprimer le fond d'une image",
       url: "https://heictojpg.fr/supprimer-fond-image",
-      description: "Supprimez automatiquement l'arriere-plan de vos photos grace a l'IA.",
+      description: "Supprimez automatiquement l'arrière-plan de vos photos grâce à l'IA.",
       applicationCategory: "MultimediaApplication",
       operatingSystem: "Tout navigateur web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
@@ -38,7 +38,7 @@ const jsonLd = {
           name: "Comment fonctionne la suppression de fond ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Notre outil utilise un modele d'intelligence artificielle qui analyse votre image, detecte le sujet principal (personne, objet, animal) et supprime automatiquement l'arriere-plan. Le resultat est une image PNG avec un fond transparent.",
+            text: "Notre outil utilise un modèle d'intelligence artificielle qui analyse votre image, détecte le sujet principal (personne, objet, animal) et supprime automatiquement l'arrière-plan. Le résultat est une image PNG avec un fond transparent.",
           },
         },
         {
@@ -46,7 +46,7 @@ const jsonLd = {
           name: "Quels types d'images fonctionnent le mieux ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Les photos avec un sujet bien defini sur un fond relativement uniforme donnent les meilleurs resultats : portraits, photos de produits, objets isoles. Les scenes complexes avec plusieurs sujets ou des fonds tres charges peuvent donner des resultats moins precis.",
+            text: "Les photos avec un sujet bien défini sur un fond relativement uniforme donnent les meilleurs résultats : portraits, photos de produits, objets isolés. Les scènes complexes avec plusieurs sujets ou des fonds très chargés peuvent donner des résultats moins précis.",
           },
         },
         {
@@ -54,15 +54,15 @@ const jsonLd = {
           name: "Le traitement est-il gratuit ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Oui, notre outil de suppression de fond est entierement gratuit, sans inscription et sans filigrane. Le traitement s'effectue directement sur nos serveurs sans aucune API externe payante.",
+            text: "Oui, notre outil de suppression de fond est entièrement gratuit, sans inscription et sans filigrane. Le traitement s'effectue directement sur nos serveurs sans aucune API externe payante.",
           },
         },
         {
           "@type": "Question",
-          name: "Mes images sont-elles conservees ?",
+          name: "Mes images sont-elles conservées ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Non, aucune image n'est conservee sur nos serveurs. Le traitement s'effectue en memoire et toutes les donnees sont supprimees immediatement apres le telechargement du resultat.",
+            text: "Non, aucune image n'est conservée sur nos serveurs. Le traitement s'effectue en mémoire et toutes les données sont supprimées immédiatement après le téléchargement du résultat.",
           },
         },
       ],
@@ -80,16 +80,16 @@ export default function SupprimerFondImage() {
           Supprimer le fond d&apos;une image gratuitement
         </h1>
         <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-          Supprimez automatiquement l&apos;arriere-plan de vos photos grace a l&apos;intelligence artificielle.
-          Obtenez une image PNG avec fond transparent en quelques secondes. Ideal pour les photos de produits
-          e-commerce, les portraits professionnels, les logos et les visuels marketing. Aucun logiciel a installer,
-          aucune competence requise.
+          Supprimez automatiquement l&apos;arrière-plan de vos photos grâce à l&apos;intelligence artificielle.
+          Obtenez une image PNG avec fond transparent en quelques secondes. Idéal pour les photos de produits
+          e-commerce, les portraits professionnels, les logos et les visuels marketing. Aucun logiciel à installer,
+          aucune compétence requise.
         </p>
       </div>
 
       <div className="mb-4 p-4 bg-amber-50 border border-amber-200 rounded-lg max-w-lg mx-auto">
         <p className="text-sm text-amber-800">
-          Le traitement IA peut prendre 10 a 30 secondes selon la taille de l&apos;image. Merci de patienter.
+          Le traitement IA peut prendre 10 à 30 secondes selon la taille de l&apos;image. Merci de patienter.
         </p>
       </div>
 
@@ -103,20 +103,20 @@ export default function SupprimerFondImage() {
         </h2>
         <div className="prose prose-gray max-w-none">
           <p className="text-gray-600 mb-4">
-            Notre outil utilise un modele d&apos;intelligence artificielle entraine sur des millions d&apos;images
-            pour detecter automatiquement le sujet principal de votre photo et le separer de l&apos;arriere-plan.
-            Le modele analyse les contours, les couleurs, la profondeur et la semantique de l&apos;image pour
-            produire un detourage precis, meme autour des cheveux, de la fourrure et des details fins.
+            Notre outil utilise un modèle d&apos;intelligence artificielle entraîné sur des millions d&apos;images
+            pour détecter automatiquement le sujet principal de votre photo et le séparer de l&apos;arrière-plan.
+            Le modèle analyse les contours, les couleurs, la profondeur et la sémantique de l&apos;image pour
+            produire un détourage précis, même autour des cheveux, de la fourrure et des détails fins.
           </p>
           <p className="text-gray-600 mb-4">
             Contrairement aux outils manuels (lasso, baguette magique), l&apos;IA comprend le contenu de l&apos;image.
             Elle sait distinguer une personne d&apos;un mur, un produit d&apos;une table, un animal d&apos;un jardin.
-            Le resultat est un PNG avec transparence que vous pouvez utiliser directement dans vos designs,
-            presentations ou publications.
+            Le résultat est un PNG avec transparence que vous pouvez utiliser directement dans vos designs,
+            présentations ou publications.
           </p>
           <p className="text-gray-600 mb-4">
-            Tout le traitement s&apos;effectue sur nos serveurs — aucune donnee n&apos;est envoyee a des services tiers.
-            Votre image est traitee en memoire et supprimee immediatement apres le telechargement du resultat.
+            Tout le traitement s&apos;effectue sur nos serveurs — aucune donnée n&apos;est envoyée à des services tiers.
+            Votre image est traitée en mémoire et supprimée immédiatement après le téléchargement du résultat.
           </p>
 
           <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">
@@ -125,43 +125,43 @@ export default function SupprimerFondImage() {
           <ul className="text-gray-600 space-y-2">
             <li>&bull; <strong>E-commerce :</strong> photos de produits sur fond blanc ou transparent pour Amazon, Shopify, Etsy</li>
             <li>&bull; <strong>Portraits pro :</strong> photo de profil LinkedIn, CV, badge d&apos;entreprise</li>
-            <li>&bull; <strong>Design :</strong> integrer un sujet dans un nouveau decor, creer des collages</li>
-            <li>&bull; <strong>Marketing :</strong> visuels pour les reseaux sociaux, bannieres publicitaires</li>
-            <li>&bull; <strong>Presentations :</strong> integrer des photos dans des slides sans fond genant</li>
-            <li>&bull; <strong>Logos :</strong> isoler un logo pour l&apos;utiliser sur differents fonds</li>
+            <li>&bull; <strong>Design :</strong> intégrer un sujet dans un nouveau décor, créer des collages</li>
+            <li>&bull; <strong>Marketing :</strong> visuels pour les réseaux sociaux, bannières publicitaires</li>
+            <li>&bull; <strong>Présentations :</strong> intégrer des photos dans des slides sans fond gênant</li>
+            <li>&bull; <strong>Logos :</strong> isoler un logo pour l&apos;utiliser sur différents fonds</li>
           </ul>
 
           <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">
-            Conseils pour un meilleur resultat
+            Conseils pour un meilleur résultat
           </h3>
           <ul className="text-gray-600 space-y-2">
             <li>&bull; Utilisez des photos avec un bon contraste entre le sujet et le fond</li>
-            <li>&bull; Les images bien eclairees donnent de meilleurs resultats</li>
-            <li>&bull; Un sujet unique et bien centre est plus facile a detourer</li>
-            <li>&bull; Evitez les images ou le sujet se confond avec l&apos;arriere-plan</li>
-            <li>&bull; Les images de haute resolution produisent un detourage plus precis</li>
+            <li>&bull; Les images bien éclairées donnent de meilleurs résultats</li>
+            <li>&bull; Un sujet unique et bien centré est plus facile à détourer</li>
+            <li>&bull; Évitez les images où le sujet se confond avec l&apos;arrière-plan</li>
+            <li>&bull; Les images de haute résolution produisent un détourage plus précis</li>
           </ul>
         </div>
       </div>
 
       <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Questions frequentes</h2>
+        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Questions fréquentes</h2>
         <div className="prose prose-gray max-w-none">
           <div>
             <h3 className="text-lg font-semibold text-gray-800 mb-2">Comment fonctionne la suppression de fond ?</h3>
-            <p className="text-gray-600 mb-4">Notre outil utilise un modele d&apos;intelligence artificielle qui analyse votre image, detecte le sujet principal (personne, objet, animal) et supprime automatiquement l&apos;arriere-plan. Le resultat est une image PNG avec un fond transparent.</p>
+            <p className="text-gray-600 mb-4">Notre outil utilise un modèle d&apos;intelligence artificielle qui analyse votre image, détecte le sujet principal (personne, objet, animal) et supprime automatiquement l&apos;arrière-plan. Le résultat est une image PNG avec un fond transparent.</p>
           </div>
           <div>
             <h3 className="text-lg font-semibold text-gray-800 mb-2">Quels types d&apos;images fonctionnent le mieux ?</h3>
-            <p className="text-gray-600 mb-4">Les photos avec un sujet bien defini sur un fond relativement uniforme donnent les meilleurs resultats : portraits, photos de produits, objets isoles. Les scenes complexes avec plusieurs sujets peuvent donner des resultats moins precis.</p>
+            <p className="text-gray-600 mb-4">Les photos avec un sujet bien défini sur un fond relativement uniforme donnent les meilleurs résultats : portraits, photos de produits, objets isolés. Les scènes complexes avec plusieurs sujets peuvent donner des résultats moins précis.</p>
           </div>
           <div>
             <h3 className="text-lg font-semibold text-gray-800 mb-2">Le traitement est-il gratuit ?</h3>
-            <p className="text-gray-600 mb-4">Oui, entierement gratuit, sans inscription et sans filigrane. Le traitement s&apos;effectue sur nos serveurs sans API externe payante.</p>
+            <p className="text-gray-600 mb-4">Oui, entièrement gratuit, sans inscription et sans filigrane. Le traitement s&apos;effectue sur nos serveurs sans API externe payante.</p>
           </div>
           <div>
             <h3 className="text-lg font-semibold text-gray-800 mb-2">Combien de temps prend le traitement ?</h3>
-            <p className="text-gray-600 mb-4">Le traitement prend generalement 10 a 30 secondes selon la taille et la complexite de l&apos;image. Les images plus petites sont traitees plus rapidement.</p>
+            <p className="text-gray-600 mb-4">Le traitement prend généralement 10 à 30 secondes selon la taille et la complexité de l&apos;image. Les images plus petites sont traitées plus rapidement.</p>
           </div>
         </div>
       </div>
@@ -175,11 +175,11 @@ export default function SupprimerFondImage() {
           </Link>
           <Link href="/compresser-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">Compresser image</h3>
-            <p className="text-sm text-gray-600">Reduisez le poids de vos images.</p>
+            <p className="text-sm text-gray-600">Réduisez le poids de vos images.</p>
           </Link>
           <Link href="/recadrer-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">Recadrer image</h3>
-            <p className="text-sm text-gray-600">Decoupez vos images avec precision.</p>
+            <p className="text-sm text-gray-600">Découpez vos images avec précision.</p>
           </Link>
         </div>
       </div>

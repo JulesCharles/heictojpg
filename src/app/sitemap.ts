@@ -1,19 +1,12 @@
 import { MetadataRoute } from 'next'
+import { getAllBlogSlugs } from '@/data/blog'
+import { getAllGlossaryIds } from '@/data/glossary'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://heictojpg.fr'
 
-  const blogSlugs = [
-    'heic-vs-jpg-quelle-difference',
-    'ouvrir-fichier-heic-windows',
-    'meilleurs-formats-image-2025',
-    'convertir-heic-en-jpg-sans-perte-qualite',
-    'pourquoi-apple-utilise-format-heic',
-    'optimiser-photos-web-heic-jpg-webp',
-    'gerer-espace-stockage-iphone-conversion-heic',
-    'supprimer-fond-image-gratuitement',
-    'reduire-taille-photo-iphone',
-  ]
+  const blogSlugs = getAllBlogSlugs()
+  const glossaryIds = getAllGlossaryIds()
 
   const toolSlugs = [
     // HEIC tools
@@ -85,6 +78,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'ajouter-filigrane',
     'supprimer-metadonnees-image',
     'lire-metadonnees-image',
+    // New tools
+    'generer-qr-code',
+    'redimensionner-image-reseaux-sociaux',
+    'convertir-images-en-pdf',
+    'creer-gif',
+    'extraire-texte-image',
   ]
 
   const deviceSlugs = [
@@ -96,7 +95,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: baseUrl, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
-    { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.8 },
     ...blogSlugs.map((slug) => ({
       url: `${baseUrl}/blog/${slug}`,
       lastModified: new Date(),
@@ -111,6 +110,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...deviceSlugs.map((slug) => ({
       url: `${baseUrl}/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
+    { url: `${baseUrl}/format`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    ...glossaryIds.map((id) => ({
+      url: `${baseUrl}/format/${id}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.8,

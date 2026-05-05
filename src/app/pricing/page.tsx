@@ -17,10 +17,10 @@ const features = [
   { name: "Conversions par jour", free: "5", pro: "Illimitees" },
   { name: "Taille max par fichier", free: "10 Mo", pro: "50 Mo" },
   { name: "Conversion batch (multi-fichiers)", free: false, pro: true },
-  { name: "Telechargement ZIP", free: false, pro: true },
+  { name: "Téléchargement ZIP", free: false, pro: true },
   { name: "Tous les outils (HEIC, PNG, WebP, SVG, compression, redimensionnement)", free: true, pro: true },
-  { name: "Qualite personnalisable", free: false, pro: true },
-  { name: "Sans publicite", free: false, pro: true },
+  { name: "Qualité personnalisable", free: false, pro: true },
+  { name: "Sans publicité", free: false, pro: true },
   { name: "Support prioritaire", free: false, pro: true },
 ];
 
@@ -119,7 +119,7 @@ export default async function PricingPage() {
       {/* FAQ */}
       <div className="bg-white rounded-lg shadow-sm p-8 max-w-3xl mx-auto">
         <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
-          Questions frequentes
+          Questions fréquentes
         </h2>
         <div className="space-y-6">
           <div>

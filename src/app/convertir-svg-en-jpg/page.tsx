@@ -4,7 +4,7 @@ import ImageConvertForm from "@/components/ImageConvertForm";
 
 export const metadata: Metadata = {
   title: "Convertir SVG en JPG en ligne gratuit | heictojpg.fr",
-  description: "Convertissez vos fichiers vectoriels SVG en images JPG. Compatible avec tous les appareils et reseaux sociaux. Gratuit, sans inscription.",
+  description: "Convertissez vos fichiers vectoriels SVG en images JPG. Compatible avec tous les appareils et réseaux sociaux. Gratuit, sans inscription.",
   keywords: ["convertir svg en jpg","svg to jpg","svg jpg gratuit","svg vers jpg","vectoriel en jpg"],
   openGraph: {
     type: "website",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     url: "https://heictojpg.fr/convertir-svg-en-jpg",
     siteName: "heictojpg.fr",
     title: "Convertir SVG en JPG gratuitement en ligne",
-    description: "Convertissez vos fichiers vectoriels SVG en images JPG. Compatible avec tous les appareils et reseaux sociaux. Gratuit, sans inscription.",
+    description: "Convertissez vos fichiers vectoriels SVG en images JPG. Compatible avec tous les appareils et réseaux sociaux. Gratuit, sans inscription.",
   },
   alternates: { canonical: "https://heictojpg.fr/convertir-svg-en-jpg" },
 };
@@ -24,7 +24,7 @@ const jsonLd = {
       "@type": "WebApplication",
       name: "Convertisseur SVG en JPG",
       url: "https://heictojpg.fr/convertir-svg-en-jpg",
-      description: "Convertissez vos fichiers vectoriels SVG en images JPG. Compatible avec tous les appareils et reseaux sociaux. Gratuit, sans inscription.",
+      description: "Convertissez vos fichiers vectoriels SVG en images JPG. Compatible avec tous les appareils et réseaux sociaux. Gratuit, sans inscription.",
       applicationCategory: "MultimediaApplication",
       operatingSystem: "Tout navigateur web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
@@ -40,13 +40,13 @@ const jsonLd = {
         },
         {
           "@type": "Question",
-          name: "La qualite du texte est-elle preservee ?",
-          acceptedAnswer: { "@type": "Answer", text: "Oui, notre outil effectue un rendu haute resolution de votre SVG avant la conversion, ce qui garantit que les textes et les details fins restent nets dans le JPG final." },
+          name: "La qualité du texte est-elle préservée ?",
+          acceptedAnswer: { "@type": "Answer", text: "Oui, notre outil effectue un rendu haute résolution de votre SVG avant la conversion, ce qui garantit que les textes et les détails fins restent nets dans le JPG final." },
         },
         {
           "@type": "Question",
           name: "Puis-je choisir la taille de l'image de sortie ?",
-          acceptedAnswer: { "@type": "Answer", text: "L'image est generee a la taille definie dans le fichier SVG. Pour redimensionner le resultat, utilisez ensuite notre outil de redimensionnement d'image." },
+          acceptedAnswer: { "@type": "Answer", text: "L'image est générée à la taille définie dans le fichier SVG. Pour redimensionner le résultat, utilisez ensuite notre outil de redimensionnement d'image." },
         }
       ],
     },
@@ -61,7 +61,7 @@ export default function Page() {
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-800 mb-6">Convertir SVG en JPG gratuitement</h1>
         <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-          Transformez vos fichiers vectoriels SVG en images JPG universellement compatibles. Ideal pour partager vos logos et illustrations sur les reseaux sociaux, par email, ou les integrer dans des documents qui n'acceptent pas le SVG.
+          Transformez vos fichiers vectoriels SVG en images JPG universellement compatibles. Idéal pour partager vos logos et illustrations sur les réseaux sociaux, par email, ou les intégrer dans des documents qui n'acceptent pas le SVG.
         </p>
       </div>
 
@@ -69,43 +69,43 @@ export default function Page() {
         <ImageConvertForm
           title="SVG &rarr; JPG"
           acceptedFormats=".svg,image/svg+xml"
-          acceptLabel="Selectionner un fichier SVG"
+          acceptLabel="Sélectionner un fichier SVG"
           outputFormat="jpg"
           apiEndpoint="/api/convert-image"
           outputExtension=".jpg"
           acceptedMimeTypes={["image/svg+xml"]}
           acceptedExtensions={[".svg"]}
-          errorMessage="Veuillez selectionner un fichier SVG valide."
+          errorMessage="Veuillez sélectionner un fichier SVG valide."
         />
       </div>
 
       <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
         <h2 className="text-2xl font-semibold text-gray-800 mb-6">Pourquoi convertir SVG en JPG ?</h2>
         <div className="prose prose-gray max-w-none">
-          <p className="text-gray-600 mb-4">Le format SVG (Scalable Vector Graphics) est le format de reference pour les graphiques vectoriels sur le web. Il est parfait pour les logos, les icones et les illustrations car il est redimensionnable a l'infini sans perte de qualite.</p>
-          <p className="text-gray-600 mb-4">Cependant, le SVG n'est pas accepte partout. La plupart des reseaux sociaux (Instagram, Facebook, Twitter), des clients email, et des logiciels de bureautique (Word, PowerPoint) ne supportent pas le SVG. Vous devez donc convertir vos fichiers SVG en JPG pour les utiliser dans ces contextes.</p>
-          <p className="text-gray-600 mb-4">Le JPG est le format d'image le plus universellement supporte. Il est reconnu par absolument tous les appareils, navigateurs, applications et systemes d'exploitation. En convertissant votre SVG en JPG, vous garantissez que votre image sera visible et utilisable partout.</p>
-          <p className="text-gray-600 mb-4">Notre outil effectue un rendu haute qualite de votre SVG avec un fond blanc, puis l'exporte en JPG avec une compression optimisee pour conserver la nettete des textes et des lignes.</p>
+          <p className="text-gray-600 mb-4">Le format SVG (Scalable Vector Graphics) est le format de référence pour les graphiques vectoriels sur le web. Il est parfait pour les logos, les icônes et les illustrations car il est redimensionnable à l'infini sans perte de qualité.</p>
+          <p className="text-gray-600 mb-4">Cependant, le SVG n'est pas accepté partout. La plupart des réseaux sociaux (Instagram, Facebook, Twitter), des clients email, et des logiciels de bureautique (Word, PowerPoint) ne supportent pas le SVG. Vous devez donc convertir vos fichiers SVG en JPG pour les utiliser dans ces contextes.</p>
+          <p className="text-gray-600 mb-4">Le JPG est le format d'image le plus universellement supporté. Il est reconnu par absolument tous les appareils, navigateurs, applications et systèmes d'exploitation. En convertissant votre SVG en JPG, vous garantissez que votre image sera visible et utilisable partout.</p>
+          <p className="text-gray-600 mb-4">Notre outil effectue un rendu haute qualité de votre SVG avec un fond blanc, puis l'exporte en JPG avec une compression optimisée pour conserver la netteté des textes et des lignes.</p>
         </div>
       </div>
 
       <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Questions frequentes</h2>
+        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Questions fréquentes</h2>
         <div className="prose prose-gray max-w-none">
-          
+
           <div>
             <h3 className="text-lg font-semibold text-gray-800 mb-2">Le fond du SVG sera-t-il blanc en JPG ?</h3>
             <p className="text-gray-600 mb-4">Oui, le format JPG ne supporte pas la transparence. Les zones transparentes de votre SVG seront remplies avec un fond blanc lors de la conversion.</p>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">La qualite du texte est-elle preservee ?</h3>
-            <p className="text-gray-600 mb-4">Oui, notre outil effectue un rendu haute resolution de votre SVG avant la conversion, ce qui garantit que les textes et les details fins restent nets dans le JPG final.</p>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">La qualité du texte est-elle préservée ?</h3>
+            <p className="text-gray-600 mb-4">Oui, notre outil effectue un rendu haute résolution de votre SVG avant la conversion, ce qui garantit que les textes et les détails fins restent nets dans le JPG final.</p>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold text-gray-800 mb-2">Puis-je choisir la taille de l'image de sortie ?</h3>
-            <p className="text-gray-600 mb-4">L'image est generee a la taille definie dans le fichier SVG. Pour redimensionner le resultat, utilisez ensuite notre outil de redimensionnement d'image.</p>
+            <p className="text-gray-600 mb-4">L'image est générée à la taille définie dans le fichier SVG. Pour redimensionner le résultat, utilisez ensuite notre outil de redimensionnement d'image.</p>
           </div>
         </div>
       </div>
@@ -119,7 +119,7 @@ export default function Page() {
           </Link>
           <Link href="/compresser-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">Compresser image</h3>
-            <p className="text-sm text-gray-600">Reduisez le poids de vos images.</p>
+            <p className="text-sm text-gray-600">Réduisez le poids de vos images.</p>
           </Link>
           <Link href="/redimensionner-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">Redimensionner</h3>

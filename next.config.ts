@@ -24,6 +24,18 @@ const nextConfig: NextConfig = {
         destination: '/blog/gerer-espace-stockage-iphone-conversion-heic',
         permanent: true,
       },
+      // Redirect blog format pages to glossary pages
+      {
+        source: '/blog/format-:id',
+        destination: '/format/:id',
+        permanent: true,
+      },
+      // SEO slug alias for jpg vs png
+      {
+        source: '/blog/jpg-vs-png-lequel-choisir',
+        destination: '/blog/png-vs-jpg',
+        permanent: true,
+      },
     ];
   },
 };

@@ -4,7 +4,7 @@ import ImageConvertForm from "@/components/ImageConvertForm";
 
 export const metadata: Metadata = {
   title: "Convertir ICO en PNG en ligne gratuit | heictojpg.fr",
-  description: "Extrayez et convertissez un fichier favicon ICO en image PNG. Recuperez votre icone en haute qualite. Gratuit, sans inscription.",
+  description: "Extrayez et convertissez un fichier favicon ICO en image PNG. Récupérez votre icône en haute qualité. Gratuit, sans inscription.",
   keywords: ["convertir ico en png","ico to png","ico png gratuit","extraire favicon","favicon en png"],
   openGraph: {
     type: "website",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     url: "https://heictojpg.fr/convertir-ico-en-png",
     siteName: "heictojpg.fr",
     title: "Convertir ICO en PNG gratuitement en ligne",
-    description: "Extrayez et convertissez un fichier favicon ICO en image PNG. Recuperez votre icone en haute qualite. Gratuit, sans inscription.",
+    description: "Extrayez et convertissez un fichier favicon ICO en image PNG. Récupérez votre icône en haute qualité. Gratuit, sans inscription.",
   },
   alternates: { canonical: "https://heictojpg.fr/convertir-ico-en-png" },
 };
@@ -24,7 +24,7 @@ const jsonLd = {
       "@type": "WebApplication",
       name: "Convertisseur ICO en PNG",
       url: "https://heictojpg.fr/convertir-ico-en-png",
-      description: "Extrayez et convertissez un fichier favicon ICO en image PNG. Recuperez votre icone en haute qualite. Gratuit, sans inscription.",
+      description: "Extrayez et convertissez un fichier favicon ICO en image PNG. Récupérez votre icône en haute qualité. Gratuit, sans inscription.",
       applicationCategory: "MultimediaApplication",
       operatingSystem: "Tout navigateur web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
@@ -36,12 +36,12 @@ const jsonLd = {
         {
           "@type": "Question",
           name: "Quelle taille aura le PNG ?",
-          acceptedAnswer: { "@type": "Answer", text: "Notre outil extrait la plus grande taille disponible dans le fichier ICO. Les favicons modernes contiennent generalement des tailles allant de 16x16 a 256x256 pixels." },
+          acceptedAnswer: { "@type": "Answer", text: "Notre outil extrait la plus grande taille disponible dans le fichier ICO. Les favicons modernes contiennent généralement des tailles allant de 16x16 à 256x256 pixels." },
         },
         {
           "@type": "Question",
-          name: "Puis-je recuperer toutes les tailles du fichier ICO ?",
-          acceptedAnswer: { "@type": "Answer", text: "Notre outil extrait la plus grande taille pour un resultat optimal. Les autres tailles sont des versions redimensionnees de la meme image." },
+          name: "Puis-je récupérer toutes les tailles du fichier ICO ?",
+          acceptedAnswer: { "@type": "Answer", text: "Notre outil extrait la plus grande taille pour un résultat optimal. Les autres tailles sont des versions redimensionnées de la même image." },
         }
       ],
     },
@@ -56,7 +56,7 @@ export default function Page() {
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-800 mb-6">Convertir ICO en PNG gratuitement</h1>
         <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-          Extrayez et convertissez vos fichiers favicon ICO en images PNG haute qualite. Ideal pour recuperer un logo a partir d'un favicon, editer une icone, ou utiliser un favicon dans un contexte ou le format ICO n'est pas accepte.
+          Extrayez et convertissez vos fichiers favicon ICO en images PNG haute qualité. Idéal pour récupérer un logo à partir d'un favicon, éditer une icône, ou utiliser un favicon dans un contexte où le format ICO n'est pas accepté.
         </p>
       </div>
 
@@ -64,37 +64,37 @@ export default function Page() {
         <ImageConvertForm
           title="ICO &rarr; PNG"
           acceptedFormats=".ico,image/x-icon"
-          acceptLabel="Selectionner un fichier ICO"
+          acceptLabel="Sélectionner un fichier ICO"
           outputFormat="png"
           apiEndpoint="/api/convert-image"
           outputExtension=".png"
           acceptedMimeTypes={["image/x-icon","image/vnd.microsoft.icon"]}
           acceptedExtensions={[".ico"]}
-          errorMessage="Veuillez selectionner un fichier ICO valide."
+          errorMessage="Veuillez sélectionner un fichier ICO valide."
         />
       </div>
 
       <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
         <h2 className="text-2xl font-semibold text-gray-800 mb-6">Pourquoi convertir ICO en PNG ?</h2>
         <div className="prose prose-gray max-w-none">
-          <p className="text-gray-600 mb-4">Le format ICO est specifique aux favicons et icones Windows. Il n'est pas reconnu par la plupart des logiciels d'edition d'images, des reseaux sociaux et des applications web. Convertir un ICO en PNG vous permet de recuperer l'image dans un format universellement compatible.</p>
-          <p className="text-gray-600 mb-4">Cette conversion est utile quand vous souhaitez recuperer le logo d'un site web a partir de son favicon, editer une icone dans un logiciel comme Photoshop ou Canva, ou utiliser un favicon comme image de profil ou dans une presentation.</p>
-          <p className="text-gray-600 mb-4">Notre outil extrait la plus grande taille disponible dans le fichier ICO (generalement 256x256 ou 128x128) et la convertit en PNG haute qualite.</p>
+          <p className="text-gray-600 mb-4">Le format ICO est spécifique aux favicons et icônes Windows. Il n'est pas reconnu par la plupart des logiciels d'édition d'images, des réseaux sociaux et des applications web. Convertir un ICO en PNG vous permet de récupérer l'image dans un format universellement compatible.</p>
+          <p className="text-gray-600 mb-4">Cette conversion est utile quand vous souhaitez récupérer le logo d'un site web à partir de son favicon, éditer une icône dans un logiciel comme Photoshop ou Canva, ou utiliser un favicon comme image de profil ou dans une présentation.</p>
+          <p className="text-gray-600 mb-4">Notre outil extrait la plus grande taille disponible dans le fichier ICO (généralement 256x256 ou 128x128) et la convertit en PNG haute qualité.</p>
         </div>
       </div>
 
       <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Questions frequentes</h2>
+        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Questions fréquentes</h2>
         <div className="prose prose-gray max-w-none">
-          
+
           <div>
             <h3 className="text-lg font-semibold text-gray-800 mb-2">Quelle taille aura le PNG ?</h3>
-            <p className="text-gray-600 mb-4">Notre outil extrait la plus grande taille disponible dans le fichier ICO. Les favicons modernes contiennent generalement des tailles allant de 16x16 a 256x256 pixels.</p>
+            <p className="text-gray-600 mb-4">Notre outil extrait la plus grande taille disponible dans le fichier ICO. Les favicons modernes contiennent généralement des tailles allant de 16x16 à 256x256 pixels.</p>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">Puis-je recuperer toutes les tailles du fichier ICO ?</h3>
-            <p className="text-gray-600 mb-4">Notre outil extrait la plus grande taille pour un resultat optimal. Les autres tailles sont des versions redimensionnees de la meme image.</p>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">Puis-je récupérer toutes les tailles du fichier ICO ?</h3>
+            <p className="text-gray-600 mb-4">Notre outil extrait la plus grande taille pour un résultat optimal. Les autres tailles sont des versions redimensionnées de la même image.</p>
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@ export default function Page() {
           </Link>
           <Link href="/compresser-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">Compresser image</h3>
-            <p className="text-sm text-gray-600">Reduisez le poids de vos images.</p>
+            <p className="text-sm text-gray-600">Réduisez le poids de vos images.</p>
           </Link>
           <Link href="/redimensionner-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">Redimensionner</h3>

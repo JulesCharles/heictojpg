@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "redimensionner photo en ligne",
     "changer taille image",
     "resize image gratuit",
-    "reduire taille photo",
+    "réduire taille photo",
     "redimensionner image en ligne",
   ],
   openGraph: {
@@ -52,8 +52,8 @@ export default function RedimensionnerImage() {
         </h1>
         <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
           Changez la taille de vos images JPG, PNG et WebP en quelques secondes.
-          Notre outil conserve les proportions et la qualite de vos photos.
-          Gratuit, sans inscription, aucun fichier conserve.
+          Notre outil conserve les proportions et la qualité de vos photos.
+          Gratuit, sans inscription, aucun fichier conservé.
         </p>
       </div>
 
@@ -68,23 +68,23 @@ export default function RedimensionnerImage() {
         <div className="prose prose-gray max-w-none">
           <p className="text-gray-600 mb-4">
             Redimensionner vos images est essentiel pour optimiser la vitesse de chargement
-            de vos sites web, respecter les limites de taille des reseaux sociaux, ou
-            simplement reduire l&apos;espace de stockage utilise.
+            de vos sites web, respecter les limites de taille des réseaux sociaux, ou
+            simplement réduire l&apos;espace de stockage utilisé.
           </p>
           <p className="text-gray-600 mb-4">
             Une photo prise avec un smartphone moderne peut peser entre 3 et 12 Mo.
             En la redimensionnant pour le web (par exemple 1920px de large), vous pouvez
-            reduire sa taille a moins de 500 Ko sans perte visible de qualite.
+            réduire sa taille à moins de 500 Ko sans perte visible de qualité.
           </p>
           <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">
-            Tailles recommandees
+            Tailles recommandées
           </h3>
           <ul className="text-gray-600 space-y-2">
-            <li>&bull; <strong>Site web / blog :</strong> 1200 a 1920 px de large</li>
+            <li>&bull; <strong>Site web / blog :</strong> 1200 à 1920 px de large</li>
             <li>&bull; <strong>Photo de profil :</strong> 400 x 400 px</li>
-            <li>&bull; <strong>Banniere Facebook :</strong> 820 x 312 px</li>
+            <li>&bull; <strong>Bannière Facebook :</strong> 820 x 312 px</li>
             <li>&bull; <strong>Post Instagram :</strong> 1080 x 1080 px</li>
-            <li>&bull; <strong>Email :</strong> 600 a 800 px de large</li>
+            <li>&bull; <strong>Email :</strong> 600 à 800 px de large</li>
           </ul>
         </div>
       </div>
@@ -98,11 +98,11 @@ export default function RedimensionnerImage() {
           </Link>
           <Link href="/convertir-png-en-jpg" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">PNG &rarr; JPG</h3>
-            <p className="text-sm text-gray-600">Reduisez la taille de vos PNG en JPG.</p>
+            <p className="text-sm text-gray-600">Réduisez la taille de vos PNG en JPG.</p>
           </Link>
           <Link href="/compresser-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">Compresser image</h3>
-            <p className="text-sm text-gray-600">Reduisez le poids de vos images.</p>
+            <p className="text-sm text-gray-600">Réduisez le poids de vos images.</p>
           </Link>
           <Link href="/convertir-svg-en-png" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
             <h3 className="font-semibold text-gray-800">SVG &rarr; PNG</h3>

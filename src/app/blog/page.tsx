@@ -1,144 +1,111 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { getAllBlogPosts, getBlogPostsByCategory } from "@/data/blog";
 
 export const metadata: Metadata = {
-  title: "Blog - Convertisseur HEIC en JPG",
-  description: "Articles et guides sur la conversion d'images HEIC en JPG, conseils photo et optimisation d'images.",
+  title: "Blog - Guides images et PDF | heictojpg.fr",
+  description:
+    "Guides complets sur les formats d'image (HEIC, JPG, PNG, WebP, AVIF, SVG), tutoriels de conversion, comparatifs et astuces pour optimiser vos photos.",
   openGraph: {
     type: "website",
-    title: "Blog - Convertisseur HEIC en JPG",
-    description: "Articles et guides sur la conversion d'images HEIC en JPG, conseils photo et optimisation d'images.",
+    title: "Blog - Guides images et PDF | heictojpg.fr",
+    description:
+      "Guides complets sur les formats d'image, tutoriels de conversion, comparatifs et astuces.",
     url: "https://heictojpg.fr/blog",
     siteName: "heictojpg.fr",
     locale: "fr_FR",
   },
-  alternates: {
-    canonical: "https://heictojpg.fr/blog",
-  },
+  alternates: { canonical: "https://heictojpg.fr/blog" },
 };
 
-const blogPosts = [
-  {
-    slug: "supprimer-fond-image-gratuitement",
-    title: "Comment supprimer le fond d'une image gratuitement (5 methodes)",
-    excerpt: "5 methodes gratuites pour supprimer l'arriere-plan de vos photos : outils en ligne, IA, GIMP, PowerPoint et plus.",
-    date: "5 mai 2026",
-    readTime: "8 min",
-  },
-  {
-    slug: "reduire-taille-photo-iphone",
-    title: "Comment reduire la taille d'une photo sur iPhone (guide 2026)",
-    excerpt: "6 methodes pour reduire le poids de vos photos iPhone : compression, format HEIC, raccourcis, iCloud et plus.",
-    date: "5 mai 2026",
-    readTime: "7 min",
-  },
-  {
-    slug: "heic-vs-jpg-quelle-difference",
-    title: "HEIC vs JPG : quelle difference entre ces deux formats ?",
-    excerpt: "Comparaison complete entre HEIC et JPG : compression, qualite, compatibilite et cas d'usage pour choisir le bon format.",
-    date: "22 janvier 2025",
-    readTime: "6 min",
-  },
-  {
-    slug: "ouvrir-fichier-heic-windows",
-    title: "Comment ouvrir un fichier HEIC sur Windows gratuitement",
-    excerpt: "4 methodes gratuites pour ouvrir et visualiser vos fichiers HEIC sur Windows 10 et 11, etape par etape.",
-    date: "20 janvier 2025",
-    readTime: "5 min",
-  },
-  {
-    slug: "meilleurs-formats-image-2025",
-    title: "Les meilleurs formats d'image en 2025 : guide complet",
-    excerpt: "JPEG, PNG, WebP, AVIF, HEIC, SVG : decouvrez les forces et faiblesses de chaque format d'image pour bien choisir.",
-    date: "18 janvier 2025",
-    readTime: "8 min",
-  },
-  {
-    slug: "convertir-heic-en-jpg-sans-perte-qualite",
-    title: "Comment convertir HEIC en JPG sans perte de qualite",
-    excerpt: "Decouvrez les meilleures techniques pour convertir vos photos iPhone tout en preservant leur qualite d'origine.",
-    date: "15 janvier 2025",
-    readTime: "5 min",
-  },
-  {
-    slug: "pourquoi-apple-utilise-format-heic",
-    title: "Pourquoi Apple utilise-t-il le format HEIC ?",
-    excerpt: "Comprenez les avantages du format HEIC et pourquoi Apple l'a choisi comme format par defaut pour ses appareils.",
-    date: "12 janvier 2025",
-    readTime: "3 min",
-  },
-  {
-    slug: "optimiser-photos-web-heic-jpg-webp",
-    title: "Optimiser ses photos pour le web : HEIC vs JPG vs WebP",
-    excerpt: "Comparaison detaillee des formats d'image modernes et leurs cas d'usage pour le web.",
-    date: "8 janvier 2025",
-    readTime: "7 min",
-  },
-  {
-    slug: "gerer-espace-stockage-iphone-conversion-heic",
-    title: "Gerer l'espace de stockage sur iPhone avec la conversion HEIC",
-    excerpt: "Astuces pour liberer de l'espace sur votre iPhone en optimisant vos photos.",
-    date: "5 janvier 2025",
-    readTime: "4 min",
-  },
+const categoryOrder = [
+  "Guides pratiques",
+  "Guides de conversion",
+  "Comparatifs",
+  "Formats d'image",
+  "Guides par appareil",
+  "Optimisation web",
 ];
 
 export default function Blog() {
+  const categories = getBlogPostsByCategory();
+  const totalPosts = getAllBlogPosts().length;
+
+  const sortedCategories = categoryOrder.filter((c) => categories[c]);
+
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
+    <div className="container mx-auto px-4 py-12 max-w-5xl">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">
-          Blog
-        </h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Guides, conseils et actualités sur la conversion d'images et l'optimisation de photos.
+        <h1 className="text-4xl font-bold text-gray-800 mb-4">Blog</h1>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-2">
+          Guides, comparatifs et tutoriels sur les formats d&apos;image et les outils de conversion.
         </p>
+        <p className="text-sm text-gray-400">{totalPosts} articles</p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
-        {blogPosts.map((post) => (
-          <Card key={post.slug} className="hover:shadow-lg transition-shadow">
-            <CardHeader>
-              <CardTitle className="text-xl hover:text-blue-600 transition-colors">
-                <Link href={`/blog/${post.slug}`}>
-                  {post.title}
-                </Link>
-              </CardTitle>
-              <div className="flex items-center text-sm text-gray-500 space-x-2">
-                <span>{post.date}</span>
-                <span>•</span>
-                <span>{post.readTime} de lecture</span>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-600 mb-4">
-                {post.excerpt}
-              </p>
-              <Link
-                href={`/blog/${post.slug}`}
-                className="text-blue-600 hover:text-blue-800 font-medium text-sm"
-              >
-                Lire la suite →
-              </Link>
-            </CardContent>
-          </Card>
-        ))}
+      {/* Table of contents */}
+      <div className="mb-12 p-4 bg-gray-50 rounded-lg">
+        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Categories</h2>
+        <div className="flex flex-wrap gap-2">
+          {sortedCategories.map((cat) => (
+            <a
+              key={cat}
+              href={`#${cat.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+              className="text-sm px-3 py-1.5 bg-white border border-gray-200 rounded-full hover:bg-blue-50 hover:border-blue-200 transition-colors text-gray-700"
+            >
+              {cat} ({categories[cat].length})
+            </a>
+          ))}
+        </div>
       </div>
 
+      {/* Articles by category */}
+      {sortedCategories.map((cat) => (
+        <section key={cat} id={cat.toLowerCase().replace(/[^a-z0-9]+/g, "-")} className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6 scroll-mt-8">{cat}</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            {categories[cat].map((post) => (
+              <Card key={post.slug} className="hover:shadow-lg transition-shadow">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-lg hover:text-blue-600 transition-colors leading-snug">
+                    <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                  </CardTitle>
+                  <div className="flex items-center text-xs text-gray-400 space-x-2 mt-1">
+                    <span>{post.date}</span>
+                    <span>-</span>
+                    <span>{post.readTime} de lecture</span>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 text-sm mb-3">{post.excerpt}</p>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="text-blue-600 hover:text-blue-800 font-medium text-sm"
+                  >
+                    Lire la suite →
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      {/* CTA */}
       <div className="mt-16 text-center">
         <div className="bg-blue-50 rounded-lg p-8">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-            Convertisseur gratuit
+            Outils gratuits
           </h2>
           <p className="text-gray-600 mb-6">
-            Besoin de convertir vos fichiers HEIC en JPG ? Utilisez notre outil gratuit.
+            Plus de 50 outils de conversion, compression et edition d&apos;images. Gratuit, sans inscription.
           </p>
           <Link
             href="/"
             className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
-            Commencer la conversion
+            Voir tous les outils
           </Link>
         </div>
       </div>
