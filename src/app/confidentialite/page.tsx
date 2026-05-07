@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Politique de confidentialité - Convertisseur HEIC en JPG",
@@ -19,16 +20,17 @@ export const metadata: Metadata = {
 
 export default function Privacy() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">
+    <>
+      <PageHero>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
           Politique de confidentialité
         </h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
           Votre vie privée est importante pour nous. Cette politique explique comment
           nous traitons vos données lors de l'utilisation de notre service.
         </p>
-      </div>
+      </PageHero>
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
 
       <div className="bg-white rounded-lg shadow-sm p-8 space-y-8">
         <section>
@@ -168,5 +170,6 @@ export default function Privacy() {
         <p className="text-gray-600">Retour à l'<Link href="/" className="text-blue-600 hover:text-blue-800">outil de conversion HEIC → JPG</Link> | <Link href="/a-propos" className="text-blue-600 hover:text-blue-800">À propos</Link> | <Link href="/faq" className="text-blue-600 hover:text-blue-800">FAQ</Link></p>
       </div>
     </div>
+    </>
   );
 }

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HeicMetadataForm from "@/components/HeicMetadataForm";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Lire les métadonnées EXIF HEIC en ligne | heictojpg.fr",
@@ -26,16 +28,18 @@ const jsonLd = {
 
 export default function LireMetadonneesHeic() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">Lire les métadonnées d&apos;un fichier HEIC</h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+    <>
+      <PageHero>
+        <Breadcrumbs items={[{ label: "Lire metadonnees HEIC", href: "/lire-metadonnees-heic" }]} />
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Lire les métadonnées d&apos;un fichier HEIC</h1>
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Découvrez toutes les informations cachées dans vos photos iPhone : appareil utilisé,
           date de prise de vue, coordonnées GPS, réglages de l&apos;appareil photo (ISO, ouverture, vitesse).
           Outil gratuit, aucun fichier conservé.
         </p>
-      </div>
+      </PageHero>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
       <div className="mb-16">
         <HeicMetadataForm />
       </div>
@@ -86,5 +90,6 @@ export default function LireMetadonneesHeic() {
         </div>
       </div>
     </div>
+    </>
   );
 }

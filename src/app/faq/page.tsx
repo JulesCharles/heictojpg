@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "FAQ - Questions fréquentes sur la conversion HEIC en JPG",
@@ -112,7 +114,9 @@ export default function FAQ() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
+    <>
+      <PageHero>
+        <Breadcrumbs items={[{ label: "FAQ", href: "/faq" }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
@@ -122,15 +126,15 @@ export default function FAQ() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
           Questions fréquentes
         </h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
           Retrouvez les réponses aux questions les plus courantes sur le format
           HEIC et la conversion vers JPG.
         </p>
-      </div>
+      </PageHero>
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
 
       <div className="space-y-4 mb-12">
         {faqItems.map((item, index) => (
@@ -211,5 +215,6 @@ export default function FAQ() {
         </ul>
       </div>
     </div>
+    </>
   );
 }

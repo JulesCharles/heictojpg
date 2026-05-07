@@ -6,6 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Upload, Download, Loader2 } from "lucide-react";
+import { useConversionLimit } from "@/lib/useConversionLimit";
+
+import UpgradePopup from "@/components/UpgradePopup";
 
 const trackEvent = (eventName: string, eventParams?: Record<string, any>) => {
   if (typeof window !== "undefined" && (window as any).gtag) {
@@ -20,6 +23,7 @@ export default function CompressForm() {
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [reduction, setReduction] = useState<string | null>(null);
+  const { conversionsLeft, recordConversion, isLimited, totalUsed } = useConversionLimit();
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
@@ -39,6 +43,10 @@ export default function CompressForm() {
 
   const handleCompress = async () => {
     if (!file) return;
+    if (isLimited) {
+      setError("Limite atteinte ! Passez a Pro pour un usage illimite.");
+      return;
+    }
 
     setCompressing(true);
     setError(null);
@@ -63,6 +71,7 @@ export default function CompressForm() {
       const blob = await response.blob();
       const url = URL.createObjectURL(blob);
       setDownloadUrl(url);
+      recordConversion();
 
       trackEvent("compression_success", { file_size: file.size, quality, reduction: reductionHeader });
     } catch (err) {
@@ -171,6 +180,7 @@ export default function CompressForm() {
           </div>
         )}
       </CardContent>
+      <UpgradePopup totalUsed={totalUsed} />
     </Card>
   );
 }

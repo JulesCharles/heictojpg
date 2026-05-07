@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Convertir HEIC en JPG sur Mac [2026] | heictojpg.fr",
@@ -26,44 +28,56 @@ export const metadata: Metadata = {
 };
 
 export default function ConvertirHeicMac() {
-  const breadcrumbJsonLd = {
+  const howToJsonLd = {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
+    "@type": "HowTo",
+    name: "Comment convertir HEIC en JPG sur Mac",
+    description: "3 methodes pour convertir HEIC en JPG sur Mac : Apercu, Automator ou en ligne.",
+    totalTime: "PT3M",
+    step: [
       {
-        "@type": "ListItem",
-        position: 1,
-        name: "Accueil",
-        item: "https://heictojpg.fr",
+        "@type": "HowToStep",
+        name: "Methode 1 : Utiliser Apercu (Preview)",
+        text: "Ouvrez le fichier HEIC avec Apercu, allez dans Fichier > Exporter, choisissez JPEG comme format et enregistrez.",
+        url: "https://heictojpg.fr/convertir-heic-en-jpg-sur-mac#methode-1",
       },
       {
-        "@type": "ListItem",
-        position: 2,
-        name: "Convertir HEIC en JPG sur Mac",
-        item: "https://heictojpg.fr/convertir-heic-en-jpg-sur-mac",
+        "@type": "HowToStep",
+        name: "Methode 2 : Automatiser avec Automator",
+        text: "Creez un Service rapide dans Automator avec l'action Modifier le type des images en JPEG. Enregistrez et utilisez via clic droit.",
+        url: "https://heictojpg.fr/convertir-heic-en-jpg-sur-mac#methode-2",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Methode 3 : En ligne avec heictojpg.fr",
+        text: "Ouvrez heictojpg.fr dans votre navigateur, glissez-deposez vos fichiers HEIC et telechargez les JPG convertis.",
+        url: "https://heictojpg.fr/convertir-heic-en-jpg-sur-mac#methode-3",
       },
     ],
   };
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
+    <>
+      <PageHero>
+        <Breadcrumbs items={[{ label: "Convertir HEIC en JPG sur Mac", href: "/convertir-heic-en-jpg-sur-mac" }]} />
+
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
+          Comment convertir HEIC en JPG sur Mac
+        </h1>
+
+        <p className="text-gray-500 mb-8 text-lg leading-relaxed">
+          Le format HEIC est devenu le standard photo sur les appareils Apple,
+          mais il peut poser des problèmes de compatibilité lorsque vous
+          souhaitez partager vos images. Sur Mac, plusieurs solutions natives
+          et en ligne vous permettent de convertir facilement vos fichiers HEIC
+          en JPG sans installer de logiciel tiers.
+        </p>
+      </PageHero>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
       />
-
-      <h1 className="text-4xl font-bold text-gray-800 mb-6">
-        Comment convertir HEIC en JPG sur Mac
-      </h1>
-
-      <p className="text-gray-600 mb-8 text-lg">
-        Le format HEIC est devenu le standard photo sur les appareils Apple,
-        mais il peut poser des problèmes de compatibilité lorsque vous
-        souhaitez partager vos images. Sur Mac, plusieurs solutions natives
-        et en ligne vous permettent de convertir facilement vos fichiers HEIC
-        en JPG sans installer de logiciel tiers.
-      </p>
-
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
       <div className="bg-blue-50 rounded-lg p-6 mb-10 text-center">
         <h3 className="text-xl font-semibold text-gray-800 mb-3">
           Convertissez vos photos HEIC instantanément
@@ -209,5 +223,6 @@ export default function ConvertirHeicMac() {
         </div>
       </div>
     </div>
+    </>
   );
 }

@@ -15,12 +15,19 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Le fichier doit etre au format SVG" }, { status: 400 });
     }
 
+    const width = parseInt(formData.get("width") as string) || 0;
+    const height = parseInt(formData.get("height") as string) || 0;
+
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    const outputBuffer = await sharp(buffer, { density: 72 * scale })
-      .png()
-      .toBuffer();
+    let pipeline = sharp(buffer, { density: 72 * scale }).png();
+
+    if (width > 0 || height > 0) {
+      pipeline = pipeline.resize(width || undefined, height || undefined, { fit: "inside" });
+    }
+
+    const outputBuffer = await pipeline.toBuffer();
 
     const originalName = file.name.replace(/\.svg$/i, "");
 

@@ -33,7 +33,33 @@ const nextConfig: NextConfig = {
       // SEO slug alias for jpg vs png
       {
         source: '/blog/jpg-vs-png-lequel-choisir',
-        destination: '/blog/png-vs-jpg',
+        destination: '/png-vs-jpg',
+        permanent: true,
+      },
+      // Redirect blog comparison pages to standalone comparison pages
+      {
+        source: '/blog/heic-vs-jpg',
+        destination: '/heic-vs-jpg',
+        permanent: true,
+      },
+      {
+        source: '/blog/png-vs-webp',
+        destination: '/png-vs-webp',
+        permanent: true,
+      },
+      {
+        source: '/blog/png-vs-jpg',
+        destination: '/png-vs-jpg',
+        permanent: true,
+      },
+      {
+        source: '/blog/avif-vs-webp',
+        destination: '/avif-vs-webp',
+        permanent: true,
+      },
+      {
+        source: '/blog/svg-vs-png',
+        destination: '/svg-vs-png',
         permanent: true,
       },
     ];

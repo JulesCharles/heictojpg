@@ -6,6 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Upload, Download, Loader2 } from "lucide-react";
+import { useConversionLimit } from "@/lib/useConversionLimit";
+
+import UpgradePopup from "@/components/UpgradePopup";
 
 const trackEvent = (eventName: string, eventParams?: Record<string, unknown>) => {
   if (typeof window !== "undefined" && (window as any).gtag) {
@@ -20,6 +23,7 @@ export default function ResizeForm() {
   const [resizing, setResizing] = useState(false);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const { conversionsLeft, recordConversion, isLimited, totalUsed } = useConversionLimit();
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
@@ -35,6 +39,10 @@ export default function ResizeForm() {
 
   const handleResize = async () => {
     if (!file || (!width && !height)) return;
+    if (isLimited) {
+      setError("Limite atteinte ! Passez a Pro pour un usage illimite.");
+      return;
+    }
 
     setResizing(true);
     setError(null);
@@ -51,6 +59,7 @@ export default function ResizeForm() {
 
       const blob = await response.blob();
       setDownloadUrl(URL.createObjectURL(blob));
+      recordConversion();
       trackEvent("resize_success", { width, height });
     } catch {
       setError("Erreur lors du redimensionnement. Veuillez reessayer.");
@@ -157,6 +166,7 @@ export default function ResizeForm() {
           </div>
         )}
       </CardContent>
+      <UpgradePopup totalUsed={totalUsed} />
     </Card>
   );
 }

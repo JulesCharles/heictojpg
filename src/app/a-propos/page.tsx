@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, Zap, Heart } from "lucide-react";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "À propos - Convertisseur HEIC en JPG gratuit",
@@ -21,16 +22,17 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">
+    <>
+      <PageHero>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
           À propos de notre service
         </h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
           Notre mission est de vous fournir un outil de conversion HEIC vers JPG simple,
           rapide et sécurisé, sans compromettre votre vie privée.
         </p>
-      </div>
+      </PageHero>
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
 
       <div className="grid md:grid-cols-3 gap-6 mb-12">
         <Card className="text-center">
@@ -149,5 +151,6 @@ export default function About() {
         </div>
       </div>
     </div>
+    </>
   );
 }

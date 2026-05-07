@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Convertir HEIC en JPG sur Android [2026] | heictojpg.fr",
@@ -26,44 +28,56 @@ export const metadata: Metadata = {
 };
 
 export default function ConvertirHeicAndroid() {
-  const breadcrumbJsonLd = {
+  const howToJsonLd = {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
+    "@type": "HowTo",
+    name: "Comment convertir HEIC en JPG sur Android",
+    description: "3 methodes gratuites pour convertir HEIC en JPG sur Android : Google Photos, apps tierces ou en ligne.",
+    totalTime: "PT3M",
+    step: [
       {
-        "@type": "ListItem",
-        position: 1,
-        name: "Accueil",
-        item: "https://heictojpg.fr",
+        "@type": "HowToStep",
+        name: "Methode 1 : Utiliser Google Photos",
+        text: "Ouvrez la photo HEIC dans Google Photos, appuyez sur Partager et envoyez vers Gmail ou Drive. Le fichier sera converti en JPG automatiquement.",
+        url: "https://heictojpg.fr/convertir-heic-en-jpg-sur-android#methode-1",
       },
       {
-        "@type": "ListItem",
-        position: 2,
-        name: "Convertir HEIC en JPG sur Android",
-        item: "https://heictojpg.fr/convertir-heic-en-jpg-sur-android",
+        "@type": "HowToStep",
+        name: "Methode 2 : Applications tierces du Play Store",
+        text: "Installez une app comme Luma ou HEIC Converter depuis le Play Store, selectionnez vos fichiers HEIC et convertissez en JPG.",
+        url: "https://heictojpg.fr/convertir-heic-en-jpg-sur-android#methode-2",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Methode 3 : En ligne avec heictojpg.fr",
+        text: "Ouvrez heictojpg.fr dans Chrome sur Android, selectionnez vos photos HEIC et telechargez les JPG convertis.",
+        url: "https://heictojpg.fr/convertir-heic-en-jpg-sur-android#methode-3",
       },
     ],
   };
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
+    <>
+      <PageHero>
+        <Breadcrumbs items={[{ label: "Convertir HEIC en JPG sur Android", href: "/convertir-heic-en-jpg-sur-android" }]} />
+
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
+          Comment convertir HEIC en JPG sur Android
+        </h1>
+
+        <p className="text-gray-500 mb-8 text-lg leading-relaxed">
+          Vous avez recu des photos au format HEIC depuis un iPhone et votre
+          appareil Android ne parvient pas à les ouvrir ? Le format HEIC
+          d'Apple n'est pas toujours pris en charge sur les smartphones
+          Android. Voici les meilleures méthodes pour convertir vos fichiers
+          HEIC en JPG directement depuis votre téléphone Android.
+        </p>
+      </PageHero>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
       />
-
-      <h1 className="text-4xl font-bold text-gray-800 mb-6">
-        Comment convertir HEIC en JPG sur Android
-      </h1>
-
-      <p className="text-gray-600 mb-8 text-lg">
-        Vous avez recu des photos au format HEIC depuis un iPhone et votre
-        appareil Android ne parvient pas à les ouvrir ? Le format HEIC
-        d'Apple n'est pas toujours pris en charge sur les smartphones
-        Android. Voici les meilleures méthodes pour convertir vos fichiers
-        HEIC en JPG directement depuis votre téléphone Android.
-      </p>
-
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
       <div className="bg-blue-50 rounded-lg p-6 mb-10 text-center">
         <h3 className="text-xl font-semibold text-gray-800 mb-3">
           Convertissez vos photos HEIC instantanément
@@ -209,5 +223,6 @@ export default function ConvertirHeicAndroid() {
         </div>
       </div>
     </div>
+    </>
   );
 }

@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getAllBlogPosts, getBlogPostsByCategory } from "@/data/blog";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Blog - Guides images et PDF | heictojpg.fr",
@@ -35,14 +36,15 @@ export default function Blog() {
   const sortedCategories = categoryOrder.filter((c) => categories[c]);
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-5xl">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">Blog</h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-2">
+    <>
+      <PageHero>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">Blog</h1>
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed mb-2">
           Guides, comparatifs et tutoriels sur les formats d&apos;image et les outils de conversion.
         </p>
         <p className="text-sm text-gray-400">{totalPosts} articles</p>
-      </div>
+      </PageHero>
+      <div className="container mx-auto px-4 py-12 max-w-5xl">
 
       {/* Table of contents */}
       <div className="mb-12 p-4 bg-gray-50 rounded-lg">
@@ -110,5 +112,6 @@ export default function Blog() {
         </div>
       </div>
     </div>
+    </>
   );
 }

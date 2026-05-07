@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ImageConvertForm from "@/components/ImageConvertForm";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Convertir JPG en PNG en ligne gratuit | heictojpg.fr",
@@ -86,23 +88,25 @@ const jsonLd = {
 
 export default function ConvertirJpgEnPng() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
+    <>
+      <PageHero>
+        <Breadcrumbs items={[{ label: "Convertir JPG en PNG", href: "/convertir-jpg-en-png" }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
           Convertir JPG en PNG gratuitement
         </h1>
 
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Transformez vos images JPG en fichiers PNG avec support de la
           transparence et compression sans perte. Notre convertisseur en ligne
           est rapide, sécurisé et entièrement gratuit. Aucune inscription
           requise.
         </p>
-      </div>
+      </PageHero>
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
 
       <div className="mb-16">
         <ImageConvertForm
@@ -245,5 +249,6 @@ export default function ConvertirJpgEnPng() {
         <p className="mt-6 text-gray-600">Consultez aussi notre <Link href="/blog/meilleurs-formats-image-2025" className="text-blue-600 hover:text-blue-800">guide complet des formats d'image</Link> et notre <Link href="/faq" className="text-blue-600 hover:text-blue-800">FAQ</Link>.</p>
       </div>
     </div>
+    </>
   );
 }

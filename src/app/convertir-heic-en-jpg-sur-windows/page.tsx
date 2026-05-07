@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Convertir HEIC en JPG sur Windows [2026] | heictojpg.fr",
@@ -26,43 +28,55 @@ export const metadata: Metadata = {
 };
 
 export default function ConvertirHeicWindows() {
-  const breadcrumbJsonLd = {
+  const howToJsonLd = {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
+    "@type": "HowTo",
+    name: "Comment convertir HEIC en JPG sur Windows",
+    description: "3 methodes gratuites pour convertir HEIC en JPG sur Windows 10/11 : Photos, Paint ou en ligne.",
+    totalTime: "PT3M",
+    step: [
       {
-        "@type": "ListItem",
-        position: 1,
-        name: "Accueil",
-        item: "https://heictojpg.fr",
+        "@type": "HowToStep",
+        name: "Methode 1 : Utiliser l'application Photos de Windows",
+        text: "Installez l'extension HEIF depuis le Microsoft Store, ouvrez le fichier HEIC dans Photos, puis Enregistrer sous en JPG.",
+        url: "https://heictojpg.fr/convertir-heic-en-jpg-sur-windows#methode-1",
       },
       {
-        "@type": "ListItem",
-        position: 2,
-        name: "Convertir HEIC en JPG sur Windows",
-        item: "https://heictojpg.fr/convertir-heic-en-jpg-sur-windows",
+        "@type": "HowToStep",
+        name: "Methode 2 : Convertir avec Paint",
+        text: "Ouvrez le fichier HEIC avec Paint (extension HEIF requise), puis Fichier > Enregistrer sous > Image JPEG.",
+        url: "https://heictojpg.fr/convertir-heic-en-jpg-sur-windows#methode-2",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Methode 3 : En ligne avec heictojpg.fr",
+        text: "Ouvrez heictojpg.fr dans votre navigateur, glissez-deposez vos fichiers HEIC et telechargez les JPG convertis.",
+        url: "https://heictojpg.fr/convertir-heic-en-jpg-sur-windows#methode-3",
       },
     ],
   };
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
+    <>
+      <PageHero>
+        <Breadcrumbs items={[{ label: "Convertir HEIC en JPG sur Windows", href: "/convertir-heic-en-jpg-sur-windows" }]} />
+
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
+          Comment convertir HEIC en JPG sur Windows
+        </h1>
+
+        <p className="text-gray-500 mb-8 text-lg leading-relaxed">
+          Windows ne prend pas en charge nativement le format HEIC d'Apple, ce
+          qui peut rendre l'ouverture de vos photos iPhone difficile sur PC.
+          Heureusement, plusieurs méthodes gratuites existent pour convertir vos
+          fichiers HEIC en JPG sur Windows 10 et Windows 11 sans effort.
+        </p>
+      </PageHero>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
       />
-
-      <h1 className="text-4xl font-bold text-gray-800 mb-6">
-        Comment convertir HEIC en JPG sur Windows
-      </h1>
-
-      <p className="text-gray-600 mb-8 text-lg">
-        Windows ne prend pas en charge nativement le format HEIC d'Apple, ce
-        qui peut rendre l'ouverture de vos photos iPhone difficile sur PC.
-        Heureusement, plusieurs méthodes gratuites existent pour convertir vos
-        fichiers HEIC en JPG sur Windows 10 et Windows 11 sans effort.
-      </p>
-
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
       <div className="bg-blue-50 rounded-lg p-6 mb-10 text-center">
         <h3 className="text-xl font-semibold text-gray-800 mb-3">
           Convertissez vos photos HEIC instantanément
@@ -203,5 +217,6 @@ export default function ConvertirHeicWindows() {
         </div>
       </div>
     </div>
+    </>
   );
 }

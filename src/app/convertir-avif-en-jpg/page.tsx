@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ImageConvertForm from "@/components/ImageConvertForm";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Convertir AVIF en JPG en ligne gratuit | heictojpg.fr",
@@ -50,15 +51,16 @@ const jsonLd = {
 
 export default function Page() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    <>
+      <PageHero>
 
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">Convertir AVIF en JPG gratuitement</h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir AVIF en JPG gratuitement</h1>
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Transformez vos images AVIF en JPG pour les ouvrir et les partager sur n'importe quel appareil. Le format AVIF est récent et n'est pas encore supporté par tous les logiciels. Notre convertisseur vous permet de le rendre universellement compatible en un clic.
         </p>
-      </div>
+      </PageHero>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
 
       <div className="mb-16">
         <ImageConvertForm
@@ -117,5 +119,6 @@ export default function Page() {
         </div>
       </div>
     </div>
+    </>
   );
 }

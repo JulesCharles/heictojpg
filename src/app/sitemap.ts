@@ -84,6 +84,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'convertir-images-en-pdf',
     'creer-gif',
     'extraire-texte-image',
+    // New tools (Phase 3)
+    'convertisseur-couleurs',
+    'modifier-metadonnees-image',
+    'ajouter-texte-image',
+    'optimiser-image-web',
+    'creer-planche-contact',
   ]
 
   const deviceSlugs = [
@@ -95,6 +101,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: baseUrl, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
+    { url: `${baseUrl}/outils-heic`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/outils-image`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/outils-pdf`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    // VS comparison pages
+    { url: `${baseUrl}/heic-vs-jpg`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/png-vs-webp`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/png-vs-jpg`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/avif-vs-webp`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/svg-vs-png`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    // Guide pages
+    { url: `${baseUrl}/comment-ouvrir-fichier-heic`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.8 },
     ...blogSlugs.map((slug) => ({
       url: `${baseUrl}/blog/${slug}`,

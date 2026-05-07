@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import VectorizeClient from "../convertir-jpg-en-svg/client";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Convertir PNG en SVG (vectoriser) gratuit | heictojpg.fr",
@@ -42,18 +43,19 @@ const jsonLd = {
 
 export default function ConvertirPngEnSvg() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    <>
+      <PageHero>
 
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">Convertir PNG en SVG (vectorisation)</h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir PNG en SVG (vectorisation)</h1>
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Vectorisez vos images PNG en fichiers SVG redimensionnables à l&apos;infini.
           Le PNG est le format idéal pour la vectorisation car il offre des bords nets
           et des couleurs précises, sans les artefacts de compression du JPG.
           Parfait pour convertir vos logos, icônes et illustrations en vectoriel.
         </p>
-      </div>
+      </PageHero>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
 
       <div className="mb-16">
         <VectorizeClient title="PNG &rarr; SVG" accept=".png,image/png" />
@@ -124,5 +126,6 @@ export default function ConvertirPngEnSvg() {
         </div>
       </div>
     </div>
+    </>
   );
 }

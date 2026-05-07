@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Client from "./client";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Convertir JPG en PDF en ligne gratuit | heictojpg.fr",
@@ -86,22 +87,23 @@ const jsonLd = {
 
 export default function ConvertirJpgEnPdf() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
+    <>
+      <PageHero>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
           Convertir JPG en PDF gratuitement
         </h1>
 
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Transformez vos images JPG, PNG ou WebP en un document PDF.
           Ajoutez plusieurs images pour créer un PDF multi-pages. Outil
           gratuit, rapide et sans inscription.
         </p>
-      </div>
+      </PageHero>
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
 
       <div className="mb-16">
         <Client />
@@ -257,5 +259,6 @@ export default function ConvertirJpgEnPdf() {
         <Link href="/blog/ilovepdf-alternatives-gratuites" className="text-sm font-medium text-blue-600 hover:text-blue-800">Lire l&apos;article &rarr;</Link>
       </div>
     </div>
+    </>
   );
 }

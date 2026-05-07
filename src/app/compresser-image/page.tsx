@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CompressForm from "@/components/CompressForm";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Compresser une image en ligne gratuit | heictojpg.fr",
@@ -86,22 +88,24 @@ const jsonLd = {
 
 export default function CompresserImage() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
+    <>
+      <PageHero>
+        <Breadcrumbs items={[{ label: "Compresser une image", href: "/compresser-image" }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
           Compresser une image gratuitement
         </h1>
 
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Réduisez la taille de vos images JPG, PNG et WebP sans perte de
           qualité visible. Notre outil de compression en ligne est rapide,
           sécurisé et entièrement gratuit. Aucune inscription requise.
         </p>
-      </div>
+      </PageHero>
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
 
       <div className="mb-16">
         <CompressForm />
@@ -237,5 +241,6 @@ export default function CompresserImage() {
         <p className="mt-6 text-gray-600">Consultez aussi notre <Link href="/blog/optimiser-photos-web-heic-jpg-webp" className="text-blue-600 hover:text-blue-800">guide d'optimisation des photos pour le web</Link> et notre <Link href="/faq" className="text-blue-600 hover:text-blue-800">FAQ</Link>.</p>
       </div>
     </div>
+    </>
   );
 }

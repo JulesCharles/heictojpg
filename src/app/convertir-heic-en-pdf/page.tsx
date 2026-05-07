@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HeicConvertForm from "@/components/HeicConvertForm";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Convertir HEIC en PDF en ligne gratuit | heictojpg.fr",
@@ -30,16 +32,18 @@ const jsonLd = {
 
 export default function ConvertirHeicEnPdf() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">Convertir HEIC en PDF gratuitement</h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+    <>
+      <PageHero>
+        <Breadcrumbs items={[{ label: "Convertir HEIC en PDF", href: "/convertir-heic-en-pdf" }]} />
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir HEIC en PDF gratuitement</h1>
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Transformez vos photos iPhone HEIC en documents PDF prêts à imprimer ou à partager.
           Idéal pour créer des portfolios, des rapports photo ou archiver vos images.
           Gratuit, sans inscription.
         </p>
-      </div>
+      </PageHero>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
       <div className="mb-16">
         <HeicConvertForm title="Convertir HEIC en PDF" outputFormat="pdf" outputExtension=".pdf" apiEndpoint="/api/heic-to-pdf" />
       </div>
@@ -90,5 +94,6 @@ export default function ConvertirHeicEnPdf() {
         <Link href="/blog/ilovepdf-alternatives-gratuites" className="text-sm font-medium text-blue-600 hover:text-blue-800">Lire l&apos;article &rarr;</Link>
       </div>
     </div>
+    </>
   );
 }

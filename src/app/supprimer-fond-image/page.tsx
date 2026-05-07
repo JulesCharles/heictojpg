@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Client from "./client";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Supprimer le fond d'une image par IA | heictojpg.fr",
@@ -72,20 +74,22 @@ const jsonLd = {
 
 export default function SupprimerFondImage() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    <>
+      <PageHero>
+        <Breadcrumbs items={[{ label: "Supprimer le fond d'une image", href: "/supprimer-fond-image" }]} />
 
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
           Supprimer le fond d&apos;une image gratuitement
         </h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Supprimez automatiquement l&apos;arrière-plan de vos photos grâce à l&apos;intelligence artificielle.
           Obtenez une image PNG avec fond transparent en quelques secondes. Idéal pour les photos de produits
           e-commerce, les portraits professionnels, les logos et les visuels marketing. Aucun logiciel à installer,
           aucune compétence requise.
         </p>
-      </div>
+      </PageHero>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
 
       <div className="mb-4 p-4 bg-amber-50 border border-amber-200 rounded-lg max-w-lg mx-auto">
         <p className="text-sm text-amber-800">
@@ -184,5 +188,6 @@ export default function SupprimerFondImage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

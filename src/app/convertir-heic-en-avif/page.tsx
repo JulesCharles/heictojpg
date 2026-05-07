@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HeicConvertForm from "@/components/HeicConvertForm";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Convertir HEIC en AVIF en ligne gratuit | heictojpg.fr",
@@ -26,16 +28,18 @@ const jsonLd = {
 
 export default function ConvertirHeicEnAvif() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">Convertir HEIC en AVIF gratuitement</h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+    <>
+      <PageHero>
+        <Breadcrumbs items={[{ label: "Convertir HEIC en AVIF", href: "/convertir-heic-en-avif" }]} />
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir HEIC en AVIF gratuitement</h1>
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Transformez vos photos iPhone HEIC en AVIF, le format d&apos;image le plus performant du web.
           L&apos;AVIF offre une compression 50% supérieure au JPG et 20% supérieure au WebP.
           C&apos;est le futur des images sur le web.
         </p>
-      </div>
+      </PageHero>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
       <div className="mb-16">
         <HeicConvertForm title="Convertir HEIC en AVIF" outputFormat="avif" outputExtension=".avif" />
       </div>
@@ -79,5 +83,6 @@ export default function ConvertirHeicEnAvif() {
         </div>
       </div>
     </div>
+    </>
   );
 }

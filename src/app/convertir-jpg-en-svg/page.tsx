@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import VectorizeClient from "./client";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Convertir JPG en SVG (vectoriser) gratuit | heictojpg.fr",
@@ -43,18 +44,19 @@ const jsonLd = {
 
 export default function ConvertirJpgEnSvg() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    <>
+      <PageHero>
 
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">Convertir JPG en SVG (vectorisation)</h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir JPG en SVG (vectorisation)</h1>
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Vectorisez vos images JPG en fichiers SVG redimensionnables à l&apos;infini.
           Notre outil analyse les formes et les couleurs de votre image bitmap et les
           convertit en chemins vectoriels. Idéal pour les logos, les icônes, les illustrations
           et les graphiques. Choisissez le niveau de détail adapté à votre besoin.
         </p>
-      </div>
+      </PageHero>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
 
       <div className="mb-16">
         <VectorizeClient title="JPG &rarr; SVG" accept=".jpg,.jpeg,image/jpeg" />
@@ -138,5 +140,6 @@ export default function ConvertirJpgEnSvg() {
         </div>
       </div>
     </div>
+    </>
   );
 }

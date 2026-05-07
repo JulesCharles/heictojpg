@@ -8,6 +8,8 @@ import { Label } from "@/components/ui/label";
 import { Upload, Download, Loader2 } from "lucide-react";
 import { useConversionLimit } from "@/lib/useConversionLimit";
 
+import UpgradePopup from "@/components/UpgradePopup";
+
 interface EditImageFormProps {
   title: string;
   action: string;
@@ -29,7 +31,7 @@ export default function EditImageForm({
   const [processing, setProcessing] = useState(false);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const { conversionsLeft, recordConversion, isLimited } = useConversionLimit();
+  const { conversionsLeft, recordConversion, isLimited, totalUsed } = useConversionLimit();
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
@@ -87,9 +89,6 @@ export default function EditImageForm({
     <Card className="w-full max-w-lg mx-auto shadow-lg">
       <CardHeader className="text-center">
         <CardTitle className="text-2xl text-gray-800">{title}</CardTitle>
-        <p className="text-sm text-gray-500 mt-1">
-          {conversionsLeft} utilisation(s) gratuite(s) restante(s)
-        </p>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="space-y-2">
@@ -139,6 +138,7 @@ export default function EditImageForm({
           </div>
         )}
       </CardContent>
+      <UpgradePopup totalUsed={totalUsed} />
     </Card>
   );
 }

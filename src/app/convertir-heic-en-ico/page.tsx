@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HeicConvertForm from "@/components/HeicConvertForm";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Convertir HEIC en ICO (favicon) gratuit | heictojpg.fr",
@@ -26,16 +28,18 @@ const jsonLd = {
 
 export default function ConvertirHeicEnIco() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">Convertir HEIC en ICO (favicon)</h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+    <>
+      <PageHero>
+        <Breadcrumbs items={[{ label: "Convertir HEIC en ICO", href: "/convertir-heic-en-ico" }]} />
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir HEIC en ICO (favicon)</h1>
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Transformez une photo iPhone HEIC en fichier ICO multi-tailles, prêt à être utilisé
           comme favicon pour votre site web. Le fichier généré contient les tailles
           16x16, 32x32, 48x48, 64x64, 128x128 et 256x256 pixels.
         </p>
-      </div>
+      </PageHero>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
       <div className="mb-16">
         <HeicConvertForm title="Convertir HEIC en ICO" outputFormat="ico" outputExtension=".ico" apiEndpoint="/api/heic-to-ico" />
       </div>
@@ -88,5 +92,6 @@ export default function ConvertirHeicEnIco() {
         </div>
       </div>
     </div>
+    </>
   );
 }

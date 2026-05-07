@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ConvertForm from "@/components/ConvertForm";
 import AdBanner from "@/components/AdBanner";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Convertir HEIC en JPG en ligne gratuit | heictojpg.fr",
@@ -101,19 +103,21 @@ const jsonLd = {
 
 export default function ConvertirHeicEnJpg() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    <>
+      <PageHero>
+        <Breadcrumbs items={[{ label: "Convertir HEIC en JPG", href: "/convertir-heic-en-jpg" }]} />
 
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
           Convertir HEIC en JPG en ligne gratuitement
         </h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Transformez vos photos iPhone au format HEIC en images JPG compatibles avec tous les appareils.
           Glissez un ou plusieurs fichiers HEIC, convertissez en un clic et téléchargez le résultat.
           Gratuit, sans inscription, sans limite. Aucun fichier n&apos;est conservé sur nos serveurs.
         </p>
-      </div>
+      </PageHero>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
 
       <div className="mb-16">
         <ConvertForm />
@@ -281,5 +285,6 @@ export default function ConvertirHeicEnJpg() {
         </div>
       </div>
     </div>
+    </>
   );
 }

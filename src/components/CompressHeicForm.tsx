@@ -6,6 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Upload, Download, Loader2 } from "lucide-react";
+import { useConversionLimit } from "@/lib/useConversionLimit";
+
+import UpgradePopup from "@/components/UpgradePopup";
 
 export default function CompressHeicForm() {
   const [file, setFile] = useState<File | null>(null);
@@ -14,6 +17,7 @@ export default function CompressHeicForm() {
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [reduction, setReduction] = useState<string | null>(null);
+  const { conversionsLeft, recordConversion, isLimited, totalUsed } = useConversionLimit();
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
@@ -32,6 +36,10 @@ export default function CompressHeicForm() {
 
   const handleCompress = async () => {
     if (!file) return;
+    if (isLimited) {
+      setError("Limite atteinte ! Passez a Pro pour un usage illimite.");
+      return;
+    }
     setCompressing(true);
     setError(null);
     setDownloadUrl(null);
@@ -48,6 +56,7 @@ export default function CompressHeicForm() {
       setReduction(response.headers.get("X-Reduction"));
       const blob = await response.blob();
       setDownloadUrl(URL.createObjectURL(blob));
+      recordConversion();
     } catch {
       setError("Erreur lors de la compression. Veuillez reessayer.");
     } finally {
@@ -143,6 +152,7 @@ export default function CompressHeicForm() {
           </div>
         )}
       </CardContent>
+      <UpgradePopup totalUsed={totalUsed} />
     </Card>
   );
 }

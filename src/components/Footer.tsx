@@ -83,6 +83,9 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-gray-900 text-sm mb-4">Informations</h3>
             <ul className="space-y-2 text-sm">
+              <li><Link href="/outils-heic" className="text-gray-500 hover:text-blue-600 transition-colors">Tous les outils HEIC</Link></li>
+              <li><Link href="/outils-image" className="text-gray-500 hover:text-blue-600 transition-colors">Tous les outils image</Link></li>
+              <li><Link href="/outils-pdf" className="text-gray-500 hover:text-blue-600 transition-colors">Tous les outils PDF</Link></li>
               <li><Link href="/pricing" className="text-gray-500 hover:text-blue-600 transition-colors">Tarifs Pro</Link></li>
               <li><Link href="/blog" className="text-gray-500 hover:text-blue-600 transition-colors">Blog</Link></li>
               <li><Link href="/format" className="text-gray-500 hover:text-blue-600 transition-colors">Formats d&apos;image</Link></li>

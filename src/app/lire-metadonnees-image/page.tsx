@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Client from "./client";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Lire les métadonnées EXIF d'une image | heictojpg.fr",
@@ -41,13 +42,14 @@ const jsonLd = {
 
 export default function Page() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    <>
+      <PageHero>
 
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">Lire les métadonnées d'une image</h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">Découvrez toutes les informations cachées dans vos photos : appareil utilisé, date de prise de vue, localisation GPS, réglages (ISO, ouverture, vitesse). Compatible JPG, PNG, WebP, HEIC et TIFF.</p>
-      </div>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Lire les métadonnées d'une image</h1>
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">Découvrez toutes les informations cachées dans vos photos : appareil utilisé, date de prise de vue, localisation GPS, réglages (ISO, ouverture, vitesse). Compatible JPG, PNG, WebP, HEIC et TIFF.</p>
+      </PageHero>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
 
       <div className="mb-16">
         <Client />
@@ -97,5 +99,6 @@ export default function Page() {
         </div>
       </div>
     </div>
+    </>
   );
 }

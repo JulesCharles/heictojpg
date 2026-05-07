@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Client from "./client";
 import AdBanner from "@/components/AdBanner";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Creer un GIF anime en ligne gratuit | heictojpg.fr",
@@ -68,19 +69,20 @@ const jsonLd = {
 
 export default function CreerGif() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    <>
+      <PageHero>
 
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
           Creer un GIF anime a partir d&apos;images
         </h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Assemblez vos images en un GIF anime. Choisissez l&apos;ordre des frames,
           reglez la vitesse d&apos;animation, et telechargez votre GIF.
           Gratuit, sans inscription, aucun fichier conserve.
         </p>
-      </div>
+      </PageHero>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
 
       <div className="mb-16">
         <Client />
@@ -138,5 +140,6 @@ export default function CreerGif() {
         </div>
       </div>
     </div>
+    </>
   );
 }

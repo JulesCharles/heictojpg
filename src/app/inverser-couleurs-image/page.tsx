@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Client from "./client";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Inverser les couleurs d'une image gratuit | heictojpg.fr",
@@ -41,13 +42,14 @@ const jsonLd = {
 
 export default function Page() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    <>
+      <PageHero>
 
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">Inverser les couleurs d'une image</h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">Créez un effet négatif en inversant toutes les couleurs de votre image. Le blanc devient noir, le bleu devient orange, le rouge devient cyan. Un effet artistique saisissant en un clic.</p>
-      </div>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Inverser les couleurs d'une image</h1>
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">Créez un effet négatif en inversant toutes les couleurs de votre image. Le blanc devient noir, le bleu devient orange, le rouge devient cyan. Un effet artistique saisissant en un clic.</p>
+      </PageHero>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
 
       <div className="mb-16">
         <Client />
@@ -96,5 +98,6 @@ export default function Page() {
         </div>
       </div>
     </div>
+    </>
   );
 }

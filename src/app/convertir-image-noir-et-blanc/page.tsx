@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Client from "./client";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Convertir image en noir et blanc gratuit | heictojpg.fr",
@@ -41,13 +42,14 @@ const jsonLd = {
 
 export default function Page() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    <>
+      <PageHero>
 
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">Convertir une image en noir et blanc</h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">Transformez instantanément vos photos couleur en images noir et blanc élégantes. L'effet niveaux de gris donne à vos photos un aspect artistique intemporel. Compatible JPG, PNG et WebP.</p>
-      </div>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir une image en noir et blanc</h1>
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">Transformez instantanément vos photos couleur en images noir et blanc élégantes. L'effet niveaux de gris donne à vos photos un aspect artistique intemporel. Compatible JPG, PNG et WebP.</p>
+      </PageHero>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
 
       <div className="mb-16">
         <Client />
@@ -96,5 +98,6 @@ export default function Page() {
         </div>
       </div>
     </div>
+    </>
   );
 }

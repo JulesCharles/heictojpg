@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import ImageConvertForm from "@/components/ImageConvertForm";
+import SvgConvertForm from "@/components/SvgConvertForm";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Convertir SVG en PNG en ligne gratuit | heictojpg.fr",
@@ -40,34 +42,26 @@ const jsonLd = {
 
 export default function ConvertirSvgEnPng() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
+    <>
+      <PageHero>
+        <Breadcrumbs items={[{ label: "Convertir SVG en PNG", href: "/convertir-svg-en-png" }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
           Convertir SVG en PNG gratuitement
         </h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Transformez vos fichiers vectoriels SVG en images PNG haute résolution.
           Notre outil en ligne est rapide, sécurisé et entièrement gratuit.
           Aucune inscription requise.
         </p>
-      </div>
+      </PageHero>
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
 
       <div className="mb-16">
-        <ImageConvertForm
-          title="Convertir SVG en PNG"
-          acceptedFormats=".svg,image/svg+xml"
-          acceptLabel="Sélectionner un fichier SVG"
-          outputFormat="png"
-          apiEndpoint="/api/svg-to-png"
-          outputExtension=".png"
-          acceptedExtensions={[".svg"]}
-          acceptedMimeTypes={["image/svg+xml"]}
-          errorMessage="Veuillez sélectionner un fichier SVG valide."
-        />
+        <SvgConvertForm />
       </div>
 
       <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
@@ -119,5 +113,6 @@ export default function ConvertirSvgEnPng() {
         </div>
       </div>
     </div>
+    </>
   );
 }

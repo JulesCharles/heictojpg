@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ImageConvertForm from "@/components/ImageConvertForm";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Convertir TIFF en WebP en ligne gratuit | heictojpg.fr",
@@ -50,15 +51,16 @@ const jsonLd = {
 
 export default function Page() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    <>
+      <PageHero>
 
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">Convertir TIFF en WebP gratuitement</h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir TIFF en WebP gratuitement</h1>
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Transformez vos fichiers TIFF professionnels en images WebP optimisées pour le web. Passez d'un fichier de 50 Mo à moins de 1 Mo sans perte visible de qualité. Idéal pour publier vos photos pro en ligne.
         </p>
-      </div>
+      </PageHero>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
 
       <div className="mb-16">
         <ImageConvertForm
@@ -117,5 +119,6 @@ export default function Page() {
         </div>
       </div>
     </div>
+    </>
   );
 }

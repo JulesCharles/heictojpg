@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PdfToImageClient from "../convertir-pdf-en-jpg/client";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Convertir PDF en PNG en ligne gratuit | heictojpg.fr",
@@ -30,18 +31,19 @@ const jsonLd = {
 
 export default function ConvertirPdfEnPng() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    <>
+      <PageHero>
 
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">Convertir PDF en PNG gratuitement</h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir PDF en PNG gratuitement</h1>
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Extrayez chaque page de votre document PDF en image PNG haute qualité sans perte.
           Le format PNG conserve une netteté parfaite pour les textes, graphiques et tableaux.
           Idéal pour les présentations, les captures de documents et l&apos;archivage.
           Les PDF multi-pages sont téléchargés dans un fichier ZIP.
         </p>
-      </div>
+      </PageHero>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
 
       <div className="mb-16">
         <PdfToImageClient format="png" title="Convertir PDF en PNG" />
@@ -94,5 +96,6 @@ export default function ConvertirPdfEnPng() {
         <Link href="/blog/ilovepdf-alternatives-gratuites" className="text-sm font-medium text-blue-600 hover:text-blue-800">Lire l&apos;article &rarr;</Link>
       </div>
     </div>
+    </>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdBanner from "@/components/AdBanner";
+import { ToolSection, type Tool } from "@/components/ToolCard";
 
 export const metadata: Metadata = {
   title: "heictojpg.fr - Outils image et PDF en ligne gratuits",
@@ -33,14 +34,6 @@ const jsonLd = {
   description: "Outils de conversion et d'édition d'images en ligne gratuits.",
   inLanguage: "fr",
 };
-
-interface Tool {
-  href: string;
-  label: string;
-  desc: string;
-  icon: string;
-  primary?: boolean;
-}
 
 const heicTools: Tool[] = [
   { href: "/convertir-heic-en-jpg", label: "HEIC en JPG", desc: "Le format universel pour vos photos iPhone.", icon: "JPG", primary: true },
@@ -100,79 +93,6 @@ const pdfTools: Tool[] = [
   { href: "/convertir-pdf-en-png", label: "PDF en PNG", desc: "Pages en PNG haute qualité.", icon: "PNG" },
 ];
 
-const colorSchemes = {
-  blue: { iconBg: "bg-blue-100", iconText: "text-blue-600", hoverBorder: "hover:border-blue-300", tagBg: "bg-blue-50", tagText: "text-blue-600" },
-  green: { iconBg: "bg-emerald-100", iconText: "text-emerald-600", hoverBorder: "hover:border-emerald-300", tagBg: "bg-emerald-50", tagText: "text-emerald-600" },
-  purple: { iconBg: "bg-violet-100", iconText: "text-violet-600", hoverBorder: "hover:border-violet-300", tagBg: "bg-violet-50", tagText: "text-violet-600" },
-  red: { iconBg: "bg-rose-100", iconText: "text-rose-600", hoverBorder: "hover:border-rose-300", tagBg: "bg-rose-50", tagText: "text-rose-600" },
-};
-
-function FileIcon({ format, color }: { format: string; color: string }) {
-  const bgColors: Record<string, string> = {
-    blue: "#3b82f6", green: "#10b981", purple: "#8b5cf6", red: "#f43f5e",
-  };
-  const fill = bgColors[color] || bgColors.blue;
-  return (
-    <div className="relative w-14 h-16 mb-3">
-      {/* File shape */}
-      <svg viewBox="0 0 40 48" className="w-full h-full" fill="none">
-        <path d="M4 4C4 1.79 5.79 0 8 0H26L36 10V44C36 46.21 34.21 48 32 48H8C5.79 48 4 46.21 4 44V4Z" fill={fill} opacity="0.12" />
-        <path d="M26 0L36 10H30C27.79 10 26 8.21 26 6V0Z" fill={fill} opacity="0.25" />
-        <path d="M4 4C4 1.79 5.79 0 8 0H26L36 10V44C36 46.21 34.21 48 32 48H8C5.79 48 4 46.21 4 44V4Z" stroke={fill} strokeWidth="1.5" opacity="0.3" />
-      </svg>
-      {/* Format badge */}
-      <span
-        className="absolute bottom-1 left-1/2 -translate-x-1/2 text-[9px] font-extrabold tracking-wide text-white px-1.5 py-0.5 rounded"
-        style={{ backgroundColor: fill }}
-      >
-        {format}
-      </span>
-    </div>
-  );
-}
-
-function ToolCard({ tool, scheme }: { tool: Tool; scheme: keyof typeof colorSchemes }) {
-  const colors = colorSchemes[scheme];
-  return (
-    <Link
-      href={tool.href}
-      className={`group block bg-white rounded-2xl border border-gray-200/80 p-5 transition-all duration-200 hover:shadow-lg hover:-translate-y-1 ${colors.hoverBorder} ${tool.primary ? "ring-2 ring-blue-200 shadow-md" : "shadow-sm"}`}
-    >
-      <FileIcon format={tool.icon} color={scheme} />
-      <h3 className="font-semibold text-gray-900 text-[15px] mb-1.5 leading-snug">{tool.label}</h3>
-      <p className="text-gray-500 text-[13px] leading-relaxed">{tool.desc}</p>
-    </Link>
-  );
-}
-
-function ToolSection({
-  title,
-  tag,
-  tools,
-  scheme,
-}: {
-  title: string;
-  tag: string;
-  tools: Tool[];
-  scheme: keyof typeof colorSchemes;
-}) {
-  const colors = colorSchemes[scheme];
-  return (
-    <section className="mb-16">
-      <div className="flex items-center gap-3 mb-8">
-        <h2 className="text-2xl font-bold text-gray-900 tracking-tight">{title}</h2>
-        <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${colors.tagBg} ${colors.tagText}`}>
-          {tag}
-        </span>
-      </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-        {tools.map((tool) => (
-          <ToolCard key={tool.href} tool={tool} scheme={scheme} />
-        ))}
-      </div>
-    </section>
-  );
-}
 
 export default function Home() {
   return (
@@ -204,17 +124,17 @@ export default function Home() {
       {/* Tools */}
       <div className="max-w-6xl mx-auto px-4 py-16">
 
-        <ToolSection title="Outils HEIC" tag="Photos iPhone" tools={heicTools} scheme="blue" />
+        <ToolSection title="Outils HEIC" tag="Photos iPhone" tools={heicTools} scheme="blue" seeAllHref="/outils-heic" />
 
         <AdBanner slot="SLOT_1" format="horizontal" />
 
-        <ToolSection title="Convertir des images" tag="Tous les formats" tools={convertTools} scheme="green" />
+        <ToolSection title="Convertir des images" tag="Tous les formats" tools={convertTools} scheme="green" seeAllHref="/outils-image" />
 
-        <ToolSection title="Éditer des images" tag="Retouche" tools={editTools} scheme="purple" />
+        <ToolSection title="Éditer des images" tag="Retouche" tools={editTools} scheme="purple" seeAllHref="/outils-image" />
 
         <AdBanner slot="SLOT_2" format="horizontal" />
 
-        <ToolSection title="Outils PDF" tag="Documents" tools={pdfTools} scheme="red" />
+        <ToolSection title="Outils PDF" tag="Documents" tools={pdfTools} scheme="red" seeAllHref="/outils-pdf" />
 
         {/* Guides */}
         <section className="mb-16">

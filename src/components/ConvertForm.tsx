@@ -7,6 +7,9 @@ import { Upload, Download, Loader2, X, ImageIcon } from "lucide-react";
 import JSZip from "jszip";
 import { useConversionLimit } from "@/lib/useConversionLimit";
 
+import UpgradePopup from "@/components/UpgradePopup";
+import BatchProPopup from "@/components/BatchProPopup";
+
 const trackEvent = (eventName: string, eventParams?: Record<string, unknown>) => {
   if (typeof window !== "undefined" && (window as any).gtag) {
     (window as any).gtag("event", eventName, eventParams);
@@ -26,9 +29,8 @@ export default function ConvertForm() {
   const [error, setError] = useState<string | null>(null);
   const [progress, setProgress] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
-  const { conversionsLeft, recordConversion, isLimited } = useConversionLimit();
-
-  const MAX_FREE_FILES = 3;
+  const { conversionsLeft, recordConversion, isLimited, totalUsed } = useConversionLimit();
+  const [showBatchPopup, setShowBatchPopup] = useState(false);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFiles = Array.from(e.target.files || []);
@@ -78,11 +80,7 @@ export default function ConvertForm() {
       return;
     }
 
-    const filesToConvert = files.slice(0, Math.min(files.length, conversionsLeft));
-
-    if (files.length > MAX_FREE_FILES && files.length > conversionsLeft) {
-      setError(`Version gratuite : ${conversionsLeft} conversion(s) restante(s) aujourd'hui. Passez a Pro pour un usage illimite.`);
-    }
+    const filesToConvert = files.slice(0, 1);
 
     setConverting(true);
     setError(null);
@@ -120,6 +118,10 @@ export default function ConvertForm() {
 
     setConvertedFiles(results.filter((r) => r.url));
     setConverting(false);
+
+    if (files.length > 1) {
+      setShowBatchPopup(true);
+    }
 
     trackEvent("conversion_success", {
       file_count: results.filter((r) => r.url).length,
@@ -163,9 +165,6 @@ export default function ConvertForm() {
     <Card className="w-full max-w-lg mx-auto shadow-lg">
       <CardHeader className="text-center">
         <CardTitle className="text-2xl text-gray-800">Convertir HEIC en JPG</CardTitle>
-        <p className="text-sm text-gray-500 mt-1">
-          {conversionsLeft} conversion(s) gratuite(s) restante(s) aujourd&apos;hui
-        </p>
       </CardHeader>
       <CardContent className="space-y-6">
         {/* Drop zone */}
@@ -285,6 +284,8 @@ export default function ConvertForm() {
           </div>
         )}
       </CardContent>
+      <UpgradePopup totalUsed={totalUsed} />
+      <BatchProPopup visible={showBatchPopup} onDismiss={() => setShowBatchPopup(false)} totalFiles={files.length} />
     </Card>
   );
 }

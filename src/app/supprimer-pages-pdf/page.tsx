@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Client from "./client";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Supprimer des pages d'un PDF gratuit | heictojpg.fr",
@@ -14,12 +15,13 @@ const jsonLd = { "@context": "https://schema.org", "@type": "WebApplication", na
 
 export default function Page() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
+    <>
+      <PageHero>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Supprimer des pages d'un PDF</h1>
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">Retirez les pages inutiles de votre document PDF en indiquant simplement les numéros de page à supprimer. Idéal pour nettoyer un document avant envoi, retirer des pages blanches ou des couvertures. Gratuit, sans inscription.</p>
+      </PageHero>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">Supprimer des pages d'un PDF</h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">Retirez les pages inutiles de votre document PDF en indiquant simplement les numéros de page à supprimer. Idéal pour nettoyer un document avant envoi, retirer des pages blanches ou des couvertures. Gratuit, sans inscription.</p>
-      </div>
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
       <div className="mb-16"><Client /></div>
       <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
         <h2 className="text-2xl font-semibold text-gray-800 mb-6">À quoi ça sert ?</h2>
@@ -59,5 +61,6 @@ export default function Page() {
         <Link href="/blog/ilovepdf-alternatives-gratuites" className="text-sm font-medium text-blue-600 hover:text-blue-800">Lire l&apos;article &rarr;</Link>
       </div>
     </div>
+    </>
   );
 }

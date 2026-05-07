@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ImageConvertForm from "@/components/ImageConvertForm";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Convertir JPG en WebP en ligne gratuit | heictojpg.fr",
@@ -55,15 +57,17 @@ const jsonLd = {
 
 export default function Page() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    <>
+      <PageHero>
+        <Breadcrumbs items={[{ label: "Convertir JPG en WebP", href: "/convertir-jpg-en-webp" }]} />
 
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">Convertir JPG en WebP gratuitement</h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir JPG en WebP gratuitement</h1>
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Transformez vos images JPG en WebP, le format nouvelle génération de Google. Le WebP offre une compression 25 à 35% supérieure au JPG avec une qualité visuelle identique. C'est le format recommandé pour améliorer les performances de votre site web et votre score Google PageSpeed.
         </p>
-      </div>
+      </PageHero>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
 
       <div className="mb-16">
         <ImageConvertForm
@@ -127,5 +131,6 @@ export default function Page() {
         </div>
       </div>
     </div>
+    </>
   );
 }

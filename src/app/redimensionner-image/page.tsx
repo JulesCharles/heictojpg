@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ResizeForm from "@/components/ResizeForm";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Redimensionner une image en ligne gratuit | heictojpg.fr",
@@ -41,21 +43,23 @@ const jsonLd = {
 
 export default function RedimensionnerImage() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
+    <>
+      <PageHero>
+        <Breadcrumbs items={[{ label: "Redimensionner une image", href: "/redimensionner-image" }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
           Redimensionner une image gratuitement
         </h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Changez la taille de vos images JPG, PNG et WebP en quelques secondes.
           Notre outil conserve les proportions et la qualité de vos photos.
           Gratuit, sans inscription, aucun fichier conservé.
         </p>
-      </div>
+      </PageHero>
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
 
       <div className="mb-16">
         <ResizeForm />
@@ -111,5 +115,6 @@ export default function RedimensionnerImage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

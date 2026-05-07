@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Conditions d'utilisation | heictojpg.fr",
@@ -8,9 +9,14 @@ export const metadata: Metadata = {
 
 export default function ConditionsUtilisation() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-3xl">
-      <h1 className="text-3xl font-bold text-gray-800 mb-8">Conditions d&apos;utilisation</h1>
-
+    <>
+      <PageHero>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Conditions d&apos;utilisation</h1>
+        <p className="text-gray-500 mb-8 leading-relaxed">
+          Conditions générales d&apos;utilisation du site heictojpg.fr et de ses outils de conversion d&apos;images en ligne.
+        </p>
+      </PageHero>
+      <div className="container mx-auto px-4 py-12 max-w-3xl">
       <div className="prose prose-gray max-w-none space-y-6 text-gray-600">
         <p className="text-sm text-gray-400">Dernière mise à jour : 5 mai 2026</p>
 
@@ -79,5 +85,6 @@ export default function ConditionsUtilisation() {
         </p>
       </div>
     </div>
+    </>
   );
 }

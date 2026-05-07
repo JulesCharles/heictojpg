@@ -7,6 +7,9 @@ import { Upload, Download, Loader2, X, ImageIcon } from "lucide-react";
 import JSZip from "jszip";
 import { useConversionLimit } from "@/lib/useConversionLimit";
 
+import UpgradePopup from "@/components/UpgradePopup";
+import BatchProPopup from "@/components/BatchProPopup";
+
 interface ImageConvertFormProps {
   title: string;
   acceptedFormats: string;
@@ -42,7 +45,8 @@ export default function ImageConvertForm({
   const [error, setError] = useState<string | null>(null);
   const [progress, setProgress] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
-  const { conversionsLeft, recordConversion, isLimited } = useConversionLimit();
+  const { conversionsLeft, recordConversion, isLimited, totalUsed } = useConversionLimit();
+  const [showBatchPopup, setShowBatchPopup] = useState(false);
 
   const isValidFile = (f: File) => {
     const validType = acceptedMimeTypes ? acceptedMimeTypes.some((t) => f.type.includes(t)) : true;
@@ -81,7 +85,7 @@ export default function ImageConvertForm({
       return;
     }
 
-    const filesToConvert = files.slice(0, conversionsLeft);
+    const filesToConvert = files.slice(0, 1);
     setConverting(true);
     setError(null);
     setConvertedFiles([]);
@@ -111,8 +115,8 @@ export default function ImageConvertForm({
     setConvertedFiles(results);
     setConverting(false);
 
-    if (filesToConvert.length < files.length) {
-      setError(`${filesToConvert.length} fichier(s) converti(s) sur ${files.length}. Passez a Pro pour un usage illimite.`);
+    if (files.length > 1) {
+      setShowBatchPopup(true);
     }
   };
 
@@ -138,9 +142,6 @@ export default function ImageConvertForm({
     <Card className="w-full max-w-lg mx-auto shadow-lg">
       <CardHeader className="text-center">
         <CardTitle className="text-2xl text-gray-800">{title}</CardTitle>
-        <p className="text-sm text-gray-500 mt-1">
-          {conversionsLeft} conversion(s) gratuite(s) restante(s)
-        </p>
       </CardHeader>
       <CardContent className="space-y-6">
         <div
@@ -226,6 +227,8 @@ export default function ImageConvertForm({
           </div>
         )}
       </CardContent>
+      <UpgradePopup totalUsed={totalUsed} />
+      <BatchProPopup visible={showBatchPopup} onDismiss={() => setShowBatchPopup(false)} totalFiles={files.length} />
     </Card>
   );
 }

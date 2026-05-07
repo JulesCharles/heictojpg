@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Convertir HEIC en JPG sur iPhone [2026] | heictojpg.fr",
@@ -26,44 +28,56 @@ export const metadata: Metadata = {
 };
 
 export default function ConvertirHeicIphone() {
-  const breadcrumbJsonLd = {
+  const howToJsonLd = {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
+    "@type": "HowTo",
+    name: "Comment convertir HEIC en JPG sur iPhone",
+    description: "3 methodes pour convertir vos photos HEIC en JPG sur iPhone : reglages iOS, app Fichiers ou en ligne.",
+    totalTime: "PT3M",
+    step: [
       {
-        "@type": "ListItem",
-        position: 1,
-        name: "Accueil",
-        item: "https://heictojpg.fr",
+        "@type": "HowToStep",
+        name: "Methode 1 : Changer le format par defaut",
+        text: "Ouvrez Reglages > Appareil photo > Formats > Le plus compatible. Vos prochaines photos seront en JPEG.",
+        url: "https://heictojpg.fr/convertir-heic-en-jpg-sur-iphone#methode-1",
       },
       {
-        "@type": "ListItem",
-        position: 2,
-        name: "Convertir HEIC en JPG sur iPhone",
-        item: "https://heictojpg.fr/convertir-heic-en-jpg-sur-iphone",
+        "@type": "HowToStep",
+        name: "Methode 2 : Utiliser l'app Fichiers",
+        text: "Enregistrez la photo dans Fichiers depuis l'app Photos, puis copiez-collez le fichier dans Fichiers. iOS cree automatiquement une copie JPG.",
+        url: "https://heictojpg.fr/convertir-heic-en-jpg-sur-iphone#methode-2",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Methode 3 : Convertir en ligne avec heictojpg.fr",
+        text: "Ouvrez heictojpg.fr dans Safari, selectionnez vos photos HEIC, et telechargez les fichiers JPG convertis.",
+        url: "https://heictojpg.fr/convertir-heic-en-jpg-sur-iphone#methode-3",
       },
     ],
   };
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
+    <>
+      <PageHero>
+        <Breadcrumbs items={[{ label: "Convertir HEIC en JPG sur iPhone", href: "/convertir-heic-en-jpg-sur-iphone" }]} />
+
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
+          Comment convertir HEIC en JPG sur iPhone
+        </h1>
+
+        <p className="text-gray-500 mb-8 text-lg leading-relaxed">
+          Depuis iOS 11, votre iPhone enregistre les photos au format HEIC par
+          défaut. Ce format offre une meilleure compression, mais peut poser
+          des problèmes de compatibilité lorsque vous partagez vos images avec
+          des appareils non-Apple. Découvrez comment convertir vos photos HEIC
+          en JPG ou changer le format par défaut directement sur votre iPhone.
+        </p>
+      </PageHero>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
       />
-
-      <h1 className="text-4xl font-bold text-gray-800 mb-6">
-        Comment convertir HEIC en JPG sur iPhone
-      </h1>
-
-      <p className="text-gray-600 mb-8 text-lg">
-        Depuis iOS 11, votre iPhone enregistre les photos au format HEIC par
-        défaut. Ce format offre une meilleure compression, mais peut poser
-        des problèmes de compatibilité lorsque vous partagez vos images avec
-        des appareils non-Apple. Découvrez comment convertir vos photos HEIC
-        en JPG ou changer le format par défaut directement sur votre iPhone.
-      </p>
-
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
       <div className="bg-blue-50 rounded-lg p-6 mb-10 text-center">
         <h3 className="text-xl font-semibold text-gray-800 mb-3">
           Convertissez vos photos HEIC instantanément
@@ -212,5 +226,6 @@ export default function ConvertirHeicIphone() {
         </div>
       </div>
     </div>
+    </>
   );
 }

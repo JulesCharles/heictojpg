@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Client from "./client";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Changer le DPI d'une image en ligne | heictojpg.fr",
@@ -42,13 +43,14 @@ const jsonLd = {
 
 export default function Page() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    <>
+      <PageHero>
 
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">Changer le DPI d'une image gratuitement</h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">Modifiez la résolution DPI (dots per inch) de vos images pour l'impression professionnelle (300 DPI), le web (72 DPI) ou tout autre usage. Notre outil modifie les métadonnées de résolution sans altérer la qualité des pixels.</p>
-      </div>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Changer le DPI d'une image gratuitement</h1>
+        <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">Modifiez la résolution DPI (dots per inch) de vos images pour l'impression professionnelle (300 DPI), le web (72 DPI) ou tout autre usage. Notre outil modifie les métadonnées de résolution sans altérer la qualité des pixels.</p>
+      </PageHero>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
 
       <div className="mb-16">
         <Client />
@@ -106,5 +108,6 @@ export default function Page() {
         </div>
       </div>
     </div>
+    </>
   );
 }

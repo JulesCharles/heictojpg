@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { formats } from "@/data/glossary";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Glossaire des formats d'image | heictojpg.fr",
@@ -77,30 +78,31 @@ export default function FormatIndexPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-5xl">
+    <>
+      <PageHero>
+        {/* Breadcrumb */}
+        <nav className="text-sm text-gray-500 mb-6">
+          <Link href="/" className="hover:text-blue-600">
+            Accueil
+          </Link>
+          <span className="mx-2">/</span>
+          <span className="text-gray-800">Formats</span>
+        </nav>
+
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
+          Glossaire des formats d&apos;image
+        </h1>
+        <p className="text-lg text-gray-500 mb-12 max-w-3xl leading-relaxed">
+          Tout ce que vous devez savoir sur les formats d&apos;image : HEIC, JPG,
+          PNG, WebP, AVIF, SVG, TIFF, GIF et plus. Guides complets, comparatifs
+          et liens vers nos outils de conversion gratuits.
+        </p>
+      </PageHero>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-
-      {/* Breadcrumb */}
-      <nav className="text-sm text-gray-500 mb-6">
-        <Link href="/" className="hover:text-blue-600">
-          Accueil
-        </Link>
-        <span className="mx-2">/</span>
-        <span className="text-gray-800">Formats</span>
-      </nav>
-
-      <h1 className="text-4xl font-bold text-gray-800 mb-4">
-        Glossaire des formats d&apos;image
-      </h1>
-      <p className="text-lg text-gray-600 mb-12 max-w-3xl">
-        Tout ce que vous devez savoir sur les formats d&apos;image : HEIC, JPG,
-        PNG, WebP, AVIF, SVG, TIFF, GIF et plus. Guides complets, comparatifs
-        et liens vers nos outils de conversion gratuits.
-      </p>
-
+      <div className="container mx-auto px-4 py-12 max-w-5xl">
       {categories.map((cat) => (
         <section key={cat.title} className="mb-12">
           <h2 className="text-2xl font-semibold text-gray-800 mb-2">
@@ -165,5 +167,6 @@ export default function FormatIndexPage() {
         </Link>
       </div>
     </div>
+    </>
   );
 }

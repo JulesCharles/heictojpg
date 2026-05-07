@@ -36,7 +36,7 @@ export default function ProButton({ isSignedIn, annual = false }: ProButtonProps
 
   const label = annual
     ? (isSignedIn ? "Passer a Pro annuel — 39\u20AC/an" : "Pro annuel — 39\u20AC/an")
-    : (isSignedIn ? "Passer a Pro — 5\u20AC/mois" : "Creer un compte et passer a Pro");
+    : (isSignedIn ? "Essai gratuit 7 jours — puis 5\u20AC/mois" : "Essai gratuit 7 jours — puis 5\u20AC/mois");
 
   return (
     <button
