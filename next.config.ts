@@ -62,6 +62,21 @@ const nextConfig: NextConfig = {
         destination: '/svg-vs-png',
         permanent: true,
       },
+      {
+        source: '/blog/webp-vs-jpg',
+        destination: '/webp-vs-jpg',
+        permanent: true,
+      },
+      {
+        source: '/blog/avif-vs-jpg',
+        destination: '/avif-vs-jpg',
+        permanent: true,
+      },
+      {
+        source: '/blog/heic-vs-webp',
+        destination: '/heic-vs-webp',
+        permanent: true,
+      },
     ];
   },
 };

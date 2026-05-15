@@ -234,6 +234,118 @@ export const comparisons: ComparisonData[] = [
       "Export final d'un logo pour les réseaux sociaux",
     ],
   },
+  {
+    formatA: "heic",
+    formatB: "avif",
+    slug: "heic-vs-avif",
+    verdict:
+      "Le HEIC et l'AVIF sont deux formats modernes offrant une compression excellente, mais avec des philosophies differentes. Le HEIC est ancre dans l'ecosysteme Apple avec un support natif sur iPhone et Mac, tandis que l'AVIF est un format libre, mieux supporte sur le web. Pour les utilisateurs Apple, le HEIC reste pratique au quotidien. Pour le web et les projets multiplateformes, l'AVIF est le choix d'avenir.",
+    criteria: [
+      { name: "Compression", a: "Excellente (codec HEVC)", b: "Excellente (codec AV1, legerement meilleur)", winner: "b" },
+      { name: "Qualite d'image", a: "16 bits, tres bonne", b: "10-12 bits, excellente a bas debit", winner: "tie" },
+      { name: "HDR", a: "Oui (Dolby Vision, HDR10)", b: "Oui (HDR10, PQ, HLG)", winner: "tie" },
+      { name: "Support web", a: "Safari uniquement", b: "Chrome, Firefox, Safari 16.4+", winner: "b" },
+      { name: "Support mobile", a: "Natif sur iOS", b: "Android 12+, iOS limite", winner: "a" },
+      { name: "Brevets", a: "HEVC (brevets, licences couteuses)", b: "Libre de droits (AOM)", winner: "b" },
+      { name: "Ecosysteme Apple", a: "Parfaitement integre", b: "Support limite", winner: "a" },
+    ],
+    useA: [
+      "Stockage de photos sur iPhone et iPad (format natif)",
+      "Synchronisation entre appareils Apple via iCloud",
+      "Conservation des Live Photos et donnees de profondeur",
+      "Archivage dans un flux de travail 100% Apple",
+    ],
+    useB: [
+      "Publication d'images sur le web avec compression maximale",
+      "Projets open source et multiplateformes",
+      "Sites web modernes visant les meilleurs Core Web Vitals",
+      "Contenu HDR pour ecrans compatibles sur le web",
+    ],
+  },
+  {
+    formatA: "gif",
+    formatB: "webp",
+    slug: "gif-vs-webp",
+    verdict:
+      "Le GIF est un format historique universellement reconnu, mais techniquement depasse. Le WebP offre des animations plus legeres (jusqu'a 60-80% de reduction), plus de couleurs, et une meilleure qualite. Pour le web moderne, le WebP anime remplace avantageusement le GIF. Le GIF reste pertinent pour les messageries et les usages ou la compatibilite absolue est requise.",
+    criteria: [
+      { name: "Taille animation", a: "Tres lourd (souvent 5-20 Mo)", b: "60-80% plus leger que le GIF", winner: "b" },
+      { name: "Qualite d'image", a: "Limitee (tramage visible)", b: "Nettement superieure", winner: "b" },
+      { name: "Couleurs", a: "256 couleurs maximum", b: "16,7 millions de couleurs (24 bits)", winner: "b" },
+      { name: "Transparence", a: "Binaire (oui/non, pas de semi-transparence)", b: "Canal alpha complet (semi-transparence)", winner: "b" },
+      { name: "Support navigateurs", a: "Tous sans exception", b: "Tous les modernes (95%+)", winner: "a" },
+      { name: "Support messagerie", a: "Universel (iMessage, WhatsApp, Slack, etc.)", b: "Limite (peu de messageries)", winner: "a" },
+      { name: "Creation", a: "Tres simple, outils partout", b: "Plus technique, moins d'outils dedies", winner: "a" },
+    ],
+    useA: [
+      "Partage de reactions et memes sur les messageries",
+      "Emails marketing (compatibilite maximale des clients mail)",
+      "Animations simples avec peu de couleurs",
+      "Plateformes qui n'acceptent pas le WebP (Giphy, Tenor)",
+    ],
+    useB: [
+      "Animations sur un site web ou un blog",
+      "Remplacement de GIF lourds pour ameliorer la performance",
+      "Animations avec des degradees, photos ou beaucoup de couleurs",
+      "Optimisation du temps de chargement et des Core Web Vitals",
+    ],
+  },
+  {
+    formatA: "tiff",
+    formatB: "jpg",
+    slug: "tiff-vs-jpg",
+    verdict:
+      "Le TIFF est le format de reference pour l'impression professionnelle et l'archivage : qualite sans perte, support des calques et des profils colorimétriques avances. Le JPG est ideal pour le partage, le web et les usages courants grace a sa compression efficace et sa compatibilite universelle. Le choix depend de votre objectif : qualite maximale (TIFF) ou praticite (JPG).",
+    criteria: [
+      { name: "Compression", a: "Sans perte (ou non compresse)", b: "Avec perte (reglable)", winner: "b" },
+      { name: "Qualite", a: "Parfaite, aucune degradation", b: "Bonne, mais artefacts possibles", winner: "a" },
+      { name: "Taille fichier", a: "Tres lourd (20-100 Mo par photo)", b: "Leger (1-5 Mo par photo)", winner: "b" },
+      { name: "Impression pro", a: "Standard de l'industrie (CMJN, 16 bits)", b: "Acceptable mais limite (RVB, 8 bits)", winner: "a" },
+      { name: "Support logiciels", a: "Photoshop, Lightroom, InDesign, GIMP", b: "Tous les logiciels sans exception", winner: "b" },
+      { name: "Support web", a: "Non supporte par les navigateurs", b: "Universel", winner: "b" },
+      { name: "Metadonnees", a: "Tres riches (calques, profils ICC, annotations)", b: "EXIF standard", winner: "a" },
+    ],
+    useA: [
+      "Impression professionnelle (affiches, magazines, livres photo)",
+      "Archivage de photos en qualite maximale sans perte",
+      "Flux de travail PAO (InDesign, QuarkXPress)",
+      "Numerisation de documents et d'oeuvres d'art",
+    ],
+    useB: [
+      "Partage de photos par email ou messagerie",
+      "Publication sur le web et les reseaux sociaux",
+      "Stockage de photos personnelles avec un bon ratio qualite/taille",
+      "Usage dans des applications bureautiques (Word, PowerPoint)",
+    ],
+  },
+  {
+    formatA: "pdf",
+    formatB: "jpg",
+    slug: "pdf-vs-jpg",
+    verdict:
+      "Le PDF et le JPG sont des formats complementaires avec des usages tres differents. Le PDF excelle pour les documents multi-pages, les textes et les mises en page complexes. Le JPG est le format ideal pour les images individuelles et le partage visuel. Choisissez le PDF pour les documents, le JPG pour les photos.",
+    criteria: [
+      { name: "Type de contenu", a: "Documents, textes, mises en page", b: "Images et photographies", winner: "tie" },
+      { name: "Multi-pages", a: "Oui (illimite)", b: "Non (une seule image)", winner: "a" },
+      { name: "Texte selectionnable", a: "Oui (texte natif ou OCR)", b: "Non (pixels uniquement)", winner: "a" },
+      { name: "Taille fichier", a: "Variable (souvent lourd si images)", b: "Leger pour les photos", winner: "b" },
+      { name: "Partage", a: "Excellent pour les documents officiels", b: "Excellent pour les photos et visuels", winner: "tie" },
+      { name: "Impression", a: "Mise en page fidele (WYSIWYG)", b: "Bonne qualite photo", winner: "a" },
+      { name: "Edition", a: "Difficile sans logiciel dedie", b: "Simple avec tout editeur d'image", winner: "b" },
+    ],
+    useA: [
+      "Documents officiels (contrats, factures, CV)",
+      "Presentations et rapports multi-pages",
+      "Portfolios et catalogues avec mise en page complexe",
+      "Archivage de documents avec texte selectionnable",
+    ],
+    useB: [
+      "Partage de photos individuelles",
+      "Images pour le web et les reseaux sociaux",
+      "Miniatures et aperçus visuels",
+      "Photos produit pour le e-commerce",
+    ],
+  },
 ];
 
 export function getComparison(slug: string): ComparisonData | undefined {
