@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Client from "./client";
 import PageHero from "@/components/PageHero";
+import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
   title: "Supprimer des pages d'un PDF gratuit | heictojpg.fr",
@@ -45,14 +46,7 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <div className="bg-white rounded-lg shadow-sm p-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Autres outils PDF</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <Link href="/fusionner-pdf" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors"><h3 className="font-semibold text-gray-800">Fusionner PDF</h3><p className="text-sm text-gray-600">Combinez plusieurs PDF.</p></Link>
-          <Link href="/diviser-pdf" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors"><h3 className="font-semibold text-gray-800">Diviser PDF</h3><p className="text-sm text-gray-600">Séparez par pages.</p></Link>
-          <Link href="/compresser-pdf" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors"><h3 className="font-semibold text-gray-800">Compresser PDF</h3><p className="text-sm text-gray-600">Réduisez la taille.</p></Link>
-        </div>
-      </div>
+      <RelatedTools currentPath="/supprimer-pages-pdf" />
 
       {/* Article recommande */}
       <div className="bg-blue-50 rounded-lg p-6 mt-8">

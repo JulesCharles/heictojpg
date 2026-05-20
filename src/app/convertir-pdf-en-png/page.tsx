@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PdfToImageClient from "../convertir-pdf-en-jpg/client";
 import PageHero from "@/components/PageHero";
+import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
   title: "Convertir PDF en PNG en ligne gratuit | heictojpg.fr",
@@ -71,23 +72,7 @@ export default function ConvertirPdfEnPng() {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm p-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Autres outils PDF</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <Link href="/convertir-pdf-en-jpg" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">PDF &rarr; JPG</h3>
-            <p className="text-sm text-gray-600">Images plus légères pour le web.</p>
-          </Link>
-          <Link href="/fusionner-pdf" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Fusionner PDF</h3>
-            <p className="text-sm text-gray-600">Combinez plusieurs PDF en un.</p>
-          </Link>
-          <Link href="/compresser-pdf" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Compresser PDF</h3>
-            <p className="text-sm text-gray-600">Réduisez la taille de vos PDF.</p>
-          </Link>
-        </div>
-      </div>
+      <RelatedTools currentPath="/convertir-pdf-en-png" />
 
       {/* Article recommande */}
       <div className="bg-blue-50 rounded-lg p-6 mt-8">

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Client from "./client";
 import AdBanner from "@/components/AdBanner";
+import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
@@ -127,23 +127,7 @@ export default function ConvertirImagesEnPdf() {
 
       <AdBanner slot="SLOT_2" format="horizontal" />
 
-      <div className="bg-white rounded-lg shadow-sm p-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Outils PDF similaires</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <Link href="/convertir-jpg-en-pdf" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">JPG en PDF</h3>
-            <p className="text-sm text-gray-600">Convertir un JPG en PDF.</p>
-          </Link>
-          <Link href="/fusionner-pdf" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Fusionner PDF</h3>
-            <p className="text-sm text-gray-600">Assemblez plusieurs PDF en un seul.</p>
-          </Link>
-          <Link href="/compresser-pdf" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Compresser PDF</h3>
-            <p className="text-sm text-gray-600">Reduisez la taille de vos PDF.</p>
-          </Link>
-        </div>
-      </div>
+      <RelatedTools currentPath="/convertir-images-en-pdf" />
     </div>
     </>
   );

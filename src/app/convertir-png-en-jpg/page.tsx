@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import ImageConvertForm from "@/components/ImageConvertForm";
+import RelatedTools from "@/components/RelatedTools";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
-  title: "Convertir PNG en JPG en ligne gratuit | heictojpg.fr",
+  title: "Convertir PNG en JPG Gratuit en Ligne - Réduction 50 à 80% | heictojpg.fr",
   description:
-    "Convertissez vos images PNG en JPG pour reduire leur taille. Reduction 50-80%. Gratuit, sans inscription.",
+    "Convertissez vos images PNG en JPG et réduisez leur taille de 50 à 80%. Qualité préservée. 100% gratuit, sans inscription, sans limite.",
   keywords: [
     "convertir png en jpg",
     "png to jpg",
@@ -223,29 +223,7 @@ export default function ConvertirPngEnJpg() {
         </div>
       </div>
 
-      {/* Autres outils */}
-      <div className="bg-white rounded-lg shadow-sm p-8 mt-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Découvrez nos autres outils</h2>
-        <div className="grid md:grid-cols-2 gap-4">
-          <Link href="/" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">HEIC → JPG</h3>
-            <p className="text-sm text-gray-600">Convertissez vos photos iPhone HEIC en JPG.</p>
-          </Link>
-          <Link href="/convertir-webp-en-jpg" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">WebP → JPG</h3>
-            <p className="text-sm text-gray-600">Transformez vos images WebP en JPG.</p>
-          </Link>
-          <Link href="/convertir-jpg-en-png" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">JPG → PNG</h3>
-            <p className="text-sm text-gray-600">Convertissez en PNG pour la transparence.</p>
-          </Link>
-          <Link href="/compresser-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Compresser image</h3>
-            <p className="text-sm text-gray-600">Réduisez le poids de vos images.</p>
-          </Link>
-        </div>
-        <p className="mt-6 text-gray-600">Consultez aussi notre <Link href="/blog/optimiser-photos-web-heic-jpg-webp" className="text-blue-600 hover:text-blue-800">guide sur l'optimisation des photos pour le web</Link> et notre <Link href="/faq" className="text-blue-600 hover:text-blue-800">FAQ</Link>.</p>
-      </div>
+      <RelatedTools currentPath="/convertir-png-en-jpg" />
     </div>
     </>
   );

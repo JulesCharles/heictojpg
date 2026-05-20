@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedTools from "@/components/RelatedTools";
 import AdBanner from "@/components/AdBanner";
 import TextOnImageForm from "@/components/TextOnImageForm";
 import PageHero from "@/components/PageHero";
@@ -145,23 +145,7 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm p-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Nos autres outils</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <Link href="/ajouter-filigrane" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Ajouter un filigrane</h3>
-            <p className="text-sm text-gray-600">Protegez vos photos avec un watermark.</p>
-          </Link>
-          <Link href="/compresser-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Compresser image</h3>
-            <p className="text-sm text-gray-600">Reduisez le poids de vos images.</p>
-          </Link>
-          <Link href="/redimensionner-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Redimensionner</h3>
-            <p className="text-sm text-gray-600">Changez la taille de vos images.</p>
-          </Link>
-        </div>
-      </div>
+      <RelatedTools currentPath="/ajouter-texte-image" />
     </div>
     </>
   );

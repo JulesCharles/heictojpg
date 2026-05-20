@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import ContactSheetForm from "@/components/ContactSheetForm";
+import RelatedTools from "@/components/RelatedTools";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AdBanner from "@/components/AdBanner";
 import PageHero from "@/components/PageHero";
@@ -225,28 +225,7 @@ export default function CreerPlancheContact() {
         </div>
       </div>
 
-      {/* Related tools */}
-      <div className="bg-white rounded-lg shadow-sm p-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Decouvrez nos autres outils</h2>
-        <div className="grid md:grid-cols-2 gap-4">
-          <Link href="/compresser-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Compresser une image</h3>
-            <p className="text-sm text-gray-600">Reduisez le poids de vos images JPG, PNG et WebP.</p>
-          </Link>
-          <Link href="/redimensionner-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Redimensionner une image</h3>
-            <p className="text-sm text-gray-600">Changez les dimensions de vos images facilement.</p>
-          </Link>
-          <Link href="/convertir-images-en-pdf" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Images vers PDF</h3>
-            <p className="text-sm text-gray-600">Convertissez vos images en un document PDF.</p>
-          </Link>
-          <Link href="/creer-gif" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Creer un GIF</h3>
-            <p className="text-sm text-gray-600">Assemblez vos images en un GIF anime.</p>
-          </Link>
-        </div>
-      </div>
+      <RelatedTools currentPath="/creer-planche-contact" />
     </div>
     </>
   );

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import RelatedTools from "@/components/RelatedTools";
 import ColorConvertForm from "@/components/ColorConvertForm";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AdBanner from "@/components/AdBanner";
@@ -122,6 +123,8 @@ export default function ConvertisseurCouleurs() {
           </div>
         </div>
       </div>
+
+      <RelatedTools currentPath="/convertisseur-couleurs" />
     </div>
     </>
   );

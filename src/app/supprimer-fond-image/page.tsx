@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Client from "./client";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
-  title: "Supprimer le fond d'une image par IA | heictojpg.fr",
-  description: "Supprimez automatiquement l'arrière-plan de vos photos grâce à l'intelligence artificielle. Résultat en PNG transparent. Gratuit, sans inscription.",
+  title: "Supprimer le Fond d'une Image Gratuit - Détourage IA en 1 Clic | heictojpg.fr",
+  description: "Supprimez automatiquement l'arrière-plan de vos photos grâce à l'IA. Résultat en PNG transparent en quelques secondes. 100% gratuit, sans inscription, sans filigrane.",
   keywords: ["supprimer fond image", "supprimer arrière plan", "remove background", "fond transparent", "détourage photo", "enlever fond photo", "détourage automatique"],
   openGraph: {
     type: "website",
     locale: "fr_FR",
     url: "https://heictojpg.fr/supprimer-fond-image",
     siteName: "heictojpg.fr",
-    title: "Supprimer le fond d'une image gratuitement",
-    description: "Supprimez automatiquement l'arrière-plan de vos photos. Gratuit, sans inscription.",
+    title: "Supprimer le Fond d'une Image Gratuit - Détourage IA en 1 Clic",
+    description: "Supprimez automatiquement l'arrière-plan de vos photos grâce à l'IA. PNG transparent en quelques secondes. Gratuit, sans inscription.",
   },
   alternates: { canonical: "https://heictojpg.fr/supprimer-fond-image" },
 };
@@ -170,23 +170,7 @@ export default function SupprimerFondImage() {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm p-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Nos autres outils</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <Link href="/" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">HEIC &rarr; JPG</h3>
-            <p className="text-sm text-gray-600">Convertissez vos photos iPhone.</p>
-          </Link>
-          <Link href="/compresser-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Compresser image</h3>
-            <p className="text-sm text-gray-600">Réduisez le poids de vos images.</p>
-          </Link>
-          <Link href="/recadrer-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Recadrer image</h3>
-            <p className="text-sm text-gray-600">Découpez vos images avec précision.</p>
-          </Link>
-        </div>
-      </div>
+      <RelatedTools currentPath="/supprimer-fond-image" />
     </div>
     </>
   );

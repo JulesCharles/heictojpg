@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Client from "./client";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
-  title: "Compresser un PDF en ligne gratuit | heictojpg.fr",
+  title: "Compresser un PDF Gratuit en Ligne - Réduisez Jusqu'à 80% | heictojpg.fr",
   description:
-    "Compressez vos fichiers PDF en ligne gratuitement. Réduisez la taille de vos documents sans perte de qualité. Outil rapide, sécurisé et sans inscription.",
+    "Compressez vos fichiers PDF et réduisez leur taille jusqu'à 80% sans perte de qualité. Idéal pour l'envoi par email. 100% gratuit, sans inscription, sans limite.",
   keywords: [
     "compresser pdf",
     "réduire taille pdf",
@@ -209,49 +210,7 @@ export default function CompresserPdf() {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm p-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-          Découvrez nos autres outils PDF
-        </h2>
-        <div className="grid md:grid-cols-2 gap-4">
-          <Link
-            href="/fusionner-pdf"
-            className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors"
-          >
-            <h3 className="font-semibold text-gray-800">Fusionner des PDF</h3>
-            <p className="text-sm text-gray-600">
-              Combinez plusieurs PDF en un seul fichier.
-            </p>
-          </Link>
-          <Link
-            href="/diviser-pdf"
-            className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors"
-          >
-            <h3 className="font-semibold text-gray-800">Diviser un PDF</h3>
-            <p className="text-sm text-gray-600">
-              Séparez un PDF en plusieurs fichiers.
-            </p>
-          </Link>
-          <Link
-            href="/convertir-jpg-en-pdf"
-            className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors"
-          >
-            <h3 className="font-semibold text-gray-800">JPG en PDF</h3>
-            <p className="text-sm text-gray-600">
-              Convertissez vos images en document PDF.
-            </p>
-          </Link>
-          <Link
-            href="/convertir-pdf-en-jpg"
-            className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors"
-          >
-            <h3 className="font-semibold text-gray-800">PDF en JPG</h3>
-            <p className="text-sm text-gray-600">
-              Extrayez les pages d&apos;un PDF en images.
-            </p>
-          </Link>
-        </div>
-      </div>
+      <RelatedTools currentPath="/compresser-pdf" />
 
       {/* Article recommande */}
       <div className="bg-blue-50 rounded-lg p-6 mt-8">

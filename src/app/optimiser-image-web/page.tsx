@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import ImageOptimizerForm from "@/components/ImageOptimizerForm";
+import RelatedTools from "@/components/RelatedTools";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AdBanner from "@/components/AdBanner";
 import PageHero from "@/components/PageHero";
@@ -253,24 +253,7 @@ export default function OptimiserImageWeb() {
 
       <AdBanner slot="SLOT_2" format="horizontal" />
 
-      {/* Related tools */}
-      <div className="bg-white rounded-lg shadow-sm p-8 mt-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">D&eacute;couvrez nos autres outils</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <Link href="/compresser-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Compresser une image</h3>
-            <p className="text-sm text-gray-600">R&eacute;duisez le poids de vos images JPG, PNG et WebP.</p>
-          </Link>
-          <Link href="/convertir-jpg-en-webp" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">JPG &rarr; WebP</h3>
-            <p className="text-sm text-gray-600">Convertissez vos images JPG en WebP pour le web.</p>
-          </Link>
-          <Link href="/convertir-png-en-webp" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">PNG &rarr; WebP</h3>
-            <p className="text-sm text-gray-600">Transformez vos images PNG en WebP optimis&eacute;.</p>
-          </Link>
-        </div>
-      </div>
+      <RelatedTools currentPath="/optimiser-image-web" />
     </div>
     </>
   );

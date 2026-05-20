@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import ExifEditorForm from "@/components/ExifEditorForm";
+import RelatedTools from "@/components/RelatedTools";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AdBanner from "@/components/AdBanner";
 import PageHero from "@/components/PageHero";
@@ -120,23 +120,7 @@ export default function ModifierMetadonnees() {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm p-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Outils associes</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <Link href="/lire-metadonnees-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Lire les metadonnees</h3>
-            <p className="text-sm text-gray-600">Analysez les EXIF de n&apos;importe quelle image.</p>
-          </Link>
-          <Link href="/supprimer-metadonnees-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Supprimer les EXIF</h3>
-            <p className="text-sm text-gray-600">Nettoyez les metadonnees rapidement.</p>
-          </Link>
-          <Link href="/changer-dpi-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Changer le DPI</h3>
-            <p className="text-sm text-gray-600">Modifiez la resolution pour l&apos;impression.</p>
-          </Link>
-        </div>
-      </div>
+      <RelatedTools currentPath="/modifier-metadonnees-image" />
     </div>
     </>
   );

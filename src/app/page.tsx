@@ -4,8 +4,8 @@ import AdBanner from "@/components/AdBanner";
 import { ToolSection, type Tool } from "@/components/ToolCard";
 
 export const metadata: Metadata = {
-  title: "heictojpg.fr - Outils image et PDF en ligne gratuits",
-  description: "Convertissez, compressez, redimensionnez et éditez vos images en ligne gratuitement. HEIC, JPG, PNG, WebP, SVG, PDF et plus. Sans inscription.",
+  title: "heictojpg.fr - 50+ Outils Image et PDF Gratuits en Ligne, Sans Inscription",
+  description: "Convertissez HEIC en JPG, compressez, redimensionnez et éditez vos images en ligne gratuitement. 50+ outils pour HEIC, JPG, PNG, WebP, SVG, PDF. Sans inscription, sans limite. Vos fichiers ne sont pas conservés.",
   keywords: [
     "convertir image en ligne",
     "outils image gratuit",
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://heictojpg.fr",
     siteName: "heictojpg.fr",
-    title: "heictojpg.fr - Outils image et PDF en ligne gratuits",
-    description: "Convertissez, compressez et éditez vos images en ligne gratuitement.",
+    title: "heictojpg.fr - 50+ Outils Image et PDF Gratuits en Ligne",
+    description: "Convertissez HEIC en JPG, compressez, redimensionnez et éditez vos images gratuitement. 50+ outils sans inscription.",
   },
   alternates: { canonical: "https://heictojpg.fr" },
 };

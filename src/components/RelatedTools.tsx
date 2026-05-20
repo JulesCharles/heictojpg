@@ -1,0 +1,556 @@
+import Link from "next/link";
+
+interface RelatedTool {
+  href: string;
+  label: string;
+  desc: string;
+}
+
+const relatedToolsMap: Record<string, RelatedTool[]> = {
+  // ── HEIC conversions ──
+  "/convertir-heic-en-jpg": [
+    { href: "/convertir-heic-en-png", label: "HEIC en PNG", desc: "Qualité sans perte avec transparence." },
+    { href: "/convertir-heic-en-webp", label: "HEIC en WebP", desc: "Format optimisé pour le web." },
+    { href: "/compresser-heic", label: "Compresser HEIC", desc: "Réduisez la taille sans changer de format." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids de vos JPG." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille de vos images." },
+  ],
+  "/convertir-heic-en-png": [
+    { href: "/convertir-heic-en-jpg", label: "HEIC en JPG", desc: "Le format universel." },
+    { href: "/convertir-heic-en-webp", label: "HEIC en WebP", desc: "Format léger pour le web." },
+    { href: "/convertir-png-en-webp", label: "PNG en WebP", desc: "Optimisez vos PNG pour le web." },
+    { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Détourage IA automatique." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids de vos photos." },
+  ],
+  "/convertir-heic-en-webp": [
+    { href: "/convertir-heic-en-jpg", label: "HEIC en JPG", desc: "Compatibilité universelle." },
+    { href: "/convertir-heic-en-png", label: "HEIC en PNG", desc: "Qualité sans perte." },
+    { href: "/convertir-jpg-en-webp", label: "JPG en WebP", desc: "Optimisez vos JPG aussi." },
+    { href: "/optimiser-image-web", label: "Optimiser pour le web", desc: "Compression intelligente." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids de vos photos." },
+  ],
+  "/convertir-heic-en-pdf": [
+    { href: "/convertir-heic-en-jpg", label: "HEIC en JPG", desc: "Format photo universel." },
+    { href: "/convertir-jpg-en-pdf", label: "JPG en PDF", desc: "Images vers document PDF." },
+    { href: "/convertir-images-en-pdf", label: "Images en PDF", desc: "Combinez plusieurs images." },
+    { href: "/fusionner-pdf", label: "Fusionner PDF", desc: "Combinez plusieurs PDF." },
+    { href: "/compresser-pdf", label: "Compresser PDF", desc: "Réduisez la taille du PDF." },
+  ],
+  "/convertir-heic-en-avif": [
+    { href: "/convertir-heic-en-jpg", label: "HEIC en JPG", desc: "Compatibilité universelle." },
+    { href: "/convertir-heic-en-webp", label: "HEIC en WebP", desc: "Format web de Google." },
+    { href: "/convertir-jpg-en-avif", label: "JPG en AVIF", desc: "Optimisez vos JPG en AVIF." },
+    { href: "/convertir-png-en-avif", label: "PNG en AVIF", desc: "PNG vers le format le plus léger." },
+    { href: "/optimiser-image-web", label: "Optimiser pour le web", desc: "Compression intelligente." },
+  ],
+  "/convertir-heic-en-tiff": [
+    { href: "/convertir-heic-en-jpg", label: "HEIC en JPG", desc: "Format photo universel." },
+    { href: "/convertir-heic-en-png", label: "HEIC en PNG", desc: "Qualité sans perte." },
+    { href: "/convertir-tiff-en-jpg", label: "TIFF en JPG", desc: "Allégez vos fichiers TIFF." },
+    { href: "/changer-dpi-image", label: "Changer DPI", desc: "Ajustez pour l'impression." },
+    { href: "/lire-metadonnees-heic", label: "Métadonnées HEIC", desc: "Lisez les données EXIF." },
+  ],
+  "/convertir-heic-en-gif": [
+    { href: "/convertir-heic-en-jpg", label: "HEIC en JPG", desc: "Format photo universel." },
+    { href: "/convertir-heic-en-png", label: "HEIC en PNG", desc: "Qualité sans perte." },
+    { href: "/creer-gif", label: "Créer un GIF", desc: "Animez plusieurs images." },
+    { href: "/convertir-gif-en-webp", label: "GIF en WebP", desc: "GIF animé plus léger." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+  ],
+  "/convertir-heic-en-ico": [
+    { href: "/convertir-heic-en-jpg", label: "HEIC en JPG", desc: "Format photo universel." },
+    { href: "/convertir-heic-en-png", label: "HEIC en PNG", desc: "Qualité sans perte." },
+    { href: "/convertir-png-en-ico", label: "PNG en ICO", desc: "Créez un favicon depuis un PNG." },
+    { href: "/convertir-jpg-en-ico", label: "JPG en ICO", desc: "Créez un favicon depuis un JPG." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Ajustez la taille du favicon." },
+  ],
+  "/compresser-heic": [
+    { href: "/convertir-heic-en-jpg", label: "HEIC en JPG", desc: "Convertissez en JPG universel." },
+    { href: "/convertir-heic-en-webp", label: "HEIC en WebP", desc: "Format web ultra léger." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Compressez JPG, PNG, WebP." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Réduisez les dimensions." },
+    { href: "/lire-metadonnees-heic", label: "Métadonnées HEIC", desc: "Lisez les données EXIF." },
+  ],
+  "/lire-metadonnees-heic": [
+    { href: "/lire-metadonnees-image", label: "Métadonnées image", desc: "EXIF pour tous formats." },
+    { href: "/supprimer-metadonnees-image", label: "Supprimer EXIF", desc: "Protégez votre vie privée." },
+    { href: "/modifier-metadonnees-image", label: "Modifier EXIF", desc: "Éditez les métadonnées." },
+    { href: "/convertir-heic-en-jpg", label: "HEIC en JPG", desc: "Convertissez en JPG." },
+    { href: "/compresser-heic", label: "Compresser HEIC", desc: "Réduisez la taille." },
+  ],
+
+  // ── Image conversions ──
+  "/convertir-jpg-en-webp": [
+    { href: "/convertir-png-en-webp", label: "PNG en WebP", desc: "Optimisez aussi vos PNG." },
+    { href: "/convertir-jpg-en-avif", label: "JPG en AVIF", desc: "Encore plus léger que WebP." },
+    { href: "/convertir-webp-en-jpg", label: "WebP en JPG", desc: "Retour au format universel." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/optimiser-image-web", label: "Optimiser pour le web", desc: "Compression intelligente." },
+  ],
+  "/convertir-png-en-webp": [
+    { href: "/convertir-jpg-en-webp", label: "JPG en WebP", desc: "Optimisez aussi vos JPG." },
+    { href: "/convertir-png-en-avif", label: "PNG en AVIF", desc: "Encore plus léger." },
+    { href: "/convertir-webp-en-png", label: "WebP en PNG", desc: "Retour au PNG." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/optimiser-image-web", label: "Optimiser pour le web", desc: "Compression intelligente." },
+  ],
+  "/convertir-png-en-jpg": [
+    { href: "/convertir-jpg-en-png", label: "JPG en PNG", desc: "Qualité sans perte." },
+    { href: "/convertir-png-en-webp", label: "PNG en WebP", desc: "Format web ultra léger." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Détourage IA." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille." },
+  ],
+  "/convertir-jpg-en-png": [
+    { href: "/convertir-png-en-jpg", label: "PNG en JPG", desc: "Réduisez la taille." },
+    { href: "/convertir-jpg-en-webp", label: "JPG en WebP", desc: "Format web léger." },
+    { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Détourage IA en PNG transparent." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/convertir-jpg-en-svg", label: "JPG en SVG", desc: "Vectorisez votre image." },
+  ],
+  "/convertir-webp-en-jpg": [
+    { href: "/convertir-webp-en-png", label: "WebP en PNG", desc: "Qualité sans perte." },
+    { href: "/convertir-jpg-en-webp", label: "JPG en WebP", desc: "Retour au WebP." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids du JPG." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille." },
+    { href: "/convertir-webp-en-gif", label: "WebP en GIF", desc: "Extrayez l'animation." },
+  ],
+  "/convertir-webp-en-png": [
+    { href: "/convertir-webp-en-jpg", label: "WebP en JPG", desc: "Format universel." },
+    { href: "/convertir-png-en-webp", label: "PNG en WebP", desc: "Retour au WebP." },
+    { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Détourage IA." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/convertir-png-en-svg", label: "PNG en SVG", desc: "Vectorisez votre image." },
+  ],
+  "/convertir-webp-en-gif": [
+    { href: "/convertir-webp-en-jpg", label: "WebP en JPG", desc: "Format universel." },
+    { href: "/convertir-webp-en-png", label: "WebP en PNG", desc: "Qualité sans perte." },
+    { href: "/creer-gif", label: "Créer un GIF", desc: "Animez plusieurs images." },
+    { href: "/convertir-gif-en-webp", label: "GIF en WebP", desc: "GIF plus léger." },
+    { href: "/convertir-gif-en-jpg", label: "GIF en JPG", desc: "Image fixe depuis un GIF." },
+  ],
+  "/convertir-jpg-en-avif": [
+    { href: "/convertir-png-en-avif", label: "PNG en AVIF", desc: "PNG vers le plus léger." },
+    { href: "/convertir-jpg-en-webp", label: "JPG en WebP", desc: "Alternative largement supportée." },
+    { href: "/convertir-avif-en-jpg", label: "AVIF en JPG", desc: "Retour au JPG." },
+    { href: "/optimiser-image-web", label: "Optimiser pour le web", desc: "Compression intelligente." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+  ],
+  "/convertir-png-en-avif": [
+    { href: "/convertir-jpg-en-avif", label: "JPG en AVIF", desc: "Optimisez aussi vos JPG." },
+    { href: "/convertir-png-en-webp", label: "PNG en WebP", desc: "Alternative web." },
+    { href: "/convertir-avif-en-png", label: "AVIF en PNG", desc: "Retour au PNG." },
+    { href: "/optimiser-image-web", label: "Optimiser pour le web", desc: "Compression intelligente." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+  ],
+  "/convertir-avif-en-jpg": [
+    { href: "/convertir-avif-en-png", label: "AVIF en PNG", desc: "Qualité sans perte." },
+    { href: "/convertir-jpg-en-avif", label: "JPG en AVIF", desc: "Retour au format AVIF." },
+    { href: "/convertir-webp-en-jpg", label: "WebP en JPG", desc: "WebP vers JPG aussi." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille." },
+  ],
+  "/convertir-avif-en-png": [
+    { href: "/convertir-avif-en-jpg", label: "AVIF en JPG", desc: "Format universel." },
+    { href: "/convertir-png-en-avif", label: "PNG en AVIF", desc: "Retour au format AVIF." },
+    { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Détourage IA." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/convertir-png-en-webp", label: "PNG en WebP", desc: "Format web léger." },
+  ],
+  "/convertir-svg-en-png": [
+    { href: "/convertir-svg-en-jpg", label: "SVG en JPG", desc: "SVG vers photo." },
+    { href: "/convertir-png-en-svg", label: "PNG en SVG", desc: "Vectorisez votre image." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille du PNG." },
+    { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Détourage IA." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+  ],
+  "/convertir-svg-en-jpg": [
+    { href: "/convertir-svg-en-png", label: "SVG en PNG", desc: "Conservez la transparence." },
+    { href: "/convertir-jpg-en-svg", label: "JPG en SVG", desc: "Vectorisez votre image." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille." },
+    { href: "/changer-dpi-image", label: "Changer DPI", desc: "Ajustez pour l'impression." },
+  ],
+  "/convertir-jpg-en-svg": [
+    { href: "/convertir-png-en-svg", label: "PNG en SVG", desc: "Vectorisez un PNG." },
+    { href: "/convertir-svg-en-jpg", label: "SVG en JPG", desc: "Retour au JPG." },
+    { href: "/convertir-svg-en-png", label: "SVG en PNG", desc: "SVG vers bitmap." },
+    { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Préparez avant vectorisation." },
+    { href: "/convertir-image-noir-et-blanc", label: "Noir et blanc", desc: "Simplifiez pour la vectorisation." },
+  ],
+  "/convertir-png-en-svg": [
+    { href: "/convertir-jpg-en-svg", label: "JPG en SVG", desc: "Vectorisez un JPG." },
+    { href: "/convertir-svg-en-png", label: "SVG en PNG", desc: "Retour au PNG." },
+    { href: "/convertir-svg-en-jpg", label: "SVG en JPG", desc: "SVG vers photo." },
+    { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Préparez avant vectorisation." },
+    { href: "/convertir-image-noir-et-blanc", label: "Noir et blanc", desc: "Simplifiez pour la vectorisation." },
+  ],
+  "/convertir-tiff-en-jpg": [
+    { href: "/convertir-tiff-en-png", label: "TIFF en PNG", desc: "Qualité sans perte." },
+    { href: "/convertir-tiff-en-webp", label: "TIFF en WebP", desc: "Format web léger." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids du JPG." },
+    { href: "/changer-dpi-image", label: "Changer DPI", desc: "Ajustez pour l'impression." },
+    { href: "/lire-metadonnees-image", label: "Lire EXIF", desc: "Métadonnées de vos scans." },
+  ],
+  "/convertir-tiff-en-png": [
+    { href: "/convertir-tiff-en-jpg", label: "TIFF en JPG", desc: "Format universel." },
+    { href: "/convertir-tiff-en-webp", label: "TIFF en WebP", desc: "Format web léger." },
+    { href: "/convertir-png-en-webp", label: "PNG en WebP", desc: "Optimisez pour le web." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/changer-dpi-image", label: "Changer DPI", desc: "Ajustez pour l'impression." },
+  ],
+  "/convertir-tiff-en-webp": [
+    { href: "/convertir-tiff-en-jpg", label: "TIFF en JPG", desc: "Format universel." },
+    { href: "/convertir-tiff-en-png", label: "TIFF en PNG", desc: "Qualité sans perte." },
+    { href: "/convertir-jpg-en-webp", label: "JPG en WebP", desc: "JPG vers WebP aussi." },
+    { href: "/optimiser-image-web", label: "Optimiser pour le web", desc: "Compression intelligente." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+  ],
+  "/convertir-bmp-en-jpg": [
+    { href: "/convertir-bmp-en-png", label: "BMP en PNG", desc: "Qualité sans perte." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez encore plus." },
+    { href: "/convertir-jpg-en-webp", label: "JPG en WebP", desc: "Optimisez pour le web." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille." },
+    { href: "/convertir-jpg-en-png", label: "JPG en PNG", desc: "JPG vers PNG." },
+  ],
+  "/convertir-bmp-en-png": [
+    { href: "/convertir-bmp-en-jpg", label: "BMP en JPG", desc: "Format universel léger." },
+    { href: "/convertir-png-en-webp", label: "PNG en WebP", desc: "Optimisez pour le web." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Détourage IA." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille." },
+  ],
+  "/convertir-gif-en-jpg": [
+    { href: "/convertir-gif-en-png", label: "GIF en PNG", desc: "Qualité sans perte." },
+    { href: "/convertir-gif-en-webp", label: "GIF en WebP", desc: "Animation plus légère." },
+    { href: "/creer-gif", label: "Créer un GIF", desc: "Animez plusieurs images." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/convertir-jpg-en-png", label: "JPG en PNG", desc: "Ajoutez la transparence." },
+  ],
+  "/convertir-gif-en-png": [
+    { href: "/convertir-gif-en-jpg", label: "GIF en JPG", desc: "Image fixe légère." },
+    { href: "/convertir-gif-en-webp", label: "GIF en WebP", desc: "Animation plus légère." },
+    { href: "/convertir-png-en-webp", label: "PNG en WebP", desc: "Optimisez pour le web." },
+    { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Détourage IA." },
+    { href: "/creer-gif", label: "Créer un GIF", desc: "Animez plusieurs images." },
+  ],
+  "/convertir-gif-en-webp": [
+    { href: "/convertir-gif-en-jpg", label: "GIF en JPG", desc: "Image fixe." },
+    { href: "/convertir-gif-en-png", label: "GIF en PNG", desc: "Qualité sans perte." },
+    { href: "/convertir-webp-en-gif", label: "WebP en GIF", desc: "Retour au GIF." },
+    { href: "/creer-gif", label: "Créer un GIF", desc: "Animez plusieurs images." },
+    { href: "/optimiser-image-web", label: "Optimiser pour le web", desc: "Compression intelligente." },
+  ],
+  "/convertir-ico-en-png": [
+    { href: "/convertir-png-en-ico", label: "PNG en ICO", desc: "Créez un favicon." },
+    { href: "/convertir-jpg-en-ico", label: "JPG en ICO", desc: "Favicon depuis un JPG." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Ajustez la taille." },
+    { href: "/convertir-png-en-jpg", label: "PNG en JPG", desc: "Format universel." },
+    { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Fond transparent." },
+  ],
+  "/convertir-png-en-ico": [
+    { href: "/convertir-jpg-en-ico", label: "JPG en ICO", desc: "Favicon depuis un JPG." },
+    { href: "/convertir-ico-en-png", label: "ICO en PNG", desc: "Extrayez un favicon." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Taille 16x16, 32x32, 64x64." },
+    { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Fond transparent pour favicon." },
+    { href: "/convertir-png-en-svg", label: "PNG en SVG", desc: "Vectorisez votre logo." },
+  ],
+  "/convertir-jpg-en-ico": [
+    { href: "/convertir-png-en-ico", label: "PNG en ICO", desc: "Favicon depuis un PNG." },
+    { href: "/convertir-ico-en-png", label: "ICO en PNG", desc: "Extrayez un favicon." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Taille 16x16, 32x32, 64x64." },
+    { href: "/convertir-jpg-en-png", label: "JPG en PNG", desc: "Ajoutez la transparence." },
+    { href: "/convertir-jpg-en-svg", label: "JPG en SVG", desc: "Vectorisez votre logo." },
+  ],
+  "/convertir-jpg-en-gif": [
+    { href: "/creer-gif", label: "Créer un GIF", desc: "GIF animé depuis plusieurs images." },
+    { href: "/convertir-gif-en-jpg", label: "GIF en JPG", desc: "Retour au JPG." },
+    { href: "/convertir-jpg-en-webp", label: "JPG en WebP", desc: "Format web léger." },
+    { href: "/convertir-gif-en-webp", label: "GIF en WebP", desc: "Animation plus légère." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+  ],
+  "/convertir-jpg-en-tiff": [
+    { href: "/convertir-tiff-en-jpg", label: "TIFF en JPG", desc: "Retour au JPG." },
+    { href: "/convertir-jpg-en-pdf", label: "JPG en PDF", desc: "Pour l'impression." },
+    { href: "/changer-dpi-image", label: "Changer DPI", desc: "Ajustez pour l'impression." },
+    { href: "/lire-metadonnees-image", label: "Lire EXIF", desc: "Vérifiez les métadonnées." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+  ],
+  "/convertir-jpg-en-pdf": [
+    { href: "/convertir-png-en-pdf", label: "PNG en PDF", desc: "PNG vers document PDF." },
+    { href: "/convertir-images-en-pdf", label: "Images en PDF", desc: "Combinez plusieurs images." },
+    { href: "/convertir-pdf-en-jpg", label: "PDF en JPG", desc: "Extrayez les pages." },
+    { href: "/fusionner-pdf", label: "Fusionner PDF", desc: "Combinez plusieurs PDF." },
+    { href: "/compresser-pdf", label: "Compresser PDF", desc: "Réduisez la taille." },
+  ],
+  "/convertir-png-en-pdf": [
+    { href: "/convertir-jpg-en-pdf", label: "JPG en PDF", desc: "JPG vers PDF." },
+    { href: "/convertir-images-en-pdf", label: "Images en PDF", desc: "Combinez plusieurs images." },
+    { href: "/convertir-pdf-en-png", label: "PDF en PNG", desc: "Extrayez les pages." },
+    { href: "/fusionner-pdf", label: "Fusionner PDF", desc: "Combinez plusieurs PDF." },
+    { href: "/compresser-pdf", label: "Compresser PDF", desc: "Réduisez la taille." },
+  ],
+  "/convertir-pdf-en-jpg": [
+    { href: "/convertir-pdf-en-png", label: "PDF en PNG", desc: "Pages en PNG haute qualité." },
+    { href: "/convertir-jpg-en-pdf", label: "JPG en PDF", desc: "Retour au PDF." },
+    { href: "/diviser-pdf", label: "Diviser PDF", desc: "Séparez par pages." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Allégez les JPG extraits." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Ajustez les images extraites." },
+  ],
+  "/convertir-pdf-en-png": [
+    { href: "/convertir-pdf-en-jpg", label: "PDF en JPG", desc: "Pages en JPG." },
+    { href: "/convertir-png-en-pdf", label: "PNG en PDF", desc: "Retour au PDF." },
+    { href: "/diviser-pdf", label: "Diviser PDF", desc: "Séparez par pages." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Allégez les PNG extraits." },
+    { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Détourage IA." },
+  ],
+  "/convertir-images-en-pdf": [
+    { href: "/convertir-jpg-en-pdf", label: "JPG en PDF", desc: "Une seule image en PDF." },
+    { href: "/convertir-png-en-pdf", label: "PNG en PDF", desc: "PNG vers PDF." },
+    { href: "/fusionner-pdf", label: "Fusionner PDF", desc: "Combinez plusieurs PDF." },
+    { href: "/compresser-pdf", label: "Compresser PDF", desc: "Réduisez la taille." },
+    { href: "/numeroter-pages-pdf", label: "Numéroter pages", desc: "Ajoutez des numéros." },
+  ],
+
+  // ── Edit tools ──
+  "/compresser-image": [
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille de vos images." },
+    { href: "/optimiser-image-web", label: "Optimiser pour le web", desc: "Compression intelligente multi-format." },
+    { href: "/convertir-jpg-en-webp", label: "JPG en WebP", desc: "25-35% plus léger que JPG." },
+    { href: "/convertir-png-en-webp", label: "PNG en WebP", desc: "Optimisez vos PNG." },
+    { href: "/changer-dpi-image", label: "Changer DPI", desc: "72, 150 ou 300 DPI." },
+  ],
+  "/redimensionner-image": [
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/recadrer-image", label: "Recadrer", desc: "Découpez la zone souhaitée." },
+    { href: "/redimensionner-image-reseaux-sociaux", label: "Taille réseaux sociaux", desc: "Formats Instagram, Facebook..." },
+    { href: "/changer-dpi-image", label: "Changer DPI", desc: "Ajustez pour l'impression." },
+    { href: "/optimiser-image-web", label: "Optimiser pour le web", desc: "Compression intelligente." },
+  ],
+  "/recadrer-image": [
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille." },
+    { href: "/redimensionner-image-reseaux-sociaux", label: "Taille réseaux sociaux", desc: "Formats Instagram, Facebook..." },
+    { href: "/pivoter-image", label: "Pivoter / Retourner", desc: "Corrigez l'orientation." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Détourage IA." },
+  ],
+  "/pivoter-image": [
+    { href: "/recadrer-image", label: "Recadrer", desc: "Découpez la zone souhaitée." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille." },
+    { href: "/flouter-image", label: "Flouter", desc: "Floutez des zones." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/lire-metadonnees-image", label: "Lire EXIF", desc: "Vérifiez l'orientation." },
+  ],
+  "/supprimer-fond-image": [
+    { href: "/recadrer-image", label: "Recadrer", desc: "Découpez la zone souhaitée." },
+    { href: "/redimensionner-image-reseaux-sociaux", label: "Taille réseaux sociaux", desc: "Formats Instagram, LinkedIn..." },
+    { href: "/convertir-png-en-webp", label: "PNG en WebP", desc: "Allégez le résultat PNG." },
+    { href: "/convertir-png-en-jpg", label: "PNG en JPG", desc: "Fond blanc au lieu de transparent." },
+    { href: "/ajouter-filigrane", label: "Filigrane", desc: "Protégez vos photos." },
+  ],
+  "/flouter-image": [
+    { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Détourage IA." },
+    { href: "/recadrer-image", label: "Recadrer", desc: "Découpez la zone souhaitée." },
+    { href: "/pivoter-image", label: "Pivoter / Retourner", desc: "Corrigez l'orientation." },
+    { href: "/supprimer-metadonnees-image", label: "Supprimer EXIF", desc: "Protégez votre vie privée." },
+    { href: "/ajouter-filigrane", label: "Filigrane", desc: "Protégez vos photos." },
+  ],
+  "/convertir-image-noir-et-blanc": [
+    { href: "/inverser-couleurs-image", label: "Inverser couleurs", desc: "Effet négatif." },
+    { href: "/flouter-image", label: "Flouter", desc: "Effet artistique." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/convertir-jpg-en-png", label: "JPG en PNG", desc: "Qualité sans perte." },
+    { href: "/recadrer-image", label: "Recadrer", desc: "Découpez la zone souhaitée." },
+  ],
+  "/ajouter-filigrane": [
+    { href: "/ajouter-texte-image", label: "Ajouter du texte", desc: "Texte personnalisé sur vos photos." },
+    { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Détourage IA." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille." },
+    { href: "/convertir-jpg-en-pdf", label: "JPG en PDF", desc: "Protégez en PDF." },
+  ],
+  "/ajouter-texte-image": [
+    { href: "/ajouter-filigrane", label: "Filigrane", desc: "Protégez vos photos." },
+    { href: "/redimensionner-image-reseaux-sociaux", label: "Taille réseaux sociaux", desc: "Formats Instagram, Facebook..." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/recadrer-image", label: "Recadrer", desc: "Découpez la zone souhaitée." },
+    { href: "/convertir-jpg-en-png", label: "JPG en PNG", desc: "Ajoutez la transparence." },
+  ],
+  "/changer-dpi-image": [
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille en pixels." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/convertir-jpg-en-pdf", label: "JPG en PDF", desc: "Pour l'impression." },
+    { href: "/convertir-jpg-en-tiff", label: "JPG en TIFF", desc: "Format pro impression." },
+    { href: "/lire-metadonnees-image", label: "Lire EXIF", desc: "Vérifiez le DPI actuel." },
+  ],
+  "/inverser-couleurs-image": [
+    { href: "/convertir-image-noir-et-blanc", label: "Noir et blanc", desc: "Niveaux de gris." },
+    { href: "/flouter-image", label: "Flouter", desc: "Effet artistique." },
+    { href: "/pivoter-image", label: "Pivoter / Retourner", desc: "Corrigez l'orientation." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/recadrer-image", label: "Recadrer", desc: "Découpez la zone souhaitée." },
+  ],
+  "/supprimer-metadonnees-image": [
+    { href: "/lire-metadonnees-image", label: "Lire EXIF", desc: "Vérifiez avant de supprimer." },
+    { href: "/modifier-metadonnees-image", label: "Modifier EXIF", desc: "Éditez les métadonnées." },
+    { href: "/flouter-image", label: "Flouter", desc: "Floutez les visages." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/convertir-jpg-en-png", label: "JPG en PNG", desc: "Changez de format." },
+  ],
+  "/lire-metadonnees-image": [
+    { href: "/supprimer-metadonnees-image", label: "Supprimer EXIF", desc: "Protégez votre vie privée." },
+    { href: "/modifier-metadonnees-image", label: "Modifier EXIF", desc: "Éditez les métadonnées." },
+    { href: "/lire-metadonnees-heic", label: "Métadonnées HEIC", desc: "EXIF spécifique iPhone." },
+    { href: "/changer-dpi-image", label: "Changer DPI", desc: "Vérifiez et changez le DPI." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+  ],
+  "/modifier-metadonnees-image": [
+    { href: "/lire-metadonnees-image", label: "Lire EXIF", desc: "Consultez les métadonnées." },
+    { href: "/supprimer-metadonnees-image", label: "Supprimer EXIF", desc: "Supprimez tout." },
+    { href: "/changer-dpi-image", label: "Changer DPI", desc: "Ajustez le DPI." },
+    { href: "/ajouter-filigrane", label: "Filigrane", desc: "Protégez vos photos." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+  ],
+  "/optimiser-image-web": [
+    { href: "/compresser-image", label: "Compresser image", desc: "Compression manuelle." },
+    { href: "/convertir-jpg-en-webp", label: "JPG en WebP", desc: "Format web recommandé." },
+    { href: "/convertir-png-en-webp", label: "PNG en WebP", desc: "PNG vers WebP." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Tailles adaptées au web." },
+    { href: "/convertir-jpg-en-avif", label: "JPG en AVIF", desc: "Le format le plus léger." },
+  ],
+  "/redimensionner-image-reseaux-sociaux": [
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Taille personnalisée." },
+    { href: "/recadrer-image", label: "Recadrer", desc: "Découpez la zone souhaitée." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/ajouter-texte-image", label: "Ajouter du texte", desc: "Texte sur vos visuels." },
+    { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Détourage IA." },
+  ],
+  "/creer-gif": [
+    { href: "/convertir-gif-en-webp", label: "GIF en WebP", desc: "Animation plus légère." },
+    { href: "/convertir-gif-en-jpg", label: "GIF en JPG", desc: "Image fixe." },
+    { href: "/convertir-webp-en-gif", label: "WebP en GIF", desc: "WebP vers GIF." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Allégez les images source." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Ajustez avant d'animer." },
+  ],
+  "/creer-planche-contact": [
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Ajustez les images." },
+    { href: "/convertir-images-en-pdf", label: "Images en PDF", desc: "Exportez en PDF." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Allégez le résultat." },
+    { href: "/convertir-jpg-en-pdf", label: "JPG en PDF", desc: "Planche en PDF." },
+    { href: "/ajouter-texte-image", label: "Ajouter du texte", desc: "Légendes sur vos photos." },
+  ],
+  "/extraire-texte-image": [
+    { href: "/convertir-images-en-pdf", label: "Images en PDF", desc: "Numérisez vos documents." },
+    { href: "/lire-metadonnees-image", label: "Lire EXIF", desc: "Métadonnées de la photo." },
+    { href: "/recadrer-image", label: "Recadrer", desc: "Isolez le texte à extraire." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Allégez vos scans." },
+    { href: "/convertir-jpg-en-pdf", label: "JPG en PDF", desc: "Archivez en PDF." },
+  ],
+  "/generer-qr-code": [
+    { href: "/convertir-png-en-jpg", label: "PNG en JPG", desc: "Convertissez le QR code." },
+    { href: "/convertir-png-en-svg", label: "PNG en SVG", desc: "QR code vectoriel." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Ajustez la taille." },
+    { href: "/convertir-png-en-pdf", label: "PNG en PDF", desc: "QR code en document." },
+    { href: "/ajouter-filigrane", label: "Filigrane", desc: "QR code en filigrane." },
+  ],
+  "/convertisseur-couleurs": [
+    { href: "/convertir-image-noir-et-blanc", label: "Noir et blanc", desc: "Niveaux de gris." },
+    { href: "/inverser-couleurs-image", label: "Inverser couleurs", desc: "Effet négatif." },
+    { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Détourage IA." },
+    { href: "/ajouter-texte-image", label: "Ajouter du texte", desc: "Texte coloré sur vos images." },
+    { href: "/generer-qr-code", label: "QR code", desc: "Générez un QR code." },
+  ],
+
+  // ── PDF tools ──
+  "/fusionner-pdf": [
+    { href: "/diviser-pdf", label: "Diviser PDF", desc: "Séparez un PDF par pages." },
+    { href: "/compresser-pdf", label: "Compresser PDF", desc: "Réduisez la taille." },
+    { href: "/reorganiser-pages-pdf", label: "Réorganiser pages", desc: "Changez l'ordre des pages." },
+    { href: "/numeroter-pages-pdf", label: "Numéroter pages", desc: "Ajoutez des numéros." },
+    { href: "/convertir-images-en-pdf", label: "Images en PDF", desc: "Combinez des images en PDF." },
+  ],
+  "/diviser-pdf": [
+    { href: "/fusionner-pdf", label: "Fusionner PDF", desc: "Combinez plusieurs PDF." },
+    { href: "/supprimer-pages-pdf", label: "Supprimer pages", desc: "Retirez des pages." },
+    { href: "/reorganiser-pages-pdf", label: "Réorganiser pages", desc: "Changez l'ordre." },
+    { href: "/compresser-pdf", label: "Compresser PDF", desc: "Réduisez la taille." },
+    { href: "/convertir-pdf-en-jpg", label: "PDF en JPG", desc: "Extrayez en images." },
+  ],
+  "/compresser-pdf": [
+    { href: "/fusionner-pdf", label: "Fusionner PDF", desc: "Combinez plusieurs PDF." },
+    { href: "/diviser-pdf", label: "Diviser PDF", desc: "Séparez par pages." },
+    { href: "/supprimer-pages-pdf", label: "Supprimer pages", desc: "Retirez les pages inutiles." },
+    { href: "/proteger-pdf", label: "Protéger PDF", desc: "Ajoutez un mot de passe." },
+    { href: "/convertir-pdf-en-jpg", label: "PDF en JPG", desc: "Extrayez en images." },
+  ],
+  "/pivoter-pdf": [
+    { href: "/reorganiser-pages-pdf", label: "Réorganiser pages", desc: "Changez l'ordre." },
+    { href: "/fusionner-pdf", label: "Fusionner PDF", desc: "Combinez plusieurs PDF." },
+    { href: "/diviser-pdf", label: "Diviser PDF", desc: "Séparez par pages." },
+    { href: "/compresser-pdf", label: "Compresser PDF", desc: "Réduisez la taille." },
+    { href: "/numeroter-pages-pdf", label: "Numéroter pages", desc: "Ajoutez des numéros." },
+  ],
+  "/proteger-pdf": [
+    { href: "/compresser-pdf", label: "Compresser PDF", desc: "Réduisez la taille." },
+    { href: "/fusionner-pdf", label: "Fusionner PDF", desc: "Combinez plusieurs PDF." },
+    { href: "/numeroter-pages-pdf", label: "Numéroter pages", desc: "Ajoutez des numéros." },
+    { href: "/convertir-images-en-pdf", label: "Images en PDF", desc: "Créez un PDF protégé." },
+    { href: "/diviser-pdf", label: "Diviser PDF", desc: "Séparez par pages." },
+  ],
+  "/numeroter-pages-pdf": [
+    { href: "/fusionner-pdf", label: "Fusionner PDF", desc: "Combinez plusieurs PDF." },
+    { href: "/reorganiser-pages-pdf", label: "Réorganiser pages", desc: "Changez l'ordre." },
+    { href: "/compresser-pdf", label: "Compresser PDF", desc: "Réduisez la taille." },
+    { href: "/proteger-pdf", label: "Protéger PDF", desc: "Ajoutez un mot de passe." },
+    { href: "/diviser-pdf", label: "Diviser PDF", desc: "Séparez par pages." },
+  ],
+  "/reorganiser-pages-pdf": [
+    { href: "/fusionner-pdf", label: "Fusionner PDF", desc: "Combinez plusieurs PDF." },
+    { href: "/diviser-pdf", label: "Diviser PDF", desc: "Séparez par pages." },
+    { href: "/supprimer-pages-pdf", label: "Supprimer pages", desc: "Retirez des pages." },
+    { href: "/pivoter-pdf", label: "Pivoter PDF", desc: "Changez l'orientation." },
+    { href: "/numeroter-pages-pdf", label: "Numéroter pages", desc: "Ajoutez des numéros." },
+  ],
+  "/supprimer-pages-pdf": [
+    { href: "/diviser-pdf", label: "Diviser PDF", desc: "Séparez par pages." },
+    { href: "/reorganiser-pages-pdf", label: "Réorganiser pages", desc: "Changez l'ordre." },
+    { href: "/fusionner-pdf", label: "Fusionner PDF", desc: "Combinez plusieurs PDF." },
+    { href: "/compresser-pdf", label: "Compresser PDF", desc: "Réduisez la taille." },
+    { href: "/convertir-pdf-en-jpg", label: "PDF en JPG", desc: "Extrayez en images." },
+  ],
+};
+
+// Fallback for pages not explicitly mapped
+const defaultTools: RelatedTool[] = [
+  { href: "/convertir-heic-en-jpg", label: "HEIC en JPG", desc: "Convertissez vos photos iPhone." },
+  { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids de vos images." },
+  { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille de vos images." },
+  { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Détourage IA automatique." },
+  { href: "/fusionner-pdf", label: "Fusionner PDF", desc: "Combinez plusieurs PDF." },
+];
+
+export default function RelatedTools({ currentPath }: { currentPath: string }) {
+  const tools = relatedToolsMap[currentPath] || defaultTools.filter((t) => t.href !== currentPath);
+
+  return (
+    <div className="bg-white rounded-lg shadow-sm p-8">
+      <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+        Vous pourriez aussi avoir besoin de&hellip;
+      </h2>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {tools.map((tool) => (
+          <Link
+            key={tool.href}
+            href={tool.href}
+            className="group block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors"
+          >
+            <h3 className="font-semibold text-gray-800 group-hover:text-blue-700 transition-colors">
+              {tool.label}
+            </h3>
+            <p className="text-sm text-gray-600">{tool.desc}</p>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}

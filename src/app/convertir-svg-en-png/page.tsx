@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import SvgConvertForm from "@/components/SvgConvertForm";
+import RelatedTools from "@/components/RelatedTools";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PageHero from "@/components/PageHero";
 
@@ -91,27 +91,7 @@ export default function ConvertirSvgEnPng() {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm p-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Nos autres outils</h2>
-        <div className="grid md:grid-cols-2 gap-4">
-          <Link href="/" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">HEIC &rarr; JPG</h3>
-            <p className="text-sm text-gray-600">Convertissez vos photos iPhone HEIC en JPG.</p>
-          </Link>
-          <Link href="/convertir-png-en-jpg" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">PNG &rarr; JPG</h3>
-            <p className="text-sm text-gray-600">Réduisez la taille de vos PNG en JPG.</p>
-          </Link>
-          <Link href="/redimensionner-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Redimensionner</h3>
-            <p className="text-sm text-gray-600">Changez la taille de vos images facilement.</p>
-          </Link>
-          <Link href="/compresser-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Compresser image</h3>
-            <p className="text-sm text-gray-600">Réduisez le poids de vos images.</p>
-          </Link>
-        </div>
-      </div>
+      <RelatedTools currentPath="/convertir-svg-en-png" />
     </div>
     </>
   );

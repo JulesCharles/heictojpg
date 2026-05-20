@@ -4,10 +4,11 @@ import ConvertForm from "@/components/ConvertForm";
 import AdBanner from "@/components/AdBanner";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PageHero from "@/components/PageHero";
+import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
-  title: "Convertir HEIC en JPG en ligne gratuit | heictojpg.fr",
-  description: "Convertissez vos fichiers HEIC en JPG en 1 clic. Gratuit, rapide, sans inscription et sans limite. Photos iPhone compatibles partout.",
+  title: "Convertir HEIC en JPG Gratuit en Ligne - Photos iPhone en 2 Secondes | heictojpg.fr",
+  description: "Convertissez vos photos iPhone HEIC en JPG en 1 clic. Conversion batch, téléchargement ZIP. 100% gratuit, sans inscription, sans limite. Aucun fichier conservé sur nos serveurs.",
   keywords: [
     "convertir heic en jpg",
     "heic en jpg",
@@ -254,36 +255,7 @@ export default function ConvertirHeicEnJpg() {
         </div>
       </div>
 
-      {/* Autres conversions HEIC */}
-      <div className="bg-white rounded-lg shadow-sm p-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Autres conversions HEIC</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <Link href="/convertir-heic-en-png" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">HEIC &rarr; PNG</h3>
-            <p className="text-sm text-gray-600">Qualité sans perte avec transparence.</p>
-          </Link>
-          <Link href="/convertir-heic-en-webp" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">HEIC &rarr; WebP</h3>
-            <p className="text-sm text-gray-600">Format optimisé pour le web.</p>
-          </Link>
-          <Link href="/convertir-heic-en-pdf" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">HEIC &rarr; PDF</h3>
-            <p className="text-sm text-gray-600">Pour l&apos;impression et les documents.</p>
-          </Link>
-          <Link href="/convertir-heic-en-avif" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">HEIC &rarr; AVIF</h3>
-            <p className="text-sm text-gray-600">Le format le plus performant.</p>
-          </Link>
-          <Link href="/compresser-heic" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Compresser HEIC</h3>
-            <p className="text-sm text-gray-600">Réduisez la taille sans changer de format.</p>
-          </Link>
-          <Link href="/lire-metadonnees-heic" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Métadonnées HEIC</h3>
-            <p className="text-sm text-gray-600">Lisez les données EXIF de vos photos.</p>
-          </Link>
-        </div>
-      </div>
+      <RelatedTools currentPath="/convertir-heic-en-jpg" />
     </div>
     </>
   );

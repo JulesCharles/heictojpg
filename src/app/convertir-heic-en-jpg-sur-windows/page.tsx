@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Guide complet pour ouvrir et convertir HEIC en JPG sur Windows 10/11. 4 methodes gratuites.",
   openGraph: {
     type: "website",
-    title: "Convertir HEIC en JPG sur Windows - Guide complet [2025]",
+    title: "Convertir HEIC en JPG sur Windows - Guide complet [2026]",
     description:
       "Apprenez à convertir vos photos HEIC en JPG sur Windows facilement avec Photos, Paint ou en ligne.",
     url: "https://heictojpg.fr/convertir-heic-en-jpg-sur-windows",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Convertir HEIC en JPG sur Windows - Guide complet [2025]",
+    title: "Convertir HEIC en JPG sur Windows - Guide complet [2026]",
     description:
       "Apprenez à convertir vos photos HEIC en JPG sur Windows facilement avec Photos, Paint ou en ligne.",
   },

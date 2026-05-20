@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Guide complet pour convertir vos photos HEIC en JPG sur Android. 3 methodes gratuites expliquees pas a pas.",
   openGraph: {
     type: "website",
-    title: "Convertir HEIC en JPG sur Android - Guide complet [2025]",
+    title: "Convertir HEIC en JPG sur Android - Guide complet [2026]",
     description:
       "Découvrez comment convertir vos photos HEIC en JPG sur Android avec Google Photos, des apps ou en ligne.",
     url: "https://heictojpg.fr/convertir-heic-en-jpg-sur-android",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Convertir HEIC en JPG sur Android - Guide complet [2025]",
+    title: "Convertir HEIC en JPG sur Android - Guide complet [2026]",
     description:
       "Découvrez comment convertir vos photos HEIC en JPG sur Android avec Google Photos, des apps ou en ligne.",
   },

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Guide complet pour convertir HEIC en JPG sur Mac. Apercu, Automator et outil en ligne gratuit.",
   openGraph: {
     type: "website",
-    title: "Convertir HEIC en JPG sur Mac - Guide complet [2025]",
+    title: "Convertir HEIC en JPG sur Mac - Guide complet [2026]",
     description:
       "Découvrez comment convertir vos photos HEIC en JPG sur Mac facilement avec Aperçu, Automator ou en ligne.",
     url: "https://heictojpg.fr/convertir-heic-en-jpg-sur-mac",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Convertir HEIC en JPG sur Mac - Guide complet [2025]",
+    title: "Convertir HEIC en JPG sur Mac - Guide complet [2026]",
     description:
       "Découvrez comment convertir vos photos HEIC en JPG sur Mac facilement avec Aperçu, Automator ou en ligne.",
   },

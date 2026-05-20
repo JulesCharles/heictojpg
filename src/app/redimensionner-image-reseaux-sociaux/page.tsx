@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Client from "./client";
 import AdBanner from "@/components/AdBanner";
+import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
@@ -172,24 +172,7 @@ export default function RedimensionnerReseauxSociaux() {
         </div>
       </div>
 
-      {/* Related tools */}
-      <div className="bg-white rounded-lg shadow-sm p-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Outils similaires</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <Link href="/redimensionner-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Redimensionner (libre)</h3>
-            <p className="text-sm text-gray-600">Dimensions personnalisees.</p>
-          </Link>
-          <Link href="/recadrer-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Recadrer image</h3>
-            <p className="text-sm text-gray-600">Recadrage precis interactif.</p>
-          </Link>
-          <Link href="/compresser-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Compresser image</h3>
-            <p className="text-sm text-gray-600">Reduisez le poids de vos images.</p>
-          </Link>
-        </div>
-      </div>
+      <RelatedTools currentPath="/redimensionner-image-reseaux-sociaux" />
     </div>
     </>
   );

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import HeicMetadataForm from "@/components/HeicMetadataForm";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PageHero from "@/components/PageHero";
+import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
   title: "Lire les métadonnées EXIF HEIC en ligne | heictojpg.fr",
@@ -68,27 +68,7 @@ export default function LireMetadonneesHeic() {
           </ul>
         </div>
       </div>
-      <div className="bg-white rounded-lg shadow-sm p-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Outils de conversion HEIC</h2>
-        <div className="grid md:grid-cols-2 gap-4">
-          <Link href="/" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">HEIC &rarr; JPG</h3>
-            <p className="text-sm text-gray-600">Le format universel pour vos photos.</p>
-          </Link>
-          <Link href="/convertir-heic-en-png" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">HEIC &rarr; PNG</h3>
-            <p className="text-sm text-gray-600">Qualité sans perte avec transparence.</p>
-          </Link>
-          <Link href="/convertir-heic-en-webp" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">HEIC &rarr; WebP</h3>
-            <p className="text-sm text-gray-600">Format optimisé pour le web.</p>
-          </Link>
-          <Link href="/convertir-heic-en-pdf" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">HEIC &rarr; PDF</h3>
-            <p className="text-sm text-gray-600">Intégrez vos photos dans un document.</p>
-          </Link>
-        </div>
-      </div>
+      <RelatedTools currentPath="/lire-metadonnees-heic" />
     </div>
     </>
   );

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Apprenez à convertir vos photos HEIC en JPG sur iPhone. Changez le format par défaut dans les réglages iOS, utilisez l'app Fichiers ou convertissez en ligne. Guide complet.",
   openGraph: {
     type: "website",
-    title: "Convertir HEIC en JPG sur iPhone - Guide complet [2025]",
+    title: "Convertir HEIC en JPG sur iPhone - Guide complet [2026]",
     description:
       "Apprenez à convertir vos photos HEIC en JPG sur iPhone via les réglages iOS, l'app Fichiers ou en ligne.",
     url: "https://heictojpg.fr/convertir-heic-en-jpg-sur-iphone",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Convertir HEIC en JPG sur iPhone - Guide complet [2025]",
+    title: "Convertir HEIC en JPG sur iPhone - Guide complet [2026]",
     description:
       "Apprenez à convertir vos photos HEIC en JPG sur iPhone via les réglages iOS, l'app Fichiers ou en ligne.",
   },

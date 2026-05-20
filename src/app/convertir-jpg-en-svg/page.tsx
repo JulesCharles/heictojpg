@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import VectorizeClient from "./client";
+import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
@@ -122,23 +122,7 @@ export default function ConvertirJpgEnSvg() {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm p-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Autres conversions</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <Link href="/convertir-png-en-svg" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">PNG &rarr; SVG</h3>
-            <p className="text-sm text-gray-600">Vectorisez vos images PNG.</p>
-          </Link>
-          <Link href="/convertir-svg-en-png" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">SVG &rarr; PNG</h3>
-            <p className="text-sm text-gray-600">Convertissez vos SVG en PNG.</p>
-          </Link>
-          <Link href="/convertir-svg-en-jpg" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">SVG &rarr; JPG</h3>
-            <p className="text-sm text-gray-600">Convertissez vos SVG en JPG.</p>
-          </Link>
-        </div>
-      </div>
+      <RelatedTools currentPath="/convertir-jpg-en-svg" />
     </div>
     </>
   );

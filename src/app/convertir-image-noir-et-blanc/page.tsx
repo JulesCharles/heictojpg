@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Client from "./client";
 import PageHero from "@/components/PageHero";
+import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
   title: "Convertir image en noir et blanc gratuit | heictojpg.fr",
@@ -80,23 +80,7 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm p-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Nos autres outils</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <Link href="/" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">HEIC &rarr; JPG</h3>
-            <p className="text-sm text-gray-600">Convertissez vos photos iPhone.</p>
-          </Link>
-          <Link href="/compresser-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Compresser image</h3>
-            <p className="text-sm text-gray-600">Réduisez le poids de vos images.</p>
-          </Link>
-          <Link href="/redimensionner-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Redimensionner</h3>
-            <p className="text-sm text-gray-600">Changez la taille de vos images.</p>
-          </Link>
-        </div>
-      </div>
+      <RelatedTools currentPath="/convertir-image-noir-et-blanc" />
     </div>
     </>
   );

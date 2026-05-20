@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Client from "./client";
 import AdBanner from "@/components/AdBanner";
+import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
@@ -159,24 +159,7 @@ export default function GenererQrCode() {
         </div>
       </div>
 
-      {/* Related tools */}
-      <div className="bg-white rounded-lg shadow-sm p-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Outils similaires</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          <Link href="/convertir-png-en-svg" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">PNG &rarr; SVG</h3>
-            <p className="text-sm text-gray-600">Vectorisez vos images PNG.</p>
-          </Link>
-          <Link href="/redimensionner-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Redimensionner image</h3>
-            <p className="text-sm text-gray-600">Changez la taille de vos images.</p>
-          </Link>
-          <Link href="/compresser-image" className="block p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors">
-            <h3 className="font-semibold text-gray-800">Compresser image</h3>
-            <p className="text-sm text-gray-600">Reduisez le poids de vos images.</p>
-          </Link>
-        </div>
-      </div>
+      <RelatedTools currentPath="/generer-qr-code" />
     </div>
     </>
   );
