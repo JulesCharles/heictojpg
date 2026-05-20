@@ -124,6 +124,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'convertir-heic-en-jpg-sur-windows',
     'convertir-heic-en-jpg-sur-android',
     'convertir-heic-en-jpg-sur-iphone',
+    // Phase 2.2 batch 1
+    'compresser-image-sur-iphone',
+    'compresser-image-sur-mac',
+    'compresser-image-sur-windows',
+    'redimensionner-image-sur-iphone',
+    'redimensionner-image-sur-mac',
+    'redimensionner-image-sur-windows',
+    'convertir-png-en-jpg-sur-iphone',
+    'convertir-png-en-jpg-sur-mac',
+    'convertir-png-en-jpg-sur-windows',
+    'convertir-webp-en-jpg-sur-iphone',
+    'convertir-webp-en-jpg-sur-mac',
+    'convertir-webp-en-jpg-sur-windows',
+    // Phase 2.2 batch 2
+    'fusionner-pdf-sur-iphone',
+    'fusionner-pdf-sur-mac',
+    'fusionner-pdf-sur-windows',
+    'compresser-pdf-sur-iphone',
+    'compresser-pdf-sur-mac',
+    'compresser-pdf-sur-windows',
+    'convertir-jpg-en-pdf-sur-iphone',
+    'convertir-jpg-en-pdf-sur-mac',
+    'convertir-jpg-en-pdf-sur-windows',
+    'supprimer-fond-image-sur-iphone',
+    'supprimer-fond-image-sur-mac',
+    'supprimer-fond-image-sur-windows',
   ]
 
   return [
