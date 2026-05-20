@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ImageConvertForm from "@/components/ImageConvertForm";
 import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Convertir TIFF en AVIF Gratuit en Ligne | heictojpg.fr",
@@ -58,6 +59,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
+        <Breadcrumbs items={[{ label: "Convertir TIFF en AVIF", href: "/convertir-tiff-en-avif" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir TIFF en AVIF gratuitement</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Modernisez vos fichiers TIFF volumineux en les convertissant au format AVIF, ultra-compact et de nouvelle generation. Reduisez considerablement le poids de vos images tout en conservant une qualite remarquable.

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ImageConvertForm from "@/components/ImageConvertForm";
 import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Convertir WebP en PNG en ligne gratuit | heictojpg.fr",
@@ -58,7 +59,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Convertir WebP en PNG", href: "/convertir-webp-en-png" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir WebP en PNG gratuitement</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Transformez vos images WebP en PNG pour une compatibilité maximale avec tous les logiciels d'édition. Le PNG offre une qualité sans perte et une transparence parfaite, idéal pour l'édition photo et le design graphique.

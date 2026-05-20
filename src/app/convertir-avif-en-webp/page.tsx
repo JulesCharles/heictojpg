@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ImageConvertForm from "@/components/ImageConvertForm";
 import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Convertir AVIF en WebP Gratuit en Ligne | heictojpg.fr",
@@ -58,6 +59,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
+        <Breadcrumbs items={[{ label: "Convertir AVIF en WebP", href: "/convertir-avif-en-webp" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir AVIF en WebP gratuitement</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Transformez vos images AVIF en WebP pour bénéficier d'une compatibilité navigateur maximale tout en conservant une compression moderne et efficace.

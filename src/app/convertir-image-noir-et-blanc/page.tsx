@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Client from "./client";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
@@ -44,7 +45,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Image en noir et blanc", href: "/convertir-image-noir-et-blanc" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir une image en noir et blanc</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">Transformez instantanément vos photos couleur en images noir et blanc élégantes. L'effet niveaux de gris donne à vos photos un aspect artistique intemporel. Compatible JPG, PNG et WebP.</p>
       </PageHero>

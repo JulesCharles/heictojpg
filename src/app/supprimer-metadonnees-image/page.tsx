@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Client from "./client";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
@@ -45,7 +46,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Supprimer les métadonnées", href: "/supprimer-metadonnees-image" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Supprimer les métadonnées d'une image</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">Protégez votre vie privée en supprimant toutes les métadonnées cachées de vos photos : localisation GPS, modèle d'appareil, date de prise de vue, et plus. Vos photos nettoyées ne contiennent plus aucune information personnelle.</p>
       </PageHero>

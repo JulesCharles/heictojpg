@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PdfToImageClient from "../convertir-pdf-en-jpg/client";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
@@ -54,7 +55,7 @@ export default function ConvertirPdfEnAvif() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Convertir PDF en AVIF", href: "/convertir-pdf-en-avif" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir PDF en AVIF gratuitement</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Extrayez chaque page de votre document PDF en image AVIF ultra-compacte.

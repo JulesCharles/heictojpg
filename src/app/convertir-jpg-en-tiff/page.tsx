@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ImageConvertForm from "@/components/ImageConvertForm";
 import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Convertir JPG en TIFF en ligne gratuit | heictojpg.fr",
@@ -53,7 +54,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Convertir JPG en TIFF", href: "/convertir-jpg-en-tiff" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir JPG en TIFF gratuitement</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Transformez vos images JPG en fichiers TIFF professionnels, le format de référence pour l'impression haute qualité et la retouche photo avancée. Compatible avec Photoshop, Lightroom et tous les logiciels professionnels.

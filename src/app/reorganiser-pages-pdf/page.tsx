@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Client from "./client";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
+        <Breadcrumbs items={[{ label: "Réorganiser les pages", href: "/reorganiser-pages-pdf" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Réorganiser les pages d'un PDF</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">Changez l'ordre des pages de votre document PDF en spécifiant le nouvel ordre souhaité. Inversez la pagination, déplacez des pages, ou réorganisez complètement votre document. Gratuit, sans inscription.</p>
       </PageHero>

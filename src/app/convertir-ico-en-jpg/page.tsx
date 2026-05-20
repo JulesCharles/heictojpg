@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ImageConvertForm from "@/components/ImageConvertForm";
 import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Convertir ICO en JPG Gratuit en Ligne | heictojpg.fr",
@@ -58,6 +59,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
+        <Breadcrumbs items={[{ label: "Convertir ICO en JPG", href: "/convertir-ico-en-jpg" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir ICO en JPG gratuitement</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Extrayez vos fichiers ICO (favicons, icones Windows) et convertissez-les en JPG universel. Le format JPG est lisible par tous les appareils et logiciels, ce qui facilite le partage et la modification de vos icones.

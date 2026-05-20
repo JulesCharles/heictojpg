@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Client from "./client";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
@@ -44,7 +45,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Ajouter un filigrane", href: "/ajouter-filigrane" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Ajouter un filigrane à une image</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">Protégez vos photos et créations visuelles en ajoutant un filigrane texte personnalisable. Réglez l'opacité pour un marquage discret ou visible. Idéal pour les photographes, les designers et les créateurs de contenu.</p>
       </PageHero>

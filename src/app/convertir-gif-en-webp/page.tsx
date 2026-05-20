@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ImageConvertForm from "@/components/ImageConvertForm";
 import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Convertir GIF en WebP en ligne gratuit | heictojpg.fr",
@@ -53,7 +54,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Convertir GIF en WebP", href: "/convertir-gif-en-webp" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir GIF en WebP gratuitement</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Transformez vos images GIF en WebP pour des fichiers significativement plus légers et une meilleure qualité visuelle. Le WebP supporte des millions de couleurs au lieu de 256 pour le GIF.

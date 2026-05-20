@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ImageConvertForm from "@/components/ImageConvertForm";
 import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Convertir TIFF en WebP en ligne gratuit | heictojpg.fr",
@@ -53,7 +54,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Convertir TIFF en WebP", href: "/convertir-tiff-en-webp" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir TIFF en WebP gratuitement</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Transformez vos fichiers TIFF professionnels en images WebP optimisées pour le web. Passez d'un fichier de 50 Mo à moins de 1 Mo sans perte visible de qualité. Idéal pour publier vos photos pro en ligne.

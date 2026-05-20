@@ -3,6 +3,7 @@ import Client from "./client";
 import AdBanner from "@/components/AdBanner";
 import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Extraire le texte d'une image (OCR) gratuit en ligne | heictojpg.fr",
@@ -80,7 +81,7 @@ export default function ExtraireTexteImage() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Extraire le texte (OCR)", href: "/extraire-texte-image" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
           Extraire le texte d&apos;une image (OCR)
         </h1>

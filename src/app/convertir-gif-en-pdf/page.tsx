@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Client from "../convertir-jpg-en-pdf/client";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
@@ -94,6 +95,7 @@ export default function ConvertirGifEnPdf() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+        <Breadcrumbs items={[{ label: "Convertir GIF en PDF", href: "/convertir-gif-en-pdf" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
           Convertir GIF en PDF gratuitement
         </h1>

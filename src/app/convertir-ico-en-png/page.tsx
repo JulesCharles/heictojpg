@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ImageConvertForm from "@/components/ImageConvertForm";
 import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Convertir ICO en PNG en ligne gratuit | heictojpg.fr",
@@ -53,7 +54,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Convertir ICO en PNG", href: "/convertir-ico-en-png" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir ICO en PNG gratuitement</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Extrayez et convertissez vos fichiers favicon ICO en images PNG haute qualité. Idéal pour récupérer un logo à partir d'un favicon, éditer une icône, ou utiliser un favicon dans un contexte où le format ICO n'est pas accepté.

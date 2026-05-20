@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ImageConvertForm from "@/components/ImageConvertForm";
 import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Convertir AVIF en TIFF Gratuit en Ligne | heictojpg.fr",
@@ -58,6 +59,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
+        <Breadcrumbs items={[{ label: "Convertir AVIF en TIFF", href: "/convertir-avif-en-tiff" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir AVIF en TIFF gratuitement</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Transformez vos images AVIF en TIFF pour l'impression professionnelle ou l'archivage longue durée. Le format TIFF offre une qualité sans perte, idéale pour les photographes, graphistes et imprimeurs.

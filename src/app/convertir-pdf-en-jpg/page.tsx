@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Client from "./client";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
@@ -90,6 +91,7 @@ export default function ConvertirPdfEnJpg() {
   return (
     <>
       <PageHero>
+        <Breadcrumbs items={[{ label: "Convertir PDF en JPG", href: "/convertir-pdf-en-jpg" }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

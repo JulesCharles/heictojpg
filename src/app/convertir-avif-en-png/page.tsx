@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ImageConvertForm from "@/components/ImageConvertForm";
 import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Convertir AVIF en PNG en ligne gratuit | heictojpg.fr",
@@ -53,7 +54,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Convertir AVIF en PNG", href: "/convertir-avif-en-png" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir AVIF en PNG gratuitement</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Transformez vos images AVIF en PNG pour une qualité sans perte et une compatibilité totale. La transparence de l'AVIF est préservée dans le PNG. Ouvrez et éditez vos fichiers AVIF dans n'importe quel logiciel.

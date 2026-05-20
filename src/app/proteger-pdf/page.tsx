@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Client from "./client";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
+        <Breadcrumbs items={[{ label: "Protéger un PDF", href: "/proteger-pdf" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Protéger un PDF avec un mot de passe</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">Sécurisez vos documents PDF confidentiels en ajoutant une protection par mot de passe. Les destinataires devront entrer le mot de passe pour ouvrir le fichier. Idéal pour les contrats, les documents financiers et les informations sensibles. Gratuit.</p>
       </PageHero>

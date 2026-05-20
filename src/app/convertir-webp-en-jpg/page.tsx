@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ImageConvertForm from "@/components/ImageConvertForm";
 import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Convertir WebP en JPG en ligne gratuit | heictojpg.fr",
@@ -88,6 +89,7 @@ export default function ConvertirWebpEnJpg() {
   return (
     <>
       <PageHero>
+        <Breadcrumbs items={[{ label: "Convertir WebP en JPG", href: "/convertir-webp-en-jpg" }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

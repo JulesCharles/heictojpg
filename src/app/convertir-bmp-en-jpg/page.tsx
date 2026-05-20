@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ImageConvertForm from "@/components/ImageConvertForm";
 import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Convertir BMP en JPG en ligne gratuit | heictojpg.fr",
@@ -58,7 +59,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Convertir BMP en JPG", href: "/convertir-bmp-en-jpg" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir BMP en JPG gratuitement</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Transformez vos images BMP (Bitmap) en JPG pour des fichiers jusqu'à 95% plus légers. Le BMP est un format ancien et non compressé qui produit des fichiers énormes. Notre convertisseur vous permet de les rendre légers et partageables en un clic.

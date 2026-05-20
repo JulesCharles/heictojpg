@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Client from "./client";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
@@ -45,7 +46,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Changer le DPI", href: "/changer-dpi-image" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Changer le DPI d'une image gratuitement</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">Modifiez la résolution DPI (dots per inch) de vos images pour l'impression professionnelle (300 DPI), le web (72 DPI) ou tout autre usage. Notre outil modifie les métadonnées de résolution sans altérer la qualité des pixels.</p>
       </PageHero>

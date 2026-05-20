@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ImageConvertForm from "@/components/ImageConvertForm";
 import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Convertir SVG en JPG en ligne gratuit | heictojpg.fr",
@@ -58,7 +59,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Convertir SVG en JPG", href: "/convertir-svg-en-jpg" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir SVG en JPG gratuitement</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Transformez vos fichiers vectoriels SVG en images JPG universellement compatibles. Idéal pour partager vos logos et illustrations sur les réseaux sociaux, par email, ou les intégrer dans des documents qui n'acceptent pas le SVG.

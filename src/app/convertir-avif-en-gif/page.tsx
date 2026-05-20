@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ImageConvertForm from "@/components/ImageConvertForm";
 import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Convertir AVIF en GIF Gratuit en Ligne | heictojpg.fr",
@@ -58,6 +59,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
+        <Breadcrumbs items={[{ label: "Convertir AVIF en GIF", href: "/convertir-avif-en-gif" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir AVIF en GIF gratuitement</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Transformez vos images AVIF en GIF pour les partager facilement sur n'importe quel appareil ou plateforme. Le format GIF est reconnu partout depuis des décennies, ce qui en fait un choix idéal pour un partage universel.

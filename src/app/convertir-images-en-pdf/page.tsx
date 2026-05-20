@@ -3,6 +3,7 @@ import Client from "./client";
 import AdBanner from "@/components/AdBanner";
 import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Convertir images en PDF en ligne gratuit | heictojpg.fr",
@@ -72,7 +73,7 @@ export default function ConvertirImagesEnPdf() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Images en PDF", href: "/convertir-images-en-pdf" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
           Convertir images en PDF
         </h1>

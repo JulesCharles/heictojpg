@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Client from "./client";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
@@ -44,7 +45,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Flouter une image", href: "/flouter-image" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Flouter une image gratuitement</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">Appliquez un effet de flou gaussien à vos images en un clic. Ajustez l'intensité du flou selon vos besoins. Idéal pour protéger la vie privée, anonymiser des visages, ou créer des arrière-plans artistiques.</p>
       </PageHero>

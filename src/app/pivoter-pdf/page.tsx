@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Client from "./client";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
+        <Breadcrumbs items={[{ label: "Pivoter un PDF", href: "/pivoter-pdf" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Pivoter les pages d'un PDF</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">Pivotez les pages de votre document PDF de 90, 180 ou 270 degrés. Corrigez l'orientation de documents scannés, de pages en mode paysage, ou de PDF mal orientés. Appliquez la rotation à toutes les pages ou à une sélection. Gratuit.</p>
       </PageHero>

@@ -3,6 +3,7 @@ import Client from "./client";
 import AdBanner from "@/components/AdBanner";
 import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Redimensionner image pour les reseaux sociaux | heictojpg.fr",
@@ -80,7 +81,7 @@ export default function RedimensionnerReseauxSociaux() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Taille réseaux sociaux", href: "/redimensionner-image-reseaux-sociaux" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
           Redimensionner image pour les reseaux sociaux
         </h1>

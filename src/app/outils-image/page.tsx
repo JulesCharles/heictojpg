@@ -38,6 +38,21 @@ const convertTools: Tool[] = [
   { href: "/convertir-png-en-svg", label: "PNG en SVG", desc: "Vectorisation sans perte.", icon: "SVG" },
   { href: "/convertir-avif-en-jpg", label: "AVIF en JPG", desc: "Ouvrez les fichiers AVIF.", icon: "JPG" },
   { href: "/convertir-ico-en-png", label: "ICO en PNG", desc: "Extrayez un favicon.", icon: "PNG" },
+  { href: "/convertir-webp-en-avif", label: "WebP en AVIF", desc: "Le format le plus léger.", icon: "AVIF" },
+  { href: "/convertir-avif-en-webp", label: "AVIF en WebP", desc: "Plus large compatibilité.", icon: "WebP" },
+  { href: "/convertir-png-en-tiff", label: "PNG en TIFF", desc: "Pour l'impression pro.", icon: "TIFF" },
+  { href: "/convertir-png-en-gif", label: "PNG en GIF", desc: "Compatible partout.", icon: "GIF" },
+  { href: "/convertir-svg-en-webp", label: "SVG en WebP", desc: "Vectoriel vers web.", icon: "WebP" },
+  { href: "/convertir-svg-en-avif", label: "SVG en AVIF", desc: "SVG ultra léger.", icon: "AVIF" },
+  { href: "/convertir-tiff-en-avif", label: "TIFF en AVIF", desc: "Allégez vos scans.", icon: "AVIF" },
+  { href: "/convertir-ico-en-jpg", label: "ICO en JPG", desc: "Favicon vers photo.", icon: "JPG" },
+  { href: "/convertir-gif-en-avif", label: "GIF en AVIF", desc: "Animation ultra légère.", icon: "AVIF" },
+  { href: "/convertir-gif-en-tiff", label: "GIF en TIFF", desc: "Pour l'archivage.", icon: "TIFF" },
+  { href: "/convertir-bmp-en-webp", label: "BMP en WebP", desc: "Modernisez vos BMP.", icon: "WebP" },
+  { href: "/convertir-bmp-en-avif", label: "BMP en AVIF", desc: "BMP ultra compact.", icon: "AVIF" },
+  { href: "/convertir-webp-en-tiff", label: "WebP en TIFF", desc: "Web vers impression.", icon: "TIFF" },
+  { href: "/convertir-avif-en-gif", label: "AVIF en GIF", desc: "Compatibilité maximale.", icon: "GIF" },
+  { href: "/convertir-avif-en-tiff", label: "AVIF en TIFF", desc: "Pour l'impression.", icon: "TIFF" },
 ];
 
 const editTools: Tool[] = [

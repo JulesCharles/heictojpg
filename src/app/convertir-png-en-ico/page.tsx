@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ImageConvertForm from "@/components/ImageConvertForm";
 import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Convertir PNG en ICO (favicon) gratuit | heictojpg.fr",
@@ -58,7 +59,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Convertir PNG en ICO", href: "/convertir-png-en-ico" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir PNG en ICO (favicon) gratuitement</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Créez un fichier favicon ICO professionnel à partir de votre image PNG. Le fichier généré contient 6 tailles différentes (16x16 à 256x256) pour s'afficher parfaitement dans tous les navigateurs, barres de favoris et onglets.

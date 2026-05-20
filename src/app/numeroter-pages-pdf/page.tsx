@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Client from "./client";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
+        <Breadcrumbs items={[{ label: "Numéroter les pages", href: "/numeroter-pages-pdf" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Ajouter des numéros de page à un PDF</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">Ajoutez automatiquement des numéros de page (1/10, 2/10...) en bas de chaque page de votre document PDF. Idéal pour les rapports, mémoires, dossiers administratifs et présentations. Gratuit, sans inscription.</p>
       </PageHero>

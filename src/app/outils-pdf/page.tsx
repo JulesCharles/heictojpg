@@ -34,6 +34,15 @@ const pdfTools: Tool[] = [
   { href: "/pivoter-pdf", label: "Pivoter PDF", desc: "Corrigez l'orientation des pages.", icon: "ROT" },
   { href: "/reorganiser-pages-pdf", label: "Reorganiser pages", desc: "Changez l'ordre des pages.", icon: "ORD" },
   { href: "/proteger-pdf", label: "Proteger PDF", desc: "Ajoutez un mot de passe.", icon: "LCK" },
+  { href: "/convertir-tiff-en-pdf", label: "TIFF en PDF", desc: "Scans vers document PDF.", icon: "PDF" },
+  { href: "/convertir-bmp-en-pdf", label: "BMP en PDF", desc: "BMP vers document PDF.", icon: "PDF" },
+  { href: "/convertir-gif-en-pdf", label: "GIF en PDF", desc: "GIF vers document PDF.", icon: "PDF" },
+  { href: "/convertir-avif-en-pdf", label: "AVIF en PDF", desc: "AVIF vers document PDF.", icon: "PDF" },
+  { href: "/convertir-webp-en-pdf", label: "WebP en PDF", desc: "WebP vers document PDF.", icon: "PDF" },
+  { href: "/convertir-svg-en-pdf", label: "SVG en PDF", desc: "Vectoriel vers PDF.", icon: "PDF" },
+  { href: "/convertir-pdf-en-webp", label: "PDF en WebP", desc: "Pages en WebP léger.", icon: "WebP" },
+  { href: "/convertir-pdf-en-avif", label: "PDF en AVIF", desc: "Pages ultra légères.", icon: "AVIF" },
+  { href: "/convertir-pdf-en-tiff", label: "PDF en TIFF", desc: "Pages haute qualité.", icon: "TIFF" },
 ];
 
 const jsonLd = {

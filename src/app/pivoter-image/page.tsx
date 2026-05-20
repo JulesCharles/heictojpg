@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Client from "./client";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
@@ -44,7 +45,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Pivoter une image", href: "/pivoter-image" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Pivoter et retourner une image gratuitement</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">Pivotez vos images de 90, 180 ou 270 degrés, ou retournez-les horizontalement ou verticalement. Idéal pour corriger l'orientation de vos photos. Compatible avec tous les formats d'image courants.</p>
       </PageHero>

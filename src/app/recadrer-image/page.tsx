@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Client from "./client";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
@@ -44,7 +45,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Recadrer une image", href: "/recadrer-image" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Recadrer une image gratuitement</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">Découpez et recadrez vos images avec précision. Sélectionnez la zone à conserver et téléchargez le résultat immédiatement. Compatible JPG, PNG et WebP. Gratuit, sans inscription, aucun fichier conservé sur nos serveurs.</p>
       </PageHero>

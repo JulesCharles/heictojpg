@@ -3,6 +3,7 @@ import Client from "./client";
 import AdBanner from "@/components/AdBanner";
 import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Creer un GIF anime en ligne gratuit | heictojpg.fr",
@@ -71,7 +72,7 @@ export default function CreerGif() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Créer un GIF", href: "/creer-gif" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
           Creer un GIF anime a partir d&apos;images
         </h1>

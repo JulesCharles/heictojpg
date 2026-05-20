@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Client from "./client";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function Page() {
   return (
     <>
       <PageHero>
+        <Breadcrumbs items={[{ label: "Supprimer des pages", href: "/supprimer-pages-pdf" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Supprimer des pages d'un PDF</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">Retirez les pages inutiles de votre document PDF en indiquant simplement les numéros de page à supprimer. Idéal pour nettoyer un document avant envoi, retirer des pages blanches ou des couvertures. Gratuit, sans inscription.</p>
       </PageHero>

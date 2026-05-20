@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import VectorizeClient from "./client";
 import RelatedTools from "@/components/RelatedTools";
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Convertir JPG en SVG (vectoriser) gratuit | heictojpg.fr",
@@ -46,7 +47,7 @@ export default function ConvertirJpgEnSvg() {
   return (
     <>
       <PageHero>
-
+        <Breadcrumbs items={[{ label: "Convertir JPG en SVG", href: "/convertir-jpg-en-svg" }]} />
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Convertir JPG en SVG (vectorisation)</h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Vectorisez vos images JPG en fichiers SVG redimensionnables à l&apos;infini.
