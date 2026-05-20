@@ -58,12 +58,27 @@ export async function POST(request: NextRequest) {
       let outputBuffer: Buffer;
       let ext: string;
 
-      if (format === "png") {
-        outputBuffer = await sharp(pngBuffer).png().toBuffer();
-        ext = "png";
-      } else {
-        outputBuffer = await sharp(pngBuffer).jpeg({ quality: 92 }).toBuffer();
-        ext = "jpg";
+      switch (format) {
+        case "png":
+          outputBuffer = await sharp(pngBuffer).png().toBuffer();
+          ext = "png";
+          break;
+        case "webp":
+          outputBuffer = await sharp(pngBuffer).webp({ quality: 85 }).toBuffer();
+          ext = "webp";
+          break;
+        case "avif":
+          outputBuffer = await sharp(pngBuffer).avif({ quality: 80 }).toBuffer();
+          ext = "avif";
+          break;
+        case "tiff":
+          outputBuffer = await sharp(pngBuffer).tiff({ quality: 90 }).toBuffer();
+          ext = "tiff";
+          break;
+        default:
+          outputBuffer = await sharp(pngBuffer).jpeg({ quality: 92 }).toBuffer();
+          ext = "jpg";
+          break;
       }
 
       images.push({ name: `page-${i + 1}.${ext}`, buffer: outputBuffer });
@@ -72,12 +87,14 @@ export async function POST(request: NextRequest) {
     const originalName = file.name.replace(/\.pdf$/i, "");
 
     if (images.length === 1) {
-      const contentType = format === "png" ? "image/png" : "image/jpeg";
+      const contentTypes: Record<string, string> = { png: "image/png", webp: "image/webp", avif: "image/avif", tiff: "image/tiff" };
+      const contentType = contentTypes[format] || "image/jpeg";
+      const ext = format === "jpg" ? "jpg" : format;
       return new NextResponse(images[0].buffer as any, {
         status: 200,
         headers: {
           "Content-Type": contentType,
-          "Content-Disposition": `attachment; filename="${originalName}.${format === "png" ? "png" : "jpg"}"`,
+          "Content-Disposition": `attachment; filename="${originalName}.${ext}"`,
           "Content-Length": images[0].buffer.length.toString(),
         },
       });
