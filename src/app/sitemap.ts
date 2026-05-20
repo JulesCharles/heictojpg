@@ -150,6 +150,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'supprimer-fond-image-sur-iphone',
     'supprimer-fond-image-sur-mac',
     'supprimer-fond-image-sur-windows',
+    // Phase 2.3 - use-case pages
+    'redimensionner-image-pour-instagram',
+    'redimensionner-image-pour-facebook',
+    'redimensionner-image-pour-linkedin',
+    'redimensionner-image-pour-twitter',
+    'redimensionner-image-pour-youtube',
+    'redimensionner-image-pour-tiktok',
+    'redimensionner-image-pour-pinterest',
+    'compresser-image-pour-email',
+    'reduire-taille-photo-pour-email',
+    'photo-identite-en-ligne',
+    'optimiser-image-pour-wordpress',
+    'optimiser-image-pour-shopify',
+    'convertir-heic-pour-wordpress',
+    'convertir-photo-iphone-pour-pc',
+    'creer-favicon-en-ligne',
+    'redimensionner-image-pour-cv',
+    'convertir-image-pour-impression',
+    'compresser-image-pour-instagram',
+    'compresser-pdf-pour-email',
+    'convertir-image-en-pdf-pour-impression',
   ]
 
   return [
