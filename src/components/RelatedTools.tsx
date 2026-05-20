@@ -618,6 +618,78 @@ const relatedToolsMap: Record<string, RelatedTool[]> = {
     { href: "/redimensionner-image", label: "Redimensionner", desc: "Ajustez la taille." },
     { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
   ],
+
+  // ── Phase 2.1 batch 2: X→PDF, PDF→X, gif→tiff ──
+  "/convertir-gif-en-tiff": [
+    { href: "/convertir-gif-en-jpg", label: "GIF en JPG", desc: "Image fixe." },
+    { href: "/convertir-gif-en-png", label: "GIF en PNG", desc: "Qualité sans perte." },
+    { href: "/convertir-tiff-en-jpg", label: "TIFF en JPG", desc: "TIFF vers JPG." },
+    { href: "/convertir-gif-en-avif", label: "GIF en AVIF", desc: "Le plus léger." },
+    { href: "/changer-dpi-image", label: "Changer DPI", desc: "Ajustez pour l'impression." },
+  ],
+  "/convertir-tiff-en-pdf": [
+    { href: "/convertir-tiff-en-jpg", label: "TIFF en JPG", desc: "Format universel." },
+    { href: "/convertir-jpg-en-pdf", label: "JPG en PDF", desc: "JPG vers PDF." },
+    { href: "/fusionner-pdf", label: "Fusionner PDF", desc: "Combinez plusieurs PDF." },
+    { href: "/compresser-pdf", label: "Compresser PDF", desc: "Réduisez la taille." },
+    { href: "/convertir-images-en-pdf", label: "Images en PDF", desc: "Combinez plusieurs images." },
+  ],
+  "/convertir-bmp-en-pdf": [
+    { href: "/convertir-bmp-en-jpg", label: "BMP en JPG", desc: "Format universel." },
+    { href: "/convertir-jpg-en-pdf", label: "JPG en PDF", desc: "JPG vers PDF." },
+    { href: "/fusionner-pdf", label: "Fusionner PDF", desc: "Combinez plusieurs PDF." },
+    { href: "/compresser-pdf", label: "Compresser PDF", desc: "Réduisez la taille." },
+    { href: "/convertir-images-en-pdf", label: "Images en PDF", desc: "Combinez plusieurs images." },
+  ],
+  "/convertir-gif-en-pdf": [
+    { href: "/convertir-gif-en-jpg", label: "GIF en JPG", desc: "Image fixe." },
+    { href: "/convertir-jpg-en-pdf", label: "JPG en PDF", desc: "JPG vers PDF." },
+    { href: "/fusionner-pdf", label: "Fusionner PDF", desc: "Combinez plusieurs PDF." },
+    { href: "/compresser-pdf", label: "Compresser PDF", desc: "Réduisez la taille." },
+    { href: "/convertir-images-en-pdf", label: "Images en PDF", desc: "Combinez plusieurs images." },
+  ],
+  "/convertir-avif-en-pdf": [
+    { href: "/convertir-avif-en-jpg", label: "AVIF en JPG", desc: "Format universel." },
+    { href: "/convertir-jpg-en-pdf", label: "JPG en PDF", desc: "JPG vers PDF." },
+    { href: "/fusionner-pdf", label: "Fusionner PDF", desc: "Combinez plusieurs PDF." },
+    { href: "/compresser-pdf", label: "Compresser PDF", desc: "Réduisez la taille." },
+    { href: "/convertir-images-en-pdf", label: "Images en PDF", desc: "Combinez plusieurs images." },
+  ],
+  "/convertir-webp-en-pdf": [
+    { href: "/convertir-webp-en-jpg", label: "WebP en JPG", desc: "Format universel." },
+    { href: "/convertir-jpg-en-pdf", label: "JPG en PDF", desc: "JPG vers PDF." },
+    { href: "/fusionner-pdf", label: "Fusionner PDF", desc: "Combinez plusieurs PDF." },
+    { href: "/compresser-pdf", label: "Compresser PDF", desc: "Réduisez la taille." },
+    { href: "/convertir-images-en-pdf", label: "Images en PDF", desc: "Combinez plusieurs images." },
+  ],
+  "/convertir-svg-en-pdf": [
+    { href: "/convertir-svg-en-png", label: "SVG en PNG", desc: "SVG vers bitmap." },
+    { href: "/convertir-jpg-en-pdf", label: "JPG en PDF", desc: "JPG vers PDF." },
+    { href: "/fusionner-pdf", label: "Fusionner PDF", desc: "Combinez plusieurs PDF." },
+    { href: "/compresser-pdf", label: "Compresser PDF", desc: "Réduisez la taille." },
+    { href: "/convertir-images-en-pdf", label: "Images en PDF", desc: "Combinez plusieurs images." },
+  ],
+  "/convertir-pdf-en-webp": [
+    { href: "/convertir-pdf-en-jpg", label: "PDF en JPG", desc: "Pages en JPG." },
+    { href: "/convertir-pdf-en-png", label: "PDF en PNG", desc: "Pages en PNG." },
+    { href: "/convertir-pdf-en-avif", label: "PDF en AVIF", desc: "Le plus léger." },
+    { href: "/diviser-pdf", label: "Diviser PDF", desc: "Séparez par pages." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Allégez les images." },
+  ],
+  "/convertir-pdf-en-avif": [
+    { href: "/convertir-pdf-en-jpg", label: "PDF en JPG", desc: "Pages en JPG." },
+    { href: "/convertir-pdf-en-png", label: "PDF en PNG", desc: "Pages en PNG." },
+    { href: "/convertir-pdf-en-webp", label: "PDF en WebP", desc: "Format web léger." },
+    { href: "/diviser-pdf", label: "Diviser PDF", desc: "Séparez par pages." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Allégez les images." },
+  ],
+  "/convertir-pdf-en-tiff": [
+    { href: "/convertir-pdf-en-jpg", label: "PDF en JPG", desc: "Pages en JPG." },
+    { href: "/convertir-pdf-en-png", label: "PDF en PNG", desc: "Pages en PNG." },
+    { href: "/changer-dpi-image", label: "Changer DPI", desc: "Ajustez pour l'impression." },
+    { href: "/diviser-pdf", label: "Diviser PDF", desc: "Séparez par pages." },
+    { href: "/compresser-pdf", label: "Compresser PDF", desc: "Réduisez la taille." },
+  ],
 };
 
 // Fallback for pages not explicitly mapped

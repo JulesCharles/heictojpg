@@ -62,6 +62,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'convertir-svg-en-webp',
     'convertir-svg-en-avif',
     'convertir-ico-en-jpg',
+    'convertir-gif-en-tiff',
+    // X to PDF
+    'convertir-tiff-en-pdf',
+    'convertir-bmp-en-pdf',
+    'convertir-gif-en-pdf',
+    'convertir-avif-en-pdf',
+    'convertir-webp-en-pdf',
+    'convertir-svg-en-pdf',
+    // PDF to X
+    'convertir-pdf-en-webp',
+    'convertir-pdf-en-avif',
+    'convertir-pdf-en-tiff',
     // Vectorization
     'convertir-jpg-en-svg',
     'convertir-png-en-svg',
