@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import sharp from "sharp";
 
-type EditAction = "rotate" | "flip" | "flop" | "grayscale" | "blur" | "negate" | "dpi" | "crop" | "brightness";
+type EditAction = "rotate" | "flip" | "flop" | "grayscale" | "blur" | "negate" | "dpi" | "crop" | "brightness" | "trim";
 
 export async function POST(request: NextRequest) {
   try {
@@ -58,6 +58,11 @@ export async function POST(request: NextRequest) {
         const brightness = parseFloat(formData.get("brightness") as string) || 1;
         const contrast = parseFloat(formData.get("contrast") as string) || 1;
         sharpInstance = sharpInstance.modulate({ brightness }).linear(contrast, -(128 * (contrast - 1)));
+        break;
+      }
+      case "trim": {
+        const threshold = parseInt(formData.get("threshold") as string) || 10;
+        sharpInstance = sharpInstance.trim({ threshold });
         break;
       }
       default:
