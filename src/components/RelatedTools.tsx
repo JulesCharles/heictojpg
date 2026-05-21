@@ -249,11 +249,11 @@ const relatedToolsMap: Record<string, RelatedTool[]> = {
     { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Fond transparent." },
   ],
   "/convertir-png-en-ico": [
+    { href: "/generateur-favicon", label: "Générateur favicon", desc: "Toutes tailles + ZIP + code HTML." },
     { href: "/convertir-jpg-en-ico", label: "JPG en ICO", desc: "Favicon depuis un JPG." },
     { href: "/convertir-ico-en-png", label: "ICO en PNG", desc: "Extrayez un favicon." },
     { href: "/redimensionner-image", label: "Redimensionner", desc: "Taille 16x16, 32x32, 64x64." },
     { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Fond transparent pour favicon." },
-    { href: "/convertir-png-en-svg", label: "PNG en SVG", desc: "Vectorisez votre logo." },
   ],
   "/convertir-jpg-en-ico": [
     { href: "/convertir-png-en-ico", label: "PNG en ICO", desc: "Favicon depuis un PNG." },
@@ -328,17 +328,17 @@ const relatedToolsMap: Record<string, RelatedTool[]> = {
     { href: "/optimiser-image-web", label: "Optimiser pour le web", desc: "Compression intelligente." },
   ],
   "/recadrer-image": [
+    { href: "/rogner-bords-blancs-image", label: "Rogner bords blancs", desc: "Auto-crop intelligent." },
     { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille." },
     { href: "/redimensionner-image-reseaux-sociaux", label: "Taille réseaux sociaux", desc: "Formats Instagram, Facebook..." },
     { href: "/pivoter-image", label: "Pivoter / Retourner", desc: "Corrigez l'orientation." },
-    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
-    { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Détourage IA." },
+    { href: "/retourner-image-miroir", label: "Miroir", desc: "Retournez vos images." },
   ],
   "/pivoter-image": [
+    { href: "/retourner-image-miroir", label: "Miroir", desc: "Retournez horizontalement/verticalement." },
     { href: "/recadrer-image", label: "Recadrer", desc: "Découpez la zone souhaitée." },
     { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille." },
     { href: "/flouter-image", label: "Flouter", desc: "Floutez des zones." },
-    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
     { href: "/lire-metadonnees-image", label: "Lire EXIF", desc: "Vérifiez l'orientation." },
   ],
   "/supprimer-fond-image": [
@@ -357,10 +357,10 @@ const relatedToolsMap: Record<string, RelatedTool[]> = {
   ],
   "/convertir-image-noir-et-blanc": [
     { href: "/inverser-couleurs-image", label: "Inverser couleurs", desc: "Effet négatif." },
+    { href: "/convertir-image-en-pixel-art", label: "Pixel art", desc: "Effet rétro pixelisé." },
+    { href: "/convertir-image-en-ascii", label: "ASCII art", desc: "Image en caractères." },
     { href: "/flouter-image", label: "Flouter", desc: "Effet artistique." },
-    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
-    { href: "/convertir-jpg-en-png", label: "JPG en PNG", desc: "Qualité sans perte." },
-    { href: "/recadrer-image", label: "Recadrer", desc: "Découpez la zone souhaitée." },
+    { href: "/compter-couleurs-image", label: "Compter couleurs", desc: "Analysez la palette." },
   ],
   "/ajouter-filigrane": [
     { href: "/ajouter-texte-image", label: "Ajouter du texte", desc: "Texte personnalisé sur vos photos." },
@@ -377,9 +377,9 @@ const relatedToolsMap: Record<string, RelatedTool[]> = {
     { href: "/convertir-jpg-en-png", label: "JPG en PNG", desc: "Ajoutez la transparence." },
   ],
   "/changer-dpi-image": [
+    { href: "/calculateur-taille-impression", label: "Calc. impression", desc: "Calculez pixels/cm/DPI." },
     { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille en pixels." },
-    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
-    { href: "/convertir-jpg-en-pdf", label: "JPG en PDF", desc: "Pour l'impression." },
+    { href: "/redimensionner-image-pour-impression", label: "Taille impression", desc: "Presets 10x15, A4, A3." },
     { href: "/convertir-jpg-en-tiff", label: "JPG en TIFF", desc: "Format pro impression." },
     { href: "/lire-metadonnees-image", label: "Lire EXIF", desc: "Vérifiez le DPI actuel." },
   ],
@@ -414,8 +414,8 @@ const relatedToolsMap: Record<string, RelatedTool[]> = {
   "/optimiser-image-web": [
     { href: "/compresser-image", label: "Compresser image", desc: "Compression manuelle." },
     { href: "/convertir-jpg-en-webp", label: "JPG en WebP", desc: "Format web recommandé." },
-    { href: "/convertir-png-en-webp", label: "PNG en WebP", desc: "PNG vers WebP." },
-    { href: "/redimensionner-image", label: "Redimensionner", desc: "Tailles adaptées au web." },
+    { href: "/convertir-image-en-base64", label: "Image en Base64", desc: "Encodez pour inline." },
+    { href: "/comparer-images", label: "Comparer images", desc: "Avant/après compression." },
     { href: "/convertir-jpg-en-avif", label: "JPG en AVIF", desc: "Le format le plus léger." },
   ],
   "/redimensionner-image-reseaux-sociaux": [
@@ -454,11 +454,11 @@ const relatedToolsMap: Record<string, RelatedTool[]> = {
     { href: "/ajouter-filigrane", label: "Filigrane", desc: "QR code en filigrane." },
   ],
   "/convertisseur-couleurs": [
+    { href: "/compter-couleurs-image", label: "Compter couleurs", desc: "Analysez la palette d'une image." },
     { href: "/convertir-image-noir-et-blanc", label: "Noir et blanc", desc: "Niveaux de gris." },
     { href: "/inverser-couleurs-image", label: "Inverser couleurs", desc: "Effet négatif." },
-    { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Détourage IA." },
     { href: "/ajouter-texte-image", label: "Ajouter du texte", desc: "Texte coloré sur vos images." },
-    { href: "/generer-qr-code", label: "QR code", desc: "Générez un QR code." },
+    { href: "/generateur-image-placeholder", label: "Placeholder", desc: "Images colorées de test." },
   ],
 
   // ── PDF tools ──
@@ -689,6 +689,85 @@ const relatedToolsMap: Record<string, RelatedTool[]> = {
     { href: "/changer-dpi-image", label: "Changer DPI", desc: "Ajustez pour l'impression." },
     { href: "/diviser-pdf", label: "Diviser PDF", desc: "Séparez par pages." },
     { href: "/compresser-pdf", label: "Compresser PDF", desc: "Réduisez la taille." },
+  ],
+
+  // ── Tier 3 tools ──
+  "/calculateur-taille-impression": [
+    { href: "/changer-dpi-image", label: "Changer DPI", desc: "Ajustez le DPI de vos images." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille en pixels." },
+    { href: "/convertir-image-pour-impression", label: "Guide impression", desc: "Préparez vos images." },
+    { href: "/convertir-jpg-en-pdf", label: "JPG en PDF", desc: "Créez un document imprimable." },
+    { href: "/convertir-jpg-en-tiff", label: "JPG en TIFF", desc: "Format pro impression." },
+  ],
+  "/convertir-image-en-base64": [
+    { href: "/compresser-image", label: "Compresser image", desc: "Allégez avant d'encoder." },
+    { href: "/convertir-jpg-en-webp", label: "JPG en WebP", desc: "Format web léger." },
+    { href: "/optimiser-image-web", label: "Optimiser pour le web", desc: "Compression intelligente." },
+    { href: "/generateur-image-placeholder", label: "Image placeholder", desc: "Générez des images de test." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Réduisez avant d'encoder." },
+  ],
+  "/compter-couleurs-image": [
+    { href: "/convertisseur-couleurs", label: "Convertisseur couleurs", desc: "HEX, RGB, HSL." },
+    { href: "/convertir-image-noir-et-blanc", label: "Noir et blanc", desc: "Réduisez à 1 couleur." },
+    { href: "/lire-metadonnees-image", label: "Lire EXIF", desc: "Métadonnées de vos photos." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/convertir-png-en-gif", label: "PNG en GIF", desc: "Palette 256 couleurs." },
+  ],
+  "/retourner-image-miroir": [
+    { href: "/pivoter-image", label: "Pivoter image", desc: "Rotation 90/180/270°." },
+    { href: "/recadrer-image", label: "Recadrer", desc: "Découpez la zone souhaitée." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille." },
+    { href: "/flouter-image", label: "Flouter", desc: "Effet artistique." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+  ],
+  "/generateur-image-placeholder": [
+    { href: "/convertir-image-en-base64", label: "Image en Base64", desc: "Encodez pour le web." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Taille personnalisée." },
+    { href: "/convertisseur-couleurs", label: "Convertisseur couleurs", desc: "Choisissez vos couleurs." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Allégez vos images." },
+    { href: "/generer-qr-code", label: "Générateur QR code", desc: "Un autre outil pour devs." },
+  ],
+  "/convertir-image-en-pixel-art": [
+    { href: "/convertir-image-noir-et-blanc", label: "Noir et blanc", desc: "Effet niveaux de gris." },
+    { href: "/flouter-image", label: "Flouter", desc: "Effet artistique." },
+    { href: "/inverser-couleurs-image", label: "Inverser couleurs", desc: "Effet négatif." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+  ],
+  "/convertir-image-en-ascii": [
+    { href: "/convertir-image-noir-et-blanc", label: "Noir et blanc", desc: "Niveaux de gris." },
+    { href: "/convertir-image-en-pixel-art", label: "Pixel art", desc: "Autre effet rétro." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille." },
+    { href: "/inverser-couleurs-image", label: "Inverser couleurs", desc: "Effet négatif." },
+  ],
+  "/rogner-bords-blancs-image": [
+    { href: "/recadrer-image", label: "Recadrer", desc: "Recadrage manuel." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/lire-metadonnees-image", label: "Lire EXIF", desc: "Dimensions de l'image." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille." },
+    { href: "/supprimer-fond-image", label: "Supprimer le fond", desc: "Détourage IA." },
+  ],
+  "/generateur-favicon": [
+    { href: "/convertir-png-en-ico", label: "PNG en ICO", desc: "Conversion simple." },
+    { href: "/convertir-jpg-en-ico", label: "JPG en ICO", desc: "Favicon depuis JPG." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Ajustez la taille." },
+    { href: "/creer-favicon-en-ligne", label: "Guide favicon", desc: "Tout savoir sur les favicons." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Allégez votre favicon." },
+  ],
+  "/comparer-images": [
+    { href: "/compresser-image", label: "Compresser image", desc: "Comparez avant/après." },
+    { href: "/convertir-jpg-en-webp", label: "JPG en WebP", desc: "Comparez les formats." },
+    { href: "/optimiser-image-web", label: "Optimiser pour le web", desc: "Compression intelligente." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Changez la taille." },
+    { href: "/lire-metadonnees-image", label: "Lire EXIF", desc: "Comparez les métadonnées." },
+  ],
+  "/redimensionner-image-pour-impression": [
+    { href: "/calculateur-taille-impression", label: "Calculateur impression", desc: "Calculez pixels/cm/DPI." },
+    { href: "/changer-dpi-image", label: "Changer DPI", desc: "Ajustez pour l'impression." },
+    { href: "/redimensionner-image", label: "Redimensionner", desc: "Taille personnalisée." },
+    { href: "/convertir-jpg-en-tiff", label: "JPG en TIFF", desc: "Format pro impression." },
+    { href: "/convertir-jpg-en-pdf", label: "JPG en PDF", desc: "Document imprimable." },
   ],
 };
 

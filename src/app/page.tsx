@@ -90,6 +90,17 @@ const editTools: Tool[] = [
   { href: "/inverser-couleurs-image", label: "Inverser couleurs", desc: "Effet négatif.", icon: "INV" },
   { href: "/supprimer-metadonnees-image", label: "Supprimer EXIF", desc: "Protégez votre vie privée.", icon: "DEL" },
   { href: "/lire-metadonnees-image", label: "Lire EXIF", desc: "Analysez vos photos.", icon: "EXIF" },
+  { href: "/retourner-image-miroir", label: "Miroir", desc: "Retournez vos images.", icon: "MIR" },
+  { href: "/rogner-bords-blancs-image", label: "Rogner bords", desc: "Auto-crop bords blancs.", icon: "TRM" },
+  { href: "/convertir-image-en-pixel-art", label: "Pixel art", desc: "Effet rétro pixelisé.", icon: "PXL" },
+  { href: "/convertir-image-en-ascii", label: "ASCII art", desc: "Image en caractères.", icon: "ASC" },
+  { href: "/compter-couleurs-image", label: "Compter couleurs", desc: "Analysez la palette.", icon: "CLR" },
+  { href: "/calculateur-taille-impression", label: "Calc. impression", desc: "Pixels, DPI, CM.", icon: "CAL" },
+  { href: "/convertir-image-en-base64", label: "Image en Base64", desc: "Encodez pour le web.", icon: "B64" },
+  { href: "/generateur-image-placeholder", label: "Placeholder", desc: "Images de test.", icon: "PLH" },
+  { href: "/comparer-images", label: "Comparer images", desc: "Avant/après slider.", icon: "CMP" },
+  { href: "/generateur-favicon", label: "Générateur favicon", desc: "Toutes tailles + ZIP.", icon: "FAV" },
+  { href: "/redimensionner-image-pour-impression", label: "Taille impression", desc: "10x15, A4, A3...", icon: "PRT" },
 ];
 
 const pdfTools: Tool[] = [

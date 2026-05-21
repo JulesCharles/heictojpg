@@ -117,6 +117,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'ajouter-texte-image',
     'optimiser-image-web',
     'creer-planche-contact',
+    // Tier 3 tools
+    'calculateur-taille-impression',
+    'convertir-image-en-base64',
+    'compter-couleurs-image',
+    'retourner-image-miroir',
+    'generateur-image-placeholder',
+    'convertir-image-en-pixel-art',
+    'convertir-image-en-ascii',
+    'rogner-bords-blancs-image',
+    'generateur-favicon',
+    'comparer-images',
+    'redimensionner-image-pour-impression',
   ]
 
   const deviceSlugs = [
