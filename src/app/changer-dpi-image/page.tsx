@@ -5,15 +5,15 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
-  title: "Changer le DPI d'une image en ligne | heictojpg.fr",
-  description: "Modifiez la résolution DPI de vos images pour l'impression (300 DPI) ou le web (72 DPI). Gratuit, sans inscription.",
+  title: "Changer le DPI d'une Image en Ligne — 72, 150, 300 DPI Gratuit",
+  description: "Passez vos images en 300 DPI pour l'impression ou en 72 DPI pour le web. Modifiez la résolution sans perte de qualité. Outil en ligne 100% gratuit, sans inscription ni logiciel.",
   keywords: ["changer dpi image","modifier dpi","300 dpi","72 dpi","résolution image","dpi en ligne"],
   openGraph: {
     type: "website", locale: "fr_FR",
     url: "https://heictojpg.fr/changer-dpi-image",
     siteName: "heictojpg.fr",
-    title: "Changer le DPI d'une image gratuitement en ligne",
-    description: "Modifiez la résolution DPI de vos images pour l'impression (300 DPI) ou le web (72 DPI). Gratuit, sans inscription.",
+    title: "Changer le DPI d'une Image en Ligne — 72, 150, 300 DPI Gratuit",
+    description: "Passez vos images en 300 DPI pour l'impression ou en 72 DPI pour le web. Modifiez la résolution sans perte de qualité. Outil en ligne 100% gratuit, sans inscription ni logiciel.",
   },
   alternates: { canonical: "https://heictojpg.fr/changer-dpi-image" },
 };
@@ -25,7 +25,7 @@ const jsonLd = {
       "@type": "WebApplication",
       name: "Changer le DPI d'une image gratuitement",
       url: "https://heictojpg.fr/changer-dpi-image",
-      description: "Modifiez la résolution DPI de vos images pour l'impression (300 DPI) ou le web (72 DPI). Gratuit, sans inscription.",
+      description: "Passez vos images en 300 DPI pour l'impression ou en 72 DPI pour le web. Modifiez la résolution sans perte de qualité. Outil en ligne 100% gratuit, sans inscription ni logiciel.",
       applicationCategory: "MultimediaApplication",
       operatingSystem: "Tout navigateur web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },

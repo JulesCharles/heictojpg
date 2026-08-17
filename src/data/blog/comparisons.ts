@@ -11,6 +11,8 @@ export interface ComparisonData {
   }[];
   useA: string[];
   useB: string[];
+  title?: string;
+  excerpt?: string;
 }
 
 export const comparisons: ComparisonData[] = [
@@ -345,6 +347,8 @@ export const comparisons: ComparisonData[] = [
       "Miniatures et aperçus visuels",
       "Photos produit pour le e-commerce",
     ],
+    title: "PDF vs JPG : Quelle Différence ? Quel Format Choisir en 2026",
+    excerpt: "PDF ou JPG pour vos documents et photos ? On compare qualité, poids, compatibilité et impression. Avec des exemples concrets pour choisir le bon format selon votre usage.",
   },
 ];
 

@@ -5,9 +5,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
-  title: "Calculateur Taille d'Impression Gratuit - Pixels, DPI, CM | heictojpg.fr",
+  title: "Calculateur Taille d'Impression — Pixels vers CM en 1 Clic",
   description:
-    "Calculez la taille d'impression de vos images en fonction des pixels et du DPI. Convertissez pixels en cm/pouces ou cm en pixels. Tableau des formats courants inclus.",
+    "Quelle taille fera votre image une fois imprimée ? Entrez vos pixels et DPI, obtenez la taille en cm ou pouces instantanément. Formats A4, A3, 10x15 inclus. Gratuit.",
   keywords: [
     "calculateur taille impression",
     "pixels en cm",
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://heictojpg.fr/calculateur-taille-impression",
     siteName: "heictojpg.fr",
-    title: "Calculateur Taille d'Impression - Pixels, DPI, CM",
+    title: "Calculateur Taille d'Impression — Pixels vers CM en 1 Clic",
     description:
-      "Calculez la taille d'impression de vos images en fonction des pixels et du DPI. Convertissez pixels en cm ou cm en pixels.",
+      "Quelle taille fera votre image une fois imprimée ? Entrez vos pixels et DPI, obtenez la taille en cm ou pouces instantanément. Formats A4, A3, 10x15 inclus. Gratuit.",
   },
   alternates: { canonical: "https://heictojpg.fr/calculateur-taille-impression" },
 };

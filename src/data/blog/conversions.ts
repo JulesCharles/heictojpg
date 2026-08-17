@@ -7,6 +7,8 @@ export interface ConversionData {
   whenToConvert: string[];
   qualityTip: string;
   steps: string[];
+  title?: string;
+  excerpt?: string;
 }
 
 export const conversions: ConversionData[] = [
@@ -524,6 +526,8 @@ export const conversions: ConversionData[] = [
       "Cliquez sur Convertir",
       "Telechargez votre fichier ICO",
     ],
+    title: "PNG en ICO : Convertir une Image en Favicon Gratuitement (2026)",
+    excerpt: "Convertissez un PNG en fichier ICO pour créer votre favicon en 2 clics. Tailles 16x16, 32x32, 48x48 incluses. Outil en ligne gratuit, sans logiciel à installer.",
   },
   {
     from: "png",

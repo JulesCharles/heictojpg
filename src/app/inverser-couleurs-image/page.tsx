@@ -5,15 +5,15 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
-  title: "Inverser les couleurs d'une image gratuit | heictojpg.fr",
-  description: "Inversez les couleurs de vos images pour créer un effet négatif. Outil gratuit, rapide, sans inscription.",
+  title: "Inverser les Couleurs d'une Image en Ligne — Gratuit & Instantané",
+  description: "Inversez les couleurs de n'importe quelle image en un clic : JPG, PNG, WebP. Effet négatif photo, inversion noir/blanc, design graphique. 100% gratuit, sans inscription, résultat immédiat.",
   keywords: ["inverser couleurs image","négatif photo","inverser image en ligne","negative image","couleurs inversées"],
   openGraph: {
     type: "website", locale: "fr_FR",
     url: "https://heictojpg.fr/inverser-couleurs-image",
     siteName: "heictojpg.fr",
-    title: "Inverser les couleurs d'une image gratuitement",
-    description: "Inversez les couleurs de vos images pour créer un effet négatif. Outil gratuit, rapide, sans inscription.",
+    title: "Inverser les Couleurs d'une Image en Ligne — Gratuit & Instantané",
+    description: "Inversez les couleurs de n'importe quelle image en un clic : JPG, PNG, WebP. Effet négatif photo, inversion noir/blanc, design graphique. 100% gratuit, sans inscription, résultat immédiat.",
   },
   alternates: { canonical: "https://heictojpg.fr/inverser-couleurs-image" },
 };
@@ -25,7 +25,7 @@ const jsonLd = {
       "@type": "WebApplication",
       name: "Inverser les couleurs d'une image",
       url: "https://heictojpg.fr/inverser-couleurs-image",
-      description: "Inversez les couleurs de vos images pour créer un effet négatif. Outil gratuit, rapide, sans inscription.",
+      description: "Inversez les couleurs de n'importe quelle image en un clic : JPG, PNG, WebP. Effet négatif photo, inversion noir/blanc, design graphique. 100% gratuit, sans inscription, résultat immédiat.",
       applicationCategory: "MultimediaApplication",
       operatingSystem: "Tout navigateur web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },

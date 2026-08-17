@@ -41,8 +41,8 @@ export const editorialPosts: BlogPostEntry[] = [
   },
   {
     slug: "reduire-taille-photo-iphone",
-    title: "Comment reduire la taille d'une photo sur iPhone (guide 2026)",
-    excerpt: "6 methodes pour reduire le poids de vos photos iPhone : compression, format HEIC, raccourcis, iCloud et plus.",
+    title: "Réduire la Taille d'une Photo sur iPhone — 6 Méthodes Gratuites",
+    excerpt: "Comment réduire le poids d'une photo iPhone sans perdre en qualité ? Compression, format HEIC, Raccourcis, iCloud : 6 méthodes testées étape par étape.",
     date: "5 mai 2026",
     dateISO: "2026-05-05",
     readTime: "7 min",
@@ -242,8 +242,8 @@ export const editorialPosts: BlogPostEntry[] = [
   },
   {
     slug: "comment-mettre-image-en-300-dpi",
-    title: "Comment mettre une image en 300 DPI pour l'impression",
-    excerpt: "Comprenez le lien entre DPI, pixels et taille imprimee avant de preparer une image en 300 DPI.",
+    title: "Mettre une Image en 300 DPI — Guide Simple pour l'Impression",
+    excerpt: "Comment passer une image en 300 DPI pour une impression nette ? On vous explique DPI vs pixels, comment vérifier et modifier la résolution. Avec outil gratuit en ligne.",
     date: "21 mai 2026",
     dateISO: "2026-05-21",
     readTime: "12 min",
@@ -386,8 +386,8 @@ function generateConversionPosts(): BlogPostEntry[] {
     const to = formats[c.to];
     return {
       slug: c.slug,
-      title: `Comment convertir ${from?.name || c.from.toUpperCase()} en ${to?.name || c.to.toUpperCase()} (guide complet)`,
-      excerpt: `Guide étape par étape pour convertir vos fichiers ${from?.name || c.from.toUpperCase()} en ${to?.name || c.to.toUpperCase()} gratuitement. Pourquoi, quand et comment faire la conversion.`,
+      title: c.title || `Comment convertir ${from?.name || c.from.toUpperCase()} en ${to?.name || c.to.toUpperCase()} (guide complet)`,
+      excerpt: c.excerpt || `Guide étape par étape pour convertir vos fichiers ${from?.name || c.from.toUpperCase()} en ${to?.name || c.to.toUpperCase()} gratuitement. Pourquoi, quand et comment faire la conversion.`,
       date: "5 mai 2026",
       dateISO: "2026-05-05",
       readTime: "5 min",
@@ -405,8 +405,8 @@ function generateComparisonPosts(): BlogPostEntry[] {
     const b = formats[c.formatB];
     return {
       slug: c.slug,
-      title: `${a?.name || c.formatA.toUpperCase()} vs ${b?.name || c.formatB.toUpperCase()} : quelle différence et lequel choisir ?`,
-      excerpt: `Comparaison détaillée entre ${a?.name || c.formatA.toUpperCase()} et ${b?.name || c.formatB.toUpperCase()} : compression, qualité, compatibilité, cas d'usage. Quel format choisir selon vos besoins ?`,
+      title: c.title || `${a?.name || c.formatA.toUpperCase()} vs ${b?.name || c.formatB.toUpperCase()} : quelle différence et lequel choisir ?`,
+      excerpt: c.excerpt || `Comparaison détaillée entre ${a?.name || c.formatA.toUpperCase()} et ${b?.name || c.formatB.toUpperCase()} : compression, qualité, compatibilité, cas d'usage. Quel format choisir selon vos besoins ?`,
       date: "5 mai 2026",
       dateISO: "2026-05-05",
       readTime: "7 min",
