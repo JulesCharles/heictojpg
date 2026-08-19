@@ -23,7 +23,7 @@ export default function CompressForm() {
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [reduction, setReduction] = useState<string | null>(null);
-  const { conversionsLeft, recordConversion, isLimited, totalUsed } = useConversionLimit();
+  const { conversionsLeft, recordConversion, isLimited, totalUsed, requiresAuth, requiresUpgrade, limit } = useConversionLimit();
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
@@ -180,7 +180,7 @@ export default function CompressForm() {
           </div>
         )}
       </CardContent>
-      <UpgradePopup totalUsed={totalUsed} />
+      <UpgradePopup totalUsed={totalUsed} limit={limit} requiresAuth={requiresAuth} requiresUpgrade={requiresUpgrade} />
     </Card>
   );
 }

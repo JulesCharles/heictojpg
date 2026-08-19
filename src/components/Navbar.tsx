@@ -93,7 +93,10 @@ export default async function Navbar() {
                 <UserButton />
               </>
             ) : (
-              <Link href="/pricing" className="text-white bg-blue-600 hover:bg-blue-700 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors">Pro</Link>
+              <>
+                <Link href="/sign-in" className="text-sm text-gray-700 hover:text-blue-600 transition-colors">Se connecter</Link>
+                <Link href="/pricing" className="text-white bg-blue-600 hover:bg-blue-700 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors">Pro</Link>
+              </>
             )}
           </div>
         </div>

@@ -1,54 +1,62 @@
 "use client";
 
-import { useClerk, useUser } from "@clerk/nextjs";
+import { useState } from "react";
+import { useClerk } from "@clerk/nextjs";
 
 interface ProButtonProps {
   isSignedIn: boolean;
-  annual?: boolean;
+  priceType: "monthly" | "lifetime";
 }
 
-export default function ProButton({ isSignedIn, annual = false }: ProButtonProps) {
+export default function ProButton({ isSignedIn, priceType }: ProButtonProps) {
   const { openSignUp } = useClerk();
-  const { user } = useUser();
+  const [loading, setLoading] = useState(false);
 
-  const monthlyUrl = process.env.NEXT_PUBLIC_LEMONSQUEEZY_URL || "#";
-  const annualUrl = process.env.NEXT_PUBLIC_LEMONSQUEEZY_ANNUAL_URL || "#";
-  const checkoutUrl = annual ? annualUrl : monthlyUrl;
-
-  const handleClick = () => {
+  const handleClick = async () => {
     if (!isSignedIn) {
-      openSignUp({
-        fallbackRedirectUrl: "/pricing",
-      });
+      openSignUp({ fallbackRedirectUrl: "/pricing" });
       return;
     }
 
-    const email = user?.primaryEmailAddress?.emailAddress || "";
-    const url = new URL(checkoutUrl);
-    if (email) {
-      url.searchParams.set("checkout[email]", email);
+    setLoading(true);
+    try {
+      const priceId =
+        priceType === "monthly"
+          ? process.env.NEXT_PUBLIC_STRIPE_MONTHLY_PRICE_ID
+          : process.env.NEXT_PUBLIC_STRIPE_LIFETIME_PRICE_ID;
+
+      const res = await fetch("/api/stripe/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ priceId }),
+      });
+
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      }
+    } catch {
+      setLoading(false);
     }
-    if (user?.id) {
-      url.searchParams.set("checkout[custom][clerk_user_id]", user.id);
-    }
-    window.location.href = url.toString();
   };
 
-  const label = annual
-    ? (isSignedIn ? "Passer a Pro annuel — 39\u20AC/an" : "Pro annuel — 39\u20AC/an")
-    : (isSignedIn ? "Essai gratuit 7 jours — puis 5\u20AC/mois" : "Essai gratuit 7 jours — puis 5\u20AC/mois");
+  const label =
+    priceType === "lifetime"
+      ? "Acheter Pro — 19€ une fois"
+      : "S'abonner Pro — 4,99€/mois";
 
   return (
     <button
       onClick={handleClick}
+      disabled={loading}
       className={`block w-full text-center py-3 px-6 rounded-lg font-medium transition-colors cursor-pointer ${
-        annual
-          ? "bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50"
-          : "bg-blue-600 text-white hover:bg-blue-700"
-      }`}
+        priceType === "lifetime"
+          ? "bg-blue-600 text-white hover:bg-blue-700"
+          : "bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50"
+      } ${loading ? "opacity-50 cursor-wait" : ""}`}
       type="button"
     >
-      {label}
+      {loading ? "Redirection..." : label}
     </button>
   );
 }

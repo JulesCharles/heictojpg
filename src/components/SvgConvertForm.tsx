@@ -26,7 +26,7 @@ export default function SvgConvertForm() {
   const [customWidth, setCustomWidth] = useState("");
   const [customHeight, setCustomHeight] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
-  const { conversionsLeft, recordConversion, isLimited, totalUsed } = useConversionLimit();
+  const { conversionsLeft, recordConversion, isLimited, totalUsed, requiresAuth, requiresUpgrade, limit } = useConversionLimit();
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const f = e.target.files?.[0];
@@ -183,7 +183,7 @@ export default function SvgConvertForm() {
           </div>
         )}
       </CardContent>
-      <UpgradePopup totalUsed={totalUsed} />
+      <UpgradePopup totalUsed={totalUsed} limit={limit} requiresAuth={requiresAuth} requiresUpgrade={requiresUpgrade} />
     </Card>
   );
 }

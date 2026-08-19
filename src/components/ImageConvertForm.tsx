@@ -45,7 +45,7 @@ export default function ImageConvertForm({
   const [error, setError] = useState<string | null>(null);
   const [progress, setProgress] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
-  const { conversionsLeft, recordConversion, isLimited, totalUsed } = useConversionLimit();
+  const { conversionsLeft, recordConversion, isLimited, totalUsed, requiresAuth, requiresUpgrade, limit } = useConversionLimit();
   const [showBatchPopup, setShowBatchPopup] = useState(false);
 
   const isValidFile = (f: File) => {
@@ -227,7 +227,7 @@ export default function ImageConvertForm({
           </div>
         )}
       </CardContent>
-      <UpgradePopup totalUsed={totalUsed} />
+      <UpgradePopup totalUsed={totalUsed} limit={limit} requiresAuth={requiresAuth} requiresUpgrade={requiresUpgrade} />
       <BatchProPopup visible={showBatchPopup} onDismiss={() => setShowBatchPopup(false)} totalFiles={files.length} />
     </Card>
   );

@@ -30,7 +30,7 @@ export default function ImageOptimizerForm() {
   const [originalSize, setOriginalSize] = useState<number | null>(null);
   const [newSize, setNewSize] = useState<number | null>(null);
   const [reduction, setReduction] = useState<string | null>(null);
-  const { conversionsLeft, recordConversion, isLimited, totalUsed } = useConversionLimit();
+  const { conversionsLeft, recordConversion, isLimited, totalUsed, requiresAuth, requiresUpgrade, limit } = useConversionLimit();
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
@@ -265,7 +265,7 @@ export default function ImageOptimizerForm() {
           </div>
         )}
       </CardContent>
-      <UpgradePopup totalUsed={totalUsed} />
+      <UpgradePopup totalUsed={totalUsed} limit={limit} requiresAuth={requiresAuth} requiresUpgrade={requiresUpgrade} />
     </Card>
   );
 }

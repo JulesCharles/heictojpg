@@ -28,7 +28,7 @@ export default function ExifEditorForm() {
   const [error, setError] = useState<string | null>(null);
   const [copyright, setCopyright] = useState("");
   const [dpi, setDpi] = useState("300");
-  const { conversionsLeft, recordConversion, isLimited, totalUsed } = useConversionLimit();
+  const { conversionsLeft, recordConversion, isLimited, totalUsed, requiresAuth, requiresUpgrade, limit } = useConversionLimit();
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const f = e.target.files?.[0];
@@ -219,7 +219,7 @@ export default function ExifEditorForm() {
             </div>
           )}
         </CardContent>
-        <UpgradePopup totalUsed={totalUsed} />
+        <UpgradePopup totalUsed={totalUsed} limit={limit} requiresAuth={requiresAuth} requiresUpgrade={requiresUpgrade} />
       </Card>
 
       {metadata && Object.keys(metadata).length > 0 && (

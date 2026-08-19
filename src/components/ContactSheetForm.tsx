@@ -30,7 +30,7 @@ export default function ContactSheetForm() {
   const [error, setError] = useState<string | null>(null);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const { conversionsLeft, recordConversion, isLimited, totalUsed } = useConversionLimit();
+  const { conversionsLeft, recordConversion, isLimited, totalUsed, requiresAuth, requiresUpgrade, limit } = useConversionLimit();
 
   const addFiles = useCallback((files: FileList | File[]) => {
     const newItems: ImageItem[] = [];
@@ -299,7 +299,7 @@ export default function ContactSheetForm() {
           </div>
         )}
       </CardContent>
-      <UpgradePopup totalUsed={totalUsed} />
+      <UpgradePopup totalUsed={totalUsed} limit={limit} requiresAuth={requiresAuth} requiresUpgrade={requiresUpgrade} />
     </Card>
   );
 }

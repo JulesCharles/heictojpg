@@ -35,7 +35,7 @@ export default function HeicConvertForm({
   const [error, setError] = useState<string | null>(null);
   const [progress, setProgress] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
-  const { conversionsLeft, recordConversion, isLimited, totalUsed } = useConversionLimit();
+  const { conversionsLeft, recordConversion, isLimited, totalUsed, requiresAuth, requiresUpgrade, limit } = useConversionLimit();
   const [showBatchPopup, setShowBatchPopup] = useState(false);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -213,7 +213,7 @@ export default function HeicConvertForm({
           </div>
         )}
       </CardContent>
-      <UpgradePopup totalUsed={totalUsed} />
+      <UpgradePopup totalUsed={totalUsed} limit={limit} requiresAuth={requiresAuth} requiresUpgrade={requiresUpgrade} />
       <BatchProPopup visible={showBatchPopup} onDismiss={() => setShowBatchPopup(false)} totalFiles={files.length} />
     </Card>
   );
