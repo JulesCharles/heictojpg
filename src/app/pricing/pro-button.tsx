@@ -37,15 +37,19 @@ export default function ProButton({ isSignedIn, priceType }: ProButtonProps) {
         body: JSON.stringify({ priceId }),
       });
 
-      const data = await res.json();
+      const text = await res.text();
+      let data;
+      try { data = JSON.parse(text); } catch { data = { error: text }; }
+
       if (data.url) {
         window.location.href = data.url;
       } else {
-        setError(data.error || "Erreur lors de la création du paiement");
+        setError(data.error || `Erreur ${res.status}: ${text.slice(0, 200)}`);
         setLoading(false);
       }
-    } catch (e) {
-      setError("Erreur de connexion au serveur");
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : "Erreur inconnue";
+      setError(`Erreur: ${msg}`);
       setLoading(false);
     }
   };
