@@ -26,13 +26,24 @@ export default function HeicVsAvifPage() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "HEIC vs AVIF : quel format choisir ? Comparatif 2026",
-    description:
-      "Comparaison complete entre HEIC et AVIF : compression, qualite, HDR, compatibilite. Decouvrez les differences entre le format Apple et le format libre nouvelle generation.",
-    url: "https://heictojpg.fr/heic-vs-avif",
-    inLanguage: "fr",
-    publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: "HEIC vs AVIF : quel format choisir ? Comparatif 2026",
+        description: "Comparaison complète entre HEIC et AVIF : compression, qualité, HDR, compatibilité. Découvrez les différences entre le format Apple et le format libre nouvelle génération.",
+        url: "https://heictojpg.fr/heic-vs-avif",
+        inLanguage: "fr",
+        publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "Le HEIC et l'AVIF utilisent-ils la même technologie ?", acceptedAnswer: { "@type": "Answer", text: "Les deux utilisent le conteneur HEIF, mais avec des codecs différents. Le HEIC utilise HEVC (H.265, propriétaire Apple), l'AVIF utilise AV1 (libre et open-source). L'AVIF offre une meilleure compression et pas de brevets." } },
+          { "@type": "Question", name: "L'AVIF est-il meilleur que le HEIC ?", acceptedAnswer: { "@type": "Answer", text: "L'AVIF est techniquement supérieur : meilleure compression, codec libre (pas de royalties), meilleur support HDR. Mais le HEIC reste le format natif d'Apple, intégré nativement dans iOS et macOS." } },
+          { "@type": "Question", name: "Peut-on convertir un HEIC en AVIF ?", acceptedAnswer: { "@type": "Answer", text: "Oui, vous pouvez convertir vos fichiers HEIC en AVIF avec notre outil en ligne gratuit. La conversion se fait dans votre navigateur sans envoi sur un serveur." } },
+        ],
+      },
+    ],
   };
 
   return (

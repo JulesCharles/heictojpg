@@ -26,13 +26,24 @@ export default function HeicVsJpgPage() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "HEIC vs JPG : quel format choisir ? Comparatif 2026",
-    description:
-      "Comparaison complete entre HEIC et JPG : qualite, compression, compatibilite. Decouvrez les differences entre le format photo iPhone et le JPEG universel.",
-    url: "https://heictojpg.fr/heic-vs-jpg",
-    inLanguage: "fr",
-    publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: "HEIC vs JPG : quel format choisir ? Comparatif 2026",
+        description: "Comparaison complète entre HEIC et JPG : qualité, compression, compatibilité. Découvrez les différences entre le format photo iPhone et le JPEG universel.",
+        url: "https://heictojpg.fr/heic-vs-jpg",
+        inLanguage: "fr",
+        publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "Le HEIC est-il meilleur que le JPG ?", acceptedAnswer: { "@type": "Answer", text: "Le HEIC offre une meilleure compression (fichiers 50% plus légers) et supporte le 16 bits et la transparence. Mais le JPG reste supérieur en compatibilité universelle. Gardez le HEIC sur iPhone, convertissez en JPG pour partager." } },
+          { "@type": "Question", name: "Comment convertir un HEIC en JPG ?", acceptedAnswer: { "@type": "Answer", text: "Utilisez un outil en ligne comme heictojpg.fr pour convertir vos fichiers HEIC en JPG gratuitement. La conversion se fait dans votre navigateur, sans envoi sur un serveur." } },
+          { "@type": "Question", name: "Pourquoi mon iPhone prend des photos en HEIC ?", acceptedAnswer: { "@type": "Answer", text: "Depuis iOS 11, Apple utilise le HEIC par défaut car il offre une meilleure compression que le JPG, économisant jusqu'à 50% d'espace de stockage tout en conservant la même qualité d'image." } },
+        ],
+      },
+    ],
   };
 
   return (

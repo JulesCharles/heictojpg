@@ -347,8 +347,8 @@ export const comparisons: ComparisonData[] = [
       "Miniatures et aperçus visuels",
       "Photos produit pour le e-commerce",
     ],
-    title: "PDF vs JPG : Quelle Différence ? Quel Format Choisir en 2026",
-    excerpt: "PDF ou JPG pour vos documents et photos ? On compare qualité, poids, compatibilité et impression. Avec des exemples concrets pour choisir le bon format selon votre usage.",
+    title: "PDF vs JPG : Quel Format Choisir ? Comparatif Complet [2026]",
+    excerpt: "PDF ou JPG ? Découvrez les différences clés : qualité, poids, compatibilité, impression. Guide complet pour choisir le bon format selon votre usage.",
   },
 ];
 

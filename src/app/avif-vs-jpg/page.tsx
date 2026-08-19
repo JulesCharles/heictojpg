@@ -26,13 +26,24 @@ export default function AvifVsJpgPage() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "AVIF vs JPG : quel format choisir ? Comparatif 2026",
-    description:
-      "Comparaison complete entre AVIF et JPG : compression, qualite, HDR, compatibilite. Decouvrez si l'AVIF peut remplacer le JPG pour vos images.",
-    url: "https://heictojpg.fr/avif-vs-jpg",
-    inLanguage: "fr",
-    publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: "AVIF vs JPG : quel format choisir ? Comparatif 2026",
+        description: "Comparaison complète entre AVIF et JPG : compression, qualité, HDR, compatibilité. Découvrez si l'AVIF peut remplacer le JPG pour vos images.",
+        url: "https://heictojpg.fr/avif-vs-jpg",
+        inLanguage: "fr",
+        publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "L'AVIF peut-il remplacer le JPG ?", acceptedAnswer: { "@type": "Answer", text: "Techniquement oui — l'AVIF offre une compression 50% supérieure au JPG à qualité égale, supporte le HDR et la transparence. En pratique, le JPG reste plus compatible avec les logiciels anciens et l'impression." } },
+          { "@type": "Question", name: "Quelle est la différence de taille entre AVIF et JPG ?", acceptedAnswer: { "@type": "Answer", text: "À qualité visuelle équivalente, un fichier AVIF est environ 50% plus petit qu'un JPG. Par exemple, une photo de 2 Mo en JPG ne pèsera qu'environ 1 Mo en AVIF." } },
+          { "@type": "Question", name: "Comment ouvrir un fichier AVIF ?", acceptedAnswer: { "@type": "Answer", text: "Les navigateurs modernes (Chrome, Firefox, Safari, Edge) ouvrent les fichiers AVIF nativement. Pour les ouvrir dans un logiciel de retouche, utilisez une version récente de Photoshop, GIMP ou convertissez-les en JPG." } },
+        ],
+      },
+    ],
   };
 
   return (

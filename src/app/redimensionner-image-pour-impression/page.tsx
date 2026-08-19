@@ -6,14 +6,14 @@ import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
   title: "Redimensionner Image pour Impression Gratuit - 10x15, A4, A3 | heictojpg.fr",
-  description: "Redimensionnez vos images aux formats d'impression standard (10x15, 13x18, A4, A3, A5) a 300 DPI. Pret a imprimer. Gratuit, sans inscription.",
-  keywords: ["redimensionner image impression", "image 10x15", "image A4 300 DPI", "preparer image impression", "taille impression photo", "format impression standard"],
+  description: "Redimensionnez vos images aux formats d'impression standard (10x15, 13x18, A4, A3, A5) à 300 DPI. Prêt à imprimer. Gratuit, sans inscription.",
+  keywords: ["redimensionner image impression", "image 10x15", "image A4 300 DPI", "préparer image impression", "taille impression photo", "format impression standard"],
   openGraph: {
     type: "website", locale: "fr_FR",
     url: "https://heictojpg.fr/redimensionner-image-pour-impression",
     siteName: "heictojpg.fr",
     title: "Redimensionner Image pour Impression - 10x15, A4, A3",
-    description: "Redimensionnez vos images aux formats d'impression standard a 300 DPI. Pret a imprimer.",
+    description: "Redimensionnez vos images aux formats d'impression standard à 300 DPI. Prêt à imprimer.",
   },
   alternates: { canonical: "https://heictojpg.fr/redimensionner-image-pour-impression" },
 };

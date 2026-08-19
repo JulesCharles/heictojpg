@@ -26,13 +26,24 @@ export default function AvifVsWebpPage() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "AVIF vs WebP : quel format d'image moderne choisir ?",
-    description:
-      "Comparaison AVIF vs WebP : compression, qualite, HDR, compatibilite navigateurs. Decouvrez quel format next-gen choisir pour vos images web.",
-    url: "https://heictojpg.fr/avif-vs-webp",
-    inLanguage: "fr",
-    publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: "AVIF vs WebP : quel format d'image moderne choisir ?",
+        description: "Comparaison AVIF vs WebP : compression, qualité, HDR, compatibilité navigateurs. Découvrez quel format next-gen choisir pour vos images web.",
+        url: "https://heictojpg.fr/avif-vs-webp",
+        inLanguage: "fr",
+        publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "L'AVIF est-il meilleur que le WebP ?", acceptedAnswer: { "@type": "Answer", text: "L'AVIF offre une compression 20-30% supérieure au WebP et supporte le HDR et le 10/12 bits. Cependant, le WebP a une meilleure compatibilité navigateur et un encodage plus rapide. L'AVIF est techniquement supérieur, le WebP est plus pragmatique." } },
+          { "@type": "Question", name: "Tous les navigateurs supportent-ils l'AVIF ?", acceptedAnswer: { "@type": "Answer", text: "En 2026, Chrome, Firefox, Safari et Edge supportent tous l'AVIF. La compatibilité est maintenant quasi universelle, même si le WebP reste légèrement mieux supporté sur les anciens appareils." } },
+          { "@type": "Question", name: "Quel format choisir entre AVIF et WebP pour un site web ?", acceptedAnswer: { "@type": "Answer", text: "Pour les performances maximales, utilisez l'AVIF avec un fallback WebP via la balise picture. Si vous ne pouvez utiliser qu'un seul format, le WebP est le choix le plus sûr en termes de compatibilité." } },
+        ],
+      },
+    ],
   };
 
   return (

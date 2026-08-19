@@ -26,13 +26,24 @@ export default function WebpVsJpgPage() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "WebP vs JPG : quel format choisir ? Comparatif 2026",
-    description:
-      "Comparaison complete entre WebP et JPG : compression, qualite, compatibilite, performances web. Decouvrez quel format choisir pour vos images.",
-    url: "https://heictojpg.fr/webp-vs-jpg",
-    inLanguage: "fr",
-    publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: "WebP vs JPG : quel format choisir ? Comparatif 2026",
+        description: "Comparaison complète entre WebP et JPG : compression, qualité, compatibilité, performances web. Découvrez quel format choisir pour vos images.",
+        url: "https://heictojpg.fr/webp-vs-jpg",
+        inLanguage: "fr",
+        publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "Le WebP est-il meilleur que le JPG ?", acceptedAnswer: { "@type": "Answer", text: "Le WebP offre une compression 25-35% supérieure au JPG à qualité égale, et supporte la transparence et l'animation. Il est idéal pour le web. Le JPG reste plus compatible avec les logiciels anciens et l'impression." } },
+          { "@type": "Question", name: "Tous les navigateurs supportent-ils le WebP ?", acceptedAnswer: { "@type": "Answer", text: "Oui, en 2026 tous les navigateurs majeurs (Chrome, Firefox, Safari, Edge) supportent le WebP. Seuls certains logiciels anciens de retouche photo peuvent ne pas le reconnaître." } },
+          { "@type": "Question", name: "Comment convertir un WebP en JPG ?", acceptedAnswer: { "@type": "Answer", text: "Utilisez un outil en ligne comme heictojpg.fr pour convertir vos fichiers WebP en JPG gratuitement et instantanément, directement dans votre navigateur." } },
+        ],
+      },
+    ],
   };
 
   return (

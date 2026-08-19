@@ -26,13 +26,24 @@ export default function PngVsWebpPage() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "PNG vs WebP : quel format d'image pour le web ? Comparatif 2026",
-    description:
-      "Comparaison PNG vs WebP : taille, qualite, transparence, compatibilite. Decouvrez quel format choisir pour optimiser vos images web.",
-    url: "https://heictojpg.fr/png-vs-webp",
-    inLanguage: "fr",
-    publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: "PNG vs WebP : quel format d'image pour le web ? Comparatif 2026",
+        description: "Comparaison PNG vs WebP : taille, qualité, transparence, compatibilité. Découvrez quel format choisir pour optimiser vos images web.",
+        url: "https://heictojpg.fr/png-vs-webp",
+        inLanguage: "fr",
+        publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "Le WebP remplace-t-il le PNG ?", acceptedAnswer: { "@type": "Answer", text: "Le WebP peut remplacer le PNG dans la plupart des cas sur le web. Il offre une compression supérieure tout en supportant la transparence. Cependant, le PNG reste préférable pour l'édition et l'archivage car sa compression est toujours sans perte." } },
+          { "@type": "Question", name: "Le WebP supporte-t-il la transparence ?", acceptedAnswer: { "@type": "Answer", text: "Oui, le WebP supporte la transparence (canal alpha) comme le PNG, mais avec des fichiers beaucoup plus légers. C'est un avantage majeur pour les images web avec fond transparent." } },
+          { "@type": "Question", name: "Quel format est le plus léger entre PNG et WebP ?", acceptedAnswer: { "@type": "Answer", text: "Le WebP est systématiquement plus léger que le PNG, avec une réduction de 26% en moyenne pour la compression sans perte et jusqu'à 34% pour la compression avec perte." } },
+        ],
+      },
+    ],
   };
 
   return (

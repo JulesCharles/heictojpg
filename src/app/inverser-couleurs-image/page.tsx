@@ -5,15 +5,15 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
-  title: "Inverser les Couleurs d'une Image en Ligne — Gratuit & Instantané",
-  description: "Inversez les couleurs de n'importe quelle image en un clic : JPG, PNG, WebP. Effet négatif photo, inversion noir/blanc, design graphique. 100% gratuit, sans inscription, résultat immédiat.",
-  keywords: ["inverser couleurs image","négatif photo","inverser image en ligne","negative image","couleurs inversées"],
+  title: "Inverser les Couleurs d'une Image — Outil Gratuit en Ligne (1 Clic)",
+  description: "Inversez les couleurs de vos photos en 1 clic : JPG, PNG, WebP. Créez un effet négatif instantanément. 100% gratuit, sans inscription, résultat immédiat à télécharger.",
+  keywords: ["inverser couleurs image","négatif photo","inverser image en ligne","negative image","couleurs inversées","inverseur couleur","effet négatif photo"],
   openGraph: {
     type: "website", locale: "fr_FR",
     url: "https://heictojpg.fr/inverser-couleurs-image",
     siteName: "heictojpg.fr",
-    title: "Inverser les Couleurs d'une Image en Ligne — Gratuit & Instantané",
-    description: "Inversez les couleurs de n'importe quelle image en un clic : JPG, PNG, WebP. Effet négatif photo, inversion noir/blanc, design graphique. 100% gratuit, sans inscription, résultat immédiat.",
+    title: "Inverser les Couleurs d'une Image — Outil Gratuit en Ligne (1 Clic)",
+    description: "Inversez les couleurs de vos photos en 1 clic : JPG, PNG, WebP. Créez un effet négatif instantanément. 100% gratuit, sans inscription, résultat immédiat à télécharger.",
   },
   alternates: { canonical: "https://heictojpg.fr/inverser-couleurs-image" },
 };
@@ -35,7 +35,9 @@ const jsonLd = {
       "@type": "FAQPage",
       mainEntity: [
         { "@type": "Question", name: "Puis-je revenir aux couleurs originales ?", acceptedAnswer: { "@type": "Answer", text: "Oui ! Il suffit d'inverser à nouveau l'image inversée pour retrouver les couleurs originales. L'inversion est une opération parfaitement réversible." } },
-        { "@type": "Question", name: "L'inversion fonctionne-t-elle avec les images en noir et blanc ?", acceptedAnswer: { "@type": "Answer", text: "Oui, l'inversion d'une image en noir et blanc produit un négatif classique : les zones sombres deviennent claires et vice versa." } }
+        { "@type": "Question", name: "L'inversion fonctionne-t-elle avec les images en noir et blanc ?", acceptedAnswer: { "@type": "Answer", text: "Oui, l'inversion d'une image en noir et blanc produit un négatif classique : les zones sombres deviennent claires et vice versa." } },
+        { "@type": "Question", name: "Quels formats d'image sont supportés ?", acceptedAnswer: { "@type": "Answer", text: "Notre outil supporte tous les formats courants : JPG, PNG, WebP, BMP, GIF et HEIC. Le résultat est téléchargeable au même format que l'original." } },
+        { "@type": "Question", name: "L'inversion modifie-t-elle la qualité de l'image ?", acceptedAnswer: { "@type": "Answer", text: "Non, l'inversion des couleurs est une opération sans perte. Chaque pixel est transformé mathématiquement (255 - valeur) sans compression ni perte de qualité." } }
       ],
     },
   ],
@@ -77,6 +79,16 @@ export default function Page() {
           <div>
             <h3 className="text-lg font-semibold text-gray-800 mb-2">L'inversion fonctionne-t-elle avec les images en noir et blanc ?</h3>
             <p className="text-gray-600 mb-4">Oui, l'inversion d'une image en noir et blanc produit un négatif classique : les zones sombres deviennent claires et vice versa.</p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">Quels formats d'image sont supportés ?</h3>
+            <p className="text-gray-600 mb-4">Notre outil supporte tous les formats courants : JPG, PNG, WebP, BMP, GIF et HEIC. Le résultat est téléchargeable au même format que l'original.</p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">L'inversion modifie-t-elle la qualité de l'image ?</h3>
+            <p className="text-gray-600 mb-4">Non, l'inversion des couleurs est une opération sans perte. Chaque pixel est transformé mathématiquement (255 - valeur) sans compression ni perte de qualité.</p>
           </div>
         </div>
       </div>

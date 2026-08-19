@@ -41,8 +41,8 @@ export const editorialPosts: BlogPostEntry[] = [
   },
   {
     slug: "reduire-taille-photo-iphone",
-    title: "Réduire la Taille d'une Photo sur iPhone — 6 Méthodes Gratuites",
-    excerpt: "Comment réduire le poids d'une photo iPhone sans perdre en qualité ? Compression, format HEIC, Raccourcis, iCloud : 6 méthodes testées étape par étape.",
+    title: "Réduire la Taille d'une Photo iPhone — 6 Méthodes Gratuites (2026)",
+    excerpt: "Comment réduire le poids d'une photo iPhone sans perdre en qualité ? Compression, HEIC, Raccourcis, iCloud : 6 méthodes testées pas à pas.",
     date: "5 mai 2026",
     dateISO: "2026-05-05",
     readTime: "7 min",
@@ -242,8 +242,8 @@ export const editorialPosts: BlogPostEntry[] = [
   },
   {
     slug: "comment-mettre-image-en-300-dpi",
-    title: "Mettre une Image en 300 DPI — Guide Simple pour l'Impression",
-    excerpt: "Comment passer une image en 300 DPI pour une impression nette ? On vous explique DPI vs pixels, comment vérifier et modifier la résolution. Avec outil gratuit en ligne.",
+    title: "Comment Mettre une Image en 300 DPI — Guide Gratuit + Outil en Ligne",
+    excerpt: "Passez vos images en 300 DPI pour une impression nette. On explique DPI vs pixels, comment vérifier et modifier la résolution. Avec outil gratuit en ligne.",
     date: "21 mai 2026",
     dateISO: "2026-05-21",
     readTime: "12 min",

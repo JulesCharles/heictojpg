@@ -26,13 +26,24 @@ export default function TiffVsJpgPage() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "TIFF vs JPG : quel format choisir ? Comparatif 2026",
-    description:
-      "Comparaison complete entre TIFF et JPG : qualite, compression, impression, compatibilite. Decouvrez les differences entre le format professionnel sans perte et le JPEG universel.",
-    url: "https://heictojpg.fr/tiff-vs-jpg",
-    inLanguage: "fr",
-    publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: "TIFF vs JPG : quel format choisir ? Comparatif 2026",
+        description: "Comparaison complète entre TIFF et JPG : qualité, compression, impression, compatibilité. Découvrez les différences entre le format professionnel sans perte et le JPEG universel.",
+        url: "https://heictojpg.fr/tiff-vs-jpg",
+        inLanguage: "fr",
+        publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "Le TIFF est-il meilleur que le JPG pour l'impression ?", acceptedAnswer: { "@type": "Answer", text: "Oui, le TIFF est le format de référence pour l'impression professionnelle. Il utilise une compression sans perte qui conserve tous les détails de l'image, contrairement au JPG qui perd des données à chaque sauvegarde." } },
+          { "@type": "Question", name: "Pourquoi les fichiers TIFF sont-ils si volumineux ?", acceptedAnswer: { "@type": "Answer", text: "Le TIFF utilise une compression sans perte (ou aucune compression) qui conserve chaque pixel identique à l'original. Un fichier TIFF peut être 10 à 50 fois plus lourd qu'un JPG de la même image." } },
+          { "@type": "Question", name: "Peut-on convertir un TIFF en JPG sans perte ?", acceptedAnswer: { "@type": "Answer", text: "La conversion TIFF vers JPG implique toujours une perte car le JPG utilise une compression avec perte. Avec une qualité de 95%, la différence est imperceptible pour la plupart des usages." } },
+        ],
+      },
+    ],
   };
 
   return (

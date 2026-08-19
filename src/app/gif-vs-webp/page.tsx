@@ -26,13 +26,24 @@ export default function GifVsWebpPage() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "GIF vs WebP : quel format choisir ? Comparatif 2026",
-    description:
-      "Comparaison complete entre GIF et WebP : animations, qualite, taille, compatibilite. Decouvrez les differences entre le format d'animation classique et le format moderne de Google.",
-    url: "https://heictojpg.fr/gif-vs-webp",
-    inLanguage: "fr",
-    publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: "GIF vs WebP : quel format choisir ? Comparatif 2026",
+        description: "Comparaison complète entre GIF et WebP : animations, qualité, taille, compatibilité. Découvrez les différences entre le format d'animation classique et le format moderne de Google.",
+        url: "https://heictojpg.fr/gif-vs-webp",
+        inLanguage: "fr",
+        publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "Le WebP peut-il remplacer le GIF pour les animations ?", acceptedAnswer: { "@type": "Answer", text: "Oui, le WebP animé offre une qualité supérieure au GIF avec des fichiers jusqu'à 64% plus légers. Il supporte plus de 256 couleurs et une meilleure compression. Le seul inconvénient est une compatibilité légèrement moindre sur les anciens systèmes." } },
+          { "@type": "Question", name: "Pourquoi les GIF sont-ils si volumineux ?", acceptedAnswer: { "@type": "Answer", text: "Le GIF est limité à 256 couleurs et utilise une compression LZW peu efficace. Chaque frame de l'animation est stockée quasi intégralement, ce qui donne des fichiers très lourds pour les animations longues." } },
+          { "@type": "Question", name: "Comment convertir un GIF en WebP ?", acceptedAnswer: { "@type": "Answer", text: "Utilisez un outil en ligne comme heictojpg.fr pour convertir vos GIF en WebP. La conversion conserve l'animation tout en réduisant significativement la taille du fichier." } },
+        ],
+      },
+    ],
   };
 
   return (

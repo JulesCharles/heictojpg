@@ -6,9 +6,9 @@ import AdBanner from "@/components/AdBanner";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
-  title: "Creer une planche contact en ligne | heictojpg.fr",
+  title: "Créer une Planche Contact en Ligne Gratuit | heictojpg.fr",
   description:
-    "Creez une planche contact (mosaique photo) en ligne gratuitement. Assemblez vos images en une grille personnalisable. Sans inscription.",
+    "Créez une planche contact (mosaïque photo) en ligne gratuitement. Assemblez vos images en une grille personnalisable. Sans inscription.",
   keywords: [
     "planche contact",
     "mosaique photo",
@@ -23,13 +23,13 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://heictojpg.fr/creer-planche-contact",
     siteName: "heictojpg.fr",
-    title: "Creer une planche contact en ligne gratuitement",
+    title: "Créer une planche contact en ligne gratuitement",
     description:
-      "Assemblez vos photos en une planche contact ou mosaique. Colonnes, espacement et couleur de fond personnalisables.",
+      "Assemblez vos photos en une planche contact ou mosaïque. Colonnes, espacement et couleur de fond personnalisables.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Creer une planche contact en ligne gratuitement",
+    title: "Créer une planche contact en ligne gratuitement",
     description:
       "Assemblez vos photos en une planche contact ou mosaique. Colonnes, espacement et couleur de fond personnalisables.",
   },
@@ -43,10 +43,10 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebApplication",
-      name: "Createur de planche contact en ligne",
+      name: "Créateur de planche contact en ligne",
       url: "https://heictojpg.fr/creer-planche-contact",
       description:
-        "Creez une planche contact ou mosaique photo en ligne gratuitement. Personnalisez colonnes, espacement et couleur de fond.",
+        "Créez une planche contact ou mosaïque photo en ligne gratuitement. Personnalisez colonnes, espacement et couleur de fond.",
       applicationCategory: "MultimediaApplication",
       operatingSystem: "Tout navigateur web",
       offers: {
@@ -61,34 +61,34 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "Qu&apos;est-ce qu&apos;une planche contact ?",
+          name: "Qu'est-ce qu'une planche contact ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Une planche contact est une image unique qui regroupe plusieurs photos sous forme de grille ou de mosaique. Elle permet de visualiser rapidement un ensemble de cliches sur une seule page.",
+            text: "Une planche contact est une image unique qui regroupe plusieurs photos sous forme de grille ou de mosaïque. Elle permet de visualiser rapidement un ensemble de clichés sur une seule page.",
           },
         },
         {
           "@type": "Question",
-          name: "Combien d&apos;images puis-je assembler ?",
+          name: "Combien d'images puis-je assembler ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Vous pouvez assembler autant d&apos;images que vous le souhaitez, avec un minimum de 2. Le nombre de colonnes est ajustable de 2 a 6 pour s&apos;adapter a vos besoins.",
+            text: "Vous pouvez assembler autant d'images que vous le souhaitez, avec un minimum de 2. Le nombre de colonnes est ajustable de 2 à 6 pour s'adapter à vos besoins.",
           },
         },
         {
           "@type": "Question",
-          name: "Quels formats d&apos;image sont acceptes ?",
+          name: "Quels formats d'image sont acceptés ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Notre outil accepte les formats JPG, JPEG, PNG et WebP. La planche contact finale est exportee au format JPG haute qualite.",
+            text: "Notre outil accepte les formats JPG, JPEG, PNG et WebP. La planche contact finale est exportée au format JPG haute qualité.",
           },
         },
         {
           "@type": "Question",
-          name: "La creation de planche contact est-elle gratuite ?",
+          name: "La création de planche contact est-elle gratuite ?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Oui, l&apos;outil est entierement gratuit, sans inscription requise et sans filigrane sur vos images.",
+            text: "Oui, l'outil est entièrement gratuit, sans inscription requise et sans filigrane sur vos images.",
           },
         },
       ],

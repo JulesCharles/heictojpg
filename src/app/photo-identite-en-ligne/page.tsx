@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PageHero from "@/components/PageHero";
+import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
   title:
@@ -37,31 +38,44 @@ export const metadata: Metadata = {
 };
 
 export default function PhotoIdentiteEnLigne() {
-  const howToJsonLd = {
+  const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: "Comment faire une photo d'identité en ligne aux normes françaises",
-    description:
-      "3 étapes pour créer une photo d'identité conforme aux normes françaises : recadrer, redimensionner et ajuster le DPI.",
-    totalTime: "PT5M",
-    step: [
+    "@graph": [
       {
-        "@type": "HowToStep",
-        name: "Recadrer la photo au format 35x45mm",
-        text: "Utilisez un outil de recadrage pour découper votre photo au ratio 35x45mm (rapport 7:9). Le visage doit occuper 70 à 80% de la hauteur de la photo, du menton au sommet du crâne.",
-        url: "https://heictojpg.fr/photo-identite-en-ligne#etape-1",
+        "@type": "HowTo",
+        name: "Comment faire une photo d'identité en ligne aux normes françaises",
+        description:
+          "3 étapes pour créer une photo d'identité conforme aux normes françaises : recadrer, redimensionner et ajuster le DPI.",
+        totalTime: "PT5M",
+        step: [
+          {
+            "@type": "HowToStep",
+            name: "Recadrer la photo au format 35x45mm",
+            text: "Utilisez un outil de recadrage pour découper votre photo au ratio 35x45mm (rapport 7:9). Le visage doit occuper 70 à 80% de la hauteur de la photo, du menton au sommet du crâne.",
+            url: "https://heictojpg.fr/photo-identite-en-ligne#etape-1",
+          },
+          {
+            "@type": "HowToStep",
+            name: "Redimensionner à 600x800 pixels minimum",
+            text: "Redimensionnez votre photo recadrée à au moins 600x800 pixels pour garantir une qualité d'impression suffisante. La résolution idéale est 827x1063 pixels pour un rendu optimal à 300 DPI.",
+            url: "https://heictojpg.fr/photo-identite-en-ligne#etape-2",
+          },
+          {
+            "@type": "HowToStep",
+            name: "Vérifier le DPI et exporter à 300 DPI",
+            text: "Assurez-vous que votre photo est enregistrée à 300 DPI (points par pouce) pour une impression nette. Exportez au format JPG avec une qualité de 90% minimum.",
+            url: "https://heictojpg.fr/photo-identite-en-ligne#etape-3",
+          },
+        ],
       },
       {
-        "@type": "HowToStep",
-        name: "Redimensionner à 600x800 pixels minimum",
-        text: "Redimensionnez votre photo recadrée à au moins 600x800 pixels pour garantir une qualité d'impression suffisante. La résolution idéale est 827x1063 pixels pour un rendu optimal à 300 DPI.",
-        url: "https://heictojpg.fr/photo-identite-en-ligne#etape-2",
-      },
-      {
-        "@type": "HowToStep",
-        name: "Vérifier le DPI et exporter à 300 DPI",
-        text: "Assurez-vous que votre photo est enregistrée à 300 DPI (points par pouce) pour une impression nette. Exportez au format JPG avec une qualité de 90% minimum.",
-        url: "https://heictojpg.fr/photo-identite-en-ligne#etape-3",
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "Quelle taille pour une photo d'identité française ?", acceptedAnswer: { "@type": "Answer", text: "La photo d'identité française doit mesurer 35x45mm, soit 413x531 pixels minimum à 300 DPI. La résolution recommandée est 827x1063 pixels pour un rendu optimal." } },
+          { "@type": "Question", name: "Peut-on faire sa photo d'identité avec un smartphone ?", acceptedAnswer: { "@type": "Answer", text: "Oui, les smartphones récents offrent une résolution largement suffisante. Placez-vous face à une fenêtre pour un éclairage naturel, devant un mur uni clair, à environ 1 mètre de distance." } },
+          { "@type": "Question", name: "La photo d'identité en ligne est-elle acceptée en mairie ?", acceptedAnswer: { "@type": "Answer", text: "Oui, tant qu'elle respecte les normes officielles : format 35x45mm, fond uni clair, expression neutre, résolution suffisante (600x800px minimum) et format JPG." } },
+          { "@type": "Question", name: "Quel fond choisir pour une photo d'identité ?", acceptedAnswer: { "@type": "Answer", text: "Un fond uni clair est requis : gris clair ou bleu clair. Le blanc pur est déconseillé car trop contrasté. Évitez les fonds à motifs, les ombres et les dégradés." } },
+        ],
       },
     ],
   };
@@ -93,7 +107,7 @@ export default function PhotoIdentiteEnLigne() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       <div className="container mx-auto px-4 py-12 max-w-4xl">
@@ -475,6 +489,30 @@ export default function PhotoIdentiteEnLigne() {
           </div>
 
           <div className="bg-white rounded-lg shadow-sm p-8">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+              Questions fréquentes
+            </h2>
+            <div className="prose prose-gray max-w-none">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">Quelle taille pour une photo d&apos;identité française ?</h3>
+                <p className="text-gray-600 mb-4">La photo d&apos;identité française doit mesurer 35x45mm, soit 413x531 pixels minimum à 300 DPI. La résolution recommandée est 827x1063 pixels pour un rendu optimal.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">Peut-on faire sa photo d&apos;identité avec un smartphone ?</h3>
+                <p className="text-gray-600 mb-4">Oui, les smartphones récents offrent une résolution largement suffisante. Placez-vous face à une fenêtre pour un éclairage naturel, devant un mur uni clair, à environ 1 mètre de distance.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">La photo d&apos;identité en ligne est-elle acceptée en mairie ?</h3>
+                <p className="text-gray-600 mb-4">Oui, tant qu&apos;elle respecte les normes officielles : format 35x45mm, fond uni clair, expression neutre, résolution suffisante (600x800px minimum) et format JPG.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">Quel fond choisir pour une photo d&apos;identité ?</h3>
+                <p className="text-gray-600 mb-4">Un fond uni clair est requis : gris clair ou bleu clair. Le blanc pur est déconseillé car trop contrasté. Évitez les fonds à motifs, les ombres et les dégradés.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-sm p-8">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">
               Guides associés
             </h2>
@@ -504,6 +542,8 @@ export default function PhotoIdentiteEnLigne() {
             </div>
           </div>
         </div>
+
+        <RelatedTools currentPath="/photo-identite-en-ligne" />
       </div>
     </>
   );

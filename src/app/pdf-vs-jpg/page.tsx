@@ -26,13 +26,25 @@ export default function PdfVsJpgPage() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "PDF vs JPG : quel format choisir ? Comparatif 2026",
-    description:
-      "Comparaison complete entre PDF et JPG : documents vs images, multi-pages, texte selectionnable, partage. Decouvrez les differences entre le format document et le format photo.",
-    url: "https://heictojpg.fr/pdf-vs-jpg",
-    inLanguage: "fr",
-    publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: "PDF vs JPG : quel format choisir ? Comparatif 2026",
+        description:
+          "Comparaison complete entre PDF et JPG : documents vs images, multi-pages, texte selectionnable, partage. Decouvrez les differences entre le format document et le format photo.",
+        url: "https://heictojpg.fr/pdf-vs-jpg",
+        inLanguage: "fr",
+        publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "Est-ce que le PDF est meilleur que le JPG ?", acceptedAnswer: { "@type": "Answer", text: "Ça dépend de l'usage. Le PDF est meilleur pour les documents multi-pages avec du texte sélectionnable. Le JPG est meilleur pour les photos et images individuelles, avec un poids de fichier plus léger." } },
+          { "@type": "Question", name: "Peut-on convertir un PDF en JPG sans perte ?", acceptedAnswer: { "@type": "Answer", text: "Oui, avec un outil en ligne comme heictojpg.fr. La conversion extrait chaque page du PDF en image JPG haute qualité. La résolution dépend du DPI choisi lors de la conversion." } },
+          { "@type": "Question", name: "Quel format est le plus léger, PDF ou JPG ?", acceptedAnswer: { "@type": "Answer", text: "Le JPG est généralement plus léger pour les photos. Un PDF contenant uniquement des images sera plus lourd que les mêmes images en JPG. En revanche, un PDF avec du texte seul est très léger." } },
+        ],
+      },
+    ],
   };
 
   return (
@@ -109,6 +121,25 @@ export default function PdfVsJpgPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </div>
+
+      {/* FAQ */}
+      <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Questions fréquentes</h2>
+        <div className="prose prose-gray max-w-none">
+          <div>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">Est-ce que le PDF est meilleur que le JPG ?</h3>
+            <p className="text-gray-600 mb-4">Ça dépend de l&apos;usage. Le PDF est meilleur pour les documents multi-pages avec du texte sélectionnable. Le JPG est meilleur pour les photos et images individuelles, avec un poids de fichier plus léger.</p>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">Peut-on convertir un PDF en JPG sans perte ?</h3>
+            <p className="text-gray-600 mb-4">Oui, avec un outil en ligne comme heictojpg.fr. La conversion extrait chaque page du PDF en image JPG haute qualité. La résolution dépend du DPI choisi lors de la conversion.</p>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">Quel format est le plus léger, PDF ou JPG ?</h3>
+            <p className="text-gray-600 mb-4">Le JPG est généralement plus léger pour les photos. Un PDF contenant uniquement des images sera plus lourd que les mêmes images en JPG. En revanche, un PDF avec du texte seul est très léger.</p>
+          </div>
         </div>
       </div>
 

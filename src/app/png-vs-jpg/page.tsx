@@ -26,13 +26,24 @@ export default function PngVsJpgPage() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "PNG vs JPG : quelle difference ? Quel format choisir ?",
-    description:
-      "Comparaison PNG vs JPG : compression, qualite, transparence, taille de fichier. Tout savoir pour choisir entre PNG et JPEG selon votre usage.",
-    url: "https://heictojpg.fr/png-vs-jpg",
-    inLanguage: "fr",
-    publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: "PNG vs JPG : quelle différence ? Quel format choisir ?",
+        description: "Comparaison PNG vs JPG : compression, qualité, transparence, taille de fichier. Tout savoir pour choisir entre PNG et JPEG selon votre usage.",
+        url: "https://heictojpg.fr/png-vs-jpg",
+        inLanguage: "fr",
+        publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "Le PNG est-il meilleur que le JPG ?", acceptedAnswer: { "@type": "Answer", text: "Le PNG est meilleur pour les images avec de la transparence, les logos et les captures d'écran (compression sans perte). Le JPG est meilleur pour les photos (fichiers plus légers avec une qualité visuelle équivalente)." } },
+          { "@type": "Question", name: "Pourquoi un PNG est-il plus lourd qu'un JPG ?", acceptedAnswer: { "@type": "Answer", text: "Le PNG utilise une compression sans perte qui conserve chaque pixel identique à l'original. Le JPG utilise une compression avec perte qui élimine les détails imperceptibles, ce qui donne des fichiers beaucoup plus légers." } },
+          { "@type": "Question", name: "Peut-on convertir un PNG en JPG sans perte ?", acceptedAnswer: { "@type": "Answer", text: "La conversion implique toujours une légère perte car le JPG utilise une compression avec perte. Cependant, avec une qualité de 90-95%, la différence est imperceptible à l'œil nu." } },
+        ],
+      },
+    ],
   };
 
   return (

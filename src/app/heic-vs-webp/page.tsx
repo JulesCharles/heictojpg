@@ -25,13 +25,24 @@ export default function HeicVsWebpPage() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "HEIC vs WebP : quel format choisir ? Comparatif 2026",
-    description:
-      "Comparaison complete entre HEIC et WebP : compression, qualite, compatibilite web et mobile. Decouvrez les differences entre le format iPhone et le format web de Google.",
-    url: "https://heictojpg.fr/heic-vs-webp",
-    inLanguage: "fr",
-    publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: "HEIC vs WebP : quel format choisir ? Comparatif 2026",
+        description: "Comparaison complète entre HEIC et WebP : compression, qualité, compatibilité web et mobile. Découvrez les différences entre le format iPhone et le format web de Google.",
+        url: "https://heictojpg.fr/heic-vs-webp",
+        inLanguage: "fr",
+        publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "Le HEIC et le WebP sont-ils compatibles ?", acceptedAnswer: { "@type": "Answer", text: "Ce sont deux formats distincts. Le HEIC est le format natif d'Apple (iPhone/iPad), le WebP est le format de Google pour le web. Ils ne sont pas interchangeables mais offrent des niveaux de compression similaires." } },
+          { "@type": "Question", name: "Quel format est le plus léger entre HEIC et WebP ?", acceptedAnswer: { "@type": "Answer", text: "Les deux formats offrent une compression comparable, environ 50% plus légère que le JPG. Le HEIC est légèrement meilleur pour les photos haute résolution, le WebP pour les images web." } },
+          { "@type": "Question", name: "Peut-on utiliser le HEIC sur le web ?", acceptedAnswer: { "@type": "Answer", text: "Le HEIC n'est pas recommandé pour le web car seul Safari le supporte nativement. Convertissez vos HEIC en WebP ou JPG pour une compatibilité universelle sur tous les navigateurs." } },
+        ],
+      },
+    ],
   };
 
   return (

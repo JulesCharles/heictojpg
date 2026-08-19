@@ -26,13 +26,24 @@ export default function SvgVsPngPage() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "SVG vs PNG : quel format pour logos et icones ?",
-    description:
-      "Comparaison SVG vs PNG : vectoriel ou raster ? Decouvrez quel format choisir pour vos logos, icones, illustrations et images web.",
-    url: "https://heictojpg.fr/svg-vs-png",
-    inLanguage: "fr",
-    publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: "SVG vs PNG : quel format pour logos et icônes ?",
+        description: "Comparaison SVG vs PNG : vectoriel ou raster ? Découvrez quel format choisir pour vos logos, icônes, illustrations et images web.",
+        url: "https://heictojpg.fr/svg-vs-png",
+        inLanguage: "fr",
+        publisher: { "@type": "Organization", name: "heictojpg.fr", url: "https://heictojpg.fr" },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "Quelle est la différence entre SVG et PNG ?", acceptedAnswer: { "@type": "Answer", text: "Le SVG est un format vectoriel (formes mathématiques) qui reste net à toute taille. Le PNG est un format raster (pixels) qui pixelise quand on l'agrandit. Le SVG est idéal pour les logos et icônes, le PNG pour les images complexes avec transparence." } },
+          { "@type": "Question", name: "Peut-on convertir un PNG en SVG ?", acceptedAnswer: { "@type": "Answer", text: "Oui, mais le résultat dépend de la complexité de l'image. Les logos simples se convertissent bien via la vectorisation. Les photos ou images complexes donnent des résultats médiocres car le SVG n'est pas conçu pour ça." } },
+          { "@type": "Question", name: "Le SVG est-il plus léger que le PNG ?", acceptedAnswer: { "@type": "Answer", text: "Pour les graphiques simples (logos, icônes), oui — un SVG pèse souvent quelques Ko contre des dizaines de Ko en PNG. Pour les images complexes, le PNG sera plus léger car le SVG doit décrire chaque forme." } },
+        ],
+      },
+    ],
   };
 
   return (

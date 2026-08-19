@@ -383,6 +383,13 @@ const relatedToolsMap: Record<string, RelatedTool[]> = {
     { href: "/convertir-jpg-en-tiff", label: "JPG en TIFF", desc: "Format pro impression." },
     { href: "/lire-metadonnees-image", label: "Lire EXIF", desc: "Vérifiez le DPI actuel." },
   ],
+  "/photo-identite-en-ligne": [
+    { href: "/recadrer-image", label: "Recadrer image", desc: "Découpez au bon format." },
+    { href: "/redimensionner-image-pour-impression", label: "Redimensionner impression", desc: "Formats 10x15, A4, A3." },
+    { href: "/changer-dpi-image", label: "Changer DPI", desc: "Passez en 300 DPI." },
+    { href: "/compresser-image", label: "Compresser image", desc: "Réduisez le poids." },
+    { href: "/creer-planche-contact", label: "Planche contact", desc: "Imprimez plusieurs photos." },
+  ],
   "/inverser-couleurs-image": [
     { href: "/convertir-image-noir-et-blanc", label: "Noir et blanc", desc: "Niveaux de gris." },
     { href: "/flouter-image", label: "Flouter", desc: "Effet artistique." },
