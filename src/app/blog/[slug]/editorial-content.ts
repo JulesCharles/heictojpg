@@ -1639,9 +1639,25 @@ Demandez toujours la taille finale, le format accepte et le profil attendu si l'
 
 Nommez la version remise avec sa taille et sa resolution, par exemple affiche-a5-300dpi.jpg. Relisez le fichier exporte, pas seulement le fichier source. Ouvrez-le a 100 %, puis simulez la taille imprimee si votre logiciel le permet. Gardez en tete qu'une impression grand format vue a plusieurs metres tolere une densite plus basse qu'une carte ou un catalogue tenu en main.
 
+## 300 DPI c'est quoi ? Resume rapide
+
+300 DPI signifie que 300 points (pixels) sont imprimes par pouce lineaire de papier. C'est la resolution standard pour l'impression professionnelle : magazines, tirages photo, flyers, cartes de visite. Pour le web, le DPI n'a aucune importance — seule la taille en pixels compte. Voici la correspondance 300 DPI en pixels pour les formats courants :
+
+- **Photo 10x15 cm a 300 DPI** = 1181 x 1772 pixels
+- **Photo 13x18 cm a 300 DPI** = 1535 x 2126 pixels
+- **Page A4 a 300 DPI** = 2480 x 3508 pixels
+- **Page A3 a 300 DPI** = 3508 x 4961 pixels
+- **Photo 20x30 cm a 300 DPI** = 2362 x 3543 pixels
+
+Si votre image contient deja ces pixels, il suffit de [changer le DPI](/changer-dpi-image) pour passer la metadonnee a 300. Si elle contient moins de pixels, il faut soit retrouver une source plus grande, soit reduire la taille d'impression.
+
 ## FAQ
 
 ![FAQ sur la conversion d'une image en 300 DPI pour impression](/images/blog/faq-image-300-dpi.webp)
+
+### 300 DPI en pixels, ca donne quoi ?
+
+Ca depend de la taille d'impression. Pour convertir : multipliez la taille en centimetres par 11,81 (300 / 2,54). Exemple : 10 cm = 1181 pixels a 300 DPI. Utilisez la formule pixels = (cm / 2,54) x 300.
 
 ### Changer une image de 72 DPI a 300 DPI augmente-t-il sa qualite ?
 
@@ -1651,6 +1667,10 @@ Non si le nombre de pixels reste identique. La nettete d'impression depend des p
 
 Multipliez la taille en pouces par 300. Pour 10 x 15 cm, comptez environ 1181 x 1772 pixels; pour un format plus grand, il faut davantage de pixels.
 
+### Comment convertir une image en 300 DPI ?
+
+Ouvrez [changer le DPI d'une image](/changer-dpi-image), chargez votre image, selectionnez 300 DPI et exportez. L'outil modifie la metadonnee de resolution sans alterer les pixels de l'image.
+
 ### JPG, PNG, TIFF ou PDF pour l'impression ?
 
 Le JPG convient aux photos compatibles, le PNG aux graphismes nets, le TIFF a certains flux haute qualite et le PDF aux livrables pagines. Suivez la consigne de l'imprimeur.
@@ -1659,7 +1679,7 @@ Le JPG convient aux photos compatibles, le PNG aux graphismes nets, le TIFF a ce
 
 Oui si la photo contient assez de pixels pour la taille d'impression visee. Convertissez le HEIC si le prestataire ne l'accepte pas, puis reglez la resolution.
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Changer une image de 72 DPI a 300 DPI augmente-t-il sa qualite ?","acceptedAnswer":{"@type":"Answer","text":"Non. Les pixels disponibles et la taille d'impression determinent la nettete reelle."}},{"@type":"Question","name":"Combien de pixels faut-il pour imprimer en 300 DPI ?","acceptedAnswer":{"@type":"Answer","text":"Multipliez la taille en pouces par 300; un 10 x 15 cm demande environ 1181 x 1772 pixels."}},{"@type":"Question","name":"JPG, PNG, TIFF ou PDF pour l'impression ?","acceptedAnswer":{"@type":"Answer","text":"Choisissez selon le visuel et la consigne de l'imprimeur : photo JPG, graphisme PNG, flux haute qualite TIFF ou document PDF."}},{"@type":"Question","name":"Peut-on mettre une image iPhone en 300 DPI ?","acceptedAnswer":{"@type":"Answer","text":"Oui si la photo source contient assez de pixels pour la taille imprimee voulue."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"300 DPI en pixels, ca donne quoi ?","acceptedAnswer":{"@type":"Answer","text":"Ca depend de la taille. Pour 10x15 cm : 1181x1772 pixels. Pour A4 : 2480x3508 pixels. Formule : pixels = (cm / 2,54) x 300."}},{"@type":"Question","name":"Changer une image de 72 DPI a 300 DPI augmente-t-il sa qualite ?","acceptedAnswer":{"@type":"Answer","text":"Non. Les pixels disponibles et la taille d'impression determinent la nettete reelle."}},{"@type":"Question","name":"Combien de pixels faut-il pour imprimer en 300 DPI ?","acceptedAnswer":{"@type":"Answer","text":"Multipliez la taille en pouces par 300; un 10 x 15 cm demande environ 1181 x 1772 pixels."}},{"@type":"Question","name":"Comment convertir une image en 300 DPI ?","acceptedAnswer":{"@type":"Answer","text":"Ouvrez heictojpg.fr/changer-dpi-image, chargez votre image, selectionnez 300 DPI et exportez."}},{"@type":"Question","name":"JPG, PNG, TIFF ou PDF pour l'impression ?","acceptedAnswer":{"@type":"Answer","text":"Choisissez selon le visuel et la consigne de l'imprimeur : photo JPG, graphisme PNG, flux haute qualite TIFF ou document PDF."}},{"@type":"Question","name":"Peut-on mettre une image iPhone en 300 DPI ?","acceptedAnswer":{"@type":"Answer","text":"Oui si la photo source contient assez de pixels pour la taille imprimee voulue."}}]}</script>
 
 ## Conclusion
 

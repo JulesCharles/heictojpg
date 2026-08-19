@@ -69,6 +69,27 @@ export default function Page() {
       </div>
 
       <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Comment inverser les couleurs d'une image</h2>
+        <div className="prose prose-gray max-w-none">
+          <p className="text-gray-600 mb-4">
+            Notre <strong>inverseur de couleur</strong> fonctionne en un clic : uploadez votre image, et chaque pixel est transformé en sa <strong>couleur inversée</strong> (couleur complémentaire). Le blanc (255,255,255) devient noir (0,0,0), le rouge devient cyan, le bleu devient jaune. C'est une <strong>inversion couleur image</strong> parfaitement réversible.
+          </p>
+          <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Créer un effet négatif photo</h3>
+          <p className="text-gray-600 mb-4">
+            L'<strong>effet négatif</strong> transforme vos photos en leur version <strong>couleurs inversées</strong>, comme les anciens négatifs de pellicule argentique. C'est un effet recherché en design graphique, en photographie artistique et pour les couvertures d'album. Notre outil produit des <strong>images aux couleurs inversées</strong> de haute qualité, sans compression ni perte.
+          </p>
+          <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Inverser le noir et blanc</h3>
+          <p className="text-gray-600 mb-4">
+            L'<strong>inversion couleur</strong> fonctionne aussi sur les images en noir et blanc : les zones sombres deviennent claires et vice versa. C'est utile pour améliorer la lisibilité de documents scannés, créer des versions dark mode de schémas, ou simplement obtenir un rendu artistique différent.
+          </p>
+          <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Formats supportés</h3>
+          <p className="text-gray-600 mb-4">
+            L'outil d'<strong>inversion de couleur d'image</strong> accepte tous les formats courants : JPG, PNG, WebP, BMP, GIF et HEIC (photos iPhone). Le résultat est téléchargeable instantanément dans le même format. Tout le traitement se fait dans votre navigateur — aucune image n'est envoyée sur un serveur.
+          </p>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
         <h2 className="text-2xl font-semibold text-gray-800 mb-6">Questions fréquentes</h2>
         <div className="prose prose-gray max-w-none">
           <div>

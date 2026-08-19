@@ -72,6 +72,56 @@ export default function Page() {
       </div>
 
       <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Convertir une image en 300 DPI</h2>
+        <div className="prose prose-gray max-w-none">
+          <p className="text-gray-600 mb-4">
+            Vous devez <strong>convertir une image en 300 DPI</strong> pour l&apos;impression ? Notre <strong>convertisseur DPI</strong> gratuit vous permet de <strong>changer le DPI</strong> de n&apos;importe quelle image en un clic. Que vous ayez besoin de passer de 72 DPI à 300 DPI pour l&apos;impression, ou de 300 à 72 DPI pour le web, l&apos;outil s&apos;adapte.
+          </p>
+          <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Augmenter le DPI d&apos;une image</h3>
+          <p className="text-gray-600 mb-4">
+            <strong>Augmenter le DPI</strong> d&apos;une image modifie la métadonnée de résolution dans le fichier, ce qui indique à l&apos;imprimante comment interpréter les pixels. C&apos;est important à comprendre : <strong>augmenter le DPI ne crée pas de nouveaux pixels</strong>. Si votre image fait 1000x1000 pixels, la passer de 72 à 300 DPI ne l&apos;améliorera pas — elle s&apos;imprimera simplement plus petit (environ 8,5x8,5 cm au lieu de 35x35 cm).
+          </p>
+          <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Tableau DPI → taille d&apos;impression</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="bg-gray-50">
+                  <th className="border-b p-3 text-gray-700 font-semibold">Pixels de l&apos;image</th>
+                  <th className="border-b p-3 text-gray-700 font-semibold">À 72 DPI</th>
+                  <th className="border-b p-3 text-gray-700 font-semibold">À 150 DPI</th>
+                  <th className="border-b p-3 text-gray-700 font-semibold">À 300 DPI</th>
+                </tr>
+              </thead>
+              <tbody className="text-gray-600">
+                <tr>
+                  <td className="border-b p-3 font-medium">1200 x 1800</td>
+                  <td className="border-b p-3">42 x 63 cm</td>
+                  <td className="border-b p-3">20 x 30 cm</td>
+                  <td className="border-b p-3">10 x 15 cm</td>
+                </tr>
+                <tr>
+                  <td className="border-b p-3 font-medium">2400 x 3600</td>
+                  <td className="border-b p-3">85 x 127 cm</td>
+                  <td className="border-b p-3">41 x 61 cm</td>
+                  <td className="border-b p-3">20 x 30 cm</td>
+                </tr>
+                <tr>
+                  <td className="border-b p-3 font-medium">4000 x 6000</td>
+                  <td className="border-b p-3">141 x 212 cm</td>
+                  <td className="border-b p-3">68 x 102 cm</td>
+                  <td className="border-b p-3">34 x 51 cm</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">600 DPI : pour les impressions fine art</h3>
+          <p className="text-gray-600 mb-4">
+            Le <strong>600 DPI</strong> est utilisé pour les reproductions d&apos;art, les tirages photo haut de gamme et les impressions grand format. À cette résolution, une image de 4000x6000 pixels (appareil photo 24 mégapixels) s&apos;imprime à environ 17x25 cm avec une netteté exceptionnelle.
+          </p>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
         <h2 className="text-2xl font-semibold text-gray-800 mb-6">Questions fréquentes</h2>
         <div className="prose prose-gray max-w-none">
           <div>

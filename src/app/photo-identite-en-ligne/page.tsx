@@ -463,6 +463,45 @@ export default function PhotoIdentiteEnLigne() {
 
           <div className="bg-white rounded-lg shadow-sm p-8">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+              Transformer une photo en photo d&apos;identité
+            </h2>
+            <p className="text-gray-600 mb-4">
+              Vous avez une photo portrait et vous souhaitez la <strong>convertir en format identité</strong> ?
+              C&apos;est possible gratuitement en ligne. L&apos;essentiel est de respecter le ratio 7:9
+              (35x45mm) et de cadrer correctement le visage. Notre outil vous permet de
+              <strong>mettre une photo au format identité gratuit</strong> en quelques clics,
+              sans installer de logiciel.
+            </p>
+            <p className="text-gray-600 mb-4">
+              La même <strong>photo d&apos;identité numérique</strong> est valable pour plusieurs documents
+              officiels : carte nationale d&apos;identité, passeport, permis de conduire, titre de séjour
+              et certaines demandes de visa. Le <strong>format photo identité</strong> est le même pour tous
+              ces documents en France.
+            </p>
+            <h3 className="text-lg font-semibold text-gray-700 mb-3">
+              Photo d&apos;identité pour passeport et carte d&apos;identité
+            </h3>
+            <p className="text-gray-600 mb-4">
+              Pour une demande via <strong>France Identité</strong> ou l&apos;<strong>ANTS</strong>,
+              votre photo doit être au format numérique JPG, entre 50 Ko et 2 Mo.
+              Les <strong>normes photo identité française</strong> exigent un fond uni clair (gris ou bleu),
+              une expression neutre et le visage parfaitement centré. Utilisez notre outil pour
+              <strong>recadrer votre photo identité</strong> au bon format avant de la soumettre.
+            </p>
+            <h3 className="text-lg font-semibold text-gray-700 mb-3">
+              Créer sa photo d&apos;identité avec un smartphone
+            </h3>
+            <p className="text-gray-600 mb-4">
+              Les smartphones récents (iPhone, Samsung, Pixel) produisent des photos largement suffisantes
+              pour une <strong>photo d&apos;identité gratuite</strong>. Prenez la photo devant un mur uni clair,
+              face à une fenêtre, à hauteur des yeux. Ensuite, utilisez notre outil pour
+              <strong>redimensionner la photo identité</strong> à 600x800 pixels minimum et vérifier
+              que le cadrage respecte les normes (visage entre 32 et 36mm de hauteur).
+            </p>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-sm p-8">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
               Conclusion
             </h2>
             <p className="text-gray-600 mb-4">

@@ -83,6 +83,22 @@ export default function CompresserHeic() {
         </div>
       </div>
       <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Réduire la taille d&apos;un fichier HEIC</h2>
+        <div className="prose prose-gray max-w-none">
+          <p className="text-gray-600 mb-4">
+            Vous cherchez à <strong>réduire la taille de vos photos HEIC</strong> prises avec un iPhone ? Notre <strong>compresseur HEIC</strong> en ligne permet de <strong>compresser un fichier HEIC</strong> sans perte visible de qualité. Le traitement se fait entièrement dans votre navigateur — vos photos ne quittent jamais votre appareil.
+          </p>
+          <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Compresser une photo HEIC pour l&apos;envoyer par email</h3>
+          <p className="text-gray-600 mb-4">
+            La plupart des messageries limitent la taille des pièces jointes à 10-25 Mo. Une seule photo HEIC peut peser 5 à 8 Mo, ce qui limite le nombre de photos par email. En utilisant notre outil pour <strong>compresser vos photos HEIC</strong>, vous pouvez <strong>réduire le poids de 30 à 70%</strong> et envoyer plus de photos dans un seul email.
+          </p>
+          <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Compresser des fichiers HEIF et HEIC</h3>
+          <p className="text-gray-600 mb-4">
+            HEIC et HEIF sont le même format — HEIC est le nom utilisé par Apple pour les fichiers HEIF contenant des images. Notre outil gère les deux extensions. Vous pouvez aussi <strong>compresser un fichier HEIF</strong> de la même manière qu&apos;un HEIC, avec les mêmes résultats de compression.
+          </p>
+        </div>
+      </div>
+      <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
         <h2 className="text-2xl font-semibold text-gray-800 mb-6">HEIC vs AVIF : comprendre la compression</h2>
         <div className="prose prose-gray max-w-none">
           <p className="text-gray-600 mb-4">
